@@ -1,0 +1,7 @@
+{
+  "workflow": "run_live",
+  "status": "dry-run",
+  "timestamp_utc": "2026-04-21T18:51:38.417013+00:00",
+  "log_path": "logs\\run_live_workflow_20260421_185138.log",
+  "extra_config": {}
+}

@@ -1,0 +1,7 @@
+{
+  "workflow": "evaluate",
+  "status": "dry-run",
+  "timestamp_utc": "2026-04-21T18:51:34.722245+00:00",
+  "log_path": "logs\\evaluate_workflow_20260421_185134.log",
+  "extra_config": {}
+}

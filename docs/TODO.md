@@ -2,50 +2,50 @@
 
 ## Comprehensive Analysis and Overview
 
-- [ ] O-01 Confirm phase-gated delivery policy (Depends on: None)
-  - [ ] O-01.1 Confirm required success target is AC-001 to AC-005 by end of Day 6.
-  - [ ] O-01.2 Confirm stretch target AC-006 to AC-009 is conditional on Day 6 gate pass.
-- [ ] O-02 Lock the critical-path sequence (Depends on: O-01)
-  - [ ] O-02.1 Validate sequence: contract -> ingestion -> features -> training -> inference -> guardrails -> dashboard -> demo.
-  - [ ] O-02.2 Ensure every downstream task references an upstream dependency from this sequence.
-- [ ] O-03 Define risk-first execution policy (Depends on: O-01)
-  - [ ] O-03.1 Prioritize controls for overfitting, artifact sensitivity, and latency instability before stretch tasks.
-  - [ ] O-03.2 Create daily risk review checkpoint at end of each day gate.
-- [ ] O-04 Define completion evidence standard (Depends on: O-02, O-03)
-  - [ ] O-04.1 Require each completed task to produce an artifact: script, config, report, or log.
-  - [ ] O-04.2 Require each day gate to include pass/fail evidence links.
+- [x] O-01 Confirm phase-gated delivery policy (Depends on: None)
+  - [x] O-01.1 Confirm required success target is AC-001 to AC-005 by end of Day 6.
+  - [x] O-01.2 Confirm stretch target AC-006 to AC-009 is conditional on Day 6 gate pass.
+- [x] O-02 Lock the critical-path sequence (Depends on: O-01)
+  - [x] O-02.1 Validate sequence: contract -> ingestion -> features -> training -> inference -> guardrails -> dashboard -> demo.
+  - [x] O-02.2 Ensure every downstream task references an upstream dependency from this sequence.
+- [x] O-03 Define risk-first execution policy (Depends on: O-01)
+  - [x] O-03.1 Prioritize controls for overfitting, artifact sensitivity, and latency instability before stretch tasks.
+  - [x] O-03.2 Create daily risk review checkpoint at end of each day gate.
+- [x] O-04 Define completion evidence standard (Depends on: O-02, O-03)
+  - [x] O-04.1 Require each completed task to produce an artifact: script, config, report, or log.
+  - [x] O-04.2 Require each day gate to include pass/fail evidence links.
 - [ ] O-05 Freeze demo envelope and timing budget (Depends on: O-01)
   - [ ] O-05.1 Lock quick demo flow to 5 to 10 minutes.
   - [ ] O-05.2 Track per-stage time budget and flag scope that violates class timing.
 - [ ] O-06 Enforce dependency integrity with no orphan work (Depends on: O-02, O-04)
   - [ ] O-06.1 Validate each task has at least one upstream dependency, except O-01.
   - [ ] O-06.2 Validate each task feeds at least one downstream task or exit gate.
-- [ ] O-07 Confirm required runtime environment policy (Depends on: O-01)
-  - [ ] O-07.1 Execute all scripts and demos from Conda environment neuroguage.
-  - [ ] O-07.2 Record environment verification as part of Day 1 and Day 6 evidence.
+- [x] O-07 Confirm required runtime environment policy (Depends on: O-01)
+  - [x] O-07.1 Execute all scripts and demos from Conda environment neuroguage.
+  - [x] O-07.2 Record environment verification as part of Day 1 and Day 6 evidence.
 
 ## Day 1 - Scope Lock, Environment Baseline, and Data Contract
 
-- [ ] T01 Scope Freeze and Acceptance Gate Lock (Depends on: O-01, O-04)
-  - [ ] T01.1 Create working MVP acceptance checklist for AC-001 to AC-005. (Depends on: O-01)
-  - [ ] T01.2 Create separate stretch acceptance checklist for AC-006 to AC-009. (Depends on: O-01)
-  - [ ] T01.3 Document Day 6 go/no-go rule and decision owner. (Depends on: T01.1, T01.2)
-  - [ ] T01.4 Create risk log template with fields: issue, impact, owner, mitigation, status, review-date. (Depends on: O-03)
-- [ ] T02 Repository and Environment Baseline (Depends on: T01, O-07)
-  - [ ] T02.1 Create or verify directories for raw, processed, features, models, reports, and demo artifacts. (Depends on: T01)
-  - [ ] T02.2 Validate environment reproducibility files and pin critical package versions. (Depends on: O-07)
-  - [ ] T02.3 Add executable entry points for train, evaluate, run-live, and replay workflows. (Depends on: T02.1)
-  - [ ] T02.4 Add shared logging configuration for console and file diagnostics. (Depends on: T02.3)
-- [ ] T03 Data Contract and Session Schema (Depends on: T02, O-02)
-  - [ ] T03.1 Define canonical columns, units, and sampling assumptions for EEG, optical, and IMU channels. (Depends on: T02)
-  - [ ] T03.2 Define mandatory metadata fields: task type, timestamps, subjective fatigue score, optional performance metrics. (Depends on: T03.1)
-  - [ ] T03.3 Define missing-value handling and modality fallback behavior per channel group. (Depends on: T03.1)
-  - [ ] T03.4 Implement schema validation checks that fail early on malformed sessions. (Depends on: T03.2, T03.3)
+- [x] T01 Scope Freeze and Acceptance Gate Lock (Depends on: O-01, O-04)
+  - [x] T01.1 Create working MVP acceptance checklist for AC-001 to AC-005. (Depends on: O-01)
+  - [x] T01.2 Create separate stretch acceptance checklist for AC-006 to AC-009. (Depends on: O-01)
+  - [x] T01.3 Document Day 6 go/no-go rule and decision owner. (Depends on: T01.1, T01.2)
+  - [x] T01.4 Create risk log template with fields: issue, impact, owner, mitigation, status, review-date. (Depends on: O-03)
+- [x] T02 Repository and Environment Baseline (Depends on: T01, O-07)
+  - [x] T02.1 Create or verify directories for raw, processed, features, models, reports, and demo artifacts. (Depends on: T01)
+  - [x] T02.2 Validate environment reproducibility files and pin critical package versions. (Depends on: O-07)
+  - [x] T02.3 Add executable entry points for train, evaluate, run-live, and replay workflows. (Depends on: T02.1)
+  - [x] T02.4 Add shared logging configuration for console and file diagnostics. (Depends on: T02.3)
+- [x] T03 Data Contract and Session Schema (Depends on: T02, O-02)
+  - [x] T03.1 Define canonical columns, units, and sampling assumptions for EEG, optical, and IMU channels. (Depends on: T02)
+  - [x] T03.2 Define mandatory metadata fields: task type, timestamps, subjective fatigue score, optional performance metrics. (Depends on: T03.1)
+  - [x] T03.3 Define missing-value handling and modality fallback behavior per channel group. (Depends on: T03.1)
+  - [x] T03.4 Implement schema validation checks that fail early on malformed sessions. (Depends on: T03.2, T03.3)
 
-- [ ] G01 Day 1 Exit Gate (Depends on: T01, T02, T03)
-  - [ ] G01.1 Scope and acceptance checklists are finalized and versioned.
-  - [ ] G01.2 Environment and entry-point scripts run from neuroguage.
-  - [ ] G01.3 Schema validator passes valid input and rejects malformed records.
+- [x] G01 Day 1 Exit Gate (Depends on: T01, T02, T03)
+  - [x] G01.1 Scope and acceptance checklists are finalized and versioned.
+  - [x] G01.2 Environment and entry-point scripts run from neuroguage.
+  - [x] G01.3 Schema validator passes valid input and rejects malformed records.
 
 ## Day 2 - Ingestion, Alignment, and Feature Foundations
 

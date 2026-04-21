@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuroguage"
+version = "0.1.0"
+description = "NeuroGauge real-time cognitive fatigue monitoring system"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==1.26.4",
+    "pandas==2.2.3",
+    "scipy==1.14.1",
+    "scikit-learn==1.5.2",
+    "matplotlib==3.9.2",
+    "pyyaml==6.0.2"
+]
+
+[project.scripts]
+neuro-train = "neuroguage.cli:main_train"
+neuro-evaluate = "neuroguage.cli:main_evaluate"
+neuro-run-live = "neuroguage.cli:main_run_live"
+neuro-replay = "neuroguage.cli:main_replay"
+neuro-validate-schema = "neuroguage.cli:main_validate_schema"
+neuro-verify-env = "neuroguage.cli:main_verify_env"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
