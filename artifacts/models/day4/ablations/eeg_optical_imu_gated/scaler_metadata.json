@@ -1,0 +1,98 @@
+{
+  "strategy": "train_only_zscore",
+  "split_column": "split",
+  "feature_columns": [
+    "alignment_gap_s",
+    "confidence_score",
+    "downweight_factor",
+    "eeg_artifact_flag",
+    "eeg_beta_alpha_ratio",
+    "eeg_clipping_count",
+    "eeg_quality_coverage",
+    "eeg_quality_score",
+    "eeg_rel_alpha",
+    "eeg_rel_beta",
+    "eeg_rel_theta",
+    "eeg_theta_alpha_ratio",
+    "imu_coverage",
+    "imu_motion_score",
+    "optical_coverage",
+    "optical_mean_change",
+    "optical_norm_mean",
+    "optical_trend_slope"
+  ],
+  "statistics": {
+    "alignment_gap_s": {
+      "mean": 0.5,
+      "std": 0.5
+    },
+    "confidence_score": {
+      "mean": 0.715,
+      "std": 0.07783529619223745
+    },
+    "downweight_factor": {
+      "mean": 0.715,
+      "std": 0.07783529619223745
+    },
+    "eeg_artifact_flag": {
+      "mean": 0.5,
+      "std": 0.5
+    },
+    "eeg_beta_alpha_ratio": {
+      "mean": 1.1633333333333333,
+      "std": 0.4439281723682585
+    },
+    "eeg_clipping_count": {
+      "mean": 0.0,
+      "std": 1.0
+    },
+    "eeg_quality_coverage": {
+      "mean": 0.8616666666666668,
+      "std": 0.04487637339278755
+    },
+    "eeg_quality_score": {
+      "mean": 0.6508333333333334,
+      "std": 0.25014856696682386
+    },
+    "eeg_rel_alpha": {
+      "mean": 0.26166666666666666,
+      "std": 0.054898896973335345
+    },
+    "eeg_rel_beta": {
+      "mean": 0.2808333333333333,
+      "std": 0.04462031176742519
+    },
+    "eeg_rel_theta": {
+      "mean": 0.3216666666666667,
+      "std": 0.07243771270700243
+    },
+    "eeg_theta_alpha_ratio": {
+      "mean": 1.3525,
+      "std": 0.6009454356816987
+    },
+    "imu_coverage": {
+      "mean": 0.8583333333333333,
+      "std": 0.04487637339278755
+    },
+    "imu_motion_score": {
+      "mean": 0.4450000000000001,
+      "std": 0.12539936203984453
+    },
+    "optical_coverage": {
+      "mean": 0.8683333333333333,
+      "std": 0.04487637339278752
+    },
+    "optical_mean_change": {
+      "mean": 0.315,
+      "std": 0.09322910847298
+    },
+    "optical_norm_mean": {
+      "mean": 0.22666666666666666,
+      "std": 0.21374959389175194
+    },
+    "optical_trend_slope": {
+      "mean": 0.16666666666666666,
+      "std": 0.04570436400267362
+    }
+  }
+}

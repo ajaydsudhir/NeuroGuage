@@ -1,4 +1,4 @@
-﻿# NeuroGauge Detailed Build TODO (PRD-Aligned, 7-Day Execution Plan)
+# NeuroGauge Detailed Build TODO (PRD-Aligned, 7-Day Execution Plan)
 
 ## Comprehensive Analysis and Overview
 
@@ -100,26 +100,26 @@
 
 ## Day 4 - MVP Evaluation, Live Inference, and Guardrails
 
-- [ ] T11 MVP Evaluation and Ablation Report (Depends on: G03)
-  - [ ] T11.1 Compute AUROC, macro F1, and balanced accuracy on held-out sessions. (Depends on: G03)
-  - [ ] T11.2 Run ablations: EEG-only, EEG+optical, EEG+optical+IMU-gated. (Depends on: T11.1)
-  - [ ] T11.3 Select production MVP model based on robustness and metric consistency. (Depends on: T11.2)
-  - [ ] T11.4 Publish concise evaluation summary for demo narrative and technical review. (Depends on: T11.3)
-- [ ] T12 Real-Time Inference Service (Depends on: T11)
-  - [ ] T12.1 Implement live feature path aligned to offline data contract and transforms. (Depends on: T11)
-  - [ ] T12.2 Load selected MVP model and emit risk score in range [0, 1]. (Depends on: T12.1)
-  - [ ] T12.3 Add runtime fault handling for packet loss and delayed modality updates. (Depends on: T12.2)
-  - [ ] T12.4 Log per-update latency and model confidence diagnostics. (Depends on: T12.3)
-- [ ] T13 Symbolic Guardrail Engine (Depends on: T12)
-  - [ ] T13.1 Implement GREEN, YELLOW, RED, and optional BLACK transition logic. (Depends on: T12)
-  - [ ] T13.2 Implement persistence and trend checks to suppress oscillation. (Depends on: T13.1)
-  - [ ] T13.3 Generate rationale text for each non-GREEN transition. (Depends on: T13.2)
-  - [ ] T13.4 Emit timestamped transition logs for replay and post-hoc review. (Depends on: T13.3)
+- [x] T11 MVP Evaluation and Ablation Report (Depends on: G03)
+  - [x] T11.1 Compute AUROC, macro F1, and balanced accuracy on held-out sessions. (Depends on: G03)
+  - [x] T11.2 Run ablations: EEG-only, EEG+optical, EEG+optical+IMU-gated. (Depends on: T11.1)
+  - [x] T11.3 Select production MVP model based on robustness and metric consistency. (Depends on: T11.2)
+  - [x] T11.4 Publish concise evaluation summary for demo narrative and technical review. (Depends on: T11.3)
+- [x] T12 Real-Time Inference Service (Depends on: T11)
+  - [x] T12.1 Implement live feature path aligned to offline data contract and transforms. (Depends on: T11)
+  - [x] T12.2 Load selected MVP model and emit risk score in range [0, 1]. (Depends on: T12.1)
+  - [x] T12.3 Add runtime fault handling for packet loss and delayed modality updates. (Depends on: T12.2)
+  - [x] T12.4 Log per-update latency and model confidence diagnostics. (Depends on: T12.3)
+- [x] T13 Symbolic Guardrail Engine (Depends on: T12)
+  - [x] T13.1 Implement GREEN, YELLOW, RED, and optional BLACK transition logic. (Depends on: T12)
+  - [x] T13.2 Implement persistence and trend checks to suppress oscillation. (Depends on: T13.1)
+  - [x] T13.3 Generate rationale text for each non-GREEN transition. (Depends on: T13.2)
+  - [x] T13.4 Emit timestamped transition logs for replay and post-hoc review. (Depends on: T13.3)
 
-- [ ] G04 Day 4 Exit Gate (Depends on: T11, T12, T13)
-  - [ ] G04.1 Production MVP model is selected with held-out evidence.
-  - [ ] G04.2 Live inference loop emits stable and valid risk scores.
-  - [ ] G04.3 Guardrail transitions and rationale logs are functioning.
+- [x] G04 Day 4 Exit Gate (Depends on: T11, T12, T13)
+  - [x] G04.1 Production MVP model is selected with held-out evidence.
+  - [x] G04.2 Live inference loop emits stable and valid risk scores.
+  - [x] G04.3 Guardrail transitions and rationale logs are functioning.
 
 ## Day 5 - Dashboard Integration and Quick Demo Flow
 

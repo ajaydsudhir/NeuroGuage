@@ -1,0 +1,21 @@
+{
+  "weights": {
+    "linear": 0.6614583333333334,
+    "tree": 0.33854166666666674
+  },
+  "linear_model": {
+    "name": "lda",
+    "parameters": {
+      "solver": "lsqr",
+      "shrinkage": "auto"
+    }
+  },
+  "tree_model": {
+    "name": "random_forest",
+    "parameters": {
+      "n_estimators": 120,
+      "max_depth": null,
+      "min_samples_leaf": 1
+    }
+  }
+}

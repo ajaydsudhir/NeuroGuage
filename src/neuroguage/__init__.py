@@ -2,7 +2,10 @@
 
 __all__ = [
 	"cli",
+	"evaluation",
 	"feature_builder",
+	"guardrails",
+	"inference",
 	"labeling",
 	"logging_config",
 	"schema_validator",
