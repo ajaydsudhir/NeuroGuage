@@ -24,6 +24,8 @@ neuro-run-live = "neuroguage.cli:main_run_live"
 neuro-replay = "neuroguage.cli:main_replay"
 neuro-validate-schema = "neuroguage.cli:main_validate_schema"
 neuro-verify-env = "neuroguage.cli:main_verify_env"
+neuro-discover-muse = "neuroguage.cli:main_discover_muse"
+neuro-decode-raw = "neuroguage.cli:main_decode_raw"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

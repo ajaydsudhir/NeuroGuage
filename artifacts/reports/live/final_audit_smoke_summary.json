@@ -1,0 +1,25 @@
+{
+  "source": "synthetic",
+  "session_id": "final_audit_smoke",
+  "cycles": 12,
+  "elapsed_s": 6.102309703826904,
+  "final_state": "GREEN",
+  "mean_risk": 0.39583481145367955,
+  "max_risk": 0.41630922798527625,
+  "mean_latency_s": 0.028509674998834573,
+  "max_latency_s": 0.03438229998573661,
+  "within_latency_budget": true,
+  "transition_count": 0,
+  "source_health": {
+    "source": "synthetic",
+    "started": true,
+    "samples": {
+      "eeg": 1488,
+      "optical": 348,
+      "imu": 280
+    },
+    "fatigue_trend": 0.5,
+    "real_time_factor": 1.0
+  },
+  "stub_models": false
+}

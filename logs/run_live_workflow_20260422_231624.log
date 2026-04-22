@@ -1,0 +1,16 @@
+2026-04-22 19:16:24 | INFO | neuroguage.inference | Loading inference models from artifacts\models\day4\ablations\eeg_optical
+2026-04-22 19:16:25 | INFO | neuroguage.live_app | Live app started | source=synthetic | dashboard=False | stub_models=False
+2026-04-22 19:16:26 | INFO | neuroguage.inference | Inference #1 | risk=0.3000 | conf=0.8834 | latency=0.0286s | faults=none
+2026-04-22 19:16:26 | INFO | neuroguage.inference | Inference #2 | risk=0.3579 | conf=0.9430 | latency=0.0285s | faults=none
+2026-04-22 19:16:27 | INFO | neuroguage.inference | Inference #3 | risk=0.4093 | conf=0.8897 | latency=0.0247s | faults=none
+2026-04-22 19:16:27 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.4093 | Risk score (0.41) exceeded YELLOW threshold (0.40). Risk trend is rising (slope=0.0546 over 5 windows). Persistence count: 1.
+2026-04-22 19:16:27 | INFO | neuroguage.inference | Inference #4 | risk=0.4041 | conf=0.8880 | latency=0.0222s | faults=none
+2026-04-22 19:16:28 | INFO | neuroguage.inference | Inference #5 | risk=0.3900 | conf=0.9026 | latency=0.0295s | faults=none
+2026-04-22 19:16:29 | INFO | neuroguage.inference | Inference #6 | risk=0.3878 | conf=0.9041 | latency=0.0290s | faults=none
+2026-04-22 19:16:29 | INFO | neuroguage.inference | Inference #7 | risk=0.4046 | conf=0.8856 | latency=0.0226s | faults=none
+2026-04-22 19:16:29 | INFO | neuroguage.inference | Inference #8 | risk=0.3965 | conf=0.8953 | latency=0.0240s | faults=none
+2026-04-22 19:16:30 | INFO | neuroguage.inference | Inference #9 | risk=0.3888 | conf=0.9036 | latency=0.0357s | faults=none
+2026-04-22 19:16:30 | INFO | neuroguage.inference | Inference diagnostics written to artifacts\reports\live\final_smoke_updates.json
+2026-04-22 19:16:30 | INFO | neuroguage.guardrails | Guardrail artifacts written: artifacts\reports\live\final_smoke_transitions.json, artifacts\reports\live\final_smoke_guardrail_summary.json
+2026-04-22 19:16:30 | INFO | neuroguage.live_app | Live session artifacts written to artifacts\reports\live
+2026-04-22 19:16:30 | INFO | neuroguage.workflows | run_live completed | source=synthetic | cycles=9 | mean_latency=0.027s | final_state=YELLOW

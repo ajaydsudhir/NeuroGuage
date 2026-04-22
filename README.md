@@ -125,32 +125,48 @@ the production MVP, and writes:
 
 ### 3.4 Run live inference (or replay mode)
 
-Replay mode — required for day-to-day validation and class dry-runs:
+Replay a canned Day 4 session (no hardware):
 
 ```powershell
 python scripts/day4_inference_guardrails.py
 ```
 
-Dedicated live entry point (Muse stream):
+Live Muse S Athena run (see full walkthrough in
+`docs/runbooks/muse_s_athena_live.md`):
 
 ```powershell
-python scripts/run_live.py
+# Discover your headband (one-time)
+python -m neuroguage.cli discover-muse --timeout 10
+
+# Run the live fatigue gauge with dashboard
+python scripts/run_live.py --source muse --address <MAC> --session-id classroom_demo_01 --duration 600
 ```
 
-Dedicated replay entry point:
+Synthetic rehearsal (laptop only, no headband):
 
 ```powershell
-python scripts/replay.py
+python scripts/run_live.py --source synthetic --duration 60
 ```
 
-Artifacts:
+Replay a previously recorded raw session:
 
-- `artifacts/reports/day4/inference_diagnostics.json` — per-update risk,
-  latency, confidence, fault flags
-- `artifacts/reports/day4/guardrail_transition_log.json` — timestamped
-  GREEN / YELLOW / RED transitions with rationale
-- `artifacts/reports/day4/guardrail_summary.json`
-- `artifacts/reports/day4/day4_integration_summary.json`
+```powershell
+python scripts/run_live.py --source replay --raw-file data/raw/sub01/session_raw.txt
+```
+
+Collect a labelled calibration session (writes contract-shaped CSVs):
+
+```powershell
+python scripts/record_calibration_session.py \
+    --session-id sub01_baseline_rest \
+    --task-type baseline_rest \
+    --duration 180 \
+    --subjective-fatigue-score 2 \
+    --output-dir data/raw/sub01/baseline_rest
+```
+
+Live artifacts land in `artifacts/reports/live/<session>_{summary,updates,transitions,session_log,guardrail_summary}.*`.
+Day-4 replay artifacts land in `artifacts/reports/day4/`.
 
 ### 3.5 Launch the dashboard and class quick demo
 
@@ -252,6 +268,8 @@ regression.
 - `docs/PRD.md` — Product Requirements Document
 - `docs/proposal.md` — Original project proposal
 - `docs/TODO.md` — 7-day execution plan with daily exit gates
+- `docs/runbooks/muse_s_athena_live.md` — Step-by-step Muse S Athena
+  live runbook (discover → stream → dashboard → artifacts)
 - `docs/day6/demo_runbook.md` — Class quick demo runbook and fallbacks
 - `docs/day6/limitations_and_risks.md` — Known limitations, risks, and
   deferred items
@@ -259,6 +277,9 @@ regression.
   release-candidate demo folder
 - `docs/day1/governance_and_dependencies.md` — Governance, dependency
   integrity, and no-orphan task policy
+- `artifacts/reports/day1/dependency_integrity.md` — Machine-generated
+  O-06 dependency-integrity audit (regenerate via
+  `python scripts/audit_dependency_integrity.py`)
 
 ## 8. License
 

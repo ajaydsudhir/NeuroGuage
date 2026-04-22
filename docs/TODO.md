@@ -17,9 +17,9 @@
 - [x] O-05 Freeze demo envelope and timing budget (Depends on: O-01)
   - [x] O-05.1 Lock quick demo flow to 5 to 10 minutes.
   - [x] O-05.2 Track per-stage time budget and flag scope that violates class timing.
-- [ ] O-06 Enforce dependency integrity with no orphan work (Depends on: O-02, O-04)
-  - [ ] O-06.1 Validate each task has at least one upstream dependency, except O-01.
-  - [ ] O-06.2 Validate each task feeds at least one downstream task or exit gate.
+- [x] O-06 Enforce dependency integrity with no orphan work (Depends on: O-02, O-04)
+  - [x] O-06.1 Validate each task has at least one upstream dependency, except O-01. (Evidence: `artifacts/reports/day1/dependency_integrity.md` — 0 orphans reported by `scripts/audit_dependency_integrity.py`.)
+  - [x] O-06.2 Validate each task feeds at least one downstream task or exit gate. (Evidence: `artifacts/reports/day1/dependency_integrity.md` — 0 dangling tasks; every row feeds a downstream task or gate.)
 - [x] O-07 Confirm required runtime environment policy (Depends on: O-01)
   - [x] O-07.1 Execute all scripts and demos from Conda environment neuroguage.
   - [x] O-07.2 Record environment verification as part of Day 1 and Day 6 evidence.

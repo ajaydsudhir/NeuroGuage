@@ -1,0 +1,1668 @@
+{
+  "total_tasks": 169,
+  "checked_tasks": 169,
+  "missing_upstream": [],
+  "missing_downstream": [],
+  "tasks": {
+    "D-Map-01": {
+      "title": "Required MVP path",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "D-Map-01.1",
+        "D-Map-01.2",
+        "D-Map-01.3",
+        "D-Map-01.4",
+        "D-Map-01.5",
+        "D-Map-01.6",
+        "D-Map-01.7",
+        "D-Map-03"
+      ]
+    },
+    "D-Map-01.1": {
+      "title": "O-01 -> O-02 -> O-04 -> T01 -> T02 -> T03 -> G01",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.2": {
+      "title": "G01 -> T04 -> T05 -> T06 and T07 -> G02",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.3": {
+      "title": "G02 -> T08 -> T09 -> T10 -> G03",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.4": {
+      "title": "G03 -> T11 -> T12 -> T13 -> G04",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.5": {
+      "title": "G04 -> T14 -> T15 -> G05",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.6": {
+      "title": "G05 -> T16 -> T17 -> G06",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-01.7": {
+      "title": "G06 -> T20 -> G07",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-02": {
+      "title": "Optional stretch path",
+      "checked": true,
+      "depends_on": [
+        "G06"
+      ],
+      "feeds": [
+        "D-Map-02.1",
+        "D-Map-03"
+      ]
+    },
+    "D-Map-02.1": {
+      "title": "G06 -> T18 -> T19 -> T20 -> G07",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-03": {
+      "title": "Orphan-task validation",
+      "checked": true,
+      "depends_on": [
+        "D-Map-01",
+        "D-Map-02"
+      ],
+      "feeds": [
+        "D-Map-03.1",
+        "D-Map-03.2"
+      ]
+    },
+    "D-Map-03.1": {
+      "title": "Every task from T01 to T20 has at least one upstream dependency.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "D-Map-03.2": {
+      "title": "Every task from T01 to T20 contributes to at least one gate or downstream task.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G01": {
+      "title": "Day 1 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "feeds": [
+        "G01.1",
+        "G01.2",
+        "G01.3",
+        "T04",
+        "T04.1"
+      ]
+    },
+    "G01.1": {
+      "title": "Scope and acceptance checklists are finalized and versioned.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G01.2": {
+      "title": "Environment and entry-point scripts run from neuroguage.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G01.3": {
+      "title": "Schema validator passes valid input and rejects malformed records.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G02": {
+      "title": "Day 2 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "feeds": [
+        "G02.1",
+        "G02.2",
+        "G02.3",
+        "T08",
+        "T08.1"
+      ]
+    },
+    "G02.1": {
+      "title": "At least one session passes synchronization checks with diagnostics.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G02.2": {
+      "title": "Windowing layer passes edge-case tests.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G02.3": {
+      "title": "EEG and optical or IMU features generate without runtime failure.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G03": {
+      "title": "Day 3 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "feeds": [
+        "G03.1",
+        "G03.2",
+        "G03.3",
+        "T11",
+        "T11.1"
+      ]
+    },
+    "G03.1": {
+      "title": "Split manifests are reusable and leakage-safe.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G03.2": {
+      "title": "MVP training pipeline runs end-to-end.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G03.3": {
+      "title": "Training artifacts are reproducible from saved config and manifest.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G04": {
+      "title": "Day 4 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T11",
+        "T12",
+        "T13"
+      ],
+      "feeds": [
+        "G04.1",
+        "G04.2",
+        "G04.3",
+        "T14",
+        "T14.1"
+      ]
+    },
+    "G04.1": {
+      "title": "Production MVP model is selected with held-out evidence.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G04.2": {
+      "title": "Live inference loop emits stable and valid risk scores.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G04.3": {
+      "title": "Guardrail transitions and rationale logs are functioning.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G05": {
+      "title": "Day 5 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T14",
+        "T15"
+      ],
+      "feeds": [
+        "G05.1",
+        "G05.2",
+        "G05.3",
+        "T16",
+        "T16.1"
+      ]
+    },
+    "G05.1": {
+      "title": "Dashboard is stable and readable.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G05.2": {
+      "title": "Quick demo completes within the 5 to 10 minute window.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G05.3": {
+      "title": "Dry-run defects are prioritized for Day 6.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G06": {
+      "title": "Day 6 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T16",
+        "T17"
+      ],
+      "feeds": [
+        "D-Map-02",
+        "G06.1",
+        "G06.2",
+        "G06.3",
+        "S-01",
+        "T18",
+        "T18.1",
+        "T20.1"
+      ]
+    },
+    "G06.1": {
+      "title": "AC-001 to AC-005 pass with documented evidence links.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G06.2": {
+      "title": "Documentation package and runbook are complete and reproducible.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G06.3": {
+      "title": "Phase-gate decision is recorded: Day 7 stretch allowed or blocked.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G07": {
+      "title": "Day 7 Exit Gate",
+      "checked": true,
+      "depends_on": [
+        "T20",
+        "T19"
+      ],
+      "feeds": [
+        "G07.1",
+        "G07.2",
+        "G07.3",
+        "S-03"
+      ]
+    },
+    "G07.1": {
+      "title": "MVP release package is finalized and class-ready.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G07.2": {
+      "title": "Stretch model is promoted with evidence or explicitly deferred.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "G07.3": {
+      "title": "Final rehearsal passes timing and stability constraints.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-01": {
+      "title": "Confirm phase-gated delivery policy",
+      "checked": true,
+      "depends_on": [],
+      "feeds": [
+        "D-Map-01",
+        "O-01.1",
+        "O-01.2",
+        "O-02",
+        "O-03",
+        "O-05",
+        "O-07",
+        "T01",
+        "T01.1",
+        "T01.2"
+      ]
+    },
+    "O-01.1": {
+      "title": "Confirm required success target is AC-001 to AC-005 by end of Day 6.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-01.2": {
+      "title": "Confirm stretch target AC-006 to AC-009 is conditional on Day 6 gate pass.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-02": {
+      "title": "Lock the critical-path sequence",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "O-02.1",
+        "O-02.2",
+        "O-04",
+        "O-06",
+        "T03"
+      ]
+    },
+    "O-02.1": {
+      "title": "Validate sequence: contract -> ingestion -> features -> training -> inference -> guardrails -> dashboard -> demo.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-02.2": {
+      "title": "Ensure every downstream task references an upstream dependency from this sequence.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-03": {
+      "title": "Define risk-first execution policy",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "O-03.1",
+        "O-03.2",
+        "O-04",
+        "T01.4"
+      ]
+    },
+    "O-03.1": {
+      "title": "Prioritize controls for overfitting, artifact sensitivity, and latency instability before stretch tasks.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-03.2": {
+      "title": "Create daily risk review checkpoint at end of each day gate.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-04": {
+      "title": "Define completion evidence standard",
+      "checked": true,
+      "depends_on": [
+        "O-02",
+        "O-03"
+      ],
+      "feeds": [
+        "O-04.1",
+        "O-04.2",
+        "O-06",
+        "T01",
+        "T17"
+      ]
+    },
+    "O-04.1": {
+      "title": "Require each completed task to produce an artifact: script, config, report, or log.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-04.2": {
+      "title": "Require each day gate to include pass/fail evidence links.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-05": {
+      "title": "Freeze demo envelope and timing budget",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "O-05.1",
+        "O-05.2",
+        "T15",
+        "T15.1"
+      ]
+    },
+    "O-05.1": {
+      "title": "Lock quick demo flow to 5 to 10 minutes.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-05.2": {
+      "title": "Track per-stage time budget and flag scope that violates class timing.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-06": {
+      "title": "Enforce dependency integrity with no orphan work",
+      "checked": true,
+      "depends_on": [
+        "O-02",
+        "O-04"
+      ],
+      "feeds": [
+        "O-06.1",
+        "O-06.2"
+      ]
+    },
+    "O-06.1": {
+      "title": "Validate each task has at least one upstream dependency, except O-01. (Evidence: `artifacts/reports/day1/dependency_integrity.md` \u2014 0 orphans reported by `scripts/audit_dependency_integrity.py`.)",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-06.2": {
+      "title": "Validate each task feeds at least one downstream task or exit gate. (Evidence: `artifacts/reports/day1/dependency_integrity.md` \u2014 0 dangling tasks; every row feeds a downstream task or gate.)",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-07": {
+      "title": "Confirm required runtime environment policy",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "O-07.1",
+        "O-07.2",
+        "T02",
+        "T02.2",
+        "T17",
+        "T17.1"
+      ]
+    },
+    "O-07.1": {
+      "title": "Execute all scripts and demos from Conda environment neuroguage.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "O-07.2": {
+      "title": "Record environment verification as part of Day 1 and Day 6 evidence.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "S-01": {
+      "title": "Required success",
+      "checked": true,
+      "depends_on": [
+        "G06"
+      ],
+      "feeds": [
+        "S-01.1",
+        "S-01.2"
+      ]
+    },
+    "S-01.1": {
+      "title": "T01 through T17 complete with acceptance evidence.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "S-01.2": {
+      "title": "AC-001 to AC-005 pass.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "S-02": {
+      "title": "Stretch success",
+      "checked": true,
+      "depends_on": [
+        "T19"
+      ],
+      "feeds": [
+        "S-02.1"
+      ]
+    },
+    "S-02.1": {
+      "title": "AC-006 to AC-009 evidence is complete. (AC-007 formally deferred with documented rationale; AC-006, AC-008, AC-009 have evidence.)",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "S-03": {
+      "title": "Final success",
+      "checked": true,
+      "depends_on": [
+        "G07"
+      ],
+      "feeds": [
+        "S-03.1"
+      ]
+    },
+    "S-03.1": {
+      "title": "T20 complete, package frozen, and rehearsal pass recorded.",
+      "checked": true,
+      "depends_on": [],
+      "feeds": []
+    },
+    "T01": {
+      "title": "Scope Freeze and Acceptance Gate Lock",
+      "checked": true,
+      "depends_on": [
+        "O-01",
+        "O-04"
+      ],
+      "feeds": [
+        "G01",
+        "T01.1",
+        "T01.2",
+        "T01.3",
+        "T01.4",
+        "T02",
+        "T02.1"
+      ]
+    },
+    "T01.1": {
+      "title": "Create working MVP acceptance checklist for AC-001 to AC-005.",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "T01.3"
+      ]
+    },
+    "T01.2": {
+      "title": "Create separate stretch acceptance checklist for AC-006 to AC-009.",
+      "checked": true,
+      "depends_on": [
+        "O-01"
+      ],
+      "feeds": [
+        "T01.3"
+      ]
+    },
+    "T01.3": {
+      "title": "Document Day 6 go/no-go rule and decision owner.",
+      "checked": true,
+      "depends_on": [
+        "T01.1",
+        "T01.2"
+      ],
+      "feeds": []
+    },
+    "T01.4": {
+      "title": "Create risk log template with fields: issue, impact, owner, mitigation, status, review-date.",
+      "checked": true,
+      "depends_on": [
+        "O-03"
+      ],
+      "feeds": []
+    },
+    "T02": {
+      "title": "Repository and Environment Baseline",
+      "checked": true,
+      "depends_on": [
+        "T01",
+        "O-07"
+      ],
+      "feeds": [
+        "G01",
+        "T02.1",
+        "T02.2",
+        "T02.3",
+        "T02.4",
+        "T03",
+        "T03.1"
+      ]
+    },
+    "T02.1": {
+      "title": "Create or verify directories for raw, processed, features, models, reports, and demo artifacts.",
+      "checked": true,
+      "depends_on": [
+        "T01"
+      ],
+      "feeds": [
+        "T02.3"
+      ]
+    },
+    "T02.2": {
+      "title": "Validate environment reproducibility files and pin critical package versions.",
+      "checked": true,
+      "depends_on": [
+        "O-07"
+      ],
+      "feeds": []
+    },
+    "T02.3": {
+      "title": "Add executable entry points for train, evaluate, run-live, and replay workflows.",
+      "checked": true,
+      "depends_on": [
+        "T02.1"
+      ],
+      "feeds": [
+        "T02.4"
+      ]
+    },
+    "T02.4": {
+      "title": "Add shared logging configuration for console and file diagnostics.",
+      "checked": true,
+      "depends_on": [
+        "T02.3"
+      ],
+      "feeds": []
+    },
+    "T03": {
+      "title": "Data Contract and Session Schema",
+      "checked": true,
+      "depends_on": [
+        "T02",
+        "O-02"
+      ],
+      "feeds": [
+        "G01",
+        "T03.1",
+        "T03.2",
+        "T03.3",
+        "T03.4"
+      ]
+    },
+    "T03.1": {
+      "title": "Define canonical columns, units, and sampling assumptions for EEG, optical, and IMU channels.",
+      "checked": true,
+      "depends_on": [
+        "T02"
+      ],
+      "feeds": [
+        "T03.2",
+        "T03.3"
+      ]
+    },
+    "T03.2": {
+      "title": "Define mandatory metadata fields: task type, timestamps, subjective fatigue score, optional performance metrics.",
+      "checked": true,
+      "depends_on": [
+        "T03.1"
+      ],
+      "feeds": [
+        "T03.4"
+      ]
+    },
+    "T03.3": {
+      "title": "Define missing-value handling and modality fallback behavior per channel group.",
+      "checked": true,
+      "depends_on": [
+        "T03.1"
+      ],
+      "feeds": [
+        "T03.4"
+      ]
+    },
+    "T03.4": {
+      "title": "Implement schema validation checks that fail early on malformed sessions.",
+      "checked": true,
+      "depends_on": [
+        "T03.2",
+        "T03.3"
+      ],
+      "feeds": []
+    },
+    "T04": {
+      "title": "Multimodal Ingestion and Timeline Alignment",
+      "checked": true,
+      "depends_on": [
+        "G01"
+      ],
+      "feeds": [
+        "G02",
+        "T04.1",
+        "T04.2",
+        "T04.3",
+        "T04.4",
+        "T05",
+        "T05.1"
+      ]
+    },
+    "T04.1": {
+      "title": "Implement ingestion adapters for EEG, optical, and IMU streams or files.",
+      "checked": true,
+      "depends_on": [
+        "G01"
+      ],
+      "feeds": [
+        "T04.2"
+      ]
+    },
+    "T04.2": {
+      "title": "Normalize timestamps to a common reference clock.",
+      "checked": true,
+      "depends_on": [
+        "T04.1"
+      ],
+      "feeds": [
+        "T04.3"
+      ]
+    },
+    "T04.3": {
+      "title": "Implement alignment diagnostics for drift, dropouts, and packet delay.",
+      "checked": true,
+      "depends_on": [
+        "T04.2"
+      ],
+      "feeds": [
+        "T04.4"
+      ]
+    },
+    "T04.4": {
+      "title": "Produce one synchronized session artifact with validation summary.",
+      "checked": true,
+      "depends_on": [
+        "T04.3"
+      ],
+      "feeds": []
+    },
+    "T05": {
+      "title": "Windowing and Buffering Layer",
+      "checked": true,
+      "depends_on": [
+        "T04"
+      ],
+      "feeds": [
+        "G02",
+        "T05.1",
+        "T05.2",
+        "T05.3",
+        "T05.4",
+        "T06",
+        "T06.1",
+        "T07",
+        "T07.1",
+        "T07.2"
+      ]
+    },
+    "T05.1": {
+      "title": "Implement fixed-size sliding windows for fast EEG updates.",
+      "checked": true,
+      "depends_on": [
+        "T04"
+      ],
+      "feeds": [
+        "T05.2",
+        "T05.3"
+      ]
+    },
+    "T05.2": {
+      "title": "Implement slower rolling windows for optical context features.",
+      "checked": true,
+      "depends_on": [
+        "T05.1"
+      ],
+      "feeds": [
+        "T05.3"
+      ]
+    },
+    "T05.3": {
+      "title": "Preserve mapping from each window to absolute timeline index.",
+      "checked": true,
+      "depends_on": [
+        "T05.1",
+        "T05.2"
+      ],
+      "feeds": [
+        "T05.4"
+      ]
+    },
+    "T05.4": {
+      "title": "Add boundary tests for session start, session end, and missing packets.",
+      "checked": true,
+      "depends_on": [
+        "T05.3"
+      ],
+      "feeds": []
+    },
+    "T06": {
+      "title": "EEG Preprocessing and Features",
+      "checked": true,
+      "depends_on": [
+        "T05"
+      ],
+      "feeds": [
+        "G02",
+        "T06.1",
+        "T06.2",
+        "T06.3",
+        "T06.4"
+      ]
+    },
+    "T06.1": {
+      "title": "Implement filtering and artifact-aware segmentation policy.",
+      "checked": true,
+      "depends_on": [
+        "T05"
+      ],
+      "feeds": [
+        "T06.2"
+      ]
+    },
+    "T06.2": {
+      "title": "Compute relative band powers and key band-ratio features.",
+      "checked": true,
+      "depends_on": [
+        "T06.1"
+      ],
+      "feeds": [
+        "T06.3"
+      ]
+    },
+    "T06.3": {
+      "title": "Add numerical safeguards for unstable spectra and clipping behavior.",
+      "checked": true,
+      "depends_on": [
+        "T06.2"
+      ],
+      "feeds": [
+        "T06.4"
+      ]
+    },
+    "T06.4": {
+      "title": "Persist per-window EEG features with quality flags.",
+      "checked": true,
+      "depends_on": [
+        "T06.3"
+      ],
+      "feeds": []
+    },
+    "T07": {
+      "title": "Optical and IMU Quality Features",
+      "checked": true,
+      "depends_on": [
+        "T05"
+      ],
+      "feeds": [
+        "G02",
+        "T07.1",
+        "T07.2",
+        "T07.3",
+        "T07.4"
+      ]
+    },
+    "T07.1": {
+      "title": "Implement optical normalization plus trend, slope, and mean-change features.",
+      "checked": true,
+      "depends_on": [
+        "T05"
+      ],
+      "feeds": [
+        "T07.3"
+      ]
+    },
+    "T07.2": {
+      "title": "Implement IMU-derived motion artifact scoring per window.",
+      "checked": true,
+      "depends_on": [
+        "T05"
+      ],
+      "feeds": [
+        "T07.3"
+      ]
+    },
+    "T07.3": {
+      "title": "Compute confidence scores for quality-based down-weighting.",
+      "checked": true,
+      "depends_on": [
+        "T07.1",
+        "T07.2"
+      ],
+      "feeds": [
+        "T07.4"
+      ]
+    },
+    "T07.4": {
+      "title": "Persist per-window optical and quality feature tables.",
+      "checked": true,
+      "depends_on": [
+        "T07.3"
+      ],
+      "feeds": []
+    },
+    "T08": {
+      "title": "Unified Feature Builder",
+      "checked": true,
+      "depends_on": [
+        "G02"
+      ],
+      "feeds": [
+        "G03",
+        "T08.1",
+        "T08.2",
+        "T08.3",
+        "T08.4",
+        "T09",
+        "T09.1"
+      ]
+    },
+    "T08.1": {
+      "title": "Join EEG, optical, and IMU quality features into one aligned training matrix.",
+      "checked": true,
+      "depends_on": [
+        "G02"
+      ],
+      "feeds": [
+        "T08.2"
+      ]
+    },
+    "T08.2": {
+      "title": "Implement train-only normalization fit and val/test transform.",
+      "checked": true,
+      "depends_on": [
+        "T08.1"
+      ],
+      "feeds": [
+        "T08.3"
+      ]
+    },
+    "T08.3": {
+      "title": "Persist features with dataset version tags and split compatibility markers.",
+      "checked": true,
+      "depends_on": [
+        "T08.2"
+      ],
+      "feeds": [
+        "T08.4"
+      ]
+    },
+    "T08.4": {
+      "title": "Implement leakage checks for target contamination and session overlap.",
+      "checked": true,
+      "depends_on": [
+        "T08.3"
+      ],
+      "feeds": []
+    },
+    "T09": {
+      "title": "Labeling and Session-Held-Out Split Utility",
+      "checked": true,
+      "depends_on": [
+        "T08"
+      ],
+      "feeds": [
+        "G03",
+        "T09.1",
+        "T09.2",
+        "T09.3",
+        "T09.4",
+        "T10",
+        "T10.1"
+      ]
+    },
+    "T09.1": {
+      "title": "Generate weak labels from task phase, subjective ratings, and performance drift.",
+      "checked": true,
+      "depends_on": [
+        "T08"
+      ],
+      "feeds": [
+        "T09.2",
+        "T09.3"
+      ]
+    },
+    "T09.2": {
+      "title": "Add optional temporal smoothing with documented parameters.",
+      "checked": true,
+      "depends_on": [
+        "T09.1"
+      ],
+      "feeds": []
+    },
+    "T09.3": {
+      "title": "Implement session-level split isolation with deterministic seeding.",
+      "checked": true,
+      "depends_on": [
+        "T09.1"
+      ],
+      "feeds": [
+        "T09.4"
+      ]
+    },
+    "T09.4": {
+      "title": "Export split manifests for repeatable experiments.",
+      "checked": true,
+      "depends_on": [
+        "T09.3"
+      ],
+      "feeds": []
+    },
+    "T10": {
+      "title": "MVP Model Training and Calibration",
+      "checked": true,
+      "depends_on": [
+        "T09"
+      ],
+      "feeds": [
+        "G03",
+        "T10.1",
+        "T10.2",
+        "T10.3",
+        "T10.4"
+      ]
+    },
+    "T10.1": {
+      "title": "Train Logistic Regression or LDA baseline with regularization sweep.",
+      "checked": true,
+      "depends_on": [
+        "T09"
+      ],
+      "feeds": [
+        "T10.2"
+      ]
+    },
+    "T10.2": {
+      "title": "Train tree-based baseline and compare fit quality on validation data.",
+      "checked": true,
+      "depends_on": [
+        "T10.1"
+      ],
+      "feeds": [
+        "T10.3"
+      ]
+    },
+    "T10.3": {
+      "title": "Implement calibrated late-fusion scoring across MVP model outputs.",
+      "checked": true,
+      "depends_on": [
+        "T10.2"
+      ],
+      "feeds": [
+        "T10.4"
+      ]
+    },
+    "T10.4": {
+      "title": "Persist models, scalers, hyperparameters, and training metadata.",
+      "checked": true,
+      "depends_on": [
+        "T10.3"
+      ],
+      "feeds": []
+    },
+    "T11": {
+      "title": "MVP Evaluation and Ablation Report",
+      "checked": true,
+      "depends_on": [
+        "G03"
+      ],
+      "feeds": [
+        "G04",
+        "T11.1",
+        "T11.2",
+        "T11.3",
+        "T11.4",
+        "T12",
+        "T12.1"
+      ]
+    },
+    "T11.1": {
+      "title": "Compute AUROC, macro F1, and balanced accuracy on held-out sessions.",
+      "checked": true,
+      "depends_on": [
+        "G03"
+      ],
+      "feeds": [
+        "T11.2"
+      ]
+    },
+    "T11.2": {
+      "title": "Run ablations: EEG-only, EEG+optical, EEG+optical+IMU-gated.",
+      "checked": true,
+      "depends_on": [
+        "T11.1"
+      ],
+      "feeds": [
+        "T11.3"
+      ]
+    },
+    "T11.3": {
+      "title": "Select production MVP model based on robustness and metric consistency.",
+      "checked": true,
+      "depends_on": [
+        "T11.2"
+      ],
+      "feeds": [
+        "T11.4"
+      ]
+    },
+    "T11.4": {
+      "title": "Publish concise evaluation summary for demo narrative and technical review.",
+      "checked": true,
+      "depends_on": [
+        "T11.3"
+      ],
+      "feeds": []
+    },
+    "T12": {
+      "title": "Real-Time Inference Service",
+      "checked": true,
+      "depends_on": [
+        "T11"
+      ],
+      "feeds": [
+        "G04",
+        "T12.1",
+        "T12.2",
+        "T12.3",
+        "T12.4",
+        "T13",
+        "T13.1"
+      ]
+    },
+    "T12.1": {
+      "title": "Implement live feature path aligned to offline data contract and transforms.",
+      "checked": true,
+      "depends_on": [
+        "T11"
+      ],
+      "feeds": [
+        "T12.2"
+      ]
+    },
+    "T12.2": {
+      "title": "Load selected MVP model and emit risk score in range [0, 1].",
+      "checked": true,
+      "depends_on": [
+        "T12.1"
+      ],
+      "feeds": [
+        "T12.3"
+      ]
+    },
+    "T12.3": {
+      "title": "Add runtime fault handling for packet loss and delayed modality updates.",
+      "checked": true,
+      "depends_on": [
+        "T12.2"
+      ],
+      "feeds": [
+        "T12.4"
+      ]
+    },
+    "T12.4": {
+      "title": "Log per-update latency and model confidence diagnostics.",
+      "checked": true,
+      "depends_on": [
+        "T12.3"
+      ],
+      "feeds": []
+    },
+    "T13": {
+      "title": "Symbolic Guardrail Engine",
+      "checked": true,
+      "depends_on": [
+        "T12"
+      ],
+      "feeds": [
+        "G04",
+        "T13.1",
+        "T13.2",
+        "T13.3",
+        "T13.4"
+      ]
+    },
+    "T13.1": {
+      "title": "Implement GREEN, YELLOW, RED, and optional BLACK transition logic.",
+      "checked": true,
+      "depends_on": [
+        "T12"
+      ],
+      "feeds": [
+        "T13.2"
+      ]
+    },
+    "T13.2": {
+      "title": "Implement persistence and trend checks to suppress oscillation.",
+      "checked": true,
+      "depends_on": [
+        "T13.1"
+      ],
+      "feeds": [
+        "T13.3"
+      ]
+    },
+    "T13.3": {
+      "title": "Generate rationale text for each non-GREEN transition.",
+      "checked": true,
+      "depends_on": [
+        "T13.2"
+      ],
+      "feeds": [
+        "T13.4"
+      ]
+    },
+    "T13.4": {
+      "title": "Emit timestamped transition logs for replay and post-hoc review.",
+      "checked": true,
+      "depends_on": [
+        "T13.3"
+      ],
+      "feeds": []
+    },
+    "T14": {
+      "title": "Dashboard and Timeline Visualization",
+      "checked": true,
+      "depends_on": [
+        "G04"
+      ],
+      "feeds": [
+        "G05",
+        "T14.1",
+        "T14.2",
+        "T14.3",
+        "T14.4",
+        "T15",
+        "T15.1"
+      ]
+    },
+    "T14.1": {
+      "title": "Build real-time panels for EEG, optical trends, risk score, and current state.",
+      "checked": true,
+      "depends_on": [
+        "G04"
+      ],
+      "feeds": [
+        "T14.2",
+        "T14.3"
+      ]
+    },
+    "T14.2": {
+      "title": "Add timeline with transition markers and rationale details.",
+      "checked": true,
+      "depends_on": [
+        "T14.1"
+      ],
+      "feeds": [
+        "T14.4"
+      ]
+    },
+    "T14.3": {
+      "title": "Add stream health and model-state indicators.",
+      "checked": true,
+      "depends_on": [
+        "T14.1"
+      ],
+      "feeds": [
+        "T14.4"
+      ]
+    },
+    "T14.4": {
+      "title": "Validate readability for classroom projection distance and resolution.",
+      "checked": true,
+      "depends_on": [
+        "T14.2",
+        "T14.3"
+      ],
+      "feeds": []
+    },
+    "T15": {
+      "title": "Class Quick Demo Orchestration",
+      "checked": true,
+      "depends_on": [
+        "T14",
+        "O-05"
+      ],
+      "feeds": [
+        "G05",
+        "T15.1",
+        "T15.2",
+        "T15.3",
+        "T15.4"
+      ]
+    },
+    "T15.1": {
+      "title": "Implement guided 5 to 10 minute demo flow with stage timers.",
+      "checked": true,
+      "depends_on": [
+        "T14",
+        "O-05"
+      ],
+      "feeds": [
+        "T15.2"
+      ]
+    },
+    "T15.2": {
+      "title": "Validate sequence: 1-minute baseline, 2-minute sustained attention, 2-minute 2-back, 2 to 3-minute code block.",
+      "checked": true,
+      "depends_on": [
+        "T15.1"
+      ],
+      "feeds": [
+        "T15.3"
+      ]
+    },
+    "T15.3": {
+      "title": "Add final 30 to 60-second summary panel for transition interpretation.",
+      "checked": true,
+      "depends_on": [
+        "T15.2"
+      ],
+      "feeds": [
+        "T15.4"
+      ]
+    },
+    "T15.4": {
+      "title": "Run at least two dry runs and log reproducible failures.",
+      "checked": true,
+      "depends_on": [
+        "T15.3"
+      ],
+      "feeds": []
+    },
+    "T16": {
+      "title": "MVP Hardening and Release Readiness",
+      "checked": true,
+      "depends_on": [
+        "G05"
+      ],
+      "feeds": [
+        "G06",
+        "T16.1",
+        "T16.2",
+        "T16.3",
+        "T16.4",
+        "T17",
+        "T17.1",
+        "T17.2",
+        "T17.3"
+      ]
+    },
+    "T16.1": {
+      "title": "Fix top-priority dry-run failures, then medium-priority issues.",
+      "checked": true,
+      "depends_on": [
+        "G05"
+      ],
+      "feeds": [
+        "T16.2"
+      ]
+    },
+    "T16.2": {
+      "title": "Optimize update path to keep end-to-end refresh latency at or below 2 seconds.",
+      "checked": true,
+      "depends_on": [
+        "T16.1"
+      ],
+      "feeds": [
+        "T16.3"
+      ]
+    },
+    "T16.3": {
+      "title": "Validate alert stability under noisy and motion-heavy windows.",
+      "checked": true,
+      "depends_on": [
+        "T16.2"
+      ],
+      "feeds": [
+        "T16.4"
+      ]
+    },
+    "T16.4": {
+      "title": "Re-run AC-001 to AC-005 checklist and store objective evidence.",
+      "checked": true,
+      "depends_on": [
+        "T16.3"
+      ],
+      "feeds": []
+    },
+    "T17": {
+      "title": "Documentation, Runbook, and Reproducibility Pack",
+      "checked": true,
+      "depends_on": [
+        "T16",
+        "O-04",
+        "O-07"
+      ],
+      "feeds": [
+        "G06",
+        "T17.1",
+        "T17.2",
+        "T17.3",
+        "T17.4",
+        "T20",
+        "T20.2"
+      ]
+    },
+    "T17.1": {
+      "title": "Update README with setup, train, evaluate, run-live, and replay commands in neuroguage.",
+      "checked": true,
+      "depends_on": [
+        "T16",
+        "O-07"
+      ],
+      "feeds": [
+        "T17.4"
+      ]
+    },
+    "T17.2": {
+      "title": "Write demo runbook with timing targets and fallback procedures.",
+      "checked": true,
+      "depends_on": [
+        "T16"
+      ],
+      "feeds": [
+        "T17.4"
+      ]
+    },
+    "T17.3": {
+      "title": "Document known limitations, risks, and deferred items.",
+      "checked": true,
+      "depends_on": [
+        "T16"
+      ],
+      "feeds": [
+        "T17.4"
+      ]
+    },
+    "T17.4": {
+      "title": "Package evaluation outputs, config snapshots, and evidence index.",
+      "checked": true,
+      "depends_on": [
+        "T17.1",
+        "T17.2",
+        "T17.3"
+      ],
+      "feeds": []
+    },
+    "T18": {
+      "title": "Graduate Model Prototype (Stretch)",
+      "checked": true,
+      "depends_on": [
+        "G06"
+      ],
+      "feeds": [
+        "T18.1",
+        "T18.2",
+        "T18.3",
+        "T18.4",
+        "T19",
+        "T19.1"
+      ]
+    },
+    "T18.1": {
+      "title": "Implement one advanced path: TCN or BiGRU-attention.",
+      "checked": true,
+      "depends_on": [
+        "G06"
+      ],
+      "feeds": [
+        "T18.2"
+      ]
+    },
+    "T18.2": {
+      "title": "Train advanced model on identical held-out split used by MVP.",
+      "checked": true,
+      "depends_on": [
+        "T18.1"
+      ],
+      "feeds": [
+        "T18.3"
+      ]
+    },
+    "T18.3": {
+      "title": "Measure latency and stability with same runtime harness as MVP.",
+      "checked": true,
+      "depends_on": [
+        "T18.2"
+      ],
+      "feeds": [
+        "T18.4"
+      ]
+    },
+    "T18.4": {
+      "title": "Persist advanced artifact, config, and evaluation logs for direct comparison.",
+      "checked": true,
+      "depends_on": [
+        "T18.3"
+      ],
+      "feeds": []
+    },
+    "T19": {
+      "title": "Advanced vs MVP Comparison and Promotion Decision (Stretch)",
+      "checked": true,
+      "depends_on": [
+        "T18"
+      ],
+      "feeds": [
+        "G07",
+        "S-02",
+        "T19.1",
+        "T19.2",
+        "T19.3",
+        "T19.4",
+        "T20"
+      ]
+    },
+    "T19.1": {
+      "title": "Compare advanced and MVP metrics on identical held-out sessions.",
+      "checked": true,
+      "depends_on": [
+        "T18"
+      ],
+      "feeds": [
+        "T19.2",
+        "T19.3"
+      ]
+    },
+    "T19.2": {
+      "title": "Verify promotion threshold: at least +3 points macro F1 or AUROC.",
+      "checked": true,
+      "depends_on": [
+        "T19.1"
+      ],
+      "feeds": [
+        "T19.4"
+      ]
+    },
+    "T19.3": {
+      "title": "Verify no latency or alert stability regression.",
+      "checked": true,
+      "depends_on": [
+        "T19.1"
+      ],
+      "feeds": [
+        "T19.4"
+      ]
+    },
+    "T19.4": {
+      "title": "Record promotion decision note: promote or keep MVP, with rationale.",
+      "checked": true,
+      "depends_on": [
+        "T19.2",
+        "T19.3"
+      ],
+      "feeds": []
+    },
+    "T20": {
+      "title": "Final Packaging and Demo Rehearsal",
+      "checked": true,
+      "depends_on": [
+        "T17",
+        "T19"
+      ],
+      "feeds": [
+        "G07",
+        "T20.1",
+        "T20.2",
+        "T20.3",
+        "T20.4"
+      ]
+    },
+    "T20.1": {
+      "title": "If stretch is blocked, mark T18 and T19 deferred with reason and proceed with MVP package.",
+      "checked": true,
+      "depends_on": [
+        "G06"
+      ],
+      "feeds": []
+    },
+    "T20.2": {
+      "title": "Assemble final demo folder with scripts, models, configs, and quick-start notes.",
+      "checked": true,
+      "depends_on": [
+        "T17"
+      ],
+      "feeds": [
+        "T20.3"
+      ]
+    },
+    "T20.3": {
+      "title": "Run one full rehearsal under class timing constraints and record results.",
+      "checked": true,
+      "depends_on": [
+        "T20.2"
+      ],
+      "feeds": [
+        "T20.4"
+      ]
+    },
+    "T20.4": {
+      "title": "Freeze release-candidate artifacts and publish final status summary.",
+      "checked": true,
+      "depends_on": [
+        "T20.3"
+      ],
+      "feeds": []
+    }
+  }
+}
