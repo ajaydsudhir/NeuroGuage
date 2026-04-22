@@ -77,26 +77,26 @@
 
 ## Day 3 - Unified Features, Labeling, and MVP Training
 
-- [ ] T08 Unified Feature Builder (Depends on: G02)
-  - [ ] T08.1 Join EEG, optical, and IMU quality features into one aligned training matrix. (Depends on: G02)
-  - [ ] T08.2 Implement train-only normalization fit and val/test transform. (Depends on: T08.1)
-  - [ ] T08.3 Persist features with dataset version tags and split compatibility markers. (Depends on: T08.2)
-  - [ ] T08.4 Implement leakage checks for target contamination and session overlap. (Depends on: T08.3)
-- [ ] T09 Labeling and Session-Held-Out Split Utility (Depends on: T08)
-  - [ ] T09.1 Generate weak labels from task phase, subjective ratings, and performance drift. (Depends on: T08)
-  - [ ] T09.2 Add optional temporal smoothing with documented parameters. (Depends on: T09.1)
-  - [ ] T09.3 Implement session-level split isolation with deterministic seeding. (Depends on: T09.1)
-  - [ ] T09.4 Export split manifests for repeatable experiments. (Depends on: T09.3)
-- [ ] T10 MVP Model Training and Calibration (Depends on: T09)
-  - [ ] T10.1 Train Logistic Regression or LDA baseline with regularization sweep. (Depends on: T09)
-  - [ ] T10.2 Train tree-based baseline and compare fit quality on validation data. (Depends on: T10.1)
-  - [ ] T10.3 Implement calibrated late-fusion scoring across MVP model outputs. (Depends on: T10.2)
-  - [ ] T10.4 Persist models, scalers, hyperparameters, and training metadata. (Depends on: T10.3)
+- [x] T08 Unified Feature Builder (Depends on: G02)
+  - [x] T08.1 Join EEG, optical, and IMU quality features into one aligned training matrix. (Depends on: G02)
+  - [x] T08.2 Implement train-only normalization fit and val/test transform. (Depends on: T08.1)
+  - [x] T08.3 Persist features with dataset version tags and split compatibility markers. (Depends on: T08.2)
+  - [x] T08.4 Implement leakage checks for target contamination and session overlap. (Depends on: T08.3)
+- [x] T09 Labeling and Session-Held-Out Split Utility (Depends on: T08)
+  - [x] T09.1 Generate weak labels from task phase, subjective ratings, and performance drift. (Depends on: T08)
+  - [x] T09.2 Add optional temporal smoothing with documented parameters. (Depends on: T09.1)
+  - [x] T09.3 Implement session-level split isolation with deterministic seeding. (Depends on: T09.1)
+  - [x] T09.4 Export split manifests for repeatable experiments. (Depends on: T09.3)
+- [x] T10 MVP Model Training and Calibration (Depends on: T09)
+  - [x] T10.1 Train Logistic Regression or LDA baseline with regularization sweep. (Depends on: T09)
+  - [x] T10.2 Train tree-based baseline and compare fit quality on validation data. (Depends on: T10.1)
+  - [x] T10.3 Implement calibrated late-fusion scoring across MVP model outputs. (Depends on: T10.2)
+  - [x] T10.4 Persist models, scalers, hyperparameters, and training metadata. (Depends on: T10.3)
 
-- [ ] G03 Day 3 Exit Gate (Depends on: T08, T09, T10)
-  - [ ] G03.1 Split manifests are reusable and leakage-safe.
-  - [ ] G03.2 MVP training pipeline runs end-to-end.
-  - [ ] G03.3 Training artifacts are reproducible from saved config and manifest.
+- [x] G03 Day 3 Exit Gate (Depends on: T08, T09, T10)
+  - [x] G03.1 Split manifests are reusable and leakage-safe.
+  - [x] G03.2 MVP training pipeline runs end-to-end.
+  - [x] G03.3 Training artifacts are reproducible from saved config and manifest.
 
 ## Day 4 - MVP Evaluation, Live Inference, and Guardrails
 
