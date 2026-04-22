@@ -1,0 +1,10 @@
+{
+  "g05_1_dashboard_stable": true,
+  "g05_2_timing_within_budget": true,
+  "g05_3_dry_runs_completed": true,
+  "gate_passed": true,
+  "dashboard_snapshot": "artifacts\\reports\\day5\\dashboard_snapshot.png",
+  "dashboard_validation": "artifacts\\reports\\day5\\dashboard_validation.json",
+  "dry_run_count": 2,
+  "total_defects": 0
+}

@@ -2,12 +2,16 @@
 
 __all__ = [
 	"cli",
+	"dashboard",
+	"demo",
 	"evaluation",
 	"feature_builder",
 	"guardrails",
+	"hardening",
 	"inference",
 	"labeling",
 	"logging_config",
+	"release",
 	"schema_validator",
 	"training",
 	"workflows",

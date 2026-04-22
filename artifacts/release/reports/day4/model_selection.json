@@ -1,0 +1,27 @@
+{
+  "selected_variant": "eeg_optical",
+  "selected_training_manifest_path": "artifacts\\reports\\day4\\ablations\\eeg_optical_training_manifest.json",
+  "selected_models": {
+    "linear": {
+      "name": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      }
+    },
+    "tree": {
+      "name": "random_forest",
+      "parameters": {
+        "n_estimators": 220,
+        "max_depth": 8,
+        "min_samples_leaf": 2
+      }
+    }
+  },
+  "selected_test_metrics": {
+    "macro_f1": 0.4,
+    "balanced_accuracy": 0.5,
+    "auroc": 1.0
+  },
+  "selected_composite_score": 0.4883333333333334,
+  "selection_rationale": "Selected variant 'eeg_optical' because it achieved the best composite score (0.4883) while maintaining consistency (penalty=0.3083) and robust held-out performance (macro_f1=0.4000, balanced_accuracy=0.5000, auroc=1.0)."
+}

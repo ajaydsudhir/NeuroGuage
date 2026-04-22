@@ -141,21 +141,21 @@
 
 ## Day 6 - MVP Hardening, Validation, and Documentation
 
-- [ ] T16 MVP Hardening and Release Readiness (Depends on: G05)
-  - [ ] T16.1 Fix top-priority dry-run failures, then medium-priority issues. (Depends on: G05)
-  - [ ] T16.2 Optimize update path to keep end-to-end refresh latency at or below 2 seconds. (Depends on: T16.1)
-  - [ ] T16.3 Validate alert stability under noisy and motion-heavy windows. (Depends on: T16.2)
-  - [ ] T16.4 Re-run AC-001 to AC-005 checklist and store objective evidence. (Depends on: T16.3)
-- [ ] T17 Documentation, Runbook, and Reproducibility Pack (Depends on: T16, O-04, O-07)
-  - [ ] T17.1 Update README with setup, train, evaluate, run-live, and replay commands in neuroguage. (Depends on: T16, O-07)
-  - [ ] T17.2 Write demo runbook with timing targets and fallback procedures. (Depends on: T16)
-  - [ ] T17.3 Document known limitations, risks, and deferred items. (Depends on: T16)
-  - [ ] T17.4 Package evaluation outputs, config snapshots, and evidence index. (Depends on: T17.1, T17.2, T17.3)
+- [x] T16 MVP Hardening and Release Readiness (Depends on: G05)
+  - [x] T16.1 Fix top-priority dry-run failures, then medium-priority issues. (Depends on: G05)
+  - [x] T16.2 Optimize update path to keep end-to-end refresh latency at or below 2 seconds. (Depends on: T16.1)
+  - [x] T16.3 Validate alert stability under noisy and motion-heavy windows. (Depends on: T16.2)
+  - [x] T16.4 Re-run AC-001 to AC-005 checklist and store objective evidence. (Depends on: T16.3)
+- [x] T17 Documentation, Runbook, and Reproducibility Pack (Depends on: T16, O-04, O-07)
+  - [x] T17.1 Update README with setup, train, evaluate, run-live, and replay commands in neuroguage. (Depends on: T16, O-07)
+  - [x] T17.2 Write demo runbook with timing targets and fallback procedures. (Depends on: T16)
+  - [x] T17.3 Document known limitations, risks, and deferred items. (Depends on: T16)
+  - [x] T17.4 Package evaluation outputs, config snapshots, and evidence index. (Depends on: T17.1, T17.2, T17.3)
 
-- [ ] G06 Day 6 Exit Gate (Depends on: T16, T17)
-  - [ ] G06.1 AC-001 to AC-005 pass with documented evidence links.
-  - [ ] G06.2 Documentation package and runbook are complete and reproducible.
-  - [ ] G06.3 Phase-gate decision is recorded: Day 7 stretch allowed or blocked.
+- [x] G06 Day 6 Exit Gate (Depends on: T16, T17)
+  - [x] G06.1 AC-001 to AC-005 pass with documented evidence links.
+  - [x] G06.2 Documentation package and runbook are complete and reproducible.
+  - [x] G06.3 Phase-gate decision is recorded: Day 7 stretch allowed or blocked.
 
 ## Day 7 - Stretch Enhancement and Final Packaging
 

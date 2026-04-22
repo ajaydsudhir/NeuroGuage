@@ -1,0 +1,25 @@
+{
+  "rows": 24,
+  "sessions": 4,
+  "label_distribution": {
+    "0": 14,
+    "1": 10
+  },
+  "weak_label_score_mean": 0.44944992570022224,
+  "split_validation": {
+    "session_overlap_pass": true,
+    "required_splits_present": true,
+    "required_splits_non_empty": true,
+    "violating_sessions": [],
+    "split_counts": {
+      "train": 12,
+      "test": 6,
+      "val": 6
+    },
+    "overall_pass": true
+  },
+  "smoothing": {
+    "enabled": true,
+    "window": 3
+  }
+}

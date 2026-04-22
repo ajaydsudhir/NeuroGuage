@@ -1,0 +1,338 @@
+{
+  "version": "0.1.0-day6",
+  "created_at": "2026-04-22T21:42:25.279610+00:00",
+  "commit": "eb7af4ba05f00f05058f73c198672a677bdc3bcd",
+  "entries": [
+    {
+      "label": "Day 1 data contract",
+      "source": "configs\\data_contract.json",
+      "destination": "configs\\data_contract.json",
+      "included": true,
+      "sha256": "7a60d8adb4d2c39d3fea83614f21168070a807acb02b777ee8ca9a6f284402eb",
+      "bytes": 3077
+    },
+    {
+      "label": "Day 5 demo timing envelope",
+      "source": "configs\\demo_timing.json",
+      "destination": "configs\\demo_timing.json",
+      "included": true,
+      "sha256": "f59411b3cdf8160d0d2e207f5fdf55dcb3ef95082d840315721374928b0e171a",
+      "bytes": 1493
+    },
+    {
+      "label": "Day 4 ablation model variants",
+      "source": "artifacts\\models\\day4\\ablations",
+      "destination": "models\\ablations",
+      "included": true
+    },
+    {
+      "label": "Day 3 MVP baseline models",
+      "source": "artifacts\\models\\day3",
+      "destination": "models\\day3_baseline",
+      "included": true
+    },
+    {
+      "label": "Day 3 training reports",
+      "source": "artifacts\\reports\\day3",
+      "destination": "reports\\day3",
+      "included": true
+    },
+    {
+      "label": "Day 4 evaluation summary",
+      "source": "artifacts\\reports\\day4\\evaluation_summary.json",
+      "destination": "reports\\day4\\evaluation_summary.json",
+      "included": true,
+      "sha256": "5d07a0c3de195c1d366fd2dbed535fe09be09377faff4e165a046297e570166c",
+      "bytes": 1094
+    },
+    {
+      "label": "Day 4 ablation report",
+      "source": "artifacts\\reports\\day4\\ablation_report.json",
+      "destination": "reports\\day4\\ablation_report.json",
+      "included": true,
+      "sha256": "6e027ad090588c1daece41f51d2a8ea7e394ad00931ac3aa6d38ac3b8d3cacc3",
+      "bytes": 7191
+    },
+    {
+      "label": "Day 4 evaluation narrative",
+      "source": "artifacts\\reports\\day4\\evaluation_narrative.md",
+      "destination": "reports\\day4\\evaluation_narrative.md",
+      "included": true,
+      "sha256": "deb54a891b5fa4edaad857ae3f16c0c9e793c4dc0869810890d9fd078529b0a9",
+      "bytes": 634
+    },
+    {
+      "label": "Day 4 model selection",
+      "source": "artifacts\\reports\\day4\\model_selection.json",
+      "destination": "reports\\day4\\model_selection.json",
+      "included": true,
+      "sha256": "593a4f1f5143c3d1870568f571876ea0cb6d650d418300635997c1ae7c60e4a6",
+      "bytes": 876
+    },
+    {
+      "label": "Day 4 inference diagnostics",
+      "source": "artifacts\\reports\\day4\\inference_diagnostics.json",
+      "destination": "reports\\day4\\inference_diagnostics.json",
+      "included": true,
+      "sha256": "1724ba58129e3f68a1cf5cdae8cf58b5756a06bceb9504577540b6dbd8319e12",
+      "bytes": 8382
+    },
+    {
+      "label": "Day 4 guardrail transition log",
+      "source": "artifacts\\reports\\day4\\guardrail_transition_log.json",
+      "destination": "reports\\day4\\guardrail_transition_log.json",
+      "included": true,
+      "sha256": "25b8475e2a08251e908db7ad0a13afcf12525fbbecdc3e87ddaa9d65f571047c",
+      "bytes": 776
+    },
+    {
+      "label": "Day 4 guardrail summary",
+      "source": "artifacts\\reports\\day4\\guardrail_summary.json",
+      "destination": "reports\\day4\\guardrail_summary.json",
+      "included": true,
+      "sha256": "3f105bb6032937cbc948e215ef96c535948a66339bfc6af53a6fa79da7227318",
+      "bytes": 306
+    },
+    {
+      "label": "Day 4 integration summary",
+      "source": "artifacts\\reports\\day4\\day4_integration_summary.json",
+      "destination": "reports\\day4\\day4_integration_summary.json",
+      "included": true,
+      "sha256": "61062cd11aad24b9def94768d04790135f85772c19b45891dc35936a5a6764ea",
+      "bytes": 993
+    },
+    {
+      "label": "Day 5 dashboard snapshot",
+      "source": "artifacts\\reports\\day5\\dashboard_snapshot.png",
+      "destination": "reports\\day5\\dashboard_snapshot.png",
+      "included": true,
+      "sha256": "37e9b41f7cd43be0c6f038d7e8922f5ebdeef3e86e7fc28e7d83118a8f22acbd",
+      "bytes": 163862
+    },
+    {
+      "label": "Day 5 dashboard validation",
+      "source": "artifacts\\reports\\day5\\dashboard_validation.json",
+      "destination": "reports\\day5\\dashboard_validation.json",
+      "included": true,
+      "sha256": "1f5aa3e85deac85938396853e1787244e91a81fb1320bc67d322adab6648ce56",
+      "bytes": 403
+    },
+    {
+      "label": "Day 5 demo summary",
+      "source": "artifacts\\reports\\day5\\demo_summary.json",
+      "destination": "reports\\day5\\demo_summary.json",
+      "included": true,
+      "sha256": "c1829bc215fd4fc073c79f93bc3cfddb0ec2825228bf945f4f38fd58e443251e",
+      "bytes": 107
+    },
+    {
+      "label": "Day 5 dry-run defect log",
+      "source": "artifacts\\reports\\day5\\defect_log.json",
+      "destination": "reports\\day5\\defect_log.json",
+      "included": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "label": "Day 5 exit gate evidence",
+      "source": "artifacts\\reports\\day5\\day5_exit_gate.json",
+      "destination": "reports\\day5\\day5_exit_gate.json",
+      "included": true,
+      "sha256": "fbae591a2b6270c1cfa163f89438336fb8c31b10dc76bc491d966a19b035aa43",
+      "bytes": 343
+    },
+    {
+      "label": "Day 6 latency benchmark",
+      "source": "artifacts\\reports\\day6\\latency_benchmark.json",
+      "destination": "reports\\day6\\latency_benchmark.json",
+      "included": true,
+      "sha256": "690153fc43fc58db6ba562e9a062f616e9820e0d7745e68725b9018094ffbfc5",
+      "bytes": 422
+    },
+    {
+      "label": "Day 6 alert-stability report",
+      "source": "artifacts\\reports\\day6\\stability_report.json",
+      "destination": "reports\\day6\\stability_report.json",
+      "included": true,
+      "sha256": "3214b77a2bea0b7c3216d5f4417ede4d50c2df124489b5516f227e85a85752f0",
+      "bytes": 1445
+    },
+    {
+      "label": "Day 6 dry-run defect triage",
+      "source": "artifacts\\reports\\day6\\defect_triage.json",
+      "destination": "reports\\day6\\defect_triage.json",
+      "included": true,
+      "sha256": "8c120d2c744a7969cdef7006378273f1694de89c5461308badf29da0dfa4d440",
+      "bytes": 148
+    },
+    {
+      "label": "Day 6 AC-001..AC-005 results",
+      "source": "artifacts\\reports\\day6\\acceptance_results.json",
+      "destination": "reports\\day6\\acceptance_results.json",
+      "included": true,
+      "sha256": "f73dd70238a3a3d7c470d34e89b9a50f11aa2b67a676b58faf07e013dc4026ef",
+      "bytes": 2070
+    },
+    {
+      "label": "Day 6 exit gate evidence",
+      "source": "artifacts\\reports\\day6\\day6_exit_gate.json",
+      "destination": "reports\\day6\\day6_exit_gate.json",
+      "included": false
+    },
+    {
+      "label": "Updated MVP acceptance checklist",
+      "source": "artifacts\\reports\\day6\\mvp_acceptance_ac_001_to_ac_005.md",
+      "destination": "checklists\\mvp_acceptance_ac_001_to_ac_005.md",
+      "included": true,
+      "sha256": "f7aa168b0b7057824b1cd01571fd900a47961dcb74227d3930c3a36015ce0f05",
+      "bytes": 1590
+    },
+    {
+      "label": "Stretch acceptance checklist",
+      "source": "docs\\day1\\checklists\\stretch_acceptance_ac_006_to_ac_009.md",
+      "destination": "checklists\\stretch_acceptance_ac_006_to_ac_009.md",
+      "included": true,
+      "sha256": "3c876b8e00d32e74029b27ad1f0d4fc2706b53df6ce0d14a9d83c2e834961821",
+      "bytes": 477
+    },
+    {
+      "label": "T17.2 Demo runbook",
+      "source": "docs\\day6\\demo_runbook.md",
+      "destination": "docs\\demo_runbook.md",
+      "included": true,
+      "sha256": "315874fcf328cbc86d076c6e597a106cb2b2f26fc9d5ef6ee0f31b158ab7e27a",
+      "bytes": 5635
+    },
+    {
+      "label": "T17.3 Limitations and risks",
+      "source": "docs\\day6\\limitations_and_risks.md",
+      "destination": "docs\\limitations_and_risks.md",
+      "included": true,
+      "sha256": "a77359de378423371a43bc36b5ef30374d5ae0e2966829d6cb08dbb7c847ec61",
+      "bytes": 5774
+    },
+    {
+      "label": "Updated README",
+      "source": "README.md",
+      "destination": "docs\\README.md",
+      "included": true,
+      "sha256": "ca5aded4309d4cd76c28c4219af21a8a88ebcf6bc706b2c7c2f1f078561d6169",
+      "bytes": 7724
+    },
+    {
+      "label": "Conda environment spec",
+      "source": "environment.yml",
+      "destination": "env\\environment.yml",
+      "included": true,
+      "sha256": "89efe8da929dcafc8f448cedd9f96eecd94747d1de97f8c388c6a419417489ed",
+      "bytes": 262
+    },
+    {
+      "label": "Pip requirements",
+      "source": "requirements.txt",
+      "destination": "env\\requirements.txt",
+      "included": true,
+      "sha256": "868297d7522759df53b9d8eef1870847c1ca2bd80a9c3aa03e8ce836a0b12a27",
+      "bytes": 129
+    }
+  ],
+  "evidence": {
+    "Day 1 data contract": "configs\\data_contract.json",
+    "Day 5 demo timing envelope": "configs\\demo_timing.json",
+    "Day 4 ablation model variants": "models\\ablations",
+    "Day 3 MVP baseline models": "models\\day3_baseline",
+    "Day 3 training reports": "reports\\day3",
+    "Day 4 evaluation summary": "reports\\day4\\evaluation_summary.json",
+    "Day 4 ablation report": "reports\\day4\\ablation_report.json",
+    "Day 4 evaluation narrative": "reports\\day4\\evaluation_narrative.md",
+    "Day 4 model selection": "reports\\day4\\model_selection.json",
+    "Day 4 inference diagnostics": "reports\\day4\\inference_diagnostics.json",
+    "Day 4 guardrail transition log": "reports\\day4\\guardrail_transition_log.json",
+    "Day 4 guardrail summary": "reports\\day4\\guardrail_summary.json",
+    "Day 4 integration summary": "reports\\day4\\day4_integration_summary.json",
+    "Day 5 dashboard snapshot": "reports\\day5\\dashboard_snapshot.png",
+    "Day 5 dashboard validation": "reports\\day5\\dashboard_validation.json",
+    "Day 5 demo summary": "reports\\day5\\demo_summary.json",
+    "Day 5 dry-run defect log": "reports\\day5\\defect_log.json",
+    "Day 5 exit gate evidence": "reports\\day5\\day5_exit_gate.json",
+    "Day 6 latency benchmark": "reports\\day6\\latency_benchmark.json",
+    "Day 6 alert-stability report": "reports\\day6\\stability_report.json",
+    "Day 6 dry-run defect triage": "reports\\day6\\defect_triage.json",
+    "Day 6 AC-001..AC-005 results": "reports\\day6\\acceptance_results.json",
+    "Updated MVP acceptance checklist": "checklists\\mvp_acceptance_ac_001_to_ac_005.md",
+    "Stretch acceptance checklist": "checklists\\stretch_acceptance_ac_006_to_ac_009.md",
+    "T17.2 Demo runbook": "docs\\demo_runbook.md",
+    "T17.3 Limitations and risks": "docs\\limitations_and_risks.md",
+    "Updated README": "docs\\README.md",
+    "Conda environment spec": "env\\environment.yml",
+    "Pip requirements": "env\\requirements.txt"
+  },
+  "acceptance": {
+    "criteria": [
+      {
+        "id": "AC-001",
+        "description": "End-to-end pipeline operates from ingestion through dashboard and event logging.",
+        "passed": true,
+        "evidence_paths": [
+          "artifacts\\reports\\day4\\inference_diagnostics.json",
+          "artifacts\\reports\\day4\\guardrail_transition_log.json",
+          "artifacts\\reports\\day5\\dashboard_snapshot.png"
+        ],
+        "notes": "End-to-end evidence: inference diagnostics, guardrail transition log, and dashboard snapshot all present."
+      },
+      {
+        "id": "AC-002",
+        "description": "Session-held-out evaluation reports AUROC, macro F1, balanced accuracy.",
+        "passed": true,
+        "evidence_paths": [
+          "artifacts\\reports\\day4\\evaluation_summary.json",
+          "artifacts\\reports\\day4\\ablation_report.json"
+        ],
+        "notes": "Selected variant 'eeg_optical' reports macro_f1=0.4, balanced_accuracy=0.5, auroc=1.0."
+      },
+      {
+        "id": "AC-003",
+        "description": "Real-time latency meets NFR-001 (<= 2 s).",
+        "passed": true,
+        "evidence_paths": [
+          "artifacts\\reports\\day4\\inference_diagnostics.json"
+        ],
+        "notes": "Refresh latency: mean=0.06ms, p95=0.15ms, max=0.32ms (budget=2.0s)."
+      },
+      {
+        "id": "AC-004",
+        "description": "Quick demo completes in 5 to 10 minutes without system failure.",
+        "passed": true,
+        "evidence_paths": [
+          "artifacts\\reports\\day5\\day5_exit_gate.json",
+          "artifacts\\reports\\day5\\demo_summary.json"
+        ],
+        "notes": "Day 5 gate_passed=True, timing_within_budget=True, all_passed=True, dry_runs=2."
+      },
+      {
+        "id": "AC-005",
+        "description": "Guardrail outputs are interpretable and include rationale text.",
+        "passed": true,
+        "evidence_paths": [
+          "artifacts\\reports\\day4\\guardrail_transition_log.json"
+        ],
+        "notes": "2 of 2 non-GREEN transitions include rationale text."
+      }
+    ],
+    "passed_count": 5,
+    "total_count": 5,
+    "all_passed": true
+  },
+  "gate_decisions": {
+    "day5": {
+      "g05_1_dashboard_stable": true,
+      "g05_2_timing_within_budget": true,
+      "g05_3_dry_runs_completed": true,
+      "gate_passed": true,
+      "dashboard_snapshot": "artifacts\\reports\\day5\\dashboard_snapshot.png",
+      "dashboard_validation": "artifacts\\reports\\day5\\dashboard_validation.json",
+      "dry_run_count": 2,
+      "total_defects": 0
+    }
+  }
+}

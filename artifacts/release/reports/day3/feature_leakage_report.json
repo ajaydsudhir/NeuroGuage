@@ -1,0 +1,11 @@
+{
+  "target_contamination": {
+    "pass": true,
+    "contaminated_feature_columns": []
+  },
+  "session_overlap": {
+    "pass": true,
+    "violating_sessions": {}
+  },
+  "overall_pass": true
+}

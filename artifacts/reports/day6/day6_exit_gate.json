@@ -1,0 +1,77 @@
+{
+  "g06_1_ac_001_to_ac_005_pass": true,
+  "g06_2_documentation_complete": true,
+  "g06_3_release_package_complete": true,
+  "gate_passed": true,
+  "acceptance_summary": {
+    "passed_count": 5,
+    "total_count": 5,
+    "results": [
+      {
+        "id": "AC-001",
+        "passed": true,
+        "notes": "End-to-end evidence: inference diagnostics, guardrail transition log, and dashboard snapshot all present."
+      },
+      {
+        "id": "AC-002",
+        "passed": true,
+        "notes": "Selected variant 'eeg_optical' reports macro_f1=0.4, balanced_accuracy=0.5, auroc=1.0."
+      },
+      {
+        "id": "AC-003",
+        "passed": true,
+        "notes": "Refresh latency: mean=0.06ms, p95=0.15ms, max=0.32ms (budget=2.0s)."
+      },
+      {
+        "id": "AC-004",
+        "passed": true,
+        "notes": "Day 5 gate_passed=True, timing_within_budget=True, all_passed=True, dry_runs=2."
+      },
+      {
+        "id": "AC-005",
+        "passed": true,
+        "notes": "2 of 2 non-GREEN transitions include rationale text."
+      }
+    ]
+  },
+  "latency": {
+    "mean_ms": 0.059194000787101686,
+    "p95_ms": 0.14533499488607024,
+    "max_ms": 0.3229999856557697,
+    "within_budget": true
+  },
+  "stability": {
+    "all_passed": true,
+    "scenarios": [
+      {
+        "name": "noisy_risk",
+        "passed": true,
+        "transitions_per_min": 3.5999999999999996
+      },
+      {
+        "name": "motion_artifact",
+        "passed": true,
+        "transitions_per_min": 7.4
+      },
+      {
+        "name": "sustained_fatigue_ramp",
+        "passed": true,
+        "transitions_per_min": 1.0
+      }
+    ]
+  },
+  "defect_triage": {
+    "total_defects": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "release": {
+    "dir": "artifacts\\release",
+    "version": "0.1.0-day6",
+    "commit": "eb7af4ba05f00f05058f73c198672a677bdc3bcd",
+    "entries_total": 30,
+    "entries_included": 29
+  },
+  "phase_gate_decision": "GO for Day 7 stretch"
+}
