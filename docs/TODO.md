@@ -49,31 +49,31 @@
 
 ## Day 2 - Ingestion, Alignment, and Feature Foundations
 
-- [ ] T04 Multimodal Ingestion and Timeline Alignment (Depends on: G01)
-  - [ ] T04.1 Implement ingestion adapters for EEG, optical, and IMU streams or files. (Depends on: G01)
-  - [ ] T04.2 Normalize timestamps to a common reference clock. (Depends on: T04.1)
-  - [ ] T04.3 Implement alignment diagnostics for drift, dropouts, and packet delay. (Depends on: T04.2)
-  - [ ] T04.4 Produce one synchronized session artifact with validation summary. (Depends on: T04.3)
-- [ ] T05 Windowing and Buffering Layer (Depends on: T04)
-  - [ ] T05.1 Implement fixed-size sliding windows for fast EEG updates. (Depends on: T04)
-  - [ ] T05.2 Implement slower rolling windows for optical context features. (Depends on: T05.1)
-  - [ ] T05.3 Preserve mapping from each window to absolute timeline index. (Depends on: T05.1, T05.2)
-  - [ ] T05.4 Add boundary tests for session start, session end, and missing packets. (Depends on: T05.3)
-- [ ] T06 EEG Preprocessing and Features (Depends on: T05)
-  - [ ] T06.1 Implement filtering and artifact-aware segmentation policy. (Depends on: T05)
-  - [ ] T06.2 Compute relative band powers and key band-ratio features. (Depends on: T06.1)
-  - [ ] T06.3 Add numerical safeguards for unstable spectra and clipping behavior. (Depends on: T06.2)
-  - [ ] T06.4 Persist per-window EEG features with quality flags. (Depends on: T06.3)
-- [ ] T07 Optical and IMU Quality Features (Depends on: T05)
-  - [ ] T07.1 Implement optical normalization plus trend, slope, and mean-change features. (Depends on: T05)
-  - [ ] T07.2 Implement IMU-derived motion artifact scoring per window. (Depends on: T05)
-  - [ ] T07.3 Compute confidence scores for quality-based down-weighting. (Depends on: T07.1, T07.2)
-  - [ ] T07.4 Persist per-window optical and quality feature tables. (Depends on: T07.3)
+- [x] T04 Multimodal Ingestion and Timeline Alignment (Depends on: G01)
+  - [x] T04.1 Implement ingestion adapters for EEG, optical, and IMU streams or files. (Depends on: G01)
+  - [x] T04.2 Normalize timestamps to a common reference clock. (Depends on: T04.1)
+  - [x] T04.3 Implement alignment diagnostics for drift, dropouts, and packet delay. (Depends on: T04.2)
+  - [x] T04.4 Produce one synchronized session artifact with validation summary. (Depends on: T04.3)
+- [x] T05 Windowing and Buffering Layer (Depends on: T04)
+  - [x] T05.1 Implement fixed-size sliding windows for fast EEG updates. (Depends on: T04)
+  - [x] T05.2 Implement slower rolling windows for optical context features. (Depends on: T05.1)
+  - [x] T05.3 Preserve mapping from each window to absolute timeline index. (Depends on: T05.1, T05.2)
+  - [x] T05.4 Add boundary tests for session start, session end, and missing packets. (Depends on: T05.3)
+- [x] T06 EEG Preprocessing and Features (Depends on: T05)
+  - [x] T06.1 Implement filtering and artifact-aware segmentation policy. (Depends on: T05)
+  - [x] T06.2 Compute relative band powers and key band-ratio features. (Depends on: T06.1)
+  - [x] T06.3 Add numerical safeguards for unstable spectra and clipping behavior. (Depends on: T06.2)
+  - [x] T06.4 Persist per-window EEG features with quality flags. (Depends on: T06.3)
+- [x] T07 Optical and IMU Quality Features (Depends on: T05)
+  - [x] T07.1 Implement optical normalization plus trend, slope, and mean-change features. (Depends on: T05)
+  - [x] T07.2 Implement IMU-derived motion artifact scoring per window. (Depends on: T05)
+  - [x] T07.3 Compute confidence scores for quality-based down-weighting. (Depends on: T07.1, T07.2)
+  - [x] T07.4 Persist per-window optical and quality feature tables. (Depends on: T07.3)
 
-- [ ] G02 Day 2 Exit Gate (Depends on: T04, T05, T06, T07)
-  - [ ] G02.1 At least one session passes synchronization checks with diagnostics.
-  - [ ] G02.2 Windowing layer passes edge-case tests.
-  - [ ] G02.3 EEG and optical or IMU features generate without runtime failure.
+- [x] G02 Day 2 Exit Gate (Depends on: T04, T05, T06, T07)
+  - [x] G02.1 At least one session passes synchronization checks with diagnostics.
+  - [x] G02.2 Windowing layer passes edge-case tests.
+  - [x] G02.3 EEG and optical or IMU features generate without runtime failure.
 
 ## Day 3 - Unified Features, Labeling, and MVP Training
 

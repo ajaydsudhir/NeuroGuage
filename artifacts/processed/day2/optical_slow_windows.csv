@@ -1,0 +1,4 @@
+window_id,window_type,start_time_s,end_time_s,center_time_s,start_index,end_index,absolute_timeline_start_idx,absolute_timeline_end_idx,sample_count,missing_packet_count
+0,optical_slow,0.0,8.0,4.0,0,14,0,14,15,5
+1,optical_slow,2.0,10.0,6.0,6,14,6,14,9,3
+2,optical_slow,4.0,12.0,8.0,11,14,11,14,4,1
