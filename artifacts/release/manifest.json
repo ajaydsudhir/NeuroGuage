@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0-day6",
-  "created_at": "2026-04-22T21:42:25.279610+00:00",
-  "commit": "eb7af4ba05f00f05058f73c198672a677bdc3bcd",
+  "version": "1.0.0-rc1",
+  "created_at": "2026-04-22T22:06:30.029159+00:00",
+  "commit": "0d308adce6d0efa3851f0e7f70a52f28ce42f1f9",
   "entries": [
     {
       "label": "Day 1 data contract",
@@ -177,7 +177,9 @@
       "label": "Day 6 exit gate evidence",
       "source": "artifacts\\reports\\day6\\day6_exit_gate.json",
       "destination": "reports\\day6\\day6_exit_gate.json",
-      "included": false
+      "included": true,
+      "sha256": "400cf4b0b5a44ca30c20613f89fa25fbe5e3e43db322cab9831b4a55e41a8ef7",
+      "bytes": 2042
     },
     {
       "label": "Updated MVP acceptance checklist",
@@ -234,6 +236,106 @@
       "included": true,
       "sha256": "868297d7522759df53b9d8eef1870847c1ca2bd80a9c3aa03e8ce836a0b12a27",
       "bytes": 129
+    },
+    {
+      "label": "Day 7 final rehearsal report",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\rehearsal_report.json",
+      "destination": "reports\\day7\\rehearsal_report.json",
+      "included": true,
+      "sha256": "898612e71648e0af965771764f27b7df834490310a280b47051c1d4ba1774aac",
+      "bytes": 3443
+    },
+    {
+      "label": "Day 7 final status summary",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\final_status_summary.json",
+      "destination": "reports\\day7\\final_status_summary.json",
+      "included": true,
+      "sha256": "d8aacae6f5139eae652ba06ac86b3d9c02041e785e4a88bd61184e302f4c3a2c",
+      "bytes": 4061
+    },
+    {
+      "label": "Day 7 final status narrative",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\final_status_summary.md",
+      "destination": "reports\\day7\\final_status_summary.md",
+      "included": true,
+      "sha256": "fd1e3d8246ce4db87d6254b1aef986ac1ffa3ed32c3bf91bdb9fe009c7f544a5",
+      "bytes": 1421
+    },
+    {
+      "label": "Day 7 exit gate evidence",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\day7_exit_gate.json",
+      "destination": "reports\\day7\\day7_exit_gate.json",
+      "included": false
+    },
+    {
+      "label": "T20.2 quick-start notes for class demo",
+      "source": "docs\\day7\\quick_start.md",
+      "destination": "docs\\quick_start.md",
+      "included": true,
+      "sha256": "0efccb72944d5d62e07fbbc1c7754cee6fd67f568d5fda166dc0209ac294a7ee",
+      "bytes": 3588
+    },
+    {
+      "label": "Day 7 advanced BiGRU-attention model artifacts",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\models\\day7\\advanced",
+      "destination": "models\\day7_advanced",
+      "included": true
+    },
+    {
+      "label": "Day 7 advanced training metrics",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\advanced_training_metrics.json",
+      "destination": "reports\\day7\\advanced_training_metrics.json",
+      "included": true,
+      "sha256": "f65ac04425b292bf2a42c8a1a173254b19a237cf03df0675fcf9f3cde6a216e7",
+      "bytes": 438
+    },
+    {
+      "label": "Day 7 advanced training epoch log",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\advanced_training_log.json",
+      "destination": "reports\\day7\\advanced_training_log.json",
+      "included": true,
+      "sha256": "6c27322a38dc72dd54e323a90cefdf67b91b66226bdfc73c377b964e80be715e",
+      "bytes": 6005
+    },
+    {
+      "label": "Day 7 advanced held-out predictions",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\advanced_predictions.csv",
+      "destination": "reports\\day7\\advanced_predictions.csv",
+      "included": true,
+      "sha256": "55bfdc5152a13340cc3849e69a31bbd5ebe54a03786433c6b9dead18c82d4b59",
+      "bytes": 461
+    },
+    {
+      "label": "Day 7 advanced latency benchmark",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\advanced_latency_benchmark.json",
+      "destination": "reports\\day7\\advanced_latency_benchmark.json",
+      "included": true,
+      "sha256": "365a79d46a271364cba62450416508531482d2a8613fa62b4b21b9440782b60e",
+      "bytes": 418
+    },
+    {
+      "label": "Day 7 advanced stability report",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\advanced_stability_report.json",
+      "destination": "reports\\day7\\advanced_stability_report.json",
+      "included": true,
+      "sha256": "3214b77a2bea0b7c3216d5f4417ede4d50c2df124489b5516f227e85a85752f0",
+      "bytes": 1445
+    },
+    {
+      "label": "Day 7 promotion decision (T19.4)",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\promotion_decision.json",
+      "destination": "reports\\day7\\promotion_decision.json",
+      "included": true,
+      "sha256": "2bd7e235f314d841297ca62be3e739d52003f7c965cee082139d6da7dd704f29",
+      "bytes": 1816
+    },
+    {
+      "label": "Day 7 promotion decision narrative",
+      "source": "D:\\Projects\\NeuroGuage\\artifacts\\reports\\day7\\promotion_decision.md",
+      "destination": "reports\\day7\\promotion_decision.md",
+      "included": true,
+      "sha256": "0b84596462bd2a65f234a8cb16d01828d7cdef71e017a986bd7b33e7656404e6",
+      "bytes": 1355
     }
   ],
   "evidence": {
@@ -259,13 +361,26 @@
     "Day 6 alert-stability report": "reports\\day6\\stability_report.json",
     "Day 6 dry-run defect triage": "reports\\day6\\defect_triage.json",
     "Day 6 AC-001..AC-005 results": "reports\\day6\\acceptance_results.json",
+    "Day 6 exit gate evidence": "reports\\day6\\day6_exit_gate.json",
     "Updated MVP acceptance checklist": "checklists\\mvp_acceptance_ac_001_to_ac_005.md",
     "Stretch acceptance checklist": "checklists\\stretch_acceptance_ac_006_to_ac_009.md",
     "T17.2 Demo runbook": "docs\\demo_runbook.md",
     "T17.3 Limitations and risks": "docs\\limitations_and_risks.md",
     "Updated README": "docs\\README.md",
     "Conda environment spec": "env\\environment.yml",
-    "Pip requirements": "env\\requirements.txt"
+    "Pip requirements": "env\\requirements.txt",
+    "Day 7 final rehearsal report": "reports\\day7\\rehearsal_report.json",
+    "Day 7 final status summary": "reports\\day7\\final_status_summary.json",
+    "Day 7 final status narrative": "reports\\day7\\final_status_summary.md",
+    "T20.2 quick-start notes for class demo": "docs\\quick_start.md",
+    "Day 7 advanced BiGRU-attention model artifacts": "models\\day7_advanced",
+    "Day 7 advanced training metrics": "reports\\day7\\advanced_training_metrics.json",
+    "Day 7 advanced training epoch log": "reports\\day7\\advanced_training_log.json",
+    "Day 7 advanced held-out predictions": "reports\\day7\\advanced_predictions.csv",
+    "Day 7 advanced latency benchmark": "reports\\day7\\advanced_latency_benchmark.json",
+    "Day 7 advanced stability report": "reports\\day7\\advanced_stability_report.json",
+    "Day 7 promotion decision (T19.4)": "reports\\day7\\promotion_decision.json",
+    "Day 7 promotion decision narrative": "reports\\day7\\promotion_decision.md"
   },
   "acceptance": {
     "criteria": [
@@ -333,6 +448,83 @@
       "dashboard_validation": "artifacts\\reports\\day5\\dashboard_validation.json",
       "dry_run_count": 2,
       "total_defects": 0
+    },
+    "day6": {
+      "g06_1_ac_001_to_ac_005_pass": true,
+      "g06_2_documentation_complete": true,
+      "g06_3_release_package_complete": true,
+      "gate_passed": true,
+      "acceptance_summary": {
+        "passed_count": 5,
+        "total_count": 5,
+        "results": [
+          {
+            "id": "AC-001",
+            "passed": true,
+            "notes": "End-to-end evidence: inference diagnostics, guardrail transition log, and dashboard snapshot all present."
+          },
+          {
+            "id": "AC-002",
+            "passed": true,
+            "notes": "Selected variant 'eeg_optical' reports macro_f1=0.4, balanced_accuracy=0.5, auroc=1.0."
+          },
+          {
+            "id": "AC-003",
+            "passed": true,
+            "notes": "Refresh latency: mean=0.06ms, p95=0.15ms, max=0.32ms (budget=2.0s)."
+          },
+          {
+            "id": "AC-004",
+            "passed": true,
+            "notes": "Day 5 gate_passed=True, timing_within_budget=True, all_passed=True, dry_runs=2."
+          },
+          {
+            "id": "AC-005",
+            "passed": true,
+            "notes": "2 of 2 non-GREEN transitions include rationale text."
+          }
+        ]
+      },
+      "latency": {
+        "mean_ms": 0.059194000787101686,
+        "p95_ms": 0.14533499488607024,
+        "max_ms": 0.3229999856557697,
+        "within_budget": true
+      },
+      "stability": {
+        "all_passed": true,
+        "scenarios": [
+          {
+            "name": "noisy_risk",
+            "passed": true,
+            "transitions_per_min": 3.5999999999999996
+          },
+          {
+            "name": "motion_artifact",
+            "passed": true,
+            "transitions_per_min": 7.4
+          },
+          {
+            "name": "sustained_fatigue_ramp",
+            "passed": true,
+            "transitions_per_min": 1.0
+          }
+        ]
+      },
+      "defect_triage": {
+        "total_defects": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "release": {
+        "dir": "artifacts\\release",
+        "version": "0.1.0-day6",
+        "commit": "eb7af4ba05f00f05058f73c198672a677bdc3bcd",
+        "entries_total": 30,
+        "entries_included": 29
+      },
+      "phase_gate_decision": "GO for Day 7 stretch"
     }
   }
 }

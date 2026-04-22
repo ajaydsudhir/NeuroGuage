@@ -185,6 +185,23 @@ Runs:
 - `T17.4` release bundle assembly at `artifacts/release/` with an
   indexed manifest and SHA-256 hashes.
 
+### 3.7 Day 7 stretch enhancement and final packaging
+
+```powershell
+python scripts/day7_stretch_and_final.py
+```
+
+Runs:
+- `T18` trains the BiGRU-attention prototype on the identical held-out
+  split, persists `.pt` weights, and benchmarks latency + stability on
+  the same harness as the MVP.
+- `T19` applies the FR-026 / AC-007 promotion gate (+3 points on
+  macro F1 or AUROC, no latency/stability regression) and records the
+  decision note in `artifacts/reports/day7/promotion_decision.md`.
+- `T20` assembles the release-candidate bundle, runs one full
+  class-demo rehearsal under the mandated timing constraints, and
+  publishes the final status summary + `day7_exit_gate.json`.
+
 ## 4. Test Suite
 
 ```powershell
@@ -194,7 +211,8 @@ python -m pytest -q
 
 The full suite includes ingestion, windowing, feature extraction,
 training, evaluation, live inference, guardrails, dashboard, demo
-orchestration, and Day 6 hardening tests.
+orchestration, Day 6 hardening, and Day 7 advanced-model + promotion +
+finalization tests.
 
 ## 5. Reproducibility
 
@@ -204,22 +222,30 @@ orchestration, and Day 6 hardening tests.
 - `configs/demo_timing.json` freezes the 5 to 10 minute demo envelope.
 - Every training run writes a manifest with split IDs, dataset version
   tag, hyperparameters, and metric evidence.
-- The Day 6 release bundle (`artifacts/release/manifest.json`) contains
+- The release bundle (`artifacts/release/manifest.json`) contains
   SHA-256 hashes for every shipped artifact plus an `evidence_index.md`
-  human-readable index.
+  human-readable index.  Day 7 extends the bundle with the advanced
+  BiGRU-attention model, promotion decision, rehearsal report, and the
+  `final_status_summary.*` files under `reports/day7/`.
 
-## 6. Acceptance Criteria (MVP)
+## 6. Acceptance Criteria
 
-Authoritative checklist:
-`docs/day1/checklists/mvp_acceptance_ac_001_to_ac_005.md`
+Authoritative checklists:
+- MVP: `docs/day1/checklists/mvp_acceptance_ac_001_to_ac_005.md`
+- Stretch: `docs/day1/checklists/stretch_acceptance_ac_006_to_ac_009.md`
 
-Auto-generated Day 6 evidence:
-`artifacts/reports/day6/acceptance_results.json`
-`artifacts/reports/day6/day6_exit_gate.json`
+Auto-generated evidence:
+- `artifacts/reports/day6/acceptance_results.json`
+- `artifacts/reports/day6/day6_exit_gate.json`
+- `artifacts/reports/day7/promotion_decision.json`
+- `artifacts/reports/day7/final_status_summary.json`
+- `artifacts/reports/day7/day7_exit_gate.json`
 
 Phase-gate rule (`docs/day1/day6_go_no_go_rule.md`): Day 7 stretch work
 is allowed only if AC-001 through AC-005 all pass with objective
-evidence.
+evidence.  Promotion of the advanced model additionally requires the
+FR-026 threshold (+3 points macro F1 or AUROC) and no latency/stability
+regression.
 
 ## 7. Documentation Index
 
@@ -229,6 +255,8 @@ evidence.
 - `docs/day6/demo_runbook.md` — Class quick demo runbook and fallbacks
 - `docs/day6/limitations_and_risks.md` — Known limitations, risks, and
   deferred items
+- `docs/day7/quick_start.md` — In-bundle quick-start for the final
+  release-candidate demo folder
 - `docs/day1/governance_and_dependencies.md` — Governance, dependency
   integrity, and no-orphan task policy
 

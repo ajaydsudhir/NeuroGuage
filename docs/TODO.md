@@ -159,49 +159,49 @@
 
 ## Day 7 - Stretch Enhancement and Final Packaging
 
-- [ ] T18 Graduate Model Prototype (Stretch) (Depends on: G06)
-  - [ ] T18.1 Implement one advanced path: TCN or BiGRU-attention. (Depends on: G06)
-  - [ ] T18.2 Train advanced model on identical held-out split used by MVP. (Depends on: T18.1)
-  - [ ] T18.3 Measure latency and stability with same runtime harness as MVP. (Depends on: T18.2)
-  - [ ] T18.4 Persist advanced artifact, config, and evaluation logs for direct comparison. (Depends on: T18.3)
-- [ ] T19 Advanced vs MVP Comparison and Promotion Decision (Stretch) (Depends on: T18)
-  - [ ] T19.1 Compare advanced and MVP metrics on identical held-out sessions. (Depends on: T18)
-  - [ ] T19.2 Verify promotion threshold: at least +3 points macro F1 or AUROC. (Depends on: T19.1)
-  - [ ] T19.3 Verify no latency or alert stability regression. (Depends on: T19.1)
-  - [ ] T19.4 Record promotion decision note: promote or keep MVP, with rationale. (Depends on: T19.2, T19.3)
-- [ ] T20 Final Packaging and Demo Rehearsal (Depends on: T17; Optional dependency: T19)
-  - [ ] T20.1 If stretch is blocked, mark T18 and T19 deferred with reason and proceed with MVP package. (Depends on: G06)
-  - [ ] T20.2 Assemble final demo folder with scripts, models, configs, and quick-start notes. (Depends on: T17)
-  - [ ] T20.3 Run one full rehearsal under class timing constraints and record results. (Depends on: T20.2)
-  - [ ] T20.4 Freeze release-candidate artifacts and publish final status summary. (Depends on: T20.3)
+- [x] T18 Graduate Model Prototype (Stretch) (Depends on: G06)
+  - [x] T18.1 Implement one advanced path: TCN or BiGRU-attention. (Depends on: G06)
+  - [x] T18.2 Train advanced model on identical held-out split used by MVP. (Depends on: T18.1)
+  - [x] T18.3 Measure latency and stability with same runtime harness as MVP. (Depends on: T18.2)
+  - [x] T18.4 Persist advanced artifact, config, and evaluation logs for direct comparison. (Depends on: T18.3)
+- [x] T19 Advanced vs MVP Comparison and Promotion Decision (Stretch) (Depends on: T18)
+  - [x] T19.1 Compare advanced and MVP metrics on identical held-out sessions. (Depends on: T18)
+  - [x] T19.2 Verify promotion threshold: at least +3 points macro F1 or AUROC. (Depends on: T19.1)
+  - [x] T19.3 Verify no latency or alert stability regression. (Depends on: T19.1)
+  - [x] T19.4 Record promotion decision note: promote or keep MVP, with rationale. (Depends on: T19.2, T19.3)
+- [x] T20 Final Packaging and Demo Rehearsal (Depends on: T17; Optional dependency: T19)
+  - [x] T20.1 If stretch is blocked, mark T18 and T19 deferred with reason and proceed with MVP package. (Depends on: G06)
+  - [x] T20.2 Assemble final demo folder with scripts, models, configs, and quick-start notes. (Depends on: T17)
+  - [x] T20.3 Run one full rehearsal under class timing constraints and record results. (Depends on: T20.2)
+  - [x] T20.4 Freeze release-candidate artifacts and publish final status summary. (Depends on: T20.3)
 
-- [ ] G07 Day 7 Exit Gate (Depends on: T20; Optional dependency: T19)
-  - [ ] G07.1 MVP release package is finalized and class-ready.
-  - [ ] G07.2 Stretch model is promoted with evidence or explicitly deferred.
-  - [ ] G07.3 Final rehearsal passes timing and stability constraints.
+- [x] G07 Day 7 Exit Gate (Depends on: T20; Optional dependency: T19)
+  - [x] G07.1 MVP release package is finalized and class-ready.
+  - [x] G07.2 Stretch model is promoted with evidence or explicitly deferred.
+  - [x] G07.3 Final rehearsal passes timing and stability constraints.
 
 ## Dependency Summary
 
-- [ ] D-Map-01 Required MVP path (Depends on: O-01)
-  - [ ] D-Map-01.1 O-01 -> O-02 -> O-04 -> T01 -> T02 -> T03 -> G01
-  - [ ] D-Map-01.2 G01 -> T04 -> T05 -> T06 and T07 -> G02
-  - [ ] D-Map-01.3 G02 -> T08 -> T09 -> T10 -> G03
-  - [ ] D-Map-01.4 G03 -> T11 -> T12 -> T13 -> G04
-  - [ ] D-Map-01.5 G04 -> T14 -> T15 -> G05
-  - [ ] D-Map-01.6 G05 -> T16 -> T17 -> G06
-  - [ ] D-Map-01.7 G06 -> T20 -> G07
-- [ ] D-Map-02 Optional stretch path (Depends on: G06)
-  - [ ] D-Map-02.1 G06 -> T18 -> T19 -> T20 -> G07
-- [ ] D-Map-03 Orphan-task validation (Depends on: D-Map-01, D-Map-02)
-  - [ ] D-Map-03.1 Every task from T01 to T20 has at least one upstream dependency.
-  - [ ] D-Map-03.2 Every task from T01 to T20 contributes to at least one gate or downstream task.
+- [x] D-Map-01 Required MVP path (Depends on: O-01)
+  - [x] D-Map-01.1 O-01 -> O-02 -> O-04 -> T01 -> T02 -> T03 -> G01
+  - [x] D-Map-01.2 G01 -> T04 -> T05 -> T06 and T07 -> G02
+  - [x] D-Map-01.3 G02 -> T08 -> T09 -> T10 -> G03
+  - [x] D-Map-01.4 G03 -> T11 -> T12 -> T13 -> G04
+  - [x] D-Map-01.5 G04 -> T14 -> T15 -> G05
+  - [x] D-Map-01.6 G05 -> T16 -> T17 -> G06
+  - [x] D-Map-01.7 G06 -> T20 -> G07
+- [x] D-Map-02 Optional stretch path (Depends on: G06)
+  - [x] D-Map-02.1 G06 -> T18 -> T19 -> T20 -> G07
+- [x] D-Map-03 Orphan-task validation (Depends on: D-Map-01, D-Map-02)
+  - [x] D-Map-03.1 Every task from T01 to T20 has at least one upstream dependency.
+  - [x] D-Map-03.2 Every task from T01 to T20 contributes to at least one gate or downstream task.
 
 ## Definition of Weekly Success
 
-- [ ] S-01 Required success (Depends on: G06)
-  - [ ] S-01.1 T01 through T17 complete with acceptance evidence.
-  - [ ] S-01.2 AC-001 to AC-005 pass.
-- [ ] S-02 Stretch success (Depends on: T19)
-  - [ ] S-02.1 AC-006 to AC-009 evidence is complete.
-- [ ] S-03 Final success (Depends on: G07)
-  - [ ] S-03.1 T20 complete, package frozen, and rehearsal pass recorded.
+- [x] S-01 Required success (Depends on: G06)
+  - [x] S-01.1 T01 through T17 complete with acceptance evidence.
+  - [x] S-01.2 AC-001 to AC-005 pass.
+- [x] S-02 Stretch success (Depends on: T19)
+  - [x] S-02.1 AC-006 to AC-009 evidence is complete. (AC-007 formally deferred with documented rationale; AC-006, AC-008, AC-009 have evidence.)
+- [x] S-03 Final success (Depends on: G07)
+  - [x] S-03.1 T20 complete, package frozen, and rehearsal pass recorded.

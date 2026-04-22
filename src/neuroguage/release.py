@@ -60,6 +60,7 @@ def build_release_bundle(
     release_dir: Path,
     version: str = "0.1.0",
     commit: str | None = None,
+    extra_entries: list[tuple[Path, Path, str]] | None = None,
 ) -> ReleaseManifest:
     """Assemble the release bundle under `release_dir` (T17.4).
 
@@ -107,6 +108,11 @@ def build_release_bundle(
         (Path("environment.yml"), release_dir / "env" / "environment.yml", "Conda environment spec"),
         (Path("requirements.txt"), release_dir / "env" / "requirements.txt", "Pip requirements"),
     ]
+
+    if extra_entries:
+        for src, dst, label in extra_entries:
+            dst_resolved = dst if Path(dst).is_absolute() else release_dir / dst
+            bundle_map.append((Path(src), dst_resolved, label))
 
     entries: list[dict[str, Any]] = []
     for src, dst, label in bundle_map:
