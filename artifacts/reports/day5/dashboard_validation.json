@@ -1,0 +1,17 @@
+{
+  "figure_width": 16.0,
+  "figure_height": 9.0,
+  "dpi": 100,
+  "resolution": "1600x900",
+  "min_projection_resolution": "1280x720",
+  "meets_projection_minimum": true,
+  "font_sizes": {
+    "title": 16,
+    "label": 13,
+    "tick": 11,
+    "badge": 28
+  },
+  "high_contrast_bg": true,
+  "snapshot_path": "artifacts\\reports\\day5\\dashboard_snapshot.png",
+  "readability_pass": true
+}

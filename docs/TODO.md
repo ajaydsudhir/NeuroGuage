@@ -14,9 +14,9 @@
 - [x] O-04 Define completion evidence standard (Depends on: O-02, O-03)
   - [x] O-04.1 Require each completed task to produce an artifact: script, config, report, or log.
   - [x] O-04.2 Require each day gate to include pass/fail evidence links.
-- [ ] O-05 Freeze demo envelope and timing budget (Depends on: O-01)
-  - [ ] O-05.1 Lock quick demo flow to 5 to 10 minutes.
-  - [ ] O-05.2 Track per-stage time budget and flag scope that violates class timing.
+- [x] O-05 Freeze demo envelope and timing budget (Depends on: O-01)
+  - [x] O-05.1 Lock quick demo flow to 5 to 10 minutes.
+  - [x] O-05.2 Track per-stage time budget and flag scope that violates class timing.
 - [ ] O-06 Enforce dependency integrity with no orphan work (Depends on: O-02, O-04)
   - [ ] O-06.1 Validate each task has at least one upstream dependency, except O-01.
   - [ ] O-06.2 Validate each task feeds at least one downstream task or exit gate.
@@ -123,21 +123,21 @@
 
 ## Day 5 - Dashboard Integration and Quick Demo Flow
 
-- [ ] T14 Dashboard and Timeline Visualization (Depends on: G04)
-  - [ ] T14.1 Build real-time panels for EEG, optical trends, risk score, and current state. (Depends on: G04)
-  - [ ] T14.2 Add timeline with transition markers and rationale details. (Depends on: T14.1)
-  - [ ] T14.3 Add stream health and model-state indicators. (Depends on: T14.1)
-  - [ ] T14.4 Validate readability for classroom projection distance and resolution. (Depends on: T14.2, T14.3)
-- [ ] T15 Class Quick Demo Orchestration (Depends on: T14, O-05)
-  - [ ] T15.1 Implement guided 5 to 10 minute demo flow with stage timers. (Depends on: T14, O-05)
-  - [ ] T15.2 Validate sequence: 1-minute baseline, 2-minute sustained attention, 2-minute 2-back, 2 to 3-minute code block. (Depends on: T15.1)
-  - [ ] T15.3 Add final 30 to 60-second summary panel for transition interpretation. (Depends on: T15.2)
-  - [ ] T15.4 Run at least two dry runs and log reproducible failures. (Depends on: T15.3)
+- [x] T14 Dashboard and Timeline Visualization (Depends on: G04)
+  - [x] T14.1 Build real-time panels for EEG, optical trends, risk score, and current state. (Depends on: G04)
+  - [x] T14.2 Add timeline with transition markers and rationale details. (Depends on: T14.1)
+  - [x] T14.3 Add stream health and model-state indicators. (Depends on: T14.1)
+  - [x] T14.4 Validate readability for classroom projection distance and resolution. (Depends on: T14.2, T14.3)
+- [x] T15 Class Quick Demo Orchestration (Depends on: T14, O-05)
+  - [x] T15.1 Implement guided 5 to 10 minute demo flow with stage timers. (Depends on: T14, O-05)
+  - [x] T15.2 Validate sequence: 1-minute baseline, 2-minute sustained attention, 2-minute 2-back, 2 to 3-minute code block. (Depends on: T15.1)
+  - [x] T15.3 Add final 30 to 60-second summary panel for transition interpretation. (Depends on: T15.2)
+  - [x] T15.4 Run at least two dry runs and log reproducible failures. (Depends on: T15.3)
 
-- [ ] G05 Day 5 Exit Gate (Depends on: T14, T15)
-  - [ ] G05.1 Dashboard is stable and readable.
-  - [ ] G05.2 Quick demo completes within the 5 to 10 minute window.
-  - [ ] G05.3 Dry-run defects are prioritized for Day 6.
+- [x] G05 Day 5 Exit Gate (Depends on: T14, T15)
+  - [x] G05.1 Dashboard is stable and readable.
+  - [x] G05.2 Quick demo completes within the 5 to 10 minute window.
+  - [x] G05.3 Dry-run defects are prioritized for Day 6.
 
 ## Day 6 - MVP Hardening, Validation, and Documentation
 
