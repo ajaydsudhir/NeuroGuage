@@ -1,0 +1,206 @@
+2026-04-25 00:51:56 | INFO | neuroguage.live_app | Loaded guardrail profile 'personalized' from D:\Projects\NeuroGuage\configs\guardrails_personalized.json
+2026-04-25 00:51:56 | INFO | neuroguage.inference | Loading inference models from artifacts\models\day4\ablations\eeg_optical
+2026-04-25 00:51:57 | INFO | neuroguage.muse_stream | Spawning OpenMuse bridge: C:\Users\ajayd\anaconda3\envs\neuroguage\Scripts\OpenMuse.EXE stream --address 00:55:DA:B9:EF:09 --preset p1041 --record D:\Projects\NeuroGuage\data\raw\calibrated_demo_20260425_0051.txt
+2026-04-25 00:51:57 | INFO | neuroguage.muse_stream | Waiting 5.0s for OpenMuse BLE bridge to warm up...
+2026-04-25 00:52:05 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=eeg | name=Muse-EEG (00:55:DA:B9:EF:09) | stype=EEG | sfreq=256.0 | ch=8
+2026-04-25 00:52:06 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=optical | name=Muse-OPTICS (00:55:DA:B9:EF:09) | stype=PPG | sfreq=64.0 | ch=16
+2026-04-25 00:52:06 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=imu | name=Muse-ACCGYRO (00:55:DA:B9:EF:09) | stype=ACCGYRO | sfreq=52.0 | ch=6
+2026-04-25 00:52:06 | INFO | neuroguage.live_app | Live app started | source=muse_lsl | dashboard=True | stub_models=False
+2026-04-25 00:52:07 | INFO | neuroguage.inference | Inference #1 | risk=0.5177 | conf=0.7208 | latency=0.0402s | faults=none
+2026-04-25 00:52:08 | INFO | neuroguage.inference | Inference #2 | risk=0.5668 | conf=0.6751 | latency=0.0249s | faults=none
+2026-04-25 00:52:08 | INFO | neuroguage.inference | Inference #3 | risk=0.5716 | conf=0.6728 | latency=0.0267s | faults=none
+2026-04-25 00:52:09 | INFO | neuroguage.inference | Inference #4 | risk=0.4983 | conf=0.7441 | latency=0.0225s | faults=none
+2026-04-25 00:52:09 | INFO | neuroguage.inference | Inference #5 | risk=0.5222 | conf=0.7153 | latency=0.0356s | faults=none
+2026-04-25 00:52:10 | INFO | neuroguage.inference | Inference #6 | risk=0.5288 | conf=0.7097 | latency=0.0276s | faults=none
+2026-04-25 00:52:10 | INFO | neuroguage.inference | Inference #7 | risk=0.5344 | conf=0.7030 | latency=0.0315s | faults=none
+2026-04-25 00:52:11 | INFO | neuroguage.inference | Inference #8 | risk=0.6175 | conf=0.6749 | latency=0.0274s | faults=none
+2026-04-25 00:52:11 | INFO | neuroguage.inference | Inference #9 | risk=0.5445 | conf=0.6932 | latency=0.0332s | faults=none
+2026-04-25 00:52:12 | INFO | neuroguage.inference | Inference #10 | risk=0.5565 | conf=0.6796 | latency=0.0346s | faults=none
+2026-04-25 00:52:12 | INFO | neuroguage.inference | Inference #11 | risk=0.5852 | conf=0.6746 | latency=0.0408s | faults=none
+2026-04-25 00:52:13 | INFO | neuroguage.inference | Inference #12 | risk=0.6418 | conf=0.6212 | latency=0.0411s | faults=none
+2026-04-25 00:52:13 | INFO | neuroguage.inference | Inference #13 | risk=0.6387 | conf=0.6225 | latency=0.0370s | faults=none
+2026-04-25 00:52:14 | INFO | neuroguage.inference | Inference #14 | risk=0.5346 | conf=0.7005 | latency=0.0299s | faults=none
+2026-04-25 00:52:14 | INFO | neuroguage.inference | Inference #15 | risk=0.4983 | conf=0.7440 | latency=0.0271s | faults=none
+2026-04-25 00:52:15 | INFO | neuroguage.inference | Inference #16 | risk=0.4867 | conf=0.7580 | latency=0.0283s | faults=none
+2026-04-25 00:52:15 | INFO | neuroguage.inference | Inference #17 | risk=0.5317 | conf=0.7128 | latency=0.0278s | faults=none
+2026-04-25 00:52:16 | INFO | neuroguage.inference | Inference #18 | risk=0.5938 | conf=0.6569 | latency=0.0539s | faults=none
+2026-04-25 00:52:16 | INFO | neuroguage.inference | Inference #19 | risk=0.5897 | conf=0.6618 | latency=0.0266s | faults=none
+2026-04-25 00:52:17 | INFO | neuroguage.inference | Inference #20 | risk=0.6163 | conf=0.6544 | latency=0.0272s | faults=none
+2026-04-25 00:52:17 | INFO | neuroguage.inference | Inference #21 | risk=0.4995 | conf=0.7447 | latency=0.0278s | faults=none
+2026-04-25 00:52:18 | INFO | neuroguage.inference | Inference #22 | risk=0.5129 | conf=0.7309 | latency=0.0415s | faults=none
+2026-04-25 00:52:18 | INFO | neuroguage.inference | Inference #23 | risk=0.5304 | conf=0.7075 | latency=0.0278s | faults=none
+2026-04-25 00:52:19 | INFO | neuroguage.inference | Inference #24 | risk=0.6191 | conf=0.6652 | latency=0.0299s | faults=none
+2026-04-25 00:52:19 | INFO | neuroguage.inference | Inference #25 | risk=0.6462 | conf=0.6684 | latency=0.0358s | faults=none
+2026-04-25 00:52:20 | INFO | neuroguage.inference | Inference #26 | risk=0.6390 | conf=0.6687 | latency=0.0437s | faults=none
+2026-04-25 00:52:20 | INFO | neuroguage.inference | Inference #27 | risk=0.5765 | conf=0.6675 | latency=0.0305s | faults=none
+2026-04-25 00:52:21 | INFO | neuroguage.inference | Inference #28 | risk=0.5901 | conf=0.6733 | latency=0.0446s | faults=none
+2026-04-25 00:52:21 | INFO | neuroguage.inference | Inference #29 | risk=0.5820 | conf=0.6653 | latency=0.0387s | faults=none
+2026-04-25 00:52:22 | INFO | neuroguage.inference | Inference #30 | risk=0.4973 | conf=0.7453 | latency=0.0437s | faults=none
+2026-04-25 00:52:22 | INFO | neuroguage.inference | Inference #31 | risk=0.4872 | conf=0.7574 | latency=0.0417s | faults=none
+2026-04-25 00:52:23 | INFO | neuroguage.inference | Inference #32 | risk=0.5292 | conf=0.7073 | latency=0.0434s | faults=none
+2026-04-25 00:52:23 | INFO | neuroguage.inference | Inference #33 | risk=0.5974 | conf=0.6657 | latency=0.0351s | faults=none
+2026-04-25 00:52:24 | INFO | neuroguage.inference | Inference #34 | risk=0.6423 | conf=0.6688 | latency=0.0424s | faults=none
+2026-04-25 00:52:24 | INFO | neuroguage.inference | Inference #35 | risk=0.6159 | conf=0.6610 | latency=0.0422s | faults=none
+2026-04-25 00:52:25 | INFO | neuroguage.inference | Inference #36 | risk=0.5607 | conf=0.6780 | latency=0.0455s | faults=none
+2026-04-25 00:52:25 | INFO | neuroguage.inference | Inference #37 | risk=0.5193 | conf=0.7188 | latency=0.0489s | faults=none
+2026-04-25 00:52:26 | INFO | neuroguage.inference | Inference #38 | risk=0.5315 | conf=0.7044 | latency=0.0470s | faults=none
+2026-04-25 00:52:26 | INFO | neuroguage.inference | Inference #39 | risk=0.5909 | conf=0.6689 | latency=0.0373s | faults=none
+2026-04-25 00:52:27 | INFO | neuroguage.inference | Inference #40 | risk=0.6168 | conf=0.6725 | latency=0.0341s | faults=none
+2026-04-25 00:52:27 | INFO | neuroguage.inference | Inference #41 | risk=0.6352 | conf=0.6477 | latency=0.0368s | faults=none
+2026-04-25 00:52:27 | INFO | neuroguage.calibration | Personal baseline established | samples=41 | duration=20.0s | raw mean=0.566 stdev=0.049 (floor=0.040) | range=[0.487, 0.646] | baseline -> normalised 0.5; +4 sigma -> normalised 1.0
+2026-04-25 00:52:28 | INFO | neuroguage.inference | Inference #42 | risk=0.6243 | conf=0.6477 | latency=0.0313s | faults=none
+2026-04-25 00:52:28 | INFO | neuroguage.inference | Inference #43 | risk=0.5602 | conf=0.6815 | latency=0.0386s | faults=none
+2026-04-25 00:52:29 | INFO | neuroguage.inference | Inference #44 | risk=0.4879 | conf=0.7565 | latency=0.0435s | faults=none
+2026-04-25 00:52:29 | INFO | neuroguage.inference | Inference #45 | risk=0.4865 | conf=0.7582 | latency=0.0438s | faults=none
+2026-04-25 00:52:30 | INFO | neuroguage.inference | Inference #46 | risk=0.5492 | conf=0.6875 | latency=0.0265s | faults=none
+2026-04-25 00:52:30 | INFO | neuroguage.inference | Inference #47 | risk=0.5341 | conf=0.7055 | latency=0.0456s | faults=none
+2026-04-25 00:52:31 | INFO | neuroguage.inference | Inference #48 | risk=0.6003 | conf=0.6787 | latency=0.0458s | faults=none
+2026-04-25 00:52:31 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.5877 | Risk score (0.59) exceeded YELLOW threshold (0.55). Risk trend is rising (slope=0.0690 over 5 windows). Persistence count: 1.
+2026-04-25 00:52:31 | INFO | neuroguage.inference | Inference #49 | risk=0.6193 | conf=0.6482 | latency=0.0454s | faults=none
+2026-04-25 00:52:32 | INFO | neuroguage.inference | Inference #50 | risk=0.6225 | conf=0.6420 | latency=0.0267s | faults=none
+2026-04-25 00:52:32 | INFO | neuroguage.inference | Inference #51 | risk=0.6471 | conf=0.6363 | latency=0.0303s | faults=none
+2026-04-25 00:52:32 | INFO | neuroguage.guardrails | Guardrail ESCALATION: YELLOW -> RED | risk=0.7063 | Risk score (0.71) exceeded RED threshold (0.70). Risk trend is rising (slope=0.0629 over 5 windows). Persistence count: 1.
+2026-04-25 00:52:33 | INFO | neuroguage.inference | Inference #52 | risk=0.6467 | conf=0.6369 | latency=0.0316s | faults=none
+2026-04-25 00:52:33 | INFO | neuroguage.inference | Inference #53 | risk=0.4484 | conf=0.8039 | latency=0.0275s | faults=none
+2026-04-25 00:52:34 | INFO | neuroguage.inference | Inference #54 | risk=0.4242 | conf=0.8330 | latency=0.0315s | faults=none
+2026-04-25 00:52:34 | INFO | neuroguage.inference | Inference #55 | risk=0.4156 | conf=0.8166 | latency=0.0268s | faults=none
+2026-04-25 00:52:34 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: RED -> YELLOW | risk=0.1197 | Risk score (0.12) has remained below recovery threshold for 3 consecutive windows. De-escalating from RED to YELLOW.
+2026-04-25 00:52:35 | INFO | neuroguage.inference | Inference #56 | risk=0.5876 | conf=0.6904 | latency=0.0320s | faults=none
+2026-04-25 00:52:35 | INFO | neuroguage.inference | Inference #57 | risk=0.6257 | conf=0.6715 | latency=0.0261s | faults=none
+2026-04-25 00:52:36 | INFO | neuroguage.inference | Inference #58 | risk=0.5882 | conf=0.6941 | latency=0.0238s | faults=none
+2026-04-25 00:52:36 | INFO | neuroguage.inference | Inference #59 | risk=0.5695 | conf=0.7158 | latency=0.0200s | faults=none
+2026-04-25 00:52:37 | INFO | neuroguage.inference | Inference #60 | risk=0.5695 | conf=0.6749 | latency=0.0215s | faults=none
+2026-04-25 00:52:37 | INFO | neuroguage.inference | Inference #61 | risk=0.5741 | conf=0.6708 | latency=0.0298s | faults=none
+2026-04-25 00:52:38 | INFO | neuroguage.inference | Inference #62 | risk=0.6195 | conf=0.6456 | latency=0.0204s | faults=none
+2026-04-25 00:52:38 | INFO | neuroguage.inference | Inference #63 | risk=0.6392 | conf=0.6202 | latency=0.0230s | faults=none
+2026-04-25 00:52:39 | INFO | neuroguage.inference | Inference #64 | risk=0.6073 | conf=0.6537 | latency=0.0257s | faults=none
+2026-04-25 00:52:39 | INFO | neuroguage.inference | Inference #65 | risk=0.5577 | conf=0.6839 | latency=0.0246s | faults=none
+2026-04-25 00:52:40 | INFO | neuroguage.inference | Inference #66 | risk=0.4507 | conf=0.8011 | latency=0.0236s | faults=none
+2026-04-25 00:52:40 | INFO | neuroguage.inference | Inference #67 | risk=0.4669 | conf=0.7818 | latency=0.0301s | faults=none
+2026-04-25 00:52:41 | INFO | neuroguage.inference | Inference #68 | risk=0.4697 | conf=0.7784 | latency=0.0310s | faults=none
+2026-04-25 00:52:41 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: YELLOW -> GREEN | risk=0.2567 | Risk score (0.26) has remained below recovery threshold for 3 consecutive windows. De-escalating from YELLOW to GREEN.
+2026-04-25 00:52:41 | INFO | neuroguage.inference | Inference #69 | risk=0.5979 | conf=0.6750 | latency=0.0204s | faults=none
+2026-04-25 00:52:42 | INFO | neuroguage.inference | Inference #70 | risk=0.6159 | conf=0.6620 | latency=0.0221s | faults=none
+2026-04-25 00:52:42 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.6273 | Risk score (0.63) exceeded YELLOW threshold (0.55). Risk trend is rising (slope=0.1169 over 5 windows). Persistence count: 2.
+2026-04-25 00:52:42 | INFO | neuroguage.inference | Inference #71 | risk=0.6305 | conf=0.6590 | latency=0.0289s | faults=none
+2026-04-25 00:52:43 | INFO | neuroguage.inference | Inference #72 | risk=0.6098 | conf=0.6725 | latency=0.0228s | faults=none
+2026-04-25 00:52:43 | INFO | neuroguage.inference | Inference #73 | risk=0.5490 | conf=0.6877 | latency=0.0258s | faults=none
+2026-04-25 00:52:44 | INFO | neuroguage.inference | Inference #74 | risk=0.5169 | conf=0.7217 | latency=0.0252s | faults=none
+2026-04-25 00:52:44 | INFO | neuroguage.inference | Inference #75 | risk=0.5334 | conf=0.7039 | latency=0.0203s | faults=none
+2026-04-25 00:52:45 | INFO | neuroguage.inference | Inference #76 | risk=0.5587 | conf=0.6771 | latency=0.0246s | faults=none
+2026-04-25 00:52:45 | INFO | neuroguage.inference | Inference #77 | risk=0.5744 | conf=0.6721 | latency=0.0236s | faults=none
+2026-04-25 00:52:46 | INFO | neuroguage.inference | Inference #78 | risk=0.6315 | conf=0.6551 | latency=0.0230s | faults=none
+2026-04-25 00:52:46 | INFO | neuroguage.inference | Inference #79 | risk=0.6071 | conf=0.6590 | latency=0.0219s | faults=none
+2026-04-25 00:52:47 | INFO | neuroguage.inference | Inference #80 | risk=0.5771 | conf=0.6826 | latency=0.0237s | faults=none
+2026-04-25 00:52:47 | INFO | neuroguage.inference | Inference #81 | risk=0.5182 | conf=0.7326 | latency=0.0214s | faults=none
+2026-04-25 00:52:48 | INFO | neuroguage.inference | Inference #82 | risk=0.5133 | conf=0.7261 | latency=0.0309s | faults=none
+2026-04-25 00:52:48 | INFO | neuroguage.inference | Inference #83 | risk=0.5169 | conf=0.7217 | latency=0.0235s | faults=none
+2026-04-25 00:52:48 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: YELLOW -> GREEN | risk=0.3763 | Risk score (0.38) has remained below recovery threshold for 3 consecutive windows. De-escalating from YELLOW to GREEN.
+2026-04-25 00:52:49 | INFO | neuroguage.inference | Inference #84 | risk=0.5196 | conf=0.7185 | latency=0.0267s | faults=none
+2026-04-25 00:52:49 | INFO | neuroguage.inference | Inference #85 | risk=0.5812 | conf=0.6733 | latency=0.0204s | faults=none
+2026-04-25 00:52:50 | INFO | neuroguage.inference | Inference #86 | risk=0.5673 | conf=0.6837 | latency=0.0265s | faults=none
+2026-04-25 00:52:50 | INFO | neuroguage.inference | Inference #87 | risk=0.5789 | conf=0.6761 | latency=0.0254s | faults=none
+2026-04-25 00:52:51 | INFO | neuroguage.inference | Inference #88 | risk=0.5861 | conf=0.6702 | latency=0.0279s | faults=none
+2026-04-25 00:52:51 | INFO | neuroguage.inference | Inference #89 | risk=0.5663 | conf=0.6757 | latency=0.0231s | faults=none
+2026-04-25 00:52:52 | INFO | neuroguage.inference | Inference #90 | risk=0.6068 | conf=0.6594 | latency=0.0316s | faults=none
+2026-04-25 00:52:52 | INFO | neuroguage.inference | Inference #91 | risk=0.5919 | conf=0.6555 | latency=0.0202s | faults=none
+2026-04-25 00:52:53 | INFO | neuroguage.inference | Inference #92 | risk=0.6048 | conf=0.6618 | latency=0.0225s | faults=none
+2026-04-25 00:52:53 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.5990 | Risk score (0.60) exceeded YELLOW threshold (0.55). Risk trend is rising (slope=0.0160 over 5 windows). Persistence count: 3.
+2026-04-25 00:52:53 | INFO | neuroguage.inference | Inference #93 | risk=0.5260 | conf=0.7110 | latency=0.0254s | faults=none
+2026-04-25 00:52:54 | INFO | neuroguage.inference | Inference #94 | risk=0.5584 | conf=0.6754 | latency=0.0299s | faults=none
+2026-04-25 00:52:54 | INFO | neuroguage.inference | Inference #95 | risk=0.5332 | conf=0.7021 | latency=0.0248s | faults=none
+2026-04-25 00:52:55 | INFO | neuroguage.inference | Inference #96 | risk=0.5929 | conf=0.6576 | latency=0.0206s | faults=none
+2026-04-25 00:52:55 | INFO | neuroguage.inference | Inference #97 | risk=0.6107 | conf=0.6579 | latency=0.0268s | faults=none
+2026-04-25 00:52:56 | INFO | neuroguage.inference | Inference #98 | risk=0.5400 | conf=0.7029 | latency=0.0212s | faults=none
+2026-04-25 00:52:56 | INFO | neuroguage.inference | Inference #99 | risk=0.5654 | conf=0.6730 | latency=0.0266s | faults=none
+2026-04-25 00:52:57 | INFO | neuroguage.inference | Inference #100 | risk=0.6609 | conf=0.6210 | latency=0.0229s | faults=none
+2026-04-25 00:52:57 | INFO | neuroguage.inference | Inference #101 | risk=0.6506 | conf=0.6161 | latency=0.0384s | faults=none
+2026-04-25 00:52:57 | INFO | neuroguage.guardrails | Guardrail ESCALATION: YELLOW -> RED | risk=0.7151 | Risk score (0.72) exceeded RED threshold (0.70). Risk trend is rising (slope=0.0509 over 5 windows). Persistence count: 2.
+2026-04-25 00:52:58 | INFO | neuroguage.inference | Inference #102 | risk=0.6234 | conf=0.6388 | latency=0.0232s | faults=none
+2026-04-25 00:52:58 | INFO | neuroguage.inference | Inference #103 | risk=0.5874 | conf=0.6588 | latency=0.0326s | faults=none
+2026-04-25 00:52:59 | INFO | neuroguage.inference | Inference #104 | risk=0.3932 | conf=0.8702 | latency=0.0232s | faults=none
+2026-04-25 00:52:59 | INFO | neuroguage.inference | Inference #105 | risk=0.3963 | conf=0.8664 | latency=0.0281s | faults=none
+2026-04-25 00:53:00 | INFO | neuroguage.inference | Inference #106 | risk=0.3986 | conf=0.7894 | latency=0.0212s | faults=none
+2026-04-25 00:53:00 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: RED -> YELLOW | risk=0.0766 | Risk score (0.08) has remained below recovery threshold for 3 consecutive windows. De-escalating from RED to YELLOW.
+2026-04-25 00:53:00 | INFO | neuroguage.inference | Inference #107 | risk=0.6094 | conf=0.6627 | latency=0.0290s | faults=none
+2026-04-25 00:53:01 | INFO | neuroguage.inference | Inference #108 | risk=0.5712 | conf=0.6413 | latency=0.0299s | faults=none
+2026-04-25 00:53:01 | INFO | neuroguage.inference | Inference #109 | risk=0.6352 | conf=0.6490 | latency=0.0259s | faults=none
+2026-04-25 00:53:02 | INFO | neuroguage.inference | Inference #110 | risk=0.5536 | conf=0.6890 | latency=0.0332s | faults=none
+2026-04-25 00:53:02 | INFO | neuroguage.inference | Inference #111 | risk=0.5268 | conf=0.7118 | latency=0.0286s | faults=none
+2026-04-25 00:53:03 | INFO | neuroguage.inference | Inference #112 | risk=0.5671 | conf=0.6853 | latency=0.0228s | faults=none
+2026-04-25 00:53:03 | INFO | neuroguage.inference | Inference #113 | risk=0.6100 | conf=0.6809 | latency=0.0267s | faults=none
+2026-04-25 00:53:04 | INFO | neuroguage.inference | Inference #114 | risk=0.5962 | conf=0.6843 | latency=0.0236s | faults=none
+2026-04-25 00:53:04 | INFO | neuroguage.inference | Inference #115 | risk=0.5269 | conf=0.7103 | latency=0.0283s | faults=none
+2026-04-25 00:53:05 | INFO | neuroguage.inference | Inference #116 | risk=0.5284 | conf=0.7101 | latency=0.0317s | faults=none
+2026-04-25 00:53:05 | INFO | neuroguage.inference | Inference #117 | risk=0.5291 | conf=0.6860 | latency=0.0257s | faults=none
+2026-04-25 00:53:05 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: YELLOW -> GREEN | risk=0.4072 | Risk score (0.41) has remained below recovery threshold for 3 consecutive windows. De-escalating from YELLOW to GREEN.
+2026-04-25 00:53:06 | INFO | neuroguage.inference | Inference #118 | risk=0.5657 | conf=0.6794 | latency=0.0293s | faults=none
+2026-04-25 00:53:06 | INFO | neuroguage.inference | Inference #119 | risk=0.5882 | conf=0.6787 | latency=0.0275s | faults=none
+2026-04-25 00:53:06 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.5570 | Risk score (0.56) exceeded YELLOW threshold (0.55). Risk trend is rising (slope=0.0405 over 5 windows). Persistence count: 1.
+2026-04-25 00:53:07 | INFO | neuroguage.inference | Inference #120 | risk=0.5661 | conf=0.6844 | latency=0.0289s | faults=none
+2026-04-25 00:53:07 | INFO | neuroguage.inference | Inference #121 | risk=0.5297 | conf=0.7054 | latency=0.0240s | faults=none
+2026-04-25 00:53:08 | INFO | neuroguage.inference | Inference #122 | risk=0.5104 | conf=0.7296 | latency=0.0237s | faults=none
+2026-04-25 00:53:08 | INFO | neuroguage.inference | Inference #123 | risk=0.5509 | conf=0.6843 | latency=0.0246s | faults=none
+2026-04-25 00:53:09 | INFO | neuroguage.inference | Inference #124 | risk=0.5526 | conf=0.6832 | latency=0.0233s | faults=none
+2026-04-25 00:53:09 | INFO | neuroguage.inference | Inference #125 | risk=0.5756 | conf=0.6800 | latency=0.0197s | faults=none
+2026-04-25 00:53:10 | INFO | neuroguage.inference | Inference #126 | risk=0.5043 | conf=0.7389 | latency=0.0264s | faults=none
+2026-04-25 00:53:10 | INFO | neuroguage.inference | Inference #127 | risk=0.5168 | conf=0.7239 | latency=0.0243s | faults=none
+2026-04-25 00:53:11 | INFO | neuroguage.inference | Inference #128 | risk=0.5413 | conf=0.6967 | latency=0.0327s | faults=none
+2026-04-25 00:53:11 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: YELLOW -> GREEN | risk=0.4382 | Risk score (0.44) has remained below recovery threshold for 3 consecutive windows. De-escalating from YELLOW to GREEN.
+2026-04-25 00:53:11 | INFO | neuroguage.inference | Inference #129 | risk=0.6269 | conf=0.6843 | latency=0.0281s | faults=none
+2026-04-25 00:53:12 | INFO | neuroguage.inference | Inference #130 | risk=0.6195 | conf=0.6724 | latency=0.0310s | faults=none
+2026-04-25 00:53:12 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.6364 | Risk score (0.64) exceeded YELLOW threshold (0.55). Risk trend is rising (slope=0.0863 over 5 windows). Persistence count: 2.
+2026-04-25 00:53:12 | INFO | neuroguage.inference | Inference #131 | risk=0.5773 | conf=0.6757 | latency=0.0271s | faults=none
+2026-04-25 00:53:13 | INFO | neuroguage.inference | Inference #132 | risk=0.5391 | conf=0.6956 | latency=0.0246s | faults=none
+2026-04-25 00:53:13 | INFO | neuroguage.inference | Inference #133 | risk=0.5207 | conf=0.7173 | latency=0.0258s | faults=none
+2026-04-25 00:53:14 | INFO | neuroguage.inference | Inference #134 | risk=0.5267 | conf=0.7120 | latency=0.0318s | faults=none
+2026-04-25 00:53:14 | INFO | neuroguage.guardrails | Guardrail DE-ESCALATION: YELLOW -> GREEN | risk=0.4013 | Risk score (0.40) has remained below recovery threshold for 3 consecutive windows. De-escalating from YELLOW to GREEN.
+2026-04-25 00:53:14 | INFO | neuroguage.inference | Inference #135 | risk=0.5481 | conf=0.6933 | latency=0.0251s | faults=none
+2026-04-25 00:53:15 | INFO | neuroguage.inference | Inference #136 | risk=0.5412 | conf=0.6969 | latency=0.0341s | faults=none
+2026-04-25 00:53:15 | INFO | neuroguage.inference | Inference #137 | risk=0.5614 | conf=0.6867 | latency=0.0273s | faults=none
+2026-04-25 00:53:16 | INFO | neuroguage.inference | Inference #138 | risk=0.5396 | conf=0.6989 | latency=0.0247s | faults=none
+2026-04-25 00:53:16 | INFO | neuroguage.inference | Inference #139 | risk=0.5402 | conf=0.6981 | latency=0.0218s | faults=none
+2026-04-25 00:53:17 | INFO | neuroguage.inference | Inference #140 | risk=0.5537 | conf=0.6830 | latency=0.0276s | faults=none
+2026-04-25 00:53:17 | INFO | neuroguage.inference | Inference #141 | risk=0.5895 | conf=0.6705 | latency=0.0283s | faults=none
+2026-04-25 00:53:18 | INFO | neuroguage.inference | Inference #142 | risk=0.5815 | conf=0.6688 | latency=0.0300s | faults=none
+2026-04-25 00:53:18 | INFO | neuroguage.inference | Inference #143 | risk=0.5585 | conf=0.6772 | latency=0.0266s | faults=none
+2026-04-25 00:53:19 | INFO | neuroguage.inference | Inference #144 | risk=0.5444 | conf=0.6902 | latency=0.0260s | faults=none
+2026-04-25 00:53:19 | INFO | neuroguage.inference | Inference #145 | risk=0.5430 | conf=0.6939 | latency=0.0245s | faults=none
+2026-04-25 00:53:20 | INFO | neuroguage.inference | Inference #146 | risk=0.5387 | conf=0.6977 | latency=0.0192s | faults=none
+2026-04-25 00:53:20 | INFO | neuroguage.inference | Inference #147 | risk=0.5886 | conf=0.6716 | latency=0.0251s | faults=none
+2026-04-25 00:53:21 | INFO | neuroguage.inference | Inference #148 | risk=0.5677 | conf=0.6751 | latency=0.0269s | faults=none
+2026-04-25 00:53:21 | INFO | neuroguage.inference | Inference #149 | risk=0.5781 | conf=0.6744 | latency=0.0266s | faults=none
+2026-04-25 00:53:22 | INFO | neuroguage.inference | Inference #150 | risk=0.5228 | conf=0.7150 | latency=0.0235s | faults=none
+2026-04-25 00:53:22 | INFO | neuroguage.inference | Inference #151 | risk=0.5404 | conf=0.6948 | latency=0.0270s | faults=none
+2026-04-25 00:53:23 | INFO | neuroguage.inference | Inference #152 | risk=0.5321 | conf=0.7037 | latency=0.0228s | faults=none
+2026-04-25 00:53:23 | INFO | neuroguage.inference | Inference #153 | risk=0.5931 | conf=0.6777 | latency=0.0269s | faults=none
+2026-04-25 00:53:24 | INFO | neuroguage.inference | Inference #154 | risk=0.5422 | conf=0.6958 | latency=0.0261s | faults=none
+2026-04-25 00:53:24 | INFO | neuroguage.inference | Inference #155 | risk=0.5389 | conf=0.7087 | latency=0.0274s | faults=none
+2026-04-25 00:53:25 | INFO | neuroguage.inference | Inference #156 | risk=0.5365 | conf=0.6984 | latency=0.0234s | faults=none
+2026-04-25 00:53:25 | INFO | neuroguage.inference | Inference #157 | risk=0.5809 | conf=0.6740 | latency=0.0301s | faults=none
+2026-04-25 00:53:26 | INFO | neuroguage.inference | Inference #158 | risk=0.5909 | conf=0.6688 | latency=0.0266s | faults=none
+2026-04-25 00:53:26 | INFO | neuroguage.inference | Inference #159 | risk=0.5883 | conf=0.6675 | latency=0.0271s | faults=none
+2026-04-25 00:53:27 | INFO | neuroguage.inference | Inference #160 | risk=0.5647 | conf=0.6788 | latency=0.0280s | faults=none
+2026-04-25 00:53:27 | INFO | neuroguage.inference | Inference #161 | risk=0.5773 | conf=0.6886 | latency=0.0192s | faults=none
+2026-04-25 00:53:28 | INFO | neuroguage.inference | Inference #162 | risk=0.5499 | conf=0.6933 | latency=0.0276s | faults=none
+2026-04-25 00:53:28 | INFO | neuroguage.inference | Inference #163 | risk=0.5639 | conf=0.6806 | latency=0.0255s | faults=none
+2026-04-25 00:53:29 | INFO | neuroguage.inference | Inference #164 | risk=0.5435 | conf=0.6933 | latency=0.0212s | faults=none
+2026-04-25 00:53:29 | INFO | neuroguage.inference | Inference #165 | risk=0.5508 | conf=0.6845 | latency=0.0208s | faults=none
+2026-04-25 00:53:30 | INFO | neuroguage.inference | Inference #166 | risk=0.5239 | conf=0.7133 | latency=0.0209s | faults=none
+2026-04-25 00:53:30 | INFO | neuroguage.inference | Inference #167 | risk=0.5430 | conf=0.6926 | latency=0.0231s | faults=none
+2026-04-25 00:53:31 | INFO | neuroguage.inference | Inference #168 | risk=0.5557 | conf=0.6806 | latency=0.0250s | faults=none
+2026-04-25 00:53:31 | INFO | neuroguage.inference | Inference #169 | risk=0.5961 | conf=0.6712 | latency=0.0245s | faults=none
+2026-04-25 00:53:32 | INFO | neuroguage.inference | Inference #170 | risk=0.5712 | conf=0.6722 | latency=0.0241s | faults=none
+2026-04-25 00:53:32 | INFO | neuroguage.inference | Inference #171 | risk=0.5576 | conf=0.6783 | latency=0.0253s | faults=none
+2026-04-25 00:53:33 | INFO | neuroguage.inference | Inference #172 | risk=0.5419 | conf=0.6940 | latency=0.0331s | faults=none
+2026-04-25 00:53:33 | INFO | neuroguage.inference | Inference #173 | risk=0.5530 | conf=0.6822 | latency=0.0287s | faults=none
+2026-04-25 00:53:34 | INFO | neuroguage.inference | Inference #174 | risk=0.5570 | conf=0.6779 | latency=0.0292s | faults=none
+2026-04-25 00:53:34 | INFO | neuroguage.inference | Inference #175 | risk=0.5538 | conf=0.6874 | latency=0.0286s | faults=none
+2026-04-25 00:53:35 | INFO | neuroguage.inference | Inference #176 | risk=0.5228 | conf=0.7166 | latency=0.0317s | faults=none
+2026-04-25 00:53:35 | INFO | neuroguage.inference | Inference #177 | risk=0.5286 | conf=0.7098 | latency=0.0259s | faults=none
+2026-04-25 00:53:36 | INFO | neuroguage.inference | Inference #178 | risk=0.5369 | conf=0.6997 | latency=0.0296s | faults=none
+2026-04-25 00:53:36 | INFO | neuroguage.inference | Inference #179 | risk=0.5709 | conf=0.6827 | latency=0.0207s | faults=none
+2026-04-25 00:53:37 | INFO | neuroguage.inference | Inference diagnostics written to artifacts\reports\live\calibrated_demo_20260425_0051_updates.json
+2026-04-25 00:53:37 | INFO | neuroguage.guardrails | Guardrail artifacts written: artifacts\reports\live\calibrated_demo_20260425_0051_transitions.json, artifacts\reports\live\calibrated_demo_20260425_0051_guardrail_summary.json
+2026-04-25 00:53:37 | INFO | neuroguage.live_app | Live session artifacts written to artifacts\reports\live
+2026-04-25 00:53:38 | INFO | neuroguage.workflows | run_live completed | source=muse_lsl | cycles=179 | mean_latency=0.029s | final_state=GREEN | profile=personalized | calibration=personalised

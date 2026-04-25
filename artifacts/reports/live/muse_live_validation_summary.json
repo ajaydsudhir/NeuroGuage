@@ -1,0 +1,26 @@
+{
+  "source": "muse_lsl",
+  "session_id": "muse_live_validation",
+  "cycles": 59,
+  "elapsed_s": 30.013323545455933,
+  "final_state": "RED",
+  "mean_risk": 0.6673568380838131,
+  "max_risk": 0.6673568380838132,
+  "mean_latency_s": 0.03327157457644747,
+  "max_latency_s": 0.04945690000022296,
+  "within_latency_budget": true,
+  "transition_count": 1,
+  "source_health": {
+    "source": "muse_lsl",
+    "started": true,
+    "bridge_alive": false,
+    "samples": {},
+    "last_lsl_time": {},
+    "wall_time": 1777087808.1755576,
+    "reference_time": 1777087778.162234,
+    "eeg_healthy": false,
+    "optical_healthy": false,
+    "imu_healthy": false
+  },
+  "stub_models": false
+}

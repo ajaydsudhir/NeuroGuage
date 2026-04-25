@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp_s": 1.5153965950012207,
+    "previous_state": "GREEN",
+    "new_state": "YELLOW",
+    "risk_score": 0.4886991742489706,
+    "model_confidence": 0.7083817699440059,
+    "rationale": "Risk score (0.49) exceeded YELLOW threshold (0.40). Risk trend is rising (slope=0.0227 over 5 windows). Persistence count: 3.",
+    "persistence_count": 3,
+    "trend_direction": "rising"
+  },
+  {
+    "timestamp_s": 3.025557041168213,
+    "previous_state": "YELLOW",
+    "new_state": "RED",
+    "risk_score": 0.6845868817033022,
+    "model_confidence": 0.6917417431057908,
+    "rationale": "Risk score (0.68) exceeded RED threshold (0.65). Risk trend is rising (slope=0.0590 over 5 windows). Persistence count: 1.",
+    "persistence_count": 1,
+    "trend_direction": "rising"
+  },
+  {
+    "timestamp_s": 8.51936650276184,
+    "previous_state": "RED",
+    "new_state": "YELLOW",
+    "risk_score": 0.5100771689377632,
+    "model_confidence": 0.7319553767517637,
+    "rationale": "Risk score (0.51) has remained below recovery threshold for 5 consecutive windows. De-escalating from RED to YELLOW.",
+    "persistence_count": 5,
+    "trend_direction": "stable"
+  },
+  {
+    "timestamp_s": 132.089994430542,
+    "previous_state": "YELLOW",
+    "new_state": "RED",
+    "risk_score": 0.6721114079564339,
+    "model_confidence": 0.7067123116020326,
+    "rationale": "Risk score (0.67) exceeded RED threshold (0.65). Risk trend is rising (slope=0.0505 over 5 windows). Persistence count: 1.",
+    "persistence_count": 1,
+    "trend_direction": "rising"
+  },
+  {
+    "timestamp_s": 134.88471484184265,
+    "previous_state": "RED",
+    "new_state": "YELLOW",
+    "risk_score": 0.47928568029979535,
+    "model_confidence": 0.7668792336602059,
+    "rationale": "Risk score (0.48) has remained below recovery threshold for 5 consecutive windows. De-escalating from RED to YELLOW.",
+    "persistence_count": 5,
+    "trend_direction": "falling"
+  }
+]

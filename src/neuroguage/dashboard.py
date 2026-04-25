@@ -111,6 +111,17 @@ class DashboardSnapshot:
     elapsed_s: float = 0.0
     stage_name: str = ""
 
+    # Optional calibration overlay (Fix B)
+    calibration_phase: str = "passthrough"   # baseline | active | passthrough
+    raw_risk: float = 0.0
+    baseline_progress: float = 1.0           # 0..1 during the calibration window
+
+    # Guardrail thresholds used for the shaded risk panel (Fix A: live config).
+    yellow_threshold: float = 0.40
+    red_threshold: float = 0.65
+    black_threshold: float = 0.85
+    guardrail_profile: str = ""
+
 
 # ---------------------------------------------------------------------------
 # Dashboard renderer  (T14.1–T14.4)
@@ -233,21 +244,33 @@ class DashboardRenderer:
         n = len(t)
         risk = snap.risk_scores[-n:]
 
-        # Zone shading
-        t_min, t_max = min(t), max(t)
-        ax.axhspan(0.0, 0.40, color=_STATE_COLORS["GREEN"], alpha=0.08)
-        ax.axhspan(0.40, 0.65, color=_STATE_COLORS["YELLOW"], alpha=0.10)
-        ax.axhspan(0.65, 0.85, color=_STATE_COLORS["RED"], alpha=0.10)
-        ax.axhspan(0.85, 1.0, color="#6b21a8", alpha=0.12)
+        # Zone shading — derived from the live guardrail config so the visual
+        # bands always agree with the engine that produced the alert state.
+        y_th = float(snap.yellow_threshold)
+        r_th = float(snap.red_threshold)
+        b_th = float(snap.black_threshold)
+        ax.axhspan(0.0, y_th, color=_STATE_COLORS["GREEN"], alpha=0.08)
+        ax.axhspan(y_th, r_th, color=_STATE_COLORS["YELLOW"], alpha=0.10)
+        ax.axhspan(r_th, b_th, color=_STATE_COLORS["RED"], alpha=0.10)
+        ax.axhspan(b_th, 1.0, color="#6b21a8", alpha=0.12)
 
         ax.plot(t, risk, color=_ACCENT_RISK, linewidth=2.2, alpha=0.95)
         ax.fill_between(t, risk, alpha=0.15, color=_ACCENT_RISK)
         ax.set_ylim(-0.02, 1.02)
 
-        # Threshold lines
-        for level, val in [("YELLOW", 0.40), ("RED", 0.65), ("BLACK", 0.85)]:
+        for level, val in [("YELLOW", y_th), ("RED", r_th), ("BLACK", b_th)]:
             ax.axhline(val, color=_STATE_COLORS.get(level, "#888"), linestyle="--",
                        linewidth=1, alpha=0.5)
+
+        if snap.calibration_phase == "baseline":
+            ax.text(
+                0.5, 0.5,
+                f"CALIBRATING ({snap.baseline_progress * 100:.0f}%)",
+                transform=ax.transAxes, ha="center", va="center",
+                fontsize=_BADGE_SIZE - 6, fontweight="bold", color="#fff",
+                bbox=dict(boxstyle="round,pad=0.4", facecolor="#1e3a8a", alpha=0.85,
+                          edgecolor="#60a5fa"),
+            )
 
         ax.grid(True, alpha=0.3)
 
@@ -281,9 +304,24 @@ class DashboardRenderer:
         ax.axis("off")
         ax.set_title("System Status", fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
 
-        # -- State badge (large, centred) --
-        state_color = _STATE_COLORS.get(snap.current_state, "#555")
-        text_color = _STATE_TEXT_COLORS.get(snap.current_state, "#fff")
+        if snap.calibration_phase == "baseline":
+            # Override the badge during calibration so the demo audience knows
+            # we are intentionally holding GREEN until the baseline lands.
+            state_color = "#1e3a8a"
+            text_color = "#ffffff"
+            badge_label = "CALIBRATING"
+            sub_label = (
+                f"Collecting baseline {snap.baseline_progress * 100:.0f}%  |  "
+                f"raw {snap.raw_risk:.2f}"
+            )
+        else:
+            state_color = _STATE_COLORS.get(snap.current_state, "#555")
+            text_color = _STATE_TEXT_COLORS.get(snap.current_state, "#fff")
+            badge_label = snap.current_state
+            sub_label = (
+                f"Risk: {snap.current_risk:.2f}  |  Conf: {snap.current_confidence:.2f}"
+            )
+
         badge = mpatches.FancyBboxPatch(
             (0.10, 0.52), 0.80, 0.40,
             boxstyle="round,pad=0.04",
@@ -292,9 +330,9 @@ class DashboardRenderer:
             linewidth=2,
         )
         ax.add_patch(badge)
-        ax.text(0.50, 0.72, snap.current_state, fontsize=_BADGE_SIZE,
+        ax.text(0.50, 0.72, badge_label, fontsize=_BADGE_SIZE,
                 fontweight="bold", ha="center", va="center", color=text_color)
-        ax.text(0.50, 0.55, f"Risk: {snap.current_risk:.2f}  |  Conf: {snap.current_confidence:.2f}",
+        ax.text(0.50, 0.55, sub_label,
                 fontsize=_INDICATOR_SIZE, ha="center", va="center", color=text_color)
 
         # -- T14.3 — Stream health indicators --
@@ -316,7 +354,6 @@ class DashboardRenderer:
         ax.text(0.12, 0.12, f"Latency: {snap.latency_s*1000:.0f} ms",
                 fontsize=_INDICATOR_SIZE - 1, color=lat_color)
 
-        # -- Elapsed / stage --
         if snap.stage_name:
             ax.text(0.55, 0.12, f"Stage: {snap.stage_name}",
                     fontsize=_INDICATOR_SIZE - 1, color=_TEXT_COLOR)
@@ -325,6 +362,10 @@ class DashboardRenderer:
         elapsed_sec = int(snap.elapsed_s % 60)
         ax.text(0.55, 0.02, f"Elapsed: {elapsed_min}:{elapsed_sec:02d}",
                 fontsize=_INDICATOR_SIZE - 1, color=_TEXT_COLOR)
+
+        if snap.guardrail_profile:
+            ax.text(0.12, 0.02, f"Profile: {snap.guardrail_profile}",
+                    fontsize=_INDICATOR_SIZE - 2, color=_TEXT_COLOR, alpha=0.7)
 
     def _render_timeline_panel(self, snap: DashboardSnapshot) -> None:
         """T14.2 — Timeline with transition markers and rationale details."""

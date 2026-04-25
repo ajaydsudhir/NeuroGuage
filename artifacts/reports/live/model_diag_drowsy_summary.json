@@ -1,0 +1,25 @@
+{
+  "source": "synthetic",
+  "session_id": "model_diag_drowsy",
+  "cycles": 59,
+  "elapsed_s": 30.044103145599365,
+  "final_state": "YELLOW",
+  "mean_risk": 0.41482926743626863,
+  "max_risk": 0.4519432907848422,
+  "mean_latency_s": 0.03025292372873637,
+  "max_latency_s": 0.053738200000225333,
+  "within_latency_budget": true,
+  "transition_count": 1,
+  "source_health": {
+    "source": "synthetic",
+    "started": true,
+    "samples": {
+      "eeg": 7463,
+      "optical": 1765,
+      "imu": 1389
+    },
+    "fatigue_trend": 1.0,
+    "real_time_factor": 1.0
+  },
+  "stub_models": false
+}

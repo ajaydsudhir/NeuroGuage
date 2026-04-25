@@ -1,0 +1,16 @@
+{
+  "total_updates": 59,
+  "total_transitions": 1,
+  "final_state": "YELLOW",
+  "transition_counts": {
+    "GREEN": 0,
+    "YELLOW": 1,
+    "RED": 0,
+    "BLACK": 0
+  },
+  "risk_score_stats": {
+    "mean": 0.4249341265576189,
+    "min": 0.40243480570628626,
+    "max": 0.4519432907848422
+  }
+}

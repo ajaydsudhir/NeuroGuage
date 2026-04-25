@@ -1,0 +1,1123 @@
+[
+  {
+    "timestamp_s": 0.5483179092407227,
+    "risk_score": 0.32440761735639245,
+    "model_confidence": 0.9183505412019136,
+    "latency_s": 0.025771500000701053,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 1,
+      "linear_prob": 0.29544191848188534,
+      "tree_prob": 0.3533733162308996,
+      "model_agreement": 0.9420686022509857,
+      "data_quality": 0.8827734496283057,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.025771500000701053,
+      "max_latency_s": 0.025771500000701053,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 1.0313034057617188,
+    "risk_score": 0.38564121603935286,
+    "model_confidence": 0.9106451749707207,
+    "latency_s": 0.03337950000059209,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 2,
+      "linear_prob": 0.41584007038501686,
+      "tree_prob": 0.3554423616936888,
+      "model_agreement": 0.9396022913086719,
+      "data_quality": 0.867209500463794,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02957550000064657,
+      "max_latency_s": 0.03337950000059209,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 1.515561580657959,
+    "risk_score": 0.39181694410101064,
+    "model_confidence": 0.9028655599890132,
+    "latency_s": 0.03073690000019269,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 3,
+      "linear_prob": 0.42933138334077386,
+      "tree_prob": 0.3543025048612474,
+      "model_agreement": 0.9249711215204736,
+      "data_quality": 0.8697072176918226,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02996263333382861,
+      "max_latency_s": 0.03337950000059209,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 2.0011162757873535,
+    "risk_score": 0.417928451885001,
+    "model_confidence": 0.8829012925240337,
+    "latency_s": 0.026515800000197487,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 4,
+      "linear_prob": 0.47394587038196107,
+      "tree_prob": 0.3619110333880409,
+      "model_agreement": 0.8879651630060799,
+      "data_quality": 0.8753054868009646,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02910092500042083,
+      "max_latency_s": 0.03337950000059209,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 2.5353400707244873,
+    "risk_score": 0.4231289922092735,
+    "model_confidence": 0.8732473236038958,
+    "latency_s": 0.029447099997923942,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 5,
+      "linear_prob": 0.4853070407762348,
+      "tree_prob": 0.3609509436423122,
+      "model_agreement": 0.8756439028660774,
+      "data_quality": 0.8696524547106235,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029170159999921452,
+      "max_latency_s": 0.03337950000059209,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 3.050363540649414,
+    "risk_score": 0.4270149475097177,
+    "model_confidence": 0.8724260070243068,
+    "latency_s": 0.034977100000105565,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 6,
+      "linear_prob": 0.4893630423120678,
+      "tree_prob": 0.3646668527073676,
+      "model_agreement": 0.8753038103952998,
+      "data_quality": 0.8681093019678174,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.030137983333285472,
+      "max_latency_s": 0.034977100000105565,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 3.552476167678833,
+    "risk_score": 0.4229911415617422,
+    "model_confidence": 0.8728245494879281,
+    "latency_s": 0.04637499999807915,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 7,
+      "linear_prob": 0.4850313394811723,
+      "tree_prob": 0.3609509436423122,
+      "model_agreement": 0.8759196041611399,
+      "data_quality": 0.8681819674781106,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.03245755714254171,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 4.011425733566284,
+    "risk_score": 0.3968359544057553,
+    "model_confidence": 0.8966951024027413,
+    "latency_s": 0.03131569999823114,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 8,
+      "linear_prob": 0.4384622034459433,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9167475019196241,
+      "data_quality": 0.8666165031274172,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.03231482499950289,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 4.520101308822632,
+    "risk_score": 0.39883468001566325,
+    "model_confidence": 0.8920027956261747,
+    "latency_s": 0.03237760000047274,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 9,
+      "linear_prob": 0.44143219741257683,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9148049652061729,
+      "data_quality": 0.8577995412561772,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.03232179999961065,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 5.020724534988403,
+    "risk_score": 0.39990857945827285,
+    "model_confidence": 0.8915460463729848,
+    "latency_s": 0.031166300002951175,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 10,
+      "linear_prob": 0.44357999629779593,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9126571663209537,
+      "data_quality": 0.8598793664510315,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.0322062499999447,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 5.523391008377075,
+    "risk_score": 0.39254645636851293,
+    "model_confidence": 0.8999798396724357,
+    "latency_s": 0.023526000000856584,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 11,
+      "linear_prob": 0.4288557501182762,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9273814125004736,
+      "data_quality": 0.858877480430379,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.031417136363663965,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 6.018918514251709,
+    "risk_score": 0.388680158475442,
+    "model_confidence": 0.9013056097368229,
+    "latency_s": 0.026227500002278248,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 12,
+      "linear_prob": 0.4221506115853167,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9330590937802506,
+      "data_quality": 0.8536753836716814,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.03098466666688182,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 6.5197532176971436,
+    "risk_score": 0.387708917787988,
+    "model_confidence": 0.903074397919553,
+    "latency_s": 0.02199250000194297,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 13,
+      "linear_prob": 0.42020813021040865,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9350015751551587,
+      "data_quality": 0.8551836320661447,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.0302929615388096,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 7.005588054656982,
+    "risk_score": 0.38736314090387725,
+    "model_confidence": 0.9025700060338123,
+    "latency_s": 0.03620489999957499,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 14,
+      "linear_prob": 0.4195165764421871,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9356931289233803,
+      "data_quality": 0.8528853216994602,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.030715242857435703,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 7.53671932220459,
+    "risk_score": 0.38804404584291774,
+    "model_confidence": 0.9002421153434484,
+    "latency_s": 0.0249253999973007,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 15,
+      "linear_prob": 0.42087838632026814,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9343313190452992,
+      "data_quality": 0.8491083097906723,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.0303292533334267,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 8.020333290100098,
+    "risk_score": 0.3920344451139548,
+    "model_confidence": 0.8977498821411667,
+    "latency_s": 0.024008800002775388,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 16,
+      "linear_prob": 0.42783172760915983,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9284054350095898,
+      "data_quality": 0.8517665528385319,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029934225000260994,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 8.537185430526733,
+    "risk_score": 0.39965209952514813,
+    "model_confidence": 0.888158983786301,
+    "latency_s": 0.033099800002673874,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 17,
+      "linear_prob": 0.4430670364315466,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9131701261872032,
+      "data_quality": 0.8506422701849478,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.030120435294520576,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 9.035032987594604,
+    "risk_score": 0.4113207792821656,
+    "model_confidence": 0.8740361350370863,
+    "latency_s": 0.021502300001884578,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 18,
+      "linear_prob": 0.4664043959455814,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8898327666731682,
+      "data_quality": 0.8503411875829635,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029641650000485242,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 9.521263599395752,
+    "risk_score": 0.40858897728805277,
+    "model_confidence": 0.8771863495502028,
+    "latency_s": 0.028013200000714278,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 19,
+      "linear_prob": 0.4609407919573558,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8952963706613939,
+      "data_quality": 0.8500213178834163,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029555942105760454,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 10.004184007644653,
+    "risk_score": 0.40460521884043343,
+    "model_confidence": 0.8844338493650089,
+    "latency_s": 0.04220369999893592,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 20,
+      "linear_prob": 0.4529732750621171,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9032638875566326,
+      "data_quality": 0.8561887920775735,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.030188330000419226,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 10.525201559066772,
+    "risk_score": 0.40440016338935425,
+    "model_confidence": 0.8835602649140621,
+    "latency_s": 0.02342779999889899,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 21,
+      "linear_prob": 0.45256316415995873,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9036739984587909,
+      "data_quality": 0.8533896645969689,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029866400000346835,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 11.020442962646484,
+    "risk_score": 0.40189369612107384,
+    "model_confidence": 0.8862810440445975,
+    "latency_s": 0.021878799998376053,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 22,
+      "linear_prob": 0.4475502296233979,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9086869329953517,
+      "data_quality": 0.8526722106184661,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029503327272984527,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 11.505407094955444,
+    "risk_score": 0.38622862155160204,
+    "model_confidence": 0.904298731541127,
+    "latency_s": 0.029443399998854147,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 23,
+      "linear_prob": 0.41815473824195665,
+      "tree_prob": 0.3543025048612474,
+      "model_agreement": 0.9361477666192908,
+      "data_quality": 0.8565251789238814,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029500721739326684,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 12.006419897079468,
+    "risk_score": 0.3937817609261003,
+    "model_confidence": 0.8955555338405536,
+    "latency_s": 0.03637630000230274,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 24,
+      "linear_prob": 0.4323538164866332,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9228558888789342,
+      "data_quality": 0.8546050012829827,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029787204166950687,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 12.523503065109253,
+    "risk_score": 0.3955745976588791,
+    "model_confidence": 0.8917818005309287,
+    "latency_s": 0.030036699998163385,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 25,
+      "linear_prob": 0.43593948995219084,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9192702154133765,
+      "data_quality": 0.8505491782072572,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029797184000199196,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 13.03854513168335,
+    "risk_score": 0.40285364504381227,
+    "model_confidence": 0.8848196822331811,
+    "latency_s": 0.022004300000844523,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 26,
+      "linear_prob": 0.4494701274688749,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9067670351498749,
+      "data_quality": 0.8518986528581403,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029497457692531707,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 13.524255752563477,
+    "risk_score": 0.4007301426899963,
+    "model_confidence": 0.8865762134137114,
+    "latency_s": 0.02320999999938067,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 27,
+      "linear_prob": 0.4452231227612429,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9110140398575068,
+      "data_quality": 0.8499194737480184,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02926458888908167,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 14.0243239402771,
+    "risk_score": 0.4007818638051569,
+    "model_confidence": 0.8872211370440388,
+    "latency_s": 0.0349132000010286,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 28,
+      "linear_prob": 0.44532656499156403,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9109105976271856,
+      "data_quality": 0.8516869461693185,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029466325000222632,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 14.527408599853516,
+    "risk_score": 0.40818141232933014,
+    "model_confidence": 0.8780155601454962,
+    "latency_s": 0.03560839999772725,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 29,
+      "linear_prob": 0.46012566203991057,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8961115005788391,
+      "data_quality": 0.8508716494954819,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029678120689791757,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 15.044838666915894,
+    "risk_score": 0.4075952187793196,
+    "model_confidence": 0.8794012207368593,
+    "latency_s": 0.023389900001347996,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 30,
+      "linear_prob": 0.4589532749398894,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8972838876788602,
+      "data_quality": 0.8525772203238581,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029468513333510298,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 15.543857097625732,
+    "risk_score": 0.41103894234124216,
+    "model_confidence": 0.8752341837943693,
+    "latency_s": 0.03141699999832781,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 31,
+      "linear_prob": 0.46584072206373456,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8903964405550151,
+      "data_quality": 0.8524907986534008,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029531367742052797,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 16.05831480026245,
+    "risk_score": 0.40109270935884067,
+    "model_confidence": 0.8876941493300703,
+    "latency_s": 0.029207499999756692,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 32,
+      "linear_prob": 0.4459482560989317,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9102889065198181,
+      "data_quality": 0.8538020135454485,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029521246875106044,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 16.561881065368652,
+    "risk_score": 0.40187398811988906,
+    "model_confidence": 0.8874107600819832,
+    "latency_s": 0.0259516000005533,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 33,
+      "linear_prob": 0.44751081362102835,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9087263489977213,
+      "data_quality": 0.8554373767083757,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029413075757695355,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 17.05988097190857,
+    "risk_score": 0.39553937973594355,
+    "model_confidence": 0.8954350696699125,
+    "latency_s": 0.026508400002057897,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 34,
+      "linear_prob": 0.43484159685313745,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9213955657656123,
+      "data_quality": 0.8564943255263625,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029327644117823664,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 17.560302734375,
+    "risk_score": 0.39889819665070947,
+    "model_confidence": 0.8905023015828644,
+    "latency_s": 0.029017500000918517,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 35,
+      "linear_prob": 0.4415592306826692,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9146779319360805,
+      "data_quality": 0.8542388560530403,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029318782857340662,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 18.061150074005127,
+    "risk_score": 0.3969282088117317,
+    "model_confidence": 0.8931091387453525,
+    "latency_s": 0.03928829999858863,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 36,
+      "linear_prob": 0.43864671225789603,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9165629931076713,
+      "data_quality": 0.8579283572018741,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029595713889041992,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 18.528465509414673,
+    "risk_score": 0.4028567740670054,
+    "model_confidence": 0.8877047900031895,
+    "latency_s": 0.023970300000655698,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 37,
+      "linear_prob": 0.449476385515261,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9067607771034887,
+      "data_quality": 0.8591208093527407,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029443675675842364,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 19.029022455215454,
+    "risk_score": 0.40522793218328956,
+    "model_confidence": 0.8840833066780408,
+    "latency_s": 0.030394900000828784,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 38,
+      "linear_prob": 0.45421870174782947,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9020184608709203,
+      "data_quality": 0.8571805753887215,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029468707894920954,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 19.533982276916504,
+    "risk_score": 0.39843014586010295,
+    "model_confidence": 0.8916709845092983,
+    "latency_s": 0.022332299999106908,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 39,
+      "linear_prob": 0.4406231291014562,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9156140335172935,
+      "data_quality": 0.8557564109973055,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029285723077079568,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 20.063441514968872,
+    "risk_score": 0.4011987080924607,
+    "model_confidence": 0.8874933048853834,
+    "latency_s": 0.023811199996998766,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 40,
+      "linear_prob": 0.4461602535661718,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.910076909052578,
+      "data_quality": 0.8536178986345915,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029148860000077548,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 20.546942472457886,
+    "risk_score": 0.4077034127282039,
+    "model_confidence": 0.8787621976588347,
+    "latency_s": 0.027730499998142477,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 41,
+      "linear_prob": 0.459169662837658,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8970674997810917,
+      "data_quality": 0.8513042444754492,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029114265853688887,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 21.003801107406616,
+    "risk_score": 0.3888311920179135,
+    "model_confidence": 0.9006381123848327,
+    "latency_s": 0.026930699998047203,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 42,
+      "linear_prob": 0.42335987917457957,
+      "tree_prob": 0.3543025048612474,
+      "model_agreement": 0.9309426256866679,
+      "data_quality": 0.85518134243208,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029062276190459323,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 21.56224226951599,
+    "risk_score": 0.40288195674311467,
+    "model_confidence": 0.8882920225246396,
+    "latency_s": 0.024554100000386825,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 43,
+      "linear_prob": 0.44952675086747956,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9067104117512701,
+      "data_quality": 0.8606644386846938,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02895743488371345,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 22.048253297805786,
+    "risk_score": 0.4077368300285614,
+    "model_confidence": 0.8822924259941376,
+    "latency_s": 0.028883200000564102,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 44,
+      "linear_prob": 0.4592364974383731,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8970006651803766,
+      "data_quality": 0.860230067214779,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028955747727278238,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 22.563689470291138,
+    "risk_score": 0.4032314887460473,
+    "model_confidence": 0.8863044722897138,
+    "latency_s": 0.02607260000149836,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 45,
+      "linear_prob": 0.45022581487334484,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9060113477454048,
+      "data_quality": 0.8567441591061773,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028891677777816465,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 23.06392478942871,
+    "risk_score": 0.41312366918272303,
+    "model_confidence": 0.8766295347385489,
+    "latency_s": 0.024229200000263518,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 46,
+      "linear_prob": 0.47001017574669635,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8862269868720534,
+      "data_quality": 0.862233356538292,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028790319565260965,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 23.564340591430664,
+    "risk_score": 0.397245636966851,
+    "model_confidence": 0.8942905116368172,
+    "latency_s": 0.03814730000158306,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 47,
+      "linear_prob": 0.43825411131495223,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9179830513037974,
+      "data_quality": 0.8587517021363469,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02898940425539548,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 24.01468777656555,
+    "risk_score": 0.40360887159476033,
+    "model_confidence": 0.8878873895978693,
+    "latency_s": 0.03331570000227657,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 48,
+      "linear_prob": 0.45098058057077095,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9052565820479788,
+      "data_quality": 0.8618336009227051,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029079535416788833,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 24.515299320220947,
+    "risk_score": 0.39222926164507854,
+    "model_confidence": 0.9017538619711621,
+    "latency_s": 0.023479200001020217,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 49,
+      "linear_prob": 0.4292488179245897,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9259608874409777,
+      "data_quality": 0.8654433237664388,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02896524285728335,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 25.014609336853027,
+    "risk_score": 0.38544960899048497,
+    "model_confidence": 0.9102825107653998,
+    "latency_s": 0.02516470000045956,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 50,
+      "linear_prob": 0.4165967131197226,
+      "tree_prob": 0.3543025048612474,
+      "model_agreement": 0.9377057917415248,
+      "data_quality": 0.8691475893012123,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028889232000146876,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 25.51571011543274,
+    "risk_score": 0.39345607090017637,
+    "model_confidence": 0.9008978492005065,
+    "latency_s": 0.02081470000121044,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 51,
+      "linear_prob": 0.4317024364347854,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9235072689307819,
+      "data_quality": 0.8669837196050934,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028730907843304985,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 26.016141414642334,
+    "risk_score": 0.409337631545898,
+    "model_confidence": 0.8803786835689995,
+    "latency_s": 0.03455949999988661,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 52,
+      "linear_prob": 0.4624381004730463,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8937990621457035,
+      "data_quality": 0.8602481157039433,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02884299615400848,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 26.533398151397705,
+    "risk_score": 0.41655206128116634,
+    "model_confidence": 0.8723828747609551,
+    "latency_s": 0.039523399998870445,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 53,
+      "linear_prob": 0.47494069364208497,
+      "tree_prob": 0.3581634289202477,
+      "model_agreement": 0.8832227352781628,
+      "data_quality": 0.8561230839851435,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02904451320768512,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 27.06688690185547,
+    "risk_score": 0.40866639089861356,
+    "model_confidence": 0.8759599671671059,
+    "latency_s": 0.03425990000323509,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 54,
+      "linear_prob": 0.46109561917847747,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8951415434402723,
+      "data_quality": 0.8471876027573564,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029141094444639748,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 27.517307996749878,
+    "risk_score": 0.39302535039142933,
+    "model_confidence": 0.8935984090928424,
+    "latency_s": 0.021036599999206373,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 55,
+      "linear_prob": 0.4308409954172913,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.924368709948276,
+      "data_quality": 0.8474429578096918,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.028993740000177324,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 28.018441915512085,
+    "risk_score": 0.3899964985507909,
+    "model_confidence": 0.8969344614211017,
+    "latency_s": 0.03210580000086338,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 56,
+      "linear_prob": 0.4247832917360144,
+      "tree_prob": 0.35520970536556734,
+      "model_agreement": 0.9304264136295529,
+      "data_quality": 0.8466965331084246,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029049312500189575,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 28.534348726272583,
+    "risk_score": 0.39616176739485165,
+    "model_confidence": 0.8906870279917125,
+    "latency_s": 0.03840930000296794,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 57,
+      "linear_prob": 0.4360863721709536,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.9201507904477961,
+      "data_quality": 0.8464913843075871,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.02921352280725586,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 29.03518581390381,
+    "risk_score": 0.40795363061565093,
+    "model_confidence": 0.8776647137029929,
+    "latency_s": 0.02366069999698084,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 58,
+      "linear_prob": 0.4596700986125521,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8965670640061976,
+      "data_quality": 0.8493111882481859,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029117784482940775,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 29.53713583946228,
+    "risk_score": 0.41252086917380404,
+    "model_confidence": 0.87101633258106,
+    "latency_s": 0.025089499999012332,
+    "fault_flags": [],
+    "diagnostics": {
+      "update_number": 59,
+      "linear_prob": 0.46880457572885836,
+      "tree_prob": 0.3562371626187497,
+      "model_agreement": 0.8874325868898914,
+      "data_quality": 0.8463919511178128,
+      "consecutive_faults": 0,
+      "total_faults": 0,
+      "mean_latency_s": 0.029049508474738597,
+      "max_latency_s": 0.04637499999807915,
+      "within_budget": true
+    }
+  }
+]

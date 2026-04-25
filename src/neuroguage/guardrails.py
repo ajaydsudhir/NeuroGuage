@@ -79,6 +79,89 @@ class GuardrailConfig:
     # Minimum confidence before we allow RED or BLACK escalation
     min_confidence_for_red: float = 0.3
 
+    # ----- Optional human-readable metadata (preserved through round-trip) ----
+    profile_name: str = ""                 # e.g. "default", "calibrated", "personalized"
+    profile_description: str = ""
+
+    # ------------------------------------------------------------------
+    # Serialisation
+    # ------------------------------------------------------------------
+
+    _NUMERIC_FIELDS = (
+        "yellow_threshold", "red_threshold", "black_threshold",
+        "green_recovery_threshold", "yellow_recovery_threshold",
+        "red_recovery_threshold",
+        "trend_rising_threshold", "min_confidence_for_red",
+    )
+    _INT_FIELDS = ("escalation_persistence", "de_escalation_persistence", "trend_window")
+    _BOOL_FIELDS = ("enable_black",)
+    _STR_FIELDS = ("profile_name", "profile_description")
+
+    @classmethod
+    def from_dict(cls, payload: dict[str, Any]) -> "GuardrailConfig":
+        """Build a config from a (possibly partial) dict of overrides.
+
+        Unknown keys are ignored after a debug-level log so older configs
+        keep working when new fields are added.
+        """
+        kwargs: dict[str, Any] = {}
+        for key in cls._NUMERIC_FIELDS:
+            if key in payload:
+                kwargs[key] = float(payload[key])
+        for key in cls._INT_FIELDS:
+            if key in payload:
+                kwargs[key] = int(payload[key])
+        for key in cls._BOOL_FIELDS:
+            if key in payload:
+                kwargs[key] = bool(payload[key])
+        for key in cls._STR_FIELDS:
+            if key in payload:
+                kwargs[key] = str(payload[key])
+
+        unknown = set(payload) - set(
+            cls._NUMERIC_FIELDS + cls._INT_FIELDS + cls._BOOL_FIELDS + cls._STR_FIELDS
+        )
+        if unknown:
+            LOGGER.debug("GuardrailConfig.from_dict ignoring unknown keys: %s", sorted(unknown))
+
+        cfg = cls(**kwargs)
+        cfg._validate()
+        return cfg
+
+    @classmethod
+    def from_json(cls, path: str | Path) -> "GuardrailConfig":
+        payload = json.loads(Path(path).read_text(encoding="utf-8"))
+        cfg = cls.from_dict(payload)
+        if not cfg.profile_name:
+            cfg.profile_name = Path(path).stem
+        return cfg
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            **{k: getattr(self, k) for k in self._NUMERIC_FIELDS},
+            **{k: getattr(self, k) for k in self._INT_FIELDS},
+            **{k: getattr(self, k) for k in self._BOOL_FIELDS},
+            **{k: getattr(self, k) for k in self._STR_FIELDS},
+        }
+
+    def _validate(self) -> None:
+        """Enforce monotonicity and sane ranges so a bad config fails fast."""
+        if not (0.0 <= self.green_recovery_threshold
+                < self.yellow_threshold
+                <= self.yellow_recovery_threshold
+                < self.red_threshold
+                <= self.red_recovery_threshold
+                < self.black_threshold <= 1.0):
+            raise ValueError(
+                "GuardrailConfig thresholds must satisfy: "
+                "0 <= green_recovery < yellow <= yellow_recovery "
+                "< red <= red_recovery < black <= 1; got "
+                f"{self.to_dict()}"
+            )
+        for k in self._INT_FIELDS:
+            if getattr(self, k) < 1:
+                raise ValueError(f"{k} must be >= 1, got {getattr(self, k)}")
+
 
 # ---------------------------------------------------------------------------
 # Transition record

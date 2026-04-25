@@ -1,0 +1,34 @@
+{
+  "source": "muse_lsl",
+  "session_id": "muse_live_attached",
+  "cycles": 49,
+  "elapsed_s": 25.02005887031555,
+  "final_state": "YELLOW",
+  "mean_risk": 0.5247268143492694,
+  "max_risk": 0.6502862030777958,
+  "mean_latency_s": 0.029791030612502756,
+  "max_latency_s": 0.04613400000016554,
+  "within_latency_budget": true,
+  "transition_count": 1,
+  "source_health": {
+    "source": "muse_lsl",
+    "started": true,
+    "bridge_alive": false,
+    "samples": {
+      "eeg": 6816,
+      "optical": 1680,
+      "imu": 1302
+    },
+    "last_lsl_time": {
+      "eeg": 18153.58666526795,
+      "optical": 18153.620182933693,
+      "imu": 18153.609722008536
+    },
+    "wall_time": 1777088463.4843287,
+    "reference_time": 1777088438.4642699,
+    "eeg_healthy": false,
+    "optical_healthy": false,
+    "imu_healthy": false
+  },
+  "stub_models": false
+}

@@ -84,6 +84,122 @@ def test_max_cycles_caps_run_length(tmp_path: Path) -> None:
     assert summary["cycles"] == 3
 
 
+def test_live_app_loads_guardrail_config_from_json(tmp_path: Path) -> None:
+    """Fix A: --guardrail-config should swap thresholds at runtime."""
+    profile_path = tmp_path / "calibrated.json"
+    profile_path.write_text(
+        '{"profile_name":"unit-cal","yellow_threshold":0.50,'
+        '"red_threshold":0.62,"black_threshold":0.72,'
+        '"green_recovery_threshold":0.45,"yellow_recovery_threshold":0.55,'
+        '"red_recovery_threshold":0.65,'
+        '"escalation_persistence":1,"de_escalation_persistence":2,'
+        '"trend_window":3,"trend_rising_threshold":0.04}',
+        encoding="utf-8",
+    )
+    config = LiveAppConfig(
+        source_kind="synthetic",
+        duration_s=2.0,
+        step_s=0.3,
+        poll_s=0.02,
+        session_id="json-cfg",
+        output_dir=tmp_path,
+        enable_dashboard=False,
+        write_outputs=True,
+        guardrail_config_path=str(profile_path),
+    )
+    summary = run_live_app(config)
+    profile = summary["guardrail_profile"]
+    assert profile["name"] == "unit-cal"
+    assert profile["thresholds"]["yellow_threshold"] == pytest.approx(0.50)
+    assert profile["thresholds"]["red_threshold"] == pytest.approx(0.62)
+    assert profile["source_path"] == str(profile_path)
+
+
+def test_live_app_personal_baseline_normalises_risk(tmp_path: Path) -> None:
+    """Fix B: with calibration on, baseline-window risk is held GREEN, then z-scored."""
+    config = LiveAppConfig(
+        source_kind="synthetic",
+        duration_s=4.5,
+        step_s=0.3,
+        poll_s=0.02,
+        session_id="cal-on",
+        output_dir=tmp_path,
+        enable_dashboard=False,
+        write_outputs=True,
+        baseline_duration_s=1.0,
+        baseline_stdev_floor=0.04,
+        baseline_minimum_samples=3,
+    )
+    summary = run_live_app(config)
+    cal = summary["calibration"]
+    assert cal["enabled"] is True
+    assert cal["baseline_ready"] is True
+    baseline = cal["baseline"]
+    assert baseline["samples"] >= 3
+
+    saved_baseline_path = summary["artifacts"]["baseline"]
+    assert saved_baseline_path is not None
+    assert Path(saved_baseline_path).exists()
+
+    log_path = Path(summary["artifacts"]["session_log"])
+    assert log_path.exists()
+    import csv
+    rows = list(csv.DictReader(open(log_path, encoding="utf-8")))
+    phases = {row["calibration_phase"] for row in rows if row.get("calibration_phase")}
+    assert "baseline" in phases
+    assert "active" in phases
+
+    raw_during_baseline = [
+        float(r["raw_risk"]) for r in rows
+        if r.get("calibration_phase") == "baseline" and r.get("raw_risk") not in (None, "")
+    ]
+    norm_during_baseline = [
+        float(r["normalised_risk"]) for r in rows
+        if r.get("calibration_phase") == "baseline" and r.get("normalised_risk") not in (None, "")
+    ]
+    assert raw_during_baseline == norm_during_baseline
+
+
+def test_live_app_can_reuse_saved_baseline(tmp_path: Path) -> None:
+    cfg_seed = LiveAppConfig(
+        source_kind="synthetic",
+        duration_s=3.0,
+        step_s=0.3,
+        poll_s=0.02,
+        session_id="cal-seed",
+        output_dir=tmp_path,
+        enable_dashboard=False,
+        write_outputs=True,
+        baseline_duration_s=1.0,
+        baseline_minimum_samples=3,
+        save_baseline_to=str(tmp_path / "baseline.json"),
+    )
+    summary = run_live_app(cfg_seed)
+    assert (tmp_path / "baseline.json").exists()
+
+    cfg_reuse = LiveAppConfig(
+        source_kind="synthetic",
+        duration_s=2.0,
+        step_s=0.3,
+        poll_s=0.02,
+        session_id="cal-reuse",
+        output_dir=tmp_path,
+        enable_dashboard=False,
+        write_outputs=True,
+        baseline_duration_s=1.0,
+        baseline_minimum_samples=3,
+        load_baseline_from=str(tmp_path / "baseline.json"),
+    )
+    summary_reuse = run_live_app(cfg_reuse)
+    assert summary_reuse["calibration"]["baseline_ready"] is True
+
+    log_path = Path(summary_reuse["artifacts"]["session_log"])
+    import csv
+    rows = list(csv.DictReader(open(log_path, encoding="utf-8")))
+    phases = [r.get("calibration_phase") for r in rows if r.get("calibration_phase")]
+    assert "baseline" not in phases
+
+
 def test_live_app_handles_replay_source(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     import OpenMuse
     import pandas as pd

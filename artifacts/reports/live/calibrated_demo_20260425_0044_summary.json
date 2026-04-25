@@ -1,0 +1,68 @@
+{
+  "source": "muse_lsl",
+  "session_id": "calibrated_demo_20260425_0044",
+  "cycles": 121,
+  "elapsed_s": 90.26892971992493,
+  "final_state": "GREEN",
+  "mean_risk": 0.538727202201213,
+  "max_risk": 0.6673568380838132,
+  "mean_raw_risk": 0.6673568380838132,
+  "max_raw_risk": 0.6673568380838132,
+  "mean_latency_s": 0.053473244628158,
+  "max_latency_s": 0.11759460000030231,
+  "within_latency_budget": true,
+  "transition_count": 0,
+  "source_health": {
+    "source": "muse_lsl",
+    "started": true,
+    "bridge_alive": false,
+    "samples": {},
+    "last_lsl_time": {},
+    "last_wall_time": {},
+    "wall_time": 1777092445.4636018,
+    "reference_time": 1777092355.0619938,
+    "eeg_healthy": false,
+    "optical_healthy": false,
+    "imu_healthy": false
+  },
+  "stub_models": false,
+  "guardrail_profile": {
+    "name": "personalized",
+    "description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations.",
+    "thresholds": {
+      "yellow_threshold": 0.55,
+      "red_threshold": 0.7,
+      "black_threshold": 0.85,
+      "green_recovery_threshold": 0.45,
+      "yellow_recovery_threshold": 0.6,
+      "red_recovery_threshold": 0.75,
+      "trend_rising_threshold": 0.04,
+      "min_confidence_for_red": 0.3,
+      "escalation_persistence": 3,
+      "de_escalation_persistence": 3,
+      "trend_window": 5,
+      "enable_black": true,
+      "profile_name": "personalized",
+      "profile_description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations."
+    },
+    "source_path": "D:\\Projects\\NeuroGuage\\configs\\guardrails_personalized.json"
+  },
+  "calibration": {
+    "enabled": true,
+    "baseline_duration_s": 20.0,
+    "stdev_floor": 0.04,
+    "sigma_span": 4.0,
+    "baseline_ready": true,
+    "baseline": {
+      "mean": 0.6673568380838132,
+      "stdev": 0.0,
+      "samples": 28,
+      "duration_s": 20.67424988746643,
+      "floor_used": 0.04,
+      "raw_min": 0.6673568380838132,
+      "raw_max": 0.6673568380838132,
+      "metadata": {}
+    },
+    "samples_collected": 28
+  }
+}

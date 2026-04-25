@@ -1,0 +1,66 @@
+{
+  "source": "synthetic",
+  "session_id": "calib_verify_alert",
+  "cycles": 119,
+  "elapsed_s": 60.04020142555237,
+  "final_state": "GREEN",
+  "mean_risk": 0.47766072799593423,
+  "max_risk": 0.5542136383865471,
+  "mean_raw_risk": 0.4012830731833048,
+  "max_raw_risk": 0.42517549216518574,
+  "mean_latency_s": 0.02915057815111706,
+  "max_latency_s": 0.04898659999889787,
+  "within_latency_budget": true,
+  "transition_count": 0,
+  "source_health": {
+    "source": "synthetic",
+    "started": true,
+    "samples": {
+      "eeg": 14957,
+      "optical": 3537,
+      "imu": 2734
+    },
+    "fatigue_trend": 0.0,
+    "real_time_factor": 1.0
+  },
+  "stub_models": false,
+  "guardrail_profile": {
+    "name": "personalized",
+    "description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations.",
+    "thresholds": {
+      "yellow_threshold": 0.55,
+      "red_threshold": 0.7,
+      "black_threshold": 0.85,
+      "green_recovery_threshold": 0.45,
+      "yellow_recovery_threshold": 0.6,
+      "red_recovery_threshold": 0.75,
+      "trend_rising_threshold": 0.04,
+      "min_confidence_for_red": 0.3,
+      "escalation_persistence": 3,
+      "de_escalation_persistence": 3,
+      "trend_window": 5,
+      "enable_black": true,
+      "profile_name": "personalized",
+      "profile_description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations."
+    },
+    "source_path": "configs/guardrails_personalized.json"
+  },
+  "calibration": {
+    "enabled": true,
+    "baseline_duration_s": 15.0,
+    "stdev_floor": 0.04,
+    "sigma_span": 4.0,
+    "baseline_ready": true,
+    "baseline": {
+      "mean": 0.39981027203685265,
+      "stdev": 0.011466672003952622,
+      "samples": 32,
+      "duration_s": 15.51395559310913,
+      "floor_used": 0.04,
+      "raw_min": 0.3648381818643304,
+      "raw_max": 0.42517549216518574,
+      "metadata": {}
+    },
+    "samples_collected": 32
+  }
+}

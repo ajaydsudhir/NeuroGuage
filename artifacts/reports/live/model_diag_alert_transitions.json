@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp_s": 3.050363540649414,
+    "previous_state": "GREEN",
+    "new_state": "YELLOW",
+    "risk_score": 0.4270149475097177,
+    "model_confidence": 0.8724260070243068,
+    "rationale": "Risk score (0.43) exceeded YELLOW threshold (0.40). Risk trend is rising (slope=0.0114 over 5 windows). Persistence count: 3.",
+    "persistence_count": 3,
+    "trend_direction": "rising"
+  }
+]

@@ -73,6 +73,46 @@ def main_run_live() -> int:
                         help="Speed multiplier for synthetic/replay sources (1.0 = real time).")
     parser.add_argument("--fatigue-trend", type=float, default=0.5,
                         help="Synthetic source fatigue slope (0.0 alert .. 1.0 drowsy).")
+    parser.add_argument("--use-existing-stream", dest="manage_bridge",
+                        action="store_false",
+                        help="Attach to an `OpenMuse stream` already running in another "
+                             "terminal instead of spawning a new BLE bridge.")
+    parser.add_argument("--resolve-timeout", dest="resolve_timeout_s", type=float, default=60.0,
+                        help="Max seconds to wait for all LSL outlets to come online.")
+
+    # ---- Fix A ---------------------------------------------------------
+    parser.add_argument(
+        "--guardrail-config", dest="guardrail_config_path", default=None,
+        help="Path to a guardrail-thresholds JSON (e.g. configs/guardrails_calibrated.json "
+             "or configs/guardrails_personalized.json). Defaults to compiled-in values.",
+    )
+
+    # ---- Fix B ---------------------------------------------------------
+    parser.add_argument(
+        "--baseline-duration", dest="baseline_duration_s", type=float, default=0.0,
+        help="Seconds to spend collecting a personal-baseline of the model's risk "
+             "output before guardrails fire. 0 disables calibration (back-compat). "
+             "Recommended: 20.0 paired with --guardrail-config configs/guardrails_personalized.json.",
+    )
+    parser.add_argument(
+        "--baseline-stdev-floor", dest="baseline_stdev_floor", type=float, default=0.04,
+        help="Minimum stdev floor when z-scoring (prevents oversensitivity to noise).",
+    )
+    parser.add_argument(
+        "--baseline-sigma-span", dest="baseline_sigma_span", type=float, default=4.0,
+        help="Sigma multiplier mapped to the upper edge of the normalised range.",
+    )
+    parser.add_argument(
+        "--save-baseline", dest="save_baseline_to", default=None,
+        help="Write the personal-baseline JSON to this path instead of the "
+             "auto-generated <session>_baseline.json under the output directory.",
+    )
+    parser.add_argument(
+        "--load-baseline", dest="load_baseline_from", default=None,
+        help="Reuse a previously-saved personal baseline (skips the "
+             "calibration window for repeat demos).",
+    )
+
     args = parser.parse_args()
 
     run_live(
@@ -88,6 +128,14 @@ def main_run_live() -> int:
         record_raw_to=args.record_raw_to,
         real_time_factor=args.real_time_factor,
         fatigue_trend=args.fatigue_trend,
+        manage_bridge=args.manage_bridge,
+        resolve_timeout_s=args.resolve_timeout_s,
+        guardrail_config_path=args.guardrail_config_path,
+        baseline_duration_s=args.baseline_duration_s,
+        baseline_stdev_floor=args.baseline_stdev_floor,
+        baseline_sigma_span=args.baseline_sigma_span,
+        save_baseline_to=args.save_baseline_to,
+        load_baseline_from=args.load_baseline_from,
     )
     return 0
 

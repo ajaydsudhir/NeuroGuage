@@ -1,0 +1,3166 @@
+[
+  {
+    "timestamp_s": 0.543327808380127,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.410064624459552,
+    "latency_s": 0.033262000000831904,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty"
+    ],
+    "diagnostics": {
+      "update_number": 1,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 1,
+      "total_faults": 1,
+      "mean_latency_s": 0.033262000000831904,
+      "max_latency_s": 0.033262000000831904,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 1.3881762027740479,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.410064624459552,
+    "latency_s": 0.09439790000033099,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty"
+    ],
+    "diagnostics": {
+      "update_number": 2,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 2,
+      "total_faults": 2,
+      "mean_latency_s": 0.06382995000058145,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 2.1233344078063965,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.410064624459552,
+    "latency_s": 0.067629000001034,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty"
+    ],
+    "diagnostics": {
+      "update_number": 3,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 3,
+      "total_faults": 3,
+      "mean_latency_s": 0.0650963000007323,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 2.9226748943328857,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.410064624459552,
+    "latency_s": 0.09329169999909936,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty"
+    ],
+    "diagnostics": {
+      "update_number": 4,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 4,
+      "total_faults": 4,
+      "mean_latency_s": 0.07214515000032407,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 3.7413361072540283,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08399259999714559,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 5,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 5,
+      "total_faults": 5,
+      "mean_latency_s": 0.07451463999968837,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 4.672377586364746,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08322749999933876,
+    "fault_flags": [
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 6,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 6,
+      "total_faults": 6,
+      "mean_latency_s": 0.07596678333296343,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 5.410430908203125,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04904039999746601,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 7,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 7,
+      "total_faults": 7,
+      "mean_latency_s": 0.07212015714217809,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 6.003117322921753,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.032172800001717405,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 8,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 8,
+      "total_faults": 8,
+      "mean_latency_s": 0.0671267374996205,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 6.704523801803589,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07621569999901112,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 9,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 9,
+      "total_faults": 9,
+      "mean_latency_s": 0.06813662222177502,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 7.52654242515564,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04564159999790718,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 10,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 10,
+      "total_faults": 10,
+      "mean_latency_s": 0.06588711999938823,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 8.306633710861206,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07477039999866975,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 11,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 11,
+      "total_faults": 11,
+      "mean_latency_s": 0.06669469090841383,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 9.141204833984375,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.030660699998406926,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 12,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 12,
+      "total_faults": 12,
+      "mean_latency_s": 0.06369185833257991,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 9.889359712600708,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07563579999987269,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 13,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 13,
+      "total_faults": 13,
+      "mean_latency_s": 0.06461062307621782,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 10.582983255386353,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0343150999979116,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 14,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 14,
+      "total_faults": 14,
+      "mean_latency_s": 0.062446657142053094,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 10.883923530578613,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.026907700001174817,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 15,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 15,
+      "total_faults": 15,
+      "mean_latency_s": 0.060077393332661204,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 11.175711154937744,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02776100000119186,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 16,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 16,
+      "total_faults": 16,
+      "mean_latency_s": 0.05805761874944437,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 11.469676733016968,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.036601199997676304,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 17,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 17,
+      "total_faults": 17,
+      "mean_latency_s": 0.05679547646992861,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 11.798152685165405,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03561940000145114,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 18,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 18,
+      "total_faults": 18,
+      "mean_latency_s": 0.05561902777723541,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 12.133387327194214,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03800549999868963,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 19,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 19,
+      "total_faults": 19,
+      "mean_latency_s": 0.054691999999417214,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 12.450319528579712,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02714390000255662,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 20,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 20,
+      "total_faults": 20,
+      "mean_latency_s": 0.05331459499957418,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 12.781060934066772,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.017136200000095414,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 21,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 21,
+      "total_faults": 21,
+      "mean_latency_s": 0.05159181428531329,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 13.159714221954346,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02585980000003474,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 22,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 22,
+      "total_faults": 22,
+      "mean_latency_s": 0.05042217727234608,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 13.467387676239014,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03771530000085477,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 23,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 23,
+      "total_faults": 23,
+      "mean_latency_s": 0.049869704347498635,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 13.796962261199951,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.026901299999735784,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 24,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 24,
+      "total_faults": 24,
+      "mean_latency_s": 0.04891268749967518,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 14.097947835922241,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03157610000198474,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 25,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 25,
+      "total_faults": 25,
+      "mean_latency_s": 0.048219223999767566,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 14.42029356956482,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03256939999846509,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 26,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 26,
+      "total_faults": 26,
+      "mean_latency_s": 0.047617307692025164,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 14.730638980865479,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02060880000135512,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 27,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 27,
+      "total_faults": 27,
+      "mean_latency_s": 0.04661699259237072,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 15.05068063735962,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.033883799998875475,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 28,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 28,
+      "total_faults": 28,
+      "mean_latency_s": 0.0461622357140316,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 15.377789974212646,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02945240000190097,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 29,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 29,
+      "total_faults": 29,
+      "mean_latency_s": 0.04558603448257882,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 15.79857325553894,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.031420600000274135,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 30,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 30,
+      "total_faults": 30,
+      "mean_latency_s": 0.04511385333316866,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 16.101213932037354,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.025770899999770336,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 31,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 31,
+      "total_faults": 31,
+      "mean_latency_s": 0.04448988709660743,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 16.424660444259644,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.01913300000160234,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 32,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 32,
+      "total_faults": 32,
+      "mean_latency_s": 0.04369748437488852,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 16.83648681640625,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0400063000015507,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 33,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 33,
+      "total_faults": 33,
+      "mean_latency_s": 0.04358563030296919,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 17.271202564239502,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.037810599998920225,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 34,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 34,
+      "total_faults": 34,
+      "mean_latency_s": 0.04341577647049716,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 18.085892915725708,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03570680000120774,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 35,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 35,
+      "total_faults": 35,
+      "mean_latency_s": 0.04319551999994604,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 18.72831630706787,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06579210000199964,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 36,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 36,
+      "total_faults": 36,
+      "mean_latency_s": 0.04382320277778086,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 19.440980672836304,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07116649999807123,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 37,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 37,
+      "total_faults": 37,
+      "mean_latency_s": 0.04456221081076168,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 20.226327896118164,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07771999999749823,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 38,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 38,
+      "total_faults": 38,
+      "mean_latency_s": 0.04543478421041264,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 21.186084985733032,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07125919999816688,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 39,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 39,
+      "total_faults": 39,
+      "mean_latency_s": 0.04609694871779096,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 22.06014585494995,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08674080000128015,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 40,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 40,
+      "total_faults": 40,
+      "mean_latency_s": 0.04711304499987819,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 22.962087392807007,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07538790000035078,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 41,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 41,
+      "total_faults": 41,
+      "mean_latency_s": 0.04780267560964581,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 23.948112726211548,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.09220750000167754,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 42,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 42,
+      "total_faults": 42,
+      "mean_latency_s": 0.04885993333326561,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 24.846850633621216,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03664250000292668,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 43,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 43,
+      "total_faults": 43,
+      "mean_latency_s": 0.0485758069767461,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 25.80984401702881,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07655030000023544,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 44,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 44,
+      "total_faults": 44,
+      "mean_latency_s": 0.04921159090909813,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 26.740646600723267,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0827677000015683,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 45,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 45,
+      "total_faults": 45,
+      "mean_latency_s": 0.049957282222264136,
+      "max_latency_s": 0.09439790000033099,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 27.75348424911499,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.09732890000304906,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 46,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 46,
+      "total_faults": 46,
+      "mean_latency_s": 0.05098710000010729,
+      "max_latency_s": 0.09732890000304906,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 28.740284204483032,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.10878430000229855,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 47,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 47,
+      "total_faults": 47,
+      "mean_latency_s": 0.052216827659728376,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 29.7616548538208,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.09701200000199606,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 48,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 48,
+      "total_faults": 48,
+      "mean_latency_s": 0.053150060416858956,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 30.70736026763916,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0897612000007939,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 49,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 49,
+      "total_faults": 49,
+      "mean_latency_s": 0.05389722653081681,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 31.841975212097168,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.077373299998726,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 50,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 50,
+      "total_faults": 50,
+      "mean_latency_s": 0.05436674800017499,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 32.75975942611694,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08314299999983632,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 51,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 51,
+      "total_faults": 51,
+      "mean_latency_s": 0.05493098823546247,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 33.679343938827515,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07978930000172113,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 52,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 52,
+      "total_faults": 52,
+      "mean_latency_s": 0.055409032692505904,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 34.62762975692749,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08307649999915157,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 53,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 53,
+      "total_faults": 53,
+      "mean_latency_s": 0.05593106037753696,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 35.47856831550598,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04898300000058953,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 54,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 54,
+      "total_faults": 54,
+      "mean_latency_s": 0.05580239259277867,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 36.27262210845947,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0674901000020327,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 55,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 55,
+      "total_faults": 55,
+      "mean_latency_s": 0.056014896363856016,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 37.067421436309814,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07291540000005625,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 56,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 56,
+      "total_faults": 56,
+      "mean_latency_s": 0.05631669107164531,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 38.06719970703125,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0767414000001736,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 57,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 57,
+      "total_faults": 57,
+      "mean_latency_s": 0.056675019298461596,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 39.00091910362244,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04035400000066147,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 58,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 58,
+      "total_faults": 58,
+      "mean_latency_s": 0.05639362241401676,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 39.92214107513428,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08268399999724352,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 59,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 59,
+      "total_faults": 59,
+      "mean_latency_s": 0.056839222034071456,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 40.950809717178345,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.029378600000200095,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 60,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 60,
+      "total_faults": 60,
+      "mean_latency_s": 0.056381545000173595,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 41.66197443008423,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06463309999890043,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 61,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 61,
+      "total_faults": 61,
+      "mean_latency_s": 0.05651681639359535,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 42.381991386413574,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.028682399999524932,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 62,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 62,
+      "total_faults": 62,
+      "mean_latency_s": 0.05606787419369099,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 43.17856049537659,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.030498899999656714,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 63,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 63,
+      "total_faults": 63,
+      "mean_latency_s": 0.05566201746045235,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 43.86177182197571,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0340396999999939,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 64,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 64,
+      "total_faults": 64,
+      "mean_latency_s": 0.055324168750132685,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 44.52138304710388,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.032511800000065705,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 65,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 65,
+      "total_faults": 65,
+      "mean_latency_s": 0.054973209230900884,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 45.19256615638733,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08308730000135256,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 66,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 66,
+      "total_faults": 66,
+      "mean_latency_s": 0.05539918030318046,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 45.903825998306274,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03949509999802103,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 67,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 67,
+      "total_faults": 67,
+      "mean_latency_s": 0.05516180597026763,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 46.24565291404724,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.01814169999852311,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 68,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 68,
+      "total_faults": 68,
+      "mean_latency_s": 0.05461739264715374,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 46.644864559173584,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.023554799998237286,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 69,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 69,
+      "total_faults": 69,
+      "mean_latency_s": 0.05416721014499553,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 47.02653121948242,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.025666500001534587,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 70,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 70,
+      "total_faults": 70,
+      "mean_latency_s": 0.053760057142946086,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 47.403650760650635,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03038879999803612,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 71,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 71,
+      "total_faults": 71,
+      "mean_latency_s": 0.05343088450710228,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 47.80086803436279,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.021560400000453228,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 72,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 72,
+      "total_faults": 72,
+      "mean_latency_s": 0.05298823888895438,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 48.31304955482483,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04020270000182791,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 73,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 73,
+      "total_faults": 73,
+      "mean_latency_s": 0.05281309452063758,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 49.13339042663574,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.09579819999999017,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 74,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 74,
+      "total_faults": 74,
+      "mean_latency_s": 0.05339397432441262,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 50.040427923202515,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06753720000051544,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 75,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 75,
+      "total_faults": 75,
+      "mean_latency_s": 0.05358255066676065,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 51.01769256591797,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06000119999953313,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 76,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 76,
+      "total_faults": 76,
+      "mean_latency_s": 0.05366700657903398,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 51.813326835632324,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03952960000242456,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 77,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 77,
+      "total_faults": 77,
+      "mean_latency_s": 0.05348340389622087,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 52.57046985626221,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06386960000236286,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 78,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 78,
+      "total_faults": 78,
+      "mean_latency_s": 0.05361656025655602,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 53.368680477142334,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06592240000099991,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 79,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 79,
+      "total_faults": 79,
+      "mean_latency_s": 0.05377233037990341,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 54.20844888687134,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03395950000049197,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 80,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 80,
+      "total_faults": 80,
+      "mean_latency_s": 0.05352467000016077,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 55.1548228263855,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06921230000079959,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 81,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 81,
+      "total_faults": 81,
+      "mean_latency_s": 0.0537183444446131,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 55.99229884147644,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06872369999837247,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 82,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 82,
+      "total_faults": 82,
+      "mean_latency_s": 0.053901336585512605,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 56.89899206161499,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07325440000204253,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 83,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 83,
+      "total_faults": 83,
+      "mean_latency_s": 0.05413450602426598,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 57.80930733680725,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03643089999968652,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 84,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 84,
+      "total_faults": 84,
+      "mean_latency_s": 0.05392374880968765,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 58.6822350025177,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07079449999946519,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 85,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 85,
+      "total_faults": 85,
+      "mean_latency_s": 0.05412222823544974,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 59.63585615158081,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03333480000219424,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 86,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 86,
+      "total_faults": 86,
+      "mean_latency_s": 0.0538805139536677,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 60.68262481689453,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07815340000161086,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 87,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 87,
+      "total_faults": 87,
+      "mean_latency_s": 0.05415951264387394,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 61.604891538619995,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02440759999808506,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 88,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 88,
+      "total_faults": 88,
+      "mean_latency_s": 0.05382142272744452,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 62.35423493385315,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.033254999998462154,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 89,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 89,
+      "total_faults": 89,
+      "mean_latency_s": 0.05359033932599528,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 63.00011348724365,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03322340000158874,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 90,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 90,
+      "total_faults": 90,
+      "mean_latency_s": 0.05336404000016854,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 63.74320912361145,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.030985599998530233,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 91,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 91,
+      "total_faults": 91,
+      "mean_latency_s": 0.053118123077073615,
+      "max_latency_s": 0.10878430000229855,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 64.6232419013977,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.10916020000149729,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 92,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 92,
+      "total_faults": 92,
+      "mean_latency_s": 0.053727276087121696,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 65.77398014068604,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.04849060000196914,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 93,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 93,
+      "total_faults": 93,
+      "mean_latency_s": 0.05367096774212006,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 66.62410235404968,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.049397599999792874,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 94,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 94,
+      "total_faults": 94,
+      "mean_latency_s": 0.05362550638315913,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 67.48445725440979,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06930179999835673,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 95,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 95,
+      "total_faults": 95,
+      "mean_latency_s": 0.05379052000016121,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 68.34599471092224,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07201569999961066,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 96,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 96,
+      "total_faults": 96,
+      "mean_latency_s": 0.05398036562515548,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 69.19655132293701,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.05299450000165962,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 97,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 97,
+      "total_faults": 97,
+      "mean_latency_s": 0.05397020206202665,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 70.24293160438538,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06975990000137244,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 98,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 98,
+      "total_faults": 98,
+      "mean_latency_s": 0.054131321428754674,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 71.12830138206482,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.09063120000064373,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 99,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 99,
+      "total_faults": 99,
+      "mean_latency_s": 0.05450000707089497,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 72.12104034423828,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03514350000114064,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 100,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 100,
+      "total_faults": 100,
+      "mean_latency_s": 0.05430644200019742,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 73.05263209342957,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.02348820000042906,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 101,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 101,
+      "total_faults": 101,
+      "mean_latency_s": 0.05420870400019339,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 73.98485350608826,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07408360000044922,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 102,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 102,
+      "total_faults": 102,
+      "mean_latency_s": 0.054005561000194574,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 75.20771741867065,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.062244800003099954,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 103,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 103,
+      "total_faults": 103,
+      "mean_latency_s": 0.05395171900021523,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 76.23951172828674,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07372860000032233,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 104,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 104,
+      "total_faults": 104,
+      "mean_latency_s": 0.053756088000227464,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 77.222904920578,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.0785080999994534,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 105,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 105,
+      "total_faults": 105,
+      "mean_latency_s": 0.053701243000250545,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 78.27369999885559,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07868379999854369,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 106,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 106,
+      "total_faults": 106,
+      "mean_latency_s": 0.05365580600024259,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 79.26278305053711,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06291810000038822,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 107,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 107,
+      "total_faults": 107,
+      "mean_latency_s": 0.05379458300027182,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 80.35933375358582,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07773309999902267,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 108,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 108,
+      "total_faults": 108,
+      "mean_latency_s": 0.054250186000244865,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 81.45273542404175,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.03981180000118911,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 109,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 109,
+      "total_faults": 109,
+      "mean_latency_s": 0.05388614700026664,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 82.29777836799622,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.05648819999987609,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 110,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 110,
+      "total_faults": 110,
+      "mean_latency_s": 0.05399461300028634,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 83.23145365715027,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06451780000134022,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 111,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 111,
+      "total_faults": 111,
+      "mean_latency_s": 0.05389208700031304,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 84.20771980285645,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06505580000157352,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 112,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 112,
+      "total_faults": 112,
+      "mean_latency_s": 0.054236038000344704,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 85.09378385543823,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.08105090000026394,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 113,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 113,
+      "total_faults": 113,
+      "mean_latency_s": 0.05429018900034862,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 86.02340984344482,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.06152259999726084,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 114,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 114,
+      "total_faults": 114,
+      "mean_latency_s": 0.054562264000342114,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 86.84576296806335,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.05562139999892679,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 115,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 115,
+      "total_faults": 115,
+      "mean_latency_s": 0.05484940100031963,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 87.61510300636292,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.051437199999782024,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 116,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 116,
+      "total_faults": 116,
+      "mean_latency_s": 0.055086163000305534,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 88.54525232315063,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.07793730000048527,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 117,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 117,
+      "total_faults": 117,
+      "mean_latency_s": 0.055499524000333623,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  },
+  {
+    "timestamp_s": 89.74367094039917,
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.205032312229776,
+    "latency_s": 0.027152299997396767,
+    "fault_flags": [
+      "eeg_stale",
+      "optical_stale",
+      "imu_stale",
+      "eeg_buffer_empty",
+      "optical_buffer_empty",
+      "imu_buffer_empty",
+      "excessive_consecutive_faults"
+    ],
+    "diagnostics": {
+      "update_number": 118,
+      "linear_prob": 0.8923029843675199,
+      "tree_prob": 0.44241069180010645,
+      "model_agreement": 0.5501077074325866,
+      "data_quality": 0.2,
+      "consecutive_faults": 118,
+      "total_faults": 118,
+      "mean_latency_s": 0.05541485300029308,
+      "max_latency_s": 0.10916020000149729,
+      "within_budget": true
+    }
+  }
+]

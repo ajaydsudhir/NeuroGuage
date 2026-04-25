@@ -1,0 +1,59 @@
+2026-04-24 23:40:32 | INFO | neuroguage.inference | Loading inference models from artifacts\models\day4\ablations\eeg_optical
+2026-04-24 23:40:37 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=eeg | name=Muse-EEG (00:55:DA:B9:EF:09) | stype=EEG | sfreq=256.0 | ch=8
+2026-04-24 23:40:37 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=optical | name=Muse-OPTICS (00:55:DA:B9:EF:09) | stype=PPG | sfreq=64.0 | ch=16
+2026-04-24 23:40:38 | INFO | neuroguage.muse_stream | Resolved LSL stream | modality=imu | name=Muse-ACCGYRO (00:55:DA:B9:EF:09) | stype=ACCGYRO | sfreq=52.0 | ch=6
+2026-04-24 23:40:38 | INFO | neuroguage.live_app | Live app started | source=muse_lsl | dashboard=False | stub_models=False
+2026-04-24 23:40:39 | INFO | neuroguage.inference | Inference #1 | risk=0.4684 | conf=0.6889 | latency=0.0461s | faults=none
+2026-04-24 23:40:39 | INFO | neuroguage.inference | Inference #2 | risk=0.4460 | conf=0.7136 | latency=0.0308s | faults=none
+2026-04-24 23:40:40 | INFO | neuroguage.inference | Inference #3 | risk=0.5392 | conf=0.6917 | latency=0.0295s | faults=none
+2026-04-24 23:40:40 | INFO | neuroguage.guardrails | Guardrail ESCALATION: GREEN -> YELLOW | risk=0.5392 | Risk score (0.54) exceeded YELLOW threshold (0.40). Risk trend is rising (slope=0.0354 over 5 windows). Persistence count: 3.
+2026-04-24 23:40:40 | INFO | neuroguage.inference | Inference #4 | risk=0.5757 | conf=0.7018 | latency=0.0305s | faults=none
+2026-04-24 23:40:41 | INFO | neuroguage.inference | Inference #5 | risk=0.5623 | conf=0.6907 | latency=0.0285s | faults=none
+2026-04-24 23:40:41 | INFO | neuroguage.inference | Inference #6 | risk=0.5032 | conf=0.7070 | latency=0.0315s | faults=none
+2026-04-24 23:40:42 | INFO | neuroguage.inference | Inference #7 | risk=0.5163 | conf=0.7059 | latency=0.0420s | faults=none
+2026-04-24 23:40:42 | INFO | neuroguage.inference | Inference #8 | risk=0.4964 | conf=0.7092 | latency=0.0339s | faults=none
+2026-04-24 23:40:43 | INFO | neuroguage.inference | Inference #9 | risk=0.5118 | conf=0.6980 | latency=0.0307s | faults=none
+2026-04-24 23:40:43 | INFO | neuroguage.inference | Inference #10 | risk=0.5134 | conf=0.7231 | latency=0.0208s | faults=none
+2026-04-24 23:40:44 | INFO | neuroguage.inference | Inference #11 | risk=0.6039 | conf=0.6891 | latency=0.0314s | faults=none
+2026-04-24 23:40:44 | INFO | neuroguage.inference | Inference #12 | risk=0.5698 | conf=0.6771 | latency=0.0263s | faults=none
+2026-04-24 23:40:45 | INFO | neuroguage.inference | Inference #13 | risk=0.5710 | conf=0.6589 | latency=0.0311s | faults=none
+2026-04-24 23:40:45 | INFO | neuroguage.inference | Inference #14 | risk=0.6503 | conf=0.6769 | latency=0.0351s | faults=none
+2026-04-24 23:40:45 | INFO | neuroguage.inference | Inference #15 | risk=0.4807 | conf=0.7279 | latency=0.0219s | faults=none
+2026-04-24 23:40:46 | INFO | neuroguage.inference | Inference #16 | risk=0.4497 | conf=0.7757 | latency=0.0212s | faults=none
+2026-04-24 23:40:47 | INFO | neuroguage.inference | Inference #17 | risk=0.4280 | conf=0.7860 | latency=0.0242s | faults=none
+2026-04-24 23:40:47 | INFO | neuroguage.inference | Inference #18 | risk=0.5547 | conf=0.7026 | latency=0.0255s | faults=none
+2026-04-24 23:40:48 | INFO | neuroguage.inference | Inference #19 | risk=0.5478 | conf=0.6894 | latency=0.0234s | faults=none
+2026-04-24 23:40:48 | INFO | neuroguage.inference | Inference #20 | risk=0.5935 | conf=0.6995 | latency=0.0227s | faults=none
+2026-04-24 23:40:49 | INFO | neuroguage.inference | Inference #21 | risk=0.5337 | conf=0.7093 | latency=0.0304s | faults=none
+2026-04-24 23:40:49 | INFO | neuroguage.inference | Inference #22 | risk=0.5433 | conf=0.7064 | latency=0.0353s | faults=none
+2026-04-24 23:40:49 | INFO | neuroguage.inference | Inference #23 | risk=0.5252 | conf=0.7127 | latency=0.0245s | faults=none
+2026-04-24 23:40:50 | INFO | neuroguage.inference | Inference #24 | risk=0.5322 | conf=0.7055 | latency=0.0299s | faults=none
+2026-04-24 23:40:51 | INFO | neuroguage.inference | Inference #25 | risk=0.5316 | conf=0.6903 | latency=0.0383s | faults=none
+2026-04-24 23:40:51 | INFO | neuroguage.inference | Inference #26 | risk=0.5270 | conf=0.6970 | latency=0.0257s | faults=none
+2026-04-24 23:40:52 | INFO | neuroguage.inference | Inference #27 | risk=0.4920 | conf=0.7063 | latency=0.0411s | faults=none
+2026-04-24 23:40:52 | INFO | neuroguage.inference | Inference #28 | risk=0.4884 | conf=0.7233 | latency=0.0348s | faults=none
+2026-04-24 23:40:53 | INFO | neuroguage.inference | Inference #29 | risk=0.5074 | conf=0.6996 | latency=0.0207s | faults=none
+2026-04-24 23:40:53 | INFO | neuroguage.inference | Inference #30 | risk=0.5834 | conf=0.7113 | latency=0.0441s | faults=none
+2026-04-24 23:40:54 | INFO | neuroguage.inference | Inference #31 | risk=0.5571 | conf=0.7049 | latency=0.0441s | faults=none
+2026-04-24 23:40:54 | INFO | neuroguage.inference | Inference #32 | risk=0.5207 | conf=0.7217 | latency=0.0266s | faults=none
+2026-04-24 23:40:55 | INFO | neuroguage.inference | Inference #33 | risk=0.4865 | conf=0.7202 | latency=0.0326s | faults=none
+2026-04-24 23:40:55 | INFO | neuroguage.inference | Inference #34 | risk=0.5073 | conf=0.7077 | latency=0.0254s | faults=none
+2026-04-24 23:40:56 | INFO | neuroguage.inference | Inference #35 | risk=0.4910 | conf=0.7004 | latency=0.0323s | faults=none
+2026-04-24 23:40:56 | INFO | neuroguage.inference | Inference #36 | risk=0.5316 | conf=0.7131 | latency=0.0304s | faults=none
+2026-04-24 23:40:57 | INFO | neuroguage.inference | Inference #37 | risk=0.5292 | conf=0.7124 | latency=0.0218s | faults=none
+2026-04-24 23:40:57 | INFO | neuroguage.inference | Inference #38 | risk=0.5715 | conf=0.7037 | latency=0.0239s | faults=none
+2026-04-24 23:40:58 | INFO | neuroguage.inference | Inference #39 | risk=0.5294 | conf=0.7077 | latency=0.0207s | faults=none
+2026-04-24 23:40:58 | INFO | neuroguage.inference | Inference #40 | risk=0.5415 | conf=0.7055 | latency=0.0381s | faults=none
+2026-04-24 23:40:59 | INFO | neuroguage.inference | Inference #41 | risk=0.4996 | conf=0.7038 | latency=0.0277s | faults=none
+2026-04-24 23:40:59 | INFO | neuroguage.inference | Inference #42 | risk=0.5097 | conf=0.7001 | latency=0.0379s | faults=none
+2026-04-24 23:41:00 | INFO | neuroguage.inference | Inference #43 | risk=0.4999 | conf=0.7156 | latency=0.0233s | faults=none
+2026-04-24 23:41:00 | INFO | neuroguage.inference | Inference #44 | risk=0.5036 | conf=0.7121 | latency=0.0387s | faults=none
+2026-04-24 23:41:01 | INFO | neuroguage.inference | Inference #45 | risk=0.5053 | conf=0.7043 | latency=0.0261s | faults=none
+2026-04-24 23:41:01 | INFO | neuroguage.inference | Inference #46 | risk=0.5289 | conf=0.6924 | latency=0.0200s | faults=none
+2026-04-24 23:41:02 | INFO | neuroguage.inference | Inference #47 | risk=0.5651 | conf=0.7015 | latency=0.0209s | faults=none
+2026-04-24 23:41:02 | INFO | neuroguage.inference | Inference #48 | risk=0.4969 | conf=0.7252 | latency=0.0271s | faults=none
+2026-04-24 23:41:03 | INFO | neuroguage.inference | Inference #49 | risk=0.4902 | conf=0.7136 | latency=0.0304s | faults=none
+2026-04-24 23:41:03 | INFO | neuroguage.inference | Inference diagnostics written to artifacts\reports\live\muse_live_attached_updates.json
+2026-04-24 23:41:03 | INFO | neuroguage.guardrails | Guardrail artifacts written: artifacts\reports\live\muse_live_attached_transitions.json, artifacts\reports\live\muse_live_attached_guardrail_summary.json
+2026-04-24 23:41:03 | INFO | neuroguage.live_app | Live session artifacts written to artifacts\reports\live
+2026-04-24 23:41:05 | INFO | neuroguage.workflows | run_live completed | source=muse_lsl | cycles=49 | mean_latency=0.030s | final_state=YELLOW

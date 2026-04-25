@@ -1,44 +1,100 @@
 {
   "workflow": "run_live",
   "status": "executed",
-  "timestamp_utc": "2026-04-22T23:24:36.732778+00:00",
-  "log_path": "logs\\run_live_workflow_20260422_232436.log",
-  "source_kind": "synthetic",
-  "device_address": null,
+  "timestamp_utc": "2026-04-25T04:51:56.037602+00:00",
+  "log_path": "logs\\run_live_workflow_20260425_045156.log",
+  "source_kind": "muse",
+  "device_address": "00:55:DA:B9:EF:09",
   "preset": "p1041",
-  "session_id": "final_audit_fatigue",
-  "duration_s": 12.0,
+  "session_id": "calibrated_demo_20260425_0051",
+  "duration_s": 90.0,
   "raw_file": null,
   "summary": {
-    "source": "synthetic",
-    "session_id": "final_audit_fatigue",
-    "cycles": 23,
-    "elapsed_s": 12.017688751220703,
-    "final_state": "YELLOW",
-    "mean_risk": 0.40401040028776203,
-    "max_risk": 0.44229409609738113,
-    "mean_latency_s": 0.027999521738029613,
-    "max_latency_s": 0.04085530000156723,
+    "source": "muse_lsl",
+    "session_id": "calibrated_demo_20260425_0051",
+    "cycles": 179,
+    "elapsed_s": 90.0194160938263,
+    "final_state": "GREEN",
+    "mean_risk": 0.5006505907928538,
+    "max_risk": 0.7411312915698907,
+    "mean_raw_risk": 0.5600308616119025,
+    "max_raw_risk": 0.6608718059899241,
+    "mean_latency_s": 0.02883461173173829,
+    "max_latency_s": 0.053911800001515076,
     "within_latency_budget": true,
-    "transition_count": 1,
+    "transition_count": 14,
     "source_health": {
-      "source": "synthetic",
+      "source": "muse_lsl",
       "started": true,
+      "bridge_alive": true,
       "samples": {
-        "eeg": 2988,
-        "optical": 710,
-        "imu": 543
+        "eeg": 23520,
+        "optical": 5855,
+        "imu": 4626
       },
-      "fatigue_trend": 0.95,
-      "real_time_factor": 1.0
+      "last_lsl_time": {
+        "eeg": 22506.945396573345,
+        "optical": 22506.99917996469,
+        "imu": 22506.998615592718
+      },
+      "last_wall_time": {
+        "eeg": 1777092816.9553106,
+        "optical": 1777092816.9553106,
+        "imu": 1777092816.9553106
+      },
+      "wall_time": 1777092817.0192049,
+      "reference_time": 1777092726.8675978,
+      "eeg_healthy": true,
+      "optical_healthy": true,
+      "imu_healthy": true
     },
     "stub_models": false,
+    "guardrail_profile": {
+      "name": "personalized",
+      "description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations.",
+      "thresholds": {
+        "yellow_threshold": 0.55,
+        "red_threshold": 0.7,
+        "black_threshold": 0.85,
+        "green_recovery_threshold": 0.45,
+        "yellow_recovery_threshold": 0.6,
+        "red_recovery_threshold": 0.75,
+        "trend_rising_threshold": 0.04,
+        "min_confidence_for_red": 0.3,
+        "escalation_persistence": 3,
+        "de_escalation_persistence": 3,
+        "trend_window": 5,
+        "enable_black": true,
+        "profile_name": "personalized",
+        "profile_description": "Designed for use WITH personal-baseline z-score calibration (Fix B). After calibration the user's calm baseline maps to ~0.50, +1 sigma to ~0.625, +2 sigma to ~0.75. These thresholds therefore correspond to genuinely user-relative fatigue elevations."
+      },
+      "source_path": "D:\\Projects\\NeuroGuage\\configs\\guardrails_personalized.json"
+    },
+    "calibration": {
+      "enabled": true,
+      "baseline_duration_s": 20.0,
+      "stdev_floor": 0.04,
+      "sigma_span": 4.0,
+      "baseline_ready": true,
+      "baseline": {
+        "mean": 0.565714025365971,
+        "stdev": 0.04932882207262806,
+        "samples": 41,
+        "duration_s": 20.010917901992798,
+        "floor_used": 0.04,
+        "raw_min": 0.48668333650250506,
+        "raw_max": 0.6462290170520262,
+        "metadata": {}
+      },
+      "samples_collected": 41
+    },
     "artifacts": {
-      "updates": "artifacts\\reports\\live\\final_audit_fatigue_updates.json",
-      "transitions": "artifacts\\reports\\live\\final_audit_fatigue_transitions.json",
-      "guardrail_summary": "artifacts\\reports\\live\\final_audit_fatigue_guardrail_summary.json",
-      "summary": "artifacts\\reports\\live\\final_audit_fatigue_summary.json",
-      "session_log": "artifacts\\reports\\live\\final_audit_fatigue_session_log.csv"
+      "updates": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_updates.json",
+      "transitions": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_transitions.json",
+      "guardrail_summary": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_guardrail_summary.json",
+      "summary": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_summary.json",
+      "session_log": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_session_log.csv",
+      "baseline": "artifacts\\reports\\live\\calibrated_demo_20260425_0051_baseline.json"
     }
   }
 }

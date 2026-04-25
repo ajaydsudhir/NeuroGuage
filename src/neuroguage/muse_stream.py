@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import json
 import logging
+import shutil
 import subprocess
 import sys
 import threading
@@ -171,19 +172,53 @@ class OpenMuseStreamProcess:
     _process: Optional[subprocess.Popen] = None
     _stopped: bool = False
 
+    def _resolve_command(self) -> list[str]:
+        """Return the best-available invocation for ``OpenMuse stream``.
+
+        Priority order:
+        1. ``OpenMuse`` console script on PATH (created by ``pip install``).
+        2. ``<env>/Scripts/OpenMuse.exe`` next to ``python.exe`` on Windows.
+        3. ``<env>/bin/OpenMuse`` on POSIX.
+        4. ``python -m OpenMuse`` — only works if a future OpenMuse release
+           adds ``__main__.py``; currently raises but kept as a last resort
+           for forward compatibility.
+        """
+        on_path = shutil.which("OpenMuse")
+        if on_path:
+            return [on_path]
+        py_dir = Path(self.python_executable).resolve().parent
+        for candidate in (
+            py_dir / "Scripts" / "OpenMuse.exe",   # Windows
+            py_dir / "Scripts" / "OpenMuse",       # Windows w/o ext
+            py_dir / "OpenMuse.exe",
+            py_dir / "bin" / "OpenMuse",           # POSIX
+            py_dir.parent / "Scripts" / "OpenMuse.exe",
+            py_dir.parent / "bin" / "OpenMuse",
+        ):
+            if candidate.exists():
+                return [str(candidate)]
+        LOGGER.warning(
+            "OpenMuse console script not found; falling back to "
+            "`python -m OpenMuse` which requires OpenMuse>=<future>."
+        )
+        return [self.python_executable, "-m", "OpenMuse"]
+
     def start(self) -> None:
         if self._process is not None:
             raise RuntimeError("OpenMuseStreamProcess already started")
 
         cmd: list[str] = [
-            self.python_executable, "-m", "OpenMuse", "stream",
+            *self._resolve_command(),
+            "stream",
             "--address", self.address,
             "--preset", self.preset,
         ]
         if self.duration is not None:
             cmd += ["--duration", f"{self.duration:.0f}"]
         if self.record_path is not None:
-            cmd += ["--record", str(self.record_path)]
+            record_path = Path(self.record_path)
+            record_path.parent.mkdir(parents=True, exist_ok=True)
+            cmd += ["--record", str(record_path)]
 
         LOGGER.info("Spawning OpenMuse bridge: %s", " ".join(cmd))
         self._process = subprocess.Popen(  # noqa: S603
@@ -194,6 +229,12 @@ class OpenMuseStreamProcess:
 
     def is_alive(self) -> bool:
         return self._process is not None and self._process.poll() is None
+
+    @property
+    def returncode(self) -> Optional[int]:
+        if self._process is None:
+            return None
+        return self._process.poll()
 
     def stop(self, timeout_s: float = 5.0) -> None:
         if self._process is None or self._stopped:
@@ -253,10 +294,13 @@ class LSLMuseSource:
     session_id: str = "live"
     preset: str = "p1041"
     manage_bridge: bool = True
-    resolve_timeout_s: float = 10.0
+    resolve_timeout_s: float = 60.0
+    resolve_poll_interval_s: float = 2.0
     max_pull_per_read: int = 4096
     pull_timeout_s: float = 0.0
     record_raw_to: Optional[str] = None
+    require_modalities: tuple[str, ...] = ("eeg", "optical", "imu")
+    bridge_warmup_s: float = 5.0
 
     source_name: str = field(default="muse_lsl", init=False)
     _bridge: Optional[OpenMuseStreamProcess] = field(default=None, init=False)
@@ -264,6 +308,7 @@ class LSLMuseSource:
     _inlet_channel_labels: dict[str, list[str]] = field(default_factory=dict, init=False)
     _reference_time: Optional[float] = field(default=None, init=False)
     _last_lsl_time: dict[str, float] = field(default_factory=dict, init=False)
+    _last_wall_time: dict[str, float] = field(default_factory=dict, init=False)
     _samples_received: dict[str, int] = field(default_factory=dict, init=False)
     _started: bool = field(default=False, init=False)
 
@@ -280,8 +325,22 @@ class LSLMuseSource:
                 record_path=self.record_raw_to,
             )
             self._bridge.start()
-            # Give the BLE stack a moment to hand control over to LSL.
-            time.sleep(2.0)
+            # BLE connect + preset handshake on Muse S Athena typically takes
+            # 8-15 s before the first packet of each sensor type arrives, and
+            # OpenMuse only creates each LSL outlet on the first packet.
+            LOGGER.info(
+                "Waiting %.1fs for OpenMuse BLE bridge to warm up...",
+                self.bridge_warmup_s,
+            )
+            time.sleep(self.bridge_warmup_s)
+            if not self._bridge.is_alive():
+                rc = self._bridge.returncode
+                raise RuntimeError(
+                    "OpenMuse bridge subprocess exited during warmup "
+                    f"(returncode={rc}). Verify that the `OpenMuse` console "
+                    "script is installed (try running `OpenMuse find` "
+                    "manually) and that the headband is powered on."
+                )
 
         self._resolve_streams()
         self._reference_time = time.time()
@@ -307,55 +366,80 @@ class LSLMuseSource:
             resolve_streams,
         )
 
-        wanted = {
-            "eeg": {"stype": "EEG"},
-            "optical": {"stype": "PPG"},
-            "imu": {"stype": "ACCGYRO"},
-        }
-        for modality, criteria in wanted.items():
-            infos = resolve_streams(timeout=self.resolve_timeout_s, **criteria)
-            if self.device_address is not None:
-                filtered = [
-                    info for info in infos
-                    if self.device_address in (info.source_id or "")
-                    or self.device_address in (info.name or "")
-                ]
-                infos = filtered or infos
-            if not infos:
-                LOGGER.warning(
-                    "No LSL stream resolved for modality=%s (looking for %s)."
-                    " Check that `OpenMuse stream` is running.",
-                    modality, criteria,
-                )
-                continue
+        # OpenMuse names: 'Muse-EEG (<addr>)' stype='EEG',
+        # 'Muse-OPTICS (<addr>)' stype='PPG',
+        # 'Muse-ACCGYRO (<addr>)' stype='ACCGYRO',
+        # 'Muse-BATTERY (<addr>)' stype='Battery'.
+        wanted_stypes = {"eeg": "EEG", "optical": "PPG", "imu": "ACCGYRO"}
+        deadline = time.time() + self.resolve_timeout_s
 
-            info = infos[0]
-            inlet = StreamInlet(info, max_buffered=60, processing_flags=None)
-            inlet.open_stream(timeout=self.resolve_timeout_s)
-
-            labels: list[str] = []
+        while True:
             try:
-                for ch in info.get_channel_names() or []:
-                    labels.append(str(ch))
-            except Exception:
-                pass
-            if not labels:
-                # Fall back to the OpenMuse presets.
-                if modality == "eeg":
-                    labels = ["EEG_TP9", "EEG_AF7", "EEG_AF8", "EEG_TP10",
-                              "AUX_1", "AUX_2", "AUX_3", "AUX_4"][:info.n_channels]
-                elif modality == "optical":
-                    labels = list(OPTICAL_CHANNEL_MAP.keys())[:info.n_channels]
-                elif modality == "imu":
-                    labels = ["ACC_X", "ACC_Y", "ACC_Z", "GYRO_X", "GYRO_Y", "GYRO_Z"]
+                infos = resolve_streams(timeout=self.resolve_poll_interval_s)
+            except Exception as exc:
+                LOGGER.warning("resolve_streams failed: %s", exc)
+                infos = []
 
-            LOGGER.info(
-                "Resolved LSL stream | modality=%s | name=%s | sfreq=%.1f | ch=%d",
-                modality, info.name, info.sfreq, info.n_channels,
-            )
-            self._inlets[modality] = inlet
-            self._inlet_channel_labels[modality] = labels
-            self._samples_received[modality] = 0
+            for modality, stype in wanted_stypes.items():
+                if modality in self._inlets:
+                    continue
+                candidates = [info for info in infos if (info.stype or "") == stype]
+                if self.device_address:
+                    matching = [
+                        info for info in candidates
+                        if self.device_address in (info.source_id or "")
+                        or self.device_address in (info.name or "")
+                    ]
+                    if matching:
+                        candidates = matching
+                if not candidates:
+                    continue
+
+                info = candidates[0]
+                inlet = StreamInlet(info, max_buffered=60, processing_flags=None)
+                try:
+                    inlet.open_stream(timeout=self.resolve_poll_interval_s)
+                except Exception as exc:
+                    LOGGER.warning(
+                        "open_stream failed for modality=%s name=%s: %s",
+                        modality, info.name, exc,
+                    )
+                    continue
+
+                labels: list[str] = []
+                try:
+                    for ch in info.get_channel_names() or []:
+                        if ch is not None:
+                            labels.append(str(ch))
+                except Exception:
+                    pass
+                if not labels:
+                    if modality == "eeg":
+                        labels = ["EEG_TP9", "EEG_AF7", "EEG_AF8", "EEG_TP10",
+                                  "AUX_1", "AUX_2", "AUX_3", "AUX_4"][:info.n_channels]
+                    elif modality == "optical":
+                        labels = list(OPTICAL_CHANNEL_MAP.keys())[:info.n_channels]
+                    elif modality == "imu":
+                        labels = ["ACC_X", "ACC_Y", "ACC_Z", "GYRO_X", "GYRO_Y", "GYRO_Z"]
+
+                LOGGER.info(
+                    "Resolved LSL stream | modality=%s | name=%s | stype=%s | sfreq=%.1f | ch=%d",
+                    modality, info.name, info.stype, info.sfreq, info.n_channels,
+                )
+                self._inlets[modality] = inlet
+                self._inlet_channel_labels[modality] = labels
+                self._samples_received[modality] = 0
+
+            missing = [m for m in self.require_modalities if m not in self._inlets]
+            if not missing:
+                return
+            if time.time() >= deadline:
+                LOGGER.warning(
+                    "LSL resolve timed out after %.1fs; missing modalities=%s. "
+                    "Pipeline will run with partial data.",
+                    self.resolve_timeout_s, missing,
+                )
+                return
 
     # ------------------------------------------------------------------
     # Read path
@@ -378,6 +462,7 @@ class LSLMuseSource:
         timestamps = np.asarray(timestamps, dtype=np.float64) if len(timestamps) else np.empty((0,))
         if len(timestamps):
             self._last_lsl_time[modality] = float(timestamps[-1])
+            self._last_wall_time[modality] = time.time()
             self._samples_received[modality] = self._samples_received.get(modality, 0) + len(timestamps)
         return samples, timestamps
 
@@ -442,13 +527,14 @@ class LSLMuseSource:
             "bridge_alive": bool(self._bridge and self._bridge.is_alive()),
             "samples": dict(self._samples_received),
             "last_lsl_time": dict(self._last_lsl_time),
+            "last_wall_time": dict(self._last_wall_time),
             "wall_time": now,
             "reference_time": self._reference_time,
         }
         for modality in ("eeg", "optical", "imu"):
-            last = self._last_lsl_time.get(modality)
+            wall_last = self._last_wall_time.get(modality)
             info[f"{modality}_healthy"] = (
-                last is not None and (now - last) < 5.0
+                wall_last is not None and (now - wall_last) < 5.0
             )
         return info
 
@@ -762,18 +848,24 @@ def build_data_source(
     real_time_factor: float = 1.0,
     fatigue_trend: float = 0.5,
     record_raw_to: Optional[str] = None,
+    resolve_timeout_s: float = 60.0,
 ) -> MuseDataSource:
     """Return a configured :class:`MuseDataSource` for the chosen backend."""
     kind = source_kind.lower()
     if kind in ("muse", "lsl", "openmuse"):
-        if device_address is None:
-            raise ValueError("device_address is required for source_kind='muse'")
+        if manage_bridge and device_address is None:
+            raise ValueError(
+                "device_address is required for source_kind='muse' when "
+                "manage_bridge=True. Pass manage_bridge=False to attach to "
+                "an externally-managed `OpenMuse stream` session."
+            )
         return LSLMuseSource(
             device_address=device_address,
             session_id=session_id,
             preset=preset,
             manage_bridge=manage_bridge,
             record_raw_to=record_raw_to,
+            resolve_timeout_s=resolve_timeout_s,
         )
     if kind in ("synthetic", "fake", "simulated"):
         return SyntheticMuseSource(

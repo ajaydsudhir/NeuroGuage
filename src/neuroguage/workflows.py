@@ -77,6 +77,14 @@ def run_live(
     record_raw_to: Optional[str] = None,
     real_time_factor: float = 1.0,
     fatigue_trend: float = 0.5,
+    manage_bridge: bool = True,
+    resolve_timeout_s: float = 60.0,
+    guardrail_config_path: Optional[str] = None,
+    baseline_duration_s: float = 0.0,
+    baseline_stdev_floor: float = 0.04,
+    baseline_sigma_span: float = 4.0,
+    save_baseline_to: Optional[str] = None,
+    load_baseline_from: Optional[str] = None,
 ) -> WorkflowResult:
     """Run the NeuroGauge live fatigue monitor.
 
@@ -136,17 +144,35 @@ def run_live(
         record_raw_to=record_raw_to,
         real_time_factor=real_time_factor,
         fatigue_trend=fatigue_trend,
+        manage_bridge=manage_bridge,
+        resolve_timeout_s=resolve_timeout_s,
+        guardrail_config_path=guardrail_config_path,
+        baseline_duration_s=baseline_duration_s,
+        baseline_stdev_floor=baseline_stdev_floor,
+        baseline_sigma_span=baseline_sigma_span,
+        save_baseline_to=save_baseline_to,
+        load_baseline_from=load_baseline_from,
     )
     summary = run_live_app(config)
     manifest_payload["summary"] = summary
     manifest_path.write_text(json.dumps(manifest_payload, indent=2, default=str), encoding="utf-8")
 
+    profile = (
+        (summary.get("guardrail_profile") or {}).get("name") or "default"
+    )
+    cal = summary.get("calibration") or {}
+    cal_label = "personalised" if cal.get("baseline_ready") else (
+        "calibrating" if cal.get("enabled") else "raw"
+    )
     LOGGER.info(
-        "run_live completed | source=%s | cycles=%d | mean_latency=%.3fs | final_state=%s",
+        "run_live completed | source=%s | cycles=%d | mean_latency=%.3fs | "
+        "final_state=%s | profile=%s | calibration=%s",
         summary.get("source"),
         summary.get("cycles", 0),
         summary.get("mean_latency_s", 0.0),
         summary.get("final_state", "?"),
+        profile,
+        cal_label,
     )
     return WorkflowResult(
         workflow="run_live",

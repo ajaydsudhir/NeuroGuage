@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp_s": 1.5044617652893066,
+    "previous_state": "GREEN",
+    "new_state": "RED",
+    "risk_score": 0.6673568380838132,
+    "model_confidence": 0.410064624459552,
+    "rationale": "Risk score (0.67) exceeded RED threshold (0.65). Model confidence is low (0.41); interpret with caution. Persistence count: 3.",
+    "persistence_count": 3,
+    "trend_direction": "stable"
+  }
+]

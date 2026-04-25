@@ -35,6 +35,11 @@ from typing import Any, Optional
 import numpy as np
 import pandas as pd
 
+from .calibration import (
+    BaselineStats,
+    CalibrationResult,
+    PersonalBaselineCalibrator,
+)
 from .dashboard import (
     DashboardConfig,
     DashboardRenderer,
@@ -90,6 +95,7 @@ class LiveAppConfig:
     real_time_factor: float = 1.0
     fatigue_trend: float = 0.5
     record_raw_to: Optional[str] = None
+    resolve_timeout_s: float = 60.0
 
     # Loop timing
     duration_s: Optional[float] = None           # None = run until stop()
@@ -113,6 +119,20 @@ class LiveAppConfig:
     # Optional safety bounds
     max_inference_cycles: Optional[int] = None
     stop_on_finished_source: bool = True
+
+    # ---- Fix A: JSON guardrail config ---------------------------------
+    # If set, GuardrailConfig.from_json(this) is loaded at startup. ``None``
+    # means "use the defaults compiled into GuardrailConfig" (back-compat).
+    guardrail_config_path: Optional[str] = None
+
+    # ---- Fix B: personal-baseline z-score calibration -----------------
+    # ``baseline_duration_s = 0`` disables calibration entirely (back-compat).
+    baseline_duration_s: float = 0.0
+    baseline_stdev_floor: float = 0.04
+    baseline_sigma_span: float = 4.0
+    baseline_minimum_samples: int = 5
+    save_baseline_to: Optional[str] = None      # auto-derived if None and enabled
+    load_baseline_from: Optional[str] = None    # skip baseline phase, use saved one
 
 
 # ---------------------------------------------------------------------------
@@ -156,8 +176,14 @@ class SessionLog:
     transitions: list[GuardrailTransition] = field(default_factory=list)
     snapshots: list[dict[str, Any]] = field(default_factory=list)
 
-    def add_update(self, update: InferenceUpdate, state: AlertState, rationale: str) -> None:
-        self.updates.append({
+    def add_update(
+        self,
+        update: InferenceUpdate,
+        state: AlertState,
+        rationale: str,
+        calibration: Optional[CalibrationResult] = None,
+    ) -> None:
+        entry = {
             "timestamp_s": update.timestamp_s,
             "risk_score": update.risk_score,
             "model_confidence": update.model_confidence,
@@ -166,7 +192,13 @@ class SessionLog:
             "state": state.value,
             "rationale": rationale,
             "diagnostics": update.diagnostics,
-        })
+        }
+        if calibration is not None:
+            entry["raw_risk"] = calibration.raw_risk
+            entry["normalised_risk"] = calibration.normalised_risk
+            entry["z_score"] = calibration.z_score
+            entry["calibration_phase"] = calibration.phase
+        self.updates.append(entry)
 
     def append_transition(self, transition: GuardrailTransition) -> None:
         self.transitions.append(transition)
@@ -259,10 +291,38 @@ class LiveApp:
             real_time_factor=config.real_time_factor,
             fatigue_trend=config.fatigue_trend,
             record_raw_to=config.record_raw_to,
+            resolve_timeout_s=config.resolve_timeout_s,
         )
         self.inference_config = inference_config or InferenceConfig()
-        self.guardrail_config = guardrail_config or GuardrailConfig()
+
+        # Fix A: load guardrail thresholds from JSON if a path was supplied.
+        if guardrail_config is not None:
+            self.guardrail_config = guardrail_config
+        elif config.guardrail_config_path:
+            self.guardrail_config = GuardrailConfig.from_json(config.guardrail_config_path)
+            LOGGER.info(
+                "Loaded guardrail profile '%s' from %s",
+                self.guardrail_config.profile_name or "(unnamed)",
+                config.guardrail_config_path,
+            )
+        else:
+            self.guardrail_config = GuardrailConfig()
+
         self.dashboard_config = dashboard_config or DashboardConfig()
+
+        # Fix B: personal-baseline calibrator. Disabled when duration <= 0.
+        self.calibrator = PersonalBaselineCalibrator(
+            baseline_duration_s=config.baseline_duration_s,
+            stdev_floor=config.baseline_stdev_floor,
+            sigma_span=config.baseline_sigma_span,
+            minimum_samples=config.baseline_minimum_samples,
+        )
+        if config.load_baseline_from:
+            saved = PersonalBaselineCalibrator.load_baseline(config.load_baseline_from)
+            self.calibrator.adopt_baseline(saved)
+            LOGGER.info(
+                "Reusing saved personal baseline from %s", config.load_baseline_from
+            )
 
         self.models: dict[str, Any] = {}
         self.inference_state = InferenceState()
@@ -288,7 +348,8 @@ class LiveApp:
 
         # Dashboard accumulators
         self._ts_history: list[float] = []
-        self._risk_history: list[float] = []
+        self._risk_history: list[float] = []        # personalised (or raw if disabled)
+        self._raw_risk_history: list[float] = []    # always raw model output
         self._state_history: list[str] = []
         self._conf_history: list[float] = []
         self._eeg_theta_history: list[float] = []
@@ -357,14 +418,26 @@ class LiveApp:
             state=self.inference_state,
         )
 
+        # Fix B: personalise the raw risk against the user's baseline.
+        calibration = self.calibrator.update(update.risk_score, timestamp_s)
+        risk_for_guardrail = calibration.normalised_risk
+
         previous_state = self.guardrail_state.current_state
-        new_state = update_guardrail(
-            risk_score=update.risk_score,
-            model_confidence=update.model_confidence,
-            timestamp_s=timestamp_s,
-            state=self.guardrail_state,
-            config=self.guardrail_config,
-        )
+        if calibration.phase == "baseline":
+            # Don't fire transitions during the calibration window: hold GREEN
+            # so the dashboard can show "Calibrating..." without false alarms.
+            new_state = self.guardrail_state.current_state
+            self.guardrail_state.risk_history.append(risk_for_guardrail)
+            self.guardrail_state.update_count += 1
+            self.guardrail_state.state_duration += 1
+        else:
+            new_state = update_guardrail(
+                risk_score=risk_for_guardrail,
+                model_confidence=update.model_confidence,
+                timestamp_s=timestamp_s,
+                state=self.guardrail_state,
+                config=self.guardrail_config,
+            )
 
         rationale = ""
         if self.guardrail_state.transitions and (
@@ -377,11 +450,16 @@ class LiveApp:
                 self.log.append_transition(transition)
             rationale = transition.rationale
 
-        self.log.add_update(update, new_state, rationale)
-        self._accumulate_for_dashboard(update, new_state)
+        self.log.add_update(update, new_state, rationale, calibration=calibration)
+        self._accumulate_for_dashboard(update, new_state, calibration=calibration)
         return update
 
-    def _accumulate_for_dashboard(self, update: InferenceUpdate, state: AlertState) -> None:
+    def _accumulate_for_dashboard(
+        self,
+        update: InferenceUpdate,
+        state: AlertState,
+        calibration: Optional[CalibrationResult] = None,
+    ) -> None:
         eeg_frame = self.eeg_buffer.as_frame()
         optical_frame = self.optical_buffer.as_frame()
 
@@ -403,8 +481,15 @@ class LiveApp:
             if opt_cols:
                 optical_trend = float(np.tanh(optical_frame[opt_cols].mean(axis=1).mean() - 1.0))
 
+        # Dashboard / artefact metrics use the *guardrail-facing* risk so the
+        # gauge needle on screen matches the alert state. ``raw_risk_history``
+        # stays untouched for diagnostics.
+        risk_for_display = (
+            calibration.normalised_risk if calibration is not None else update.risk_score
+        )
         self._ts_history.append(update.timestamp_s)
-        self._risk_history.append(update.risk_score)
+        self._risk_history.append(risk_for_display)
+        self._raw_risk_history.append(update.risk_score)
         self._state_history.append(state.value)
         self._conf_history.append(update.model_confidence)
         self._eeg_theta_history.append(theta_val)
@@ -426,6 +511,26 @@ class LiveApp:
             return "OK"
 
         elapsed = time.time() - self._loop_start_time
+
+        # Calibration overlay parameters for the dashboard
+        if self.calibrator.enabled and not self.calibrator.baseline_ready:
+            phase = "baseline"
+            if self.calibrator.baseline_duration_s > 0:
+                progress = min(
+                    1.0,
+                    self.calibrator.samples_collected
+                    / max(1.0, self.calibrator.baseline_duration_s
+                          / max(self.config.step_s, 1e-3)),
+                )
+            else:
+                progress = 1.0
+        elif self.calibrator.enabled:
+            phase = "active"
+            progress = 1.0
+        else:
+            phase = "passthrough"
+            progress = 1.0
+
         return DashboardSnapshot(
             timestamps=list(self._ts_history),
             eeg_theta=list(self._eeg_theta_history),
@@ -454,6 +559,13 @@ class LiveApp:
             current_confidence=self._conf_history[-1] if self._conf_history else 1.0,
             elapsed_s=elapsed,
             stage_name=self.source.source_name,
+            calibration_phase=phase,
+            raw_risk=self._raw_risk_history[-1] if self._raw_risk_history else 0.0,
+            baseline_progress=progress,
+            yellow_threshold=self.guardrail_config.yellow_threshold,
+            red_threshold=self.guardrail_config.red_threshold,
+            black_threshold=self.guardrail_config.black_threshold,
+            guardrail_profile=self.guardrail_config.profile_name,
         )
 
     # ------------------------------------------------------------------
@@ -539,12 +651,25 @@ class LiveApp:
             "final_state": self.guardrail_state.current_state.value,
             "mean_risk": float(np.mean(self._risk_history)) if self._risk_history else 0.0,
             "max_risk": float(np.max(self._risk_history)) if self._risk_history else 0.0,
+            "mean_raw_risk": (
+                float(np.mean(self._raw_risk_history)) if self._raw_risk_history else 0.0
+            ),
+            "max_raw_risk": (
+                float(np.max(self._raw_risk_history)) if self._raw_risk_history else 0.0
+            ),
             "mean_latency_s": mean_latency,
             "max_latency_s": max_latency,
             "within_latency_budget": max_latency <= self.inference_config.latency_budget_s,
             "transition_count": len(self.guardrail_state.transitions),
             "source_health": self.source.health(),
             "stub_models": bool(self.models.get("stub", False)),
+            "guardrail_profile": {
+                "name": self.guardrail_config.profile_name,
+                "description": self.guardrail_config.profile_description,
+                "thresholds": self.guardrail_config.to_dict(),
+                "source_path": self.config.guardrail_config_path,
+            },
+            "calibration": self.calibrator.state_for_log(),
         }
         if self.config.write_outputs:
             self._write_artifacts(summary)
@@ -574,6 +699,15 @@ class LiveApp:
         session_path = out_dir / f"{self.config.session_id}_session_log.csv"
         pd.DataFrame(self.log.updates).to_csv(session_path, index=False)
 
+        baseline_path: Optional[Path] = None
+        if self.calibrator.enabled and self.calibrator.baseline_ready:
+            target = (
+                Path(self.config.save_baseline_to)
+                if self.config.save_baseline_to
+                else out_dir / f"{self.config.session_id}_baseline.json"
+            )
+            baseline_path = self.calibrator.save(target)
+
         LOGGER.info("Live session artifacts written to %s", out_dir)
         summary["artifacts"] = {
             "updates": str(updates_path),
@@ -581,6 +715,7 @@ class LiveApp:
             "guardrail_summary": str(guardrail_summary_path),
             "summary": str(summary_path),
             "session_log": str(session_path),
+            "baseline": str(baseline_path) if baseline_path else None,
         }
 
     @staticmethod
