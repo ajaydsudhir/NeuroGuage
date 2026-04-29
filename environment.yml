@@ -1,6 +1,8 @@
 name: neuroguage
+
 channels:
   - conda-forge
+
 dependencies:
   - python=3.12.3
   - pip=24.2
