@@ -1,0 +1,53 @@
+{
+  "validation": {
+    "linear": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "auroc": 1.0
+    },
+    "tree": {
+      "macro_f1": 0.625,
+      "balanced_accuracy": 0.6666666666666666,
+      "auroc": 1.0
+    },
+    "late_fusion": {
+      "macro_f1": 0.8285714285714285,
+      "balanced_accuracy": 0.8333333333333333,
+      "auroc": 1.0
+    }
+  },
+  "test": {
+    "linear": {
+      "macro_f1": 0.4,
+      "balanced_accuracy": 0.5,
+      "auroc": 1.0
+    },
+    "tree": {
+      "macro_f1": 0.4,
+      "balanced_accuracy": 0.5,
+      "auroc": 1.0
+    },
+    "late_fusion": {
+      "macro_f1": 0.4,
+      "balanced_accuracy": 0.5,
+      "auroc": 1.0
+    }
+  },
+  "selected_models": {
+    "linear": {
+      "name": "lda",
+      "parameters": {
+        "solver": "svd",
+        "shrinkage": null
+      }
+    },
+    "tree": {
+      "name": "random_forest",
+      "parameters": {
+        "n_estimators": 220,
+        "max_depth": 8,
+        "min_samples_leaf": 2
+      }
+    }
+  }
+}

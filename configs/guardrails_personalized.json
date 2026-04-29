@@ -1,0 +1,16 @@
+{
+  "profile_name": "personalized",
+  "profile_description": "Personalized profile for short demo sessions with baseline calibration enabled.",
+  "yellow_threshold": 0.55,
+  "red_threshold": 0.70,
+  "black_threshold": 0.85,
+  "green_recovery_threshold": 0.45,
+  "yellow_recovery_threshold": 0.60,
+  "red_recovery_threshold": 0.75,
+  "escalation_persistence": 3,
+  "de_escalation_persistence": 3,
+  "trend_window": 5,
+  "trend_rising_threshold": 0.04,
+  "enable_black": true,
+  "min_confidence_for_red": 0.30
+}

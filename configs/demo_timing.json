@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "description": "O-05: Frozen demo envelope and per-stage timing budget for class quick demo.",
+  "quick_demo": {
+    "total_min_s": 300,
+    "total_max_s": 600,
+    "stages": [
+      {
+        "name": "baseline",
+        "label": "Baseline Rest",
+        "duration_s": 60,
+        "task_type": "baseline_rest",
+        "description": "1 minute eyes-open baseline rest for per-session reference."
+      },
+      {
+        "name": "sustained_attention",
+        "label": "Sustained Attention",
+        "duration_s": 120,
+        "task_type": "sustained_attention",
+        "description": "2 minutes sustained attention reaction task."
+      },
+      {
+        "name": "n_back",
+        "label": "2-Back Working Memory",
+        "duration_s": 120,
+        "task_type": "n_back",
+        "description": "2 minutes 2-back working memory task."
+      },
+      {
+        "name": "code_comprehension",
+        "label": "Code Comprehension",
+        "duration_s": 150,
+        "task_type": "code_comprehension",
+        "description": "2 to 3 minutes code comprehension block."
+      },
+      {
+        "name": "summary",
+        "label": "Timeline Summary",
+        "duration_s": 45,
+        "task_type": "summary",
+        "description": "30 to 60 seconds for live risk timeline and guardrail-state interpretation."
+      }
+    ]
+  },
+  "timing_constraints": {
+    "min_total_s": 300,
+    "max_total_s": 600,
+    "stage_tolerance_pct": 20,
+    "latency_budget_s": 2.0
+  }
+}

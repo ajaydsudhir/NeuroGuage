@@ -1,0 +1,15 @@
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+matplotlib==3.9.2
+pyyaml==6.0.2
+pytest==8.3.3
+torch==2.5.1
+
+# Live streaming for Muse S Athena (optional at runtime, required for --source muse / replay).
+# Setup and run instructions are documented in README.md.
+mne-lsl>=1.10.0
+bleak>=0.21.0
+OpenMuse @ https://github.com/DominiqueMakowski/OpenMuse/zipball/main
+

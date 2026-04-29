@@ -1,0 +1,85 @@
+{
+  "labeled_frame": "D:\\Projects\\NeuroGuage\\artifacts\\features\\day3\\labeled_feature_matrix.csv",
+  "model_variant": "muse_demo",
+  "weak_labels": {
+    "rows": 24,
+    "attention_positive_rate": 0.8333333333333334,
+    "metabolic_positive_rate": 0.7916666666666666,
+    "mismatch_positive_rate": 0.20833333333333334,
+    "attention_score_mean": 0.6489780260687815,
+    "metabolic_score_mean": 0.7487729270057898,
+    "label_confidence_mean": 0.6447924702800889
+  },
+  "metrics": {
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.42857142857142855,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.7592592592592593
+      },
+      "mismatch": {
+        "macro_f1": 0.42857142857142855,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.6666666666666667
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.45454545454545453,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.9
+      },
+      "mismatch": {
+        "macro_f1": 0.45454545454545453,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.8
+      }
+    },
+    "test": {
+      "attention": {
+        "macro_f1": 0.14285714285714285,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.2
+      },
+      "metabolic": {
+        "macro_f1": 0.45454545454545453,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.1
+      },
+      "mismatch": {
+        "macro_f1": 0.45454545454545453,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      }
+    },
+    "best_validation_composite_score": 0.5302077922077921,
+    "epochs_trained": 20
+  },
+  "artifacts": {
+    "weights_path": "artifacts\\models\\dual_head_muse_demo_accv2\\dual_head.pt",
+    "config_path": "artifacts\\models\\dual_head_muse_demo_accv2\\config.json",
+    "metrics_path": "artifacts\\models\\dual_head_muse_demo_accv2\\metrics.json",
+    "training_log_path": "artifacts\\models\\dual_head_muse_demo_accv2\\training_log.json"
+  },
+  "epochs_trained": 20,
+  "train_sessions": [
+    "s03",
+    "s04"
+  ],
+  "val_sessions": [
+    "s02"
+  ],
+  "test_sessions": [
+    "s01"
+  ]
+}

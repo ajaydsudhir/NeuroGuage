@@ -1,0 +1,53 @@
+{
+  "architecture": "dual_head_mlp",
+  "hyperparameters": {
+    "attention_hidden": [
+      16,
+      8
+    ],
+    "metabolic_hidden": [
+      12,
+      6
+    ],
+    "dropout": 0.2,
+    "epochs": 80,
+    "batch_size": 8,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 25,
+    "seed": 1337,
+    "device": "cpu",
+    "attention_loss_weight": 1.0,
+    "metabolic_loss_weight": 1.0,
+    "mismatch_loss_weight": 0.5,
+    "attention_pos_weight": 1.5,
+    "metabolic_pos_weight": 1.5,
+    "mismatch_pos_weight": 3.0,
+    "min_lr": 1e-05
+  },
+  "eeg_features": [
+    "z_eeg_rel_theta",
+    "z_eeg_rel_alpha",
+    "z_eeg_rel_beta",
+    "z_eeg_theta_alpha_ratio",
+    "z_eeg_beta_alpha_ratio",
+    "z_eeg_quality_coverage",
+    "z_eeg_quality_score"
+  ],
+  "optical_features": [
+    "z_optical_norm_mean",
+    "z_optical_trend_slope",
+    "z_optical_mean_change",
+    "z_optical_coverage"
+  ],
+  "train_sessions": [
+    "s03",
+    "s04"
+  ],
+  "val_sessions": [
+    "s02"
+  ],
+  "test_sessions": [
+    "s01"
+  ]
+}

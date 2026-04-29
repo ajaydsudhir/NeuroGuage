@@ -1,0 +1,45 @@
+{
+  "architecture": "bigru_attention",
+  "hyperparameters": {
+    "hidden_size": 32,
+    "num_layers": 1,
+    "attention_heads": 2,
+    "dropout": 0.1,
+    "epochs": 80,
+    "batch_size": 8,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "max_sequence_length": 256,
+    "class_positive_weight": 2.0,
+    "seed": 1337,
+    "early_stopping_patience": 15,
+    "device": "cpu"
+  },
+  "input_size": 13,
+  "max_sequence_length": 256,
+  "feature_columns": [
+    "z_eeg_artifact_flag",
+    "z_eeg_beta_alpha_ratio",
+    "z_eeg_clipping_count",
+    "z_eeg_quality_coverage",
+    "z_eeg_quality_score",
+    "z_eeg_rel_alpha",
+    "z_eeg_rel_beta",
+    "z_eeg_rel_theta",
+    "z_eeg_theta_alpha_ratio",
+    "z_optical_coverage",
+    "z_optical_mean_change",
+    "z_optical_norm_mean",
+    "z_optical_trend_slope"
+  ],
+  "train_sessions": [
+    "s03",
+    "s04"
+  ],
+  "val_sessions": [
+    "s02"
+  ],
+  "test_sessions": [
+    "s01"
+  ]
+}

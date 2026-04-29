@@ -1,0 +1,126 @@
+{
+  "workflow": "run_live",
+  "status": "executed",
+  "timestamp_utc": "2026-04-29T03:25:37.201942+00:00",
+  "log_path": "logs\\run_live_workflow_20260429_032537.log",
+  "source_kind": "muse",
+  "device_address": "00:55:DA:B9:EF:09",
+  "preset": "p1041",
+  "session_id": "classroom_demo_20260428_2325",
+  "duration_s": 180.0,
+  "raw_file": null,
+  "summary": {
+    "source": "muse_lsl",
+    "session_id": "classroom_demo_20260428_2325",
+    "cycles": 346,
+    "elapsed_s": 180.4416913986206,
+    "final_state": "YELLOW",
+    "mean_risk": 0.5174394142712415,
+    "max_risk": 0.7370946619241427,
+    "mean_raw_risk": 0.5546973923114783,
+    "max_raw_risk": 0.6269720653052002,
+    "mean_latency_s": 0.050647077456317205,
+    "max_latency_s": 0.14879219996510074,
+    "within_latency_budget": true,
+    "transition_count": 7,
+    "source_health": {
+      "source": "muse_lsl",
+      "started": true,
+      "bridge_alive": true,
+      "samples": {
+        "eeg": 46654,
+        "optical": 11639,
+        "imu": 9216
+      },
+      "last_lsl_time": {
+        "eeg": 297085.4080517029,
+        "optical": 297085.4236008329,
+        "imu": 297085.4573849124
+      },
+      "last_wall_time": {
+        "eeg": 1777433338.6512132,
+        "optical": 1777433338.6512132,
+        "imu": 1777433338.6512132
+      },
+      "wall_time": 1777433339.2915273,
+      "reference_time": 1777433158.7305229,
+      "eeg_healthy": true,
+      "optical_healthy": true,
+      "imu_healthy": true
+    },
+    "stub_models": false,
+    "guardrail_profile": {
+      "name": "muse_demo",
+      "description": "Class demo profile for the lightweight Muse dual-head variant. It keeps stable risk-state thresholds and uses conservative mismatch persistence to avoid rapid alert flicker in short sessions.",
+      "thresholds": {
+        "yellow_threshold": 0.55,
+        "red_threshold": 0.7,
+        "black_threshold": 0.85,
+        "green_recovery_threshold": 0.45,
+        "yellow_recovery_threshold": 0.6,
+        "red_recovery_threshold": 0.75,
+        "trend_rising_threshold": 0.04,
+        "min_confidence_for_red": 0.3,
+        "mismatch_attention_min": 0.58,
+        "mismatch_metabolic_max": 0.58,
+        "mismatch_min_risk": 0.58,
+        "escalation_persistence": 3,
+        "de_escalation_persistence": 3,
+        "trend_window": 5,
+        "mismatch_persistence": 8,
+        "enable_black": true,
+        "profile_name": "muse_demo",
+        "profile_description": "Class demo profile for the lightweight Muse dual-head variant. It keeps stable risk-state thresholds and uses conservative mismatch persistence to avoid rapid alert flicker in short sessions."
+      },
+      "source_path": "D:\\Projects\\NeuroGuage\\configs\\guardrails_muse_demo.json"
+    },
+    "calibration": {
+      "enabled": true,
+      "baseline_duration_s": 20.0,
+      "stdev_floor": 0.04,
+      "sigma_span": 4.0,
+      "baseline_ready": true,
+      "baseline": {
+        "mean": 0.5511017734894745,
+        "stdev": 0.025404341259945215,
+        "samples": 42,
+        "duration_s": 20.47453236579895,
+        "floor_used": 0.04,
+        "raw_min": 0.4966380023926307,
+        "raw_max": 0.6045910465374384,
+        "metadata": {}
+      },
+      "samples_collected": 42
+    },
+    "dual_head": {
+      "enabled": true,
+      "pipeline_stages": {
+        "stage_1_attention": true,
+        "stage_2_fatigue_related_metabolic": true,
+        "stage_3_symbolic_intervention": true
+      },
+      "weights_path": "D:\\Projects\\NeuroGuage\\artifacts\\models\\dual_head_muse_demo_accv2\\dual_head.pt",
+      "config_path": "D:\\Projects\\NeuroGuage\\artifacts\\models\\dual_head_muse_demo_accv2\\config.json",
+      "model_variant": "muse_demo",
+      "mismatch_events": 0,
+      "mismatch_active_cycles": 0,
+      "mismatch_active_fraction": 0.0,
+      "mean_attention_prob": 0.5674184573304635,
+      "mean_metabolic_prob": 0.6159246535898526,
+      "thresholds": {
+        "attention_min": 0.58,
+        "metabolic_max": 0.58,
+        "persistence": 8
+      }
+    },
+    "artifacts": {
+      "updates": "artifacts\\reports\\live\\classroom_demo_20260428_2325_updates.json",
+      "transitions": "artifacts\\reports\\live\\classroom_demo_20260428_2325_transitions.json",
+      "guardrail_summary": "artifacts\\reports\\live\\classroom_demo_20260428_2325_guardrail_summary.json",
+      "summary": "artifacts\\reports\\live\\classroom_demo_20260428_2325_summary.json",
+      "session_log": "artifacts\\reports\\live\\classroom_demo_20260428_2325_session_log.csv",
+      "baseline": "artifacts\\reports\\live\\classroom_demo_20260428_2325_baseline.json",
+      "mismatch_events": "artifacts\\reports\\live\\classroom_demo_20260428_2325_mismatch_events.json"
+    }
+  }
+}

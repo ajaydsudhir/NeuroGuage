@@ -1,0 +1,12 @@
+{
+  "workflow": "run_live",
+  "status": "dry-run",
+  "timestamp_utc": "2026-04-22T23:16:50.429860+00:00",
+  "log_path": "logs\\run_live_workflow_20260422_231650.log",
+  "source_kind": "synthetic",
+  "device_address": null,
+  "preset": "p1041",
+  "session_id": "dry",
+  "duration_s": null,
+  "raw_file": null
+}

@@ -1,0 +1,55 @@
+{
+  "train": {
+    "attention": {
+      "macro_f1": 0.6210526315789473,
+      "balanced_accuracy": 0.65,
+      "auroc": 0.85
+    },
+    "metabolic": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "auroc": 1.0
+    },
+    "mismatch": {
+      "macro_f1": 0.7777777777777777,
+      "balanced_accuracy": 0.75,
+      "auroc": 1.0
+    }
+  },
+  "validation": {
+    "attention": {
+      "macro_f1": 0.625,
+      "balanced_accuracy": 0.8,
+      "auroc": 0.8
+    },
+    "metabolic": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "auroc": 1.0
+    },
+    "mismatch": {
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "auroc": 1.0
+    }
+  },
+  "test": {
+    "attention": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.8
+    },
+    "metabolic": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.9
+    },
+    "mismatch": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.8
+    }
+  },
+  "best_validation_composite_score": 0.8779999999999999,
+  "epochs_trained": 80
+}
