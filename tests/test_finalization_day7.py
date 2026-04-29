@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from neuroguage.finalization import (
+from neuroguage.lifecycle import (
     RehearsalResult,
     build_final_demo_bundle,
     build_final_status_summary,

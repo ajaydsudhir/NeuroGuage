@@ -1,8 +1,0 @@
-{
-  "linear_model_path": "artifacts\\models\\day3\\linear_model_calibrated.pkl",
-  "tree_model_path": "artifacts\\models\\day3\\tree_model_calibrated.pkl",
-  "fusion_config_path": "artifacts\\models\\day3\\late_fusion_config.json",
-  "feature_columns_path": "artifacts\\models\\day3\\feature_columns.json",
-  "metrics_path": "artifacts\\reports\\day3\\training_metrics.json",
-  "scaler_metadata_path": "artifacts\\models\\day3\\scaler_metadata.json"
-}

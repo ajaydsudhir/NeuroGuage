@@ -1,2 +1,0 @@
-2026-04-21 14:51:31 | INFO | neuroguage.workflows | Workflow 'train' completed with status 'dry-run'.
-2026-04-21 14:51:31 | INFO | neuroguage.workflows | Manifest written to artifacts\reports\day1\entrypoints\train_manifest.json

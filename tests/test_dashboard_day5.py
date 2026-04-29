@@ -89,11 +89,10 @@ class TestDashboardPanels:
     def test_renderer_has_all_axes(self) -> None:
         renderer = DashboardRenderer()
         renderer.initialise()
-        assert "eeg" in renderer._axes
+        assert "eeg" not in renderer._axes
         assert "risk" in renderer._axes
-        assert "optical" in renderer._axes
+        assert "probabilities" in renderer._axes
         assert "state" in renderer._axes
-        assert "timeline" in renderer._axes
         renderer.close()
 
     def test_render_with_data(self, snapshot: DashboardSnapshot) -> None:
@@ -107,24 +106,6 @@ class TestDashboardPanels:
         renderer = DashboardRenderer()
         fig = renderer.render(empty)
         assert isinstance(fig, plt.Figure)
-        renderer.close()
-
-
-# ---------------------------------------------------------------------------
-# Tests — T14.2  Timeline with transition markers
-# ---------------------------------------------------------------------------
-
-
-class TestTimeline:
-    def test_transitions_in_snapshot(self, snapshot: DashboardSnapshot) -> None:
-        assert len(snapshot.transitions) == 2
-        assert snapshot.transitions[0]["new_state"] == "YELLOW"
-        assert snapshot.transitions[1]["new_state"] == "RED"
-
-    def test_timeline_renders_without_error(self, snapshot: DashboardSnapshot) -> None:
-        renderer = DashboardRenderer()
-        renderer.initialise()
-        renderer._render_timeline_panel(snapshot)
         renderer.close()
 
 

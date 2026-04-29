@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from neuroguage.feature_builder import run_feature_builder_pipeline
-from neuroguage.labeling import run_labeling_pipeline
-from neuroguage.training import run_training_pipeline, write_training_artifacts
+from neuroguage.pipeline import run_feature_builder_pipeline
+from neuroguage.pipeline import run_labeling_pipeline
+from neuroguage.pipeline import run_training_pipeline, write_training_artifacts
 
 
 FIXTURES = Path("tests/fixtures/day3")

@@ -1,0 +1,3602 @@
+[
+  {
+    "epoch": 1,
+    "lr": 0.002998847409179881,
+    "train_loss": 2.491853634516398,
+    "train_loss_terms": {
+      "attention": 0.8529582619667053,
+      "metabolic": 0.8992755015691122,
+      "mismatch": 1.479239781697591
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.14285714285714285,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.28125
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.6,
+        "auroc": 0.4
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.5
+      }
+    },
+    "composite_score": 0.4120000000000001
+  },
+  {
+    "epoch": 2,
+    "lr": 0.0029953914139310266,
+    "train_loss": 2.5141235987345376,
+    "train_loss_terms": {
+      "attention": 0.7976284225781759,
+      "metabolic": 0.9453790187835693,
+      "mismatch": 1.542232354482015
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.6,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.625
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.6,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.625
+      }
+    },
+    "composite_score": 0.4225000000000001
+  },
+  {
+    "epoch": 3,
+    "lr": 0.002989637343147615,
+    "train_loss": 2.5592946211496987,
+    "train_loss_terms": {
+      "attention": 0.8825042247772217,
+      "metabolic": 0.8698316613833109,
+      "mismatch": 1.6139174302419026
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.375
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.78125
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.3333333333333333,
+        "balanced_accuracy": 0.6,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.875
+      }
+    },
+    "composite_score": 0.4275000000000001
+  },
+  {
+    "epoch": 4,
+    "lr": 0.002981594069189731,
+    "train_loss": 2.565413475036621,
+    "train_loss_terms": {
+      "attention": 0.894406239191691,
+      "metabolic": 0.883046825726827,
+      "mismatch": 1.5759206215540569
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.78125
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.47857142857142854
+  },
+  {
+    "epoch": 5,
+    "lr": 0.0029712739942028294,
+    "train_loss": 2.442556858062744,
+    "train_loss_terms": {
+      "attention": 0.8335956732432047,
+      "metabolic": 0.8679486711819967,
+      "mismatch": 1.482024868329366
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.78125
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 6,
+    "lr": 0.0029586930309945265,
+    "train_loss": 2.302670160929362,
+    "train_loss_terms": {
+      "attention": 0.7489116390546163,
+      "metabolic": 0.8567909797032675,
+      "mismatch": 1.393934965133667
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.78125
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 7,
+    "lr": 0.002943870578498203,
+    "train_loss": 2.2498714129130044,
+    "train_loss_terms": {
+      "attention": 0.7021212975184122,
+      "metabolic": 0.9151881535847982,
+      "mismatch": 1.2651238838831584
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.84375
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 8,
+    "lr": 0.002926829491861255,
+    "train_loss": 2.3457846641540527,
+    "train_loss_terms": {
+      "attention": 0.8182648420333862,
+      "metabolic": 0.8505088289578756,
+      "mismatch": 1.3540221055348713
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.90625
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 9,
+    "lr": 0.002907596047204114,
+    "train_loss": 2.4494691689809165,
+    "train_loss_terms": {
+      "attention": 0.9197057485580444,
+      "metabolic": 0.8723913828531901,
+      "mismatch": 1.3147438367207844
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.9375
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 10,
+    "lr": 0.0028861999011043737,
+    "train_loss": 2.1995791594187417,
+    "train_loss_terms": {
+      "attention": 0.7349637746810913,
+      "metabolic": 0.8086823225021362,
+      "mismatch": 1.3118660648663838
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.96875
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 11,
+    "lr": 0.0028626740448684965,
+    "train_loss": 1.9932890335718791,
+    "train_loss_terms": {
+      "attention": 0.6672402620315552,
+      "metabolic": 0.755882740020752,
+      "mismatch": 1.1403322219848633
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.75
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.5185714285714286
+  },
+  {
+    "epoch": 12,
+    "lr": 0.00283705475366161,
+    "train_loss": 1.9850389957427979,
+    "train_loss_terms": {
+      "attention": 0.6307374238967896,
+      "metabolic": 0.7776510715484619,
+      "mismatch": 1.1533008019129436
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.875
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7225714285714285
+  },
+  {
+    "epoch": 13,
+    "lr": 0.002809381530573832,
+    "train_loss": 2.176143169403076,
+    "train_loss_terms": {
+      "attention": 0.7973640561103821,
+      "metabolic": 0.7814325292905172,
+      "mismatch": 1.1946930487950642
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.875
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7225714285714285
+  },
+  {
+    "epoch": 14,
+    "lr": 0.002779697045709368,
+    "train_loss": 2.1065566539764404,
+    "train_loss_terms": {
+      "attention": 0.6765070756276449,
+      "metabolic": 0.8124945958455404,
+      "mismatch": 1.2351100444793701
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 0.875
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7225714285714285
+  },
+  {
+    "epoch": 15,
+    "lr": 0.0027480470703923057,
+    "train_loss": 1.9242806037267048,
+    "train_loss_terms": {
+      "attention": 0.6207866867383321,
+      "metabolic": 0.7865366737047831,
+      "mismatch": 1.033914307753245
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7829047619047619
+  },
+  {
+    "epoch": 16,
+    "lr": 0.002714480406590547,
+    "train_loss": 1.753389835357666,
+    "train_loss_terms": {
+      "attention": 0.5827382802963257,
+      "metabolic": 0.700212836265564,
+      "mismatch": 0.9408774773279825
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7829047619047619
+  },
+  {
+    "epoch": 17,
+    "lr": 0.0026790488116667137,
+    "train_loss": 1.875461181004842,
+    "train_loss_terms": {
+      "attention": 0.6721812089284261,
+      "metabolic": 0.733477512995402,
+      "mismatch": 0.9396047989527384
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7829047619047619
+  },
+  {
+    "epoch": 18,
+    "lr": 0.0026418069185720466,
+    "train_loss": 2.037890354792277,
+    "train_loss_terms": {
+      "attention": 0.6524660189946493,
+      "metabolic": 0.7929466565450033,
+      "mismatch": 1.1849553783734639
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7829047619047619
+  },
+  {
+    "epoch": 19,
+    "lr": 0.0026028121516063502,
+    "train_loss": 1.9926211833953857,
+    "train_loss_terms": {
+      "attention": 0.6856856346130371,
+      "metabolic": 0.7421984076499939,
+      "mismatch": 1.1294742425282795
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7829047619047619
+  },
+  {
+    "epoch": 20,
+    "lr": 0.002562124637873889,
+    "train_loss": 1.847347895304362,
+    "train_loss_terms": {
+      "attention": 0.689161499341329,
+      "metabolic": 0.7070527672767639,
+      "mismatch": 0.9022670984268188
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.75
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 21,
+    "lr": 0.0025198071145717486,
+    "train_loss": 1.804263710975647,
+    "train_loss_terms": {
+      "attention": 0.6347139279047648,
+      "metabolic": 0.7026613156000773,
+      "mismatch": 0.9337770144144694
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.75
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 22,
+    "lr": 0.0024759248322536254,
+    "train_loss": 1.770909309387207,
+    "train_loss_terms": {
+      "attention": 0.5858644445737203,
+      "metabolic": 0.7268795172373453,
+      "mismatch": 0.9163308540980021
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.75
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 23,
+    "lr": 0.002430545454218202,
+    "train_loss": 1.6994970242182414,
+    "train_loss_terms": {
+      "attention": 0.5443515578905741,
+      "metabolic": 0.7061238686243693,
+      "mismatch": 0.898043155670166
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.75
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 24,
+    "lr": 0.002383738952177248,
+    "train_loss": 1.7817219098409016,
+    "train_loss_terms": {
+      "attention": 0.6625702778498331,
+      "metabolic": 0.6715821425120035,
+      "mismatch": 0.8951388398806254
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 25,
+    "lr": 0.002335577498364306,
+    "train_loss": 1.8998477458953857,
+    "train_loss_terms": {
+      "attention": 0.6300284663836161,
+      "metabolic": 0.7260151704152426,
+      "mismatch": 1.0876083771387737
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 26,
+    "lr": 0.0022861353542503442,
+    "train_loss": 1.90098237991333,
+    "train_loss_terms": {
+      "attention": 0.6465567747751871,
+      "metabolic": 0.7453407446543375,
+      "mismatch": 1.0181698103745778
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 27,
+    "lr": 0.0022354887560379487,
+    "train_loss": 1.6477035681406658,
+    "train_loss_terms": {
+      "attention": 0.6032800078392029,
+      "metabolic": 0.6718553503354391,
+      "mismatch": 0.7451364199320475
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 28,
+    "lr": 0.0021837157971106233,
+    "train_loss": 1.7517166535059612,
+    "train_loss_terms": {
+      "attention": 0.6495888630549113,
+      "metabolic": 0.6971689462661743,
+      "mismatch": 0.8099178671836853
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.5,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 29,
+    "lr": 0.002130896307618456,
+    "train_loss": 1.665157636006673,
+    "train_loss_terms": {
+      "attention": 0.6215947469075521,
+      "metabolic": 0.6556967496871948,
+      "mismatch": 0.7757322390874227
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 30,
+    "lr": 0.0020771117313858104,
+    "train_loss": 1.5780642827351887,
+    "train_loss_terms": {
+      "attention": 0.5516956647237142,
+      "metabolic": 0.64964759349823,
+      "mismatch": 0.7534421682357788
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 31,
+    "lr": 0.0020224450003308533,
+    "train_loss": 1.723336656888326,
+    "train_loss_terms": {
+      "attention": 0.6379949053128561,
+      "metabolic": 0.664583424727122,
+      "mismatch": 0.8415166139602661
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 32,
+    "lr": 0.001966980406590548,
+    "train_loss": 1.6696940263112385,
+    "train_loss_terms": {
+      "attention": 0.5893292427062988,
+      "metabolic": 0.6521485249201456,
+      "mismatch": 0.8564326365788778
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 33,
+    "lr": 0.0019108034725482874,
+    "train_loss": 2.058941960334778,
+    "train_loss_terms": {
+      "attention": 0.6257384220759074,
+      "metabolic": 0.8003337581952413,
+      "mismatch": 1.265739490588506
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 34,
+    "lr": 0.0018540008189645801,
+    "train_loss": 1.5917930205663045,
+    "train_loss_terms": {
+      "attention": 0.5147799551486969,
+      "metabolic": 0.6683735251426697,
+      "mismatch": 0.8172791798909506
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 35,
+    "lr": 0.0017966600314141133,
+    "train_loss": 1.4907557169596355,
+    "train_loss_terms": {
+      "attention": 0.5182924071947733,
+      "metabolic": 0.6219706734021505,
+      "mismatch": 0.7009852727254232
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 36,
+    "lr": 0.0017388695252351467,
+    "train_loss": 1.707365910212199,
+    "train_loss_terms": {
+      "attention": 0.6269999146461487,
+      "metabolic": 0.676381250222524,
+      "mismatch": 0.8079695701599121
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 37,
+    "lr": 0.001680718409199469,
+    "train_loss": 1.5048197110493977,
+    "train_loss_terms": {
+      "attention": 0.4850260615348816,
+      "metabolic": 0.6130131483078003,
+      "mismatch": 0.8135609229405721
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 38,
+    "lr": 0.0016222963481131298,
+    "train_loss": 1.7280471722284954,
+    "train_loss_terms": {
+      "attention": 0.6054179271062216,
+      "metabolic": 0.6949832042058309,
+      "mismatch": 0.8552921811739603
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 39,
+    "lr": 0.001563693424559809,
+    "train_loss": 1.6755841573079426,
+    "train_loss_terms": {
+      "attention": 0.5996747215588888,
+      "metabolic": 0.662971576054891,
+      "mismatch": 0.8258756200472513
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 40,
+    "lr": 0.0015050000000000013,
+    "train_loss": 1.6859714190165203,
+    "train_loss_terms": {
+      "attention": 0.5868250330289205,
+      "metabolic": 0.6559218168258667,
+      "mismatch": 0.8864491780598959
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 41,
+    "lr": 0.001446306575440194,
+    "train_loss": 1.793582598368327,
+    "train_loss_terms": {
+      "attention": 0.6113288203875223,
+      "metabolic": 0.7269058624903361,
+      "mismatch": 0.9106956919034322
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 42,
+    "lr": 0.0013877036518868732,
+    "train_loss": 1.4991147915522258,
+    "train_loss_terms": {
+      "attention": 0.5114562312761942,
+      "metabolic": 0.610315183798472,
+      "mismatch": 0.7546866337458292
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 43,
+    "lr": 0.001329281590800534,
+    "train_loss": 1.4858206907908122,
+    "train_loss_terms": {
+      "attention": 0.5118375420570374,
+      "metabolic": 0.6191889842351278,
+      "mismatch": 0.7095884482065836
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 44,
+    "lr": 0.0012711304747648562,
+    "train_loss": 1.551401138305664,
+    "train_loss_terms": {
+      "attention": 0.5502929290135702,
+      "metabolic": 0.6290879646937052,
+      "mismatch": 0.7440403699874878
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 45,
+    "lr": 0.0012133399685858894,
+    "train_loss": 1.5144179662068684,
+    "train_loss_terms": {
+      "attention": 0.552635391553243,
+      "metabolic": 0.5975001653035482,
+      "mismatch": 0.7285648981730143
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 46,
+    "lr": 0.0011559991810354225,
+    "train_loss": 1.5874511400858562,
+    "train_loss_terms": {
+      "attention": 0.5999385317166647,
+      "metabolic": 0.5948629975318909,
+      "mismatch": 0.7852991223335266
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 47,
+    "lr": 0.0010991965274517147,
+    "train_loss": 1.527127742767334,
+    "train_loss_terms": {
+      "attention": 0.49873260656992596,
+      "metabolic": 0.6524797280629476,
+      "mismatch": 0.7518308957417806
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 48,
+    "lr": 0.0010430195934094547,
+    "train_loss": 1.5157615343729656,
+    "train_loss_terms": {
+      "attention": 0.5833215514818827,
+      "metabolic": 0.5887105862299601,
+      "mismatch": 0.6874586045742035
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 49,
+    "lr": 0.0009875549996691492,
+    "train_loss": 1.3523279031117756,
+    "train_loss_terms": {
+      "attention": 0.4790649314721425,
+      "metabolic": 0.5464382568995158,
+      "mismatch": 0.6536493400732676
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 50,
+    "lr": 0.0009328882686141916,
+    "train_loss": 1.3742990493774414,
+    "train_loss_terms": {
+      "attention": 0.5290867686271667,
+      "metabolic": 0.547634482383728,
+      "mismatch": 0.5951555371284485
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 51,
+    "lr": 0.0008791036923815462,
+    "train_loss": 1.5849770307540894,
+    "train_loss_terms": {
+      "attention": 0.4992826481660207,
+      "metabolic": 0.6409412225087484,
+      "mismatch": 0.8895063797632853
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 52,
+    "lr": 0.0008262842028893784,
+    "train_loss": 1.6822435061136882,
+    "train_loss_terms": {
+      "attention": 0.5981155633926392,
+      "metabolic": 0.6542175014813741,
+      "mismatch": 0.859820822874705
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.8991596638655461,
+        "balanced_accuracy": 0.875,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 53,
+    "lr": 0.0007745112439620529,
+    "train_loss": 1.4593165318171184,
+    "train_loss_terms": {
+      "attention": 0.5521363019943237,
+      "metabolic": 0.5611139933268229,
+      "mismatch": 0.6921324928601583
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 54,
+    "lr": 0.0007238646457496573,
+    "train_loss": 1.3655481338500977,
+    "train_loss_terms": {
+      "attention": 0.5078095098336538,
+      "metabolic": 0.542388399442037,
+      "mismatch": 0.630700429280599
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 55,
+    "lr": 0.0006744225016356953,
+    "train_loss": 1.4291810194651287,
+    "train_loss_terms": {
+      "attention": 0.49920332431793213,
+      "metabolic": 0.5883963306744894,
+      "mismatch": 0.6831626097361246
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 56,
+    "lr": 0.0006262610478227535,
+    "train_loss": 1.3854553699493408,
+    "train_loss_terms": {
+      "attention": 0.45890702803929645,
+      "metabolic": 0.5849895079930624,
+      "mismatch": 0.683117687702179
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 57,
+    "lr": 0.0005794545457817992,
+    "train_loss": 1.4156559308369954,
+    "train_loss_terms": {
+      "attention": 0.5045408109823862,
+      "metabolic": 0.5917167266209921,
+      "mismatch": 0.6387967467308044
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 58,
+    "lr": 0.0005340751677463762,
+    "train_loss": 1.4448366165161133,
+    "train_loss_terms": {
+      "attention": 0.5571703314781189,
+      "metabolic": 0.5767152706782023,
+      "mismatch": 0.6219019790490469
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 59,
+    "lr": 0.000490192885428253,
+    "train_loss": 1.897685448328654,
+    "train_loss_terms": {
+      "attention": 0.6425254543622335,
+      "metabolic": 0.7447198629379272,
+      "mismatch": 1.0208802620569866
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.7,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.4,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7679999999999999
+  },
+  {
+    "epoch": 60,
+    "lr": 0.000447875362126112,
+    "train_loss": 1.3860694964726765,
+    "train_loss_terms": {
+      "attention": 0.47305828332901,
+      "metabolic": 0.5746737420558929,
+      "mismatch": 0.6766749620437622
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 61,
+    "lr": 0.0004071878483936505,
+    "train_loss": 1.430715560913086,
+    "train_loss_terms": {
+      "attention": 0.5050384898980459,
+      "metabolic": 0.5666381319363912,
+      "mismatch": 0.7180776993433634
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.7,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4,
+        "balanced_accuracy": 0.4,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.7679999999999999
+  },
+  {
+    "epoch": 62,
+    "lr": 0.0003681930814279541,
+    "train_loss": 1.3833211263020833,
+    "train_loss_terms": {
+      "attention": 0.39435213804244995,
+      "metabolic": 0.6009419957796732,
+      "mismatch": 0.7760540644327799
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 63,
+    "lr": 0.00033095118833328664,
+    "train_loss": 1.3266781171162922,
+    "train_loss_terms": {
+      "attention": 0.4506722887357076,
+      "metabolic": 0.5594661235809326,
+      "mismatch": 0.6330794294675192
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 64,
+    "lr": 0.000295519593409454,
+    "train_loss": 1.5280532439549763,
+    "train_loss_terms": {
+      "attention": 0.4266912241776784,
+      "metabolic": 0.6193452676137289,
+      "mismatch": 0.9640335043271383
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 65,
+    "lr": 0.00026195292960769543,
+    "train_loss": 1.5439633131027222,
+    "train_loss_terms": {
+      "attention": 0.5766116380691528,
+      "metabolic": 0.5935243765513102,
+      "mismatch": 0.7476545969645182
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8699999999999999
+  },
+  {
+    "epoch": 66,
+    "lr": 0.00023030295429063235,
+    "train_loss": 1.5340602397918701,
+    "train_loss_terms": {
+      "attention": 0.5522772073745728,
+      "metabolic": 0.5661948124567667,
+      "mismatch": 0.8311763207117716
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 67,
+    "lr": 0.00020061846942616868,
+    "train_loss": 1.368837873140971,
+    "train_loss_terms": {
+      "attention": 0.43850433826446533,
+      "metabolic": 0.5757718682289124,
+      "mismatch": 0.7091233332951864
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 68,
+    "lr": 0.00017294524633839026,
+    "train_loss": 1.3602317969004314,
+    "train_loss_terms": {
+      "attention": 0.5016300678253174,
+      "metabolic": 0.552865207195282,
+      "mismatch": 0.6114732027053833
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 69,
+    "lr": 0.00014732595513150345,
+    "train_loss": 1.383259932200114,
+    "train_loss_terms": {
+      "attention": 0.5131854712963104,
+      "metabolic": 0.5551438530286154,
+      "mismatch": 0.629861076672872
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6974789915966386,
+        "balanced_accuracy": 0.85,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 70,
+    "lr": 0.0001238000988956264,
+    "train_loss": 1.4179635047912598,
+    "train_loss_terms": {
+      "attention": 0.5616082549095154,
+      "metabolic": 0.5103518863519033,
+      "mismatch": 0.6920067270596822
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 71,
+    "lr": 0.00010240395279588623,
+    "train_loss": 1.3456559975941975,
+    "train_loss_terms": {
+      "attention": 0.504276692867279,
+      "metabolic": 0.5444530049959818,
+      "mismatch": 0.5938525597254435
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6974789915966386,
+        "balanced_accuracy": 0.85,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 72,
+    "lr": 8.317050813874551e-05,
+    "train_loss": 1.4311118920644124,
+    "train_loss_terms": {
+      "attention": 0.49836743871370953,
+      "metabolic": 0.5713702837626139,
+      "mismatch": 0.7227482398351034
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.9,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 73,
+    "lr": 6.612942150179753e-05,
+    "train_loss": 1.4800794919331868,
+    "train_loss_terms": {
+      "attention": 0.6523784001668295,
+      "metabolic": 0.521880030632019,
+      "mismatch": 0.6116421818733215
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 74,
+    "lr": 5.130696900547358e-05,
+    "train_loss": 1.4526915550231934,
+    "train_loss_terms": {
+      "attention": 0.5607637564341227,
+      "metabolic": 0.5577025413513184,
+      "mismatch": 0.6684506038824717
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.8991596638655461,
+        "balanced_accuracy": 0.875,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 75,
+    "lr": 3.872600579717053e-05,
+    "train_loss": 1.3980594078699748,
+    "train_loss_terms": {
+      "attention": 0.4315590063730876,
+      "metabolic": 0.5644909540812174,
+      "mismatch": 0.8040188550949097
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6974789915966386,
+        "balanced_accuracy": 0.85,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.6
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8245714285714285
+  },
+  {
+    "epoch": 76,
+    "lr": 2.8405930810269218e-05,
+    "train_loss": 1.4164138634999592,
+    "train_loss_terms": {
+      "attention": 0.48942267894744873,
+      "metabolic": 0.5754502813021342,
+      "mismatch": 0.7030817866325378
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.4857142857142857,
+        "balanced_accuracy": 0.7,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8325714285714285
+  },
+  {
+    "epoch": 77,
+    "lr": 2.0362656852385203e-05,
+    "train_loss": 1.4999920129776,
+    "train_loss_terms": {
+      "attention": 0.5079720815022787,
+      "metabolic": 0.6066394646962484,
+      "mismatch": 0.7707608342170715
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 78,
+    "lr": 1.46085860689737e-05,
+    "train_loss": 1.625451922416687,
+    "train_loss_terms": {
+      "attention": 0.44307411710421246,
+      "metabolic": 0.7298621336619059,
+      "mismatch": 0.9050312638282776
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.8991596638655461,
+        "balanced_accuracy": 0.875,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 79,
+    "lr": 1.1152590820119265e-05,
+    "train_loss": 1.331488569577535,
+    "train_loss_terms": {
+      "attention": 0.4695671300093333,
+      "metabolic": 0.5538779099782308,
+      "mismatch": 0.6160870691140493
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.9
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  },
+  {
+    "epoch": 80,
+    "lr": 1e-05,
+    "train_loss": 1.521039326985677,
+    "train_loss_terms": {
+      "attention": 0.5044934749603271,
+      "metabolic": 0.5937124490737915,
+      "mismatch": 0.845666766166687
+    },
+    "train": {
+      "attention": {
+        "macro_f1": 0.6210526315789473,
+        "balanced_accuracy": 0.65,
+        "auroc": 0.85
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 0.7777777777777777,
+        "balanced_accuracy": 0.75,
+        "auroc": 1.0
+      }
+    },
+    "validation": {
+      "attention": {
+        "macro_f1": 0.625,
+        "balanced_accuracy": 0.8,
+        "auroc": 0.8
+      },
+      "metabolic": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      },
+      "mismatch": {
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "auroc": 1.0
+      }
+    },
+    "composite_score": 0.8779999999999999
+  }
+]

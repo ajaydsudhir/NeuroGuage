@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import sys
 import time
+import types
 from pathlib import Path
 
 import pandas as pd
@@ -25,6 +26,7 @@ if str(SRC) not in sys.path:
 from neuroguage.muse_stream import (  # noqa: E402
     EEG_OUTPUT_COLUMNS,
     IMU_OUTPUT_COLUMNS,
+    LSLMuseSource,
     OPTICAL_OUTPUT_COLUMNS,
     RawRecordingReplaySource,
     SyntheticMuseSource,
@@ -91,6 +93,14 @@ class TestBuildDataSource:
         with pytest.raises(ValueError):
             build_data_source(source_kind="bogus")
 
+    def test_muse_source_requires_full_link_by_default(self) -> None:
+        source = build_data_source(
+            source_kind="muse",
+            device_address="00:11:22:33:44:55",
+        )
+        assert isinstance(source, LSLMuseSource)
+        assert source.require_full_link is True
+
 
 def _fake_decoded_session(n_seconds: float = 2.0) -> dict[str, pd.DataFrame]:
     eeg_n = int(n_seconds * 256)
@@ -156,6 +166,27 @@ class TestRawRecordingReplaySource:
             assert source.finished is True
         finally:
             source.stop()
+
+
+class TestLSLMuseSource:
+    def test_resolve_streams_raises_when_required_modalities_missing(
+        self,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        fake_lsl = types.SimpleNamespace(
+            StreamInlet=object,
+            resolve_streams=lambda timeout=0.0: [],
+        )
+        monkeypatch.setitem(sys.modules, "mne_lsl.lsl", fake_lsl)
+        source = LSLMuseSource(
+            device_address="00:11:22:33:44:55",
+            manage_bridge=False,
+            resolve_timeout_s=0.0,
+            resolve_poll_interval_s=0.0,
+            require_full_link=True,
+        )
+        with pytest.raises(RuntimeError, match="Muse link not ready"):
+            source._resolve_streams()
 
 
 class TestDecodeRawSessionToContract:

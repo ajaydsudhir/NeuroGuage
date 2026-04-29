@@ -1,11 +1,8 @@
-"""Day 4 — T13  Symbolic Guardrail Engine.
+"""Guardrail logic for intervention states.
 
-Maps continuous fatigue risk scores to discrete alert states with:
-
-  T13.1  GREEN, YELLOW, RED, and optional BLACK transition logic.
-  T13.2  Persistence and trend checks to suppress oscillation.
-  T13.3  Rationale text for each non-GREEN transition.
-  T13.4  Timestamped transition logs for replay and post-hoc review.
+Turns a continuous risk score into user-facing states (`GREEN`, `YELLOW`,
+`RED`, and optional `BLACK`) with hysteresis, persistence checks, and
+transition logs that can be replayed later.
 """
 
 from __future__ import annotations
@@ -21,9 +18,7 @@ from typing import Any
 LOGGER = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
 # Alert States
-# ---------------------------------------------------------------------------
 
 class AlertState(str, Enum):
     """Symbolic fatigue risk states."""
@@ -46,9 +41,7 @@ _SEVERITY_MAP: dict[AlertState, int] = {
 }
 
 
-# ---------------------------------------------------------------------------
 # Configuration
-# ---------------------------------------------------------------------------
 
 @dataclass
 class GuardrailConfig:
@@ -83,6 +76,16 @@ class GuardrailConfig:
     profile_name: str = ""                 # e.g. "default", "calibrated", "personalized"
     profile_description: str = ""
 
+    # ----- Neuro-symbolic MetabolicMismatchRule (dual-head model) -------
+    # The rule fires when the user is *engaged but their hemodynamic
+    # readiness has dropped*, i.e. attention_prob >= mismatch_attention_min
+    # AND metabolic_prob <= mismatch_metabolic_max for at least
+    # mismatch_persistence consecutive cycles.
+    mismatch_attention_min: float = 0.60
+    mismatch_metabolic_max: float = 0.40
+    mismatch_persistence: int = 3
+    mismatch_min_risk: float = 0.0
+
     # ------------------------------------------------------------------
     # Serialisation
     # ------------------------------------------------------------------
@@ -92,8 +95,12 @@ class GuardrailConfig:
         "green_recovery_threshold", "yellow_recovery_threshold",
         "red_recovery_threshold",
         "trend_rising_threshold", "min_confidence_for_red",
+        "mismatch_attention_min", "mismatch_metabolic_max", "mismatch_min_risk",
     )
-    _INT_FIELDS = ("escalation_persistence", "de_escalation_persistence", "trend_window")
+    _INT_FIELDS = (
+        "escalation_persistence", "de_escalation_persistence", "trend_window",
+        "mismatch_persistence",
+    )
     _BOOL_FIELDS = ("enable_black",)
     _STR_FIELDS = ("profile_name", "profile_description")
 
@@ -161,15 +168,31 @@ class GuardrailConfig:
         for k in self._INT_FIELDS:
             if getattr(self, k) < 1:
                 raise ValueError(f"{k} must be >= 1, got {getattr(self, k)}")
+        if not (0.0 <= self.mismatch_metabolic_max <= 1.0):
+            raise ValueError(
+                "GuardrailConfig mismatch_metabolic_max must satisfy "
+                "0 <= mismatch_metabolic_max <= 1, "
+                f"got {self.mismatch_metabolic_max}"
+            )
+        if not (0.0 <= self.mismatch_attention_min <= 1.0):
+            raise ValueError(
+                "GuardrailConfig mismatch_attention_min must satisfy "
+                "0 <= mismatch_attention_min <= 1, "
+                f"got {self.mismatch_attention_min}"
+            )
+        if not (0.0 <= self.mismatch_min_risk <= 1.0):
+            raise ValueError(
+                "GuardrailConfig mismatch_min_risk must satisfy "
+                "0 <= mismatch_min_risk <= 1, "
+                f"got {self.mismatch_min_risk}"
+            )
 
 
-# ---------------------------------------------------------------------------
 # Transition record
-# ---------------------------------------------------------------------------
 
 @dataclass
 class GuardrailTransition:
-    """Timestamped record of a state change (T13.4)."""
+    """Timestamped record of a state change."""
 
     timestamp_s: float
     previous_state: str
@@ -182,9 +205,7 @@ class GuardrailTransition:
     diagnostics: dict[str, Any] = field(default_factory=dict)
 
 
-# ---------------------------------------------------------------------------
 # Engine state
-# ---------------------------------------------------------------------------
 
 @dataclass
 class GuardrailState:
@@ -199,9 +220,7 @@ class GuardrailState:
     update_count: int = 0
 
 
-# ---------------------------------------------------------------------------
 # Core engine
-# ---------------------------------------------------------------------------
 
 def _score_to_raw_state(score: float, config: GuardrailConfig) -> AlertState:
     """Map a raw risk score to a state ignoring persistence / hysteresis."""
@@ -244,7 +263,7 @@ def _build_rationale(
     persistence_count: int,
     config: GuardrailConfig,
 ) -> str:
-    """Generate human-readable rationale for a non-GREEN transition (T13.3)."""
+    """Generate human-readable rationale for a non-GREEN transition."""
     if new_state == AlertState.GREEN:
         return ""
 
@@ -291,8 +310,8 @@ def update_guardrail(
 ) -> AlertState:
     """Process a new risk score and return the current guardrail state.
 
-    Implements T13.1 (transition logic), T13.2 (persistence and trend
-    checks), T13.3 (rationale text), and T13.4 (transition logs).
+    Implements (transition logic), (persistence and trend
+    checks), (rationale text), and (transition logs).
     """
     if config is None:
         config = GuardrailConfig()
@@ -435,9 +454,158 @@ def update_guardrail(
     return state.current_state
 
 
-# ---------------------------------------------------------------------------
+# Neuro-symbolic MetabolicMismatchRule (dual-head model)
+
+@dataclass
+class MismatchEvent:
+    """Timestamped record of a metabolic-mismatch flag transition."""
+
+    timestamp_s: float
+    active: bool
+    attention_prob: float
+    metabolic_prob: float
+    mismatch_prob: float
+    persistence_count: int
+    rationale: str
+
+
+@dataclass
+class MismatchState:
+    """Mutable state for the MetabolicMismatchRule.
+
+    Tracks how long the symbolic AND has been satisfied so we don't fire on
+    a single noisy frame.  Holding the rationale makes it cheap for the
+    dashboard to display "you've been engaged but under-supplied for X
+    cycles -> consider a break".
+    """
+
+    active: bool = False
+    pending_count: int = 0
+    last_attention_prob: float = 0.0
+    last_metabolic_prob: float = 1.0
+    last_mismatch_prob: float = 0.0
+    events: list[MismatchEvent] = field(default_factory=list)
+
+
+def evaluate_metabolic_mismatch(
+    attention_prob: float,
+    metabolic_prob: float,
+    timestamp_s: float,
+    state: MismatchState,
+    risk_score: float | None = None,
+    config: GuardrailConfig | None = None,
+) -> MismatchEvent | None:
+    """Symbolic AND-rule on the dual-head outputs.
+
+    Returns a :class:`MismatchEvent` *only* when the active flag flips this
+    cycle (rising or falling edge), so callers can append it to a transition
+    log without de-duping.  Updates the supplied ``state`` in place either
+    way so the caller can query ``state.active`` every frame.
+    """
+    # Backward compatibility: older call sites passed `config` as the fifth
+    # positional argument before `risk_score` was introduced.
+    if isinstance(risk_score, GuardrailConfig) and config is None:
+        config = risk_score
+        risk_score = None
+
+    if config is None:
+        config = GuardrailConfig()
+
+    state.last_attention_prob = float(attention_prob)
+    state.last_metabolic_prob = float(metabolic_prob)
+    soft_and = float(attention_prob) * (1.0 - float(metabolic_prob))
+    state.last_mismatch_prob = soft_and
+
+    rule_satisfied = (
+        attention_prob >= config.mismatch_attention_min
+        and metabolic_prob <= config.mismatch_metabolic_max
+        and (risk_score is None or risk_score >= config.mismatch_min_risk)
+    )
+
+    event: MismatchEvent | None = None
+
+    if rule_satisfied:
+        state.pending_count += 1
+        if not state.active and state.pending_count >= config.mismatch_persistence:
+            state.active = True
+            rationale = (
+                f"User is engaged (P(attention)={attention_prob:.2f} >= "
+                f"{config.mismatch_attention_min:.2f}) but hemodynamic "
+                f"readiness has dropped (P(metabolic_ready)={metabolic_prob:.2f} "
+                f"<= {config.mismatch_metabolic_max:.2f})"
+                + (
+                    f" while fatigue risk is elevated ({risk_score:.2f} >= "
+                    f"{config.mismatch_min_risk:.2f})"
+                    if risk_score is not None and config.mismatch_min_risk > 0.0
+                    else ""
+                )
+                + " for "
+                f"{state.pending_count} consecutive cycles. Recommend break."
+            )
+            event = MismatchEvent(
+                timestamp_s=timestamp_s,
+                active=True,
+                attention_prob=float(attention_prob),
+                metabolic_prob=float(metabolic_prob),
+                mismatch_prob=soft_and,
+                persistence_count=state.pending_count,
+                rationale=rationale,
+            )
+            state.events.append(event)
+            LOGGER.info("MetabolicMismatchRule ACTIVATED: %s", rationale)
+    else:
+        if state.active:
+            rationale = (
+                "Hemodynamic readiness recovered or attention dropped — "
+                f"P(attention)={attention_prob:.2f}, "
+                f"P(metabolic_ready)={metabolic_prob:.2f}"
+                + (
+                    f", risk={risk_score:.2f}"
+                    if risk_score is not None
+                    else ""
+                )
+                + ". Mismatch cleared."
+            )
+            state.active = False
+            event = MismatchEvent(
+                timestamp_s=timestamp_s,
+                active=False,
+                attention_prob=float(attention_prob),
+                metabolic_prob=float(metabolic_prob),
+                mismatch_prob=soft_and,
+                persistence_count=state.pending_count,
+                rationale=rationale,
+            )
+            state.events.append(event)
+            LOGGER.info("MetabolicMismatchRule cleared: %s", rationale)
+        state.pending_count = 0
+
+    return event
+
+
+def write_mismatch_artifacts(
+    state: MismatchState,
+    output_path: str | Path,
+) -> None:
+    """Persist the mismatch transition log for post-hoc review."""
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = [
+        {
+            "timestamp_s": e.timestamp_s,
+            "active": e.active,
+            "attention_prob": e.attention_prob,
+            "metabolic_prob": e.metabolic_prob,
+            "mismatch_prob": e.mismatch_prob,
+            "persistence_count": e.persistence_count,
+            "rationale": e.rationale,
+        }
+        for e in state.events
+    ]
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
 # Batch processing (replay)
-# ---------------------------------------------------------------------------
 
 def run_guardrail_sequence(
     risk_scores: list[float],
@@ -478,9 +646,7 @@ def run_guardrail_sequence(
     return state
 
 
-# ---------------------------------------------------------------------------
-# Artifact persistence (T13.4)
-# ---------------------------------------------------------------------------
+# Artifact persistence
 
 def write_guardrail_artifacts(
     state: GuardrailState,

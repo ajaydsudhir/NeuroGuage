@@ -1,7 +1,0 @@
-{
-  "workflow": "replay",
-  "status": "dry-run",
-  "timestamp_utc": "2026-04-21T18:51:42.094399+00:00",
-  "log_path": "logs\\replay_workflow_20260421_185142.log",
-  "extra_config": {}
-}

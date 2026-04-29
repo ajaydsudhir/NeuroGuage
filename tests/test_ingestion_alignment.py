@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from neuroguage.ingestion import (
+from neuroguage.pipeline import (
     ingest_modalities,
     normalize_modality_timestamps,
     synchronize_modalities,

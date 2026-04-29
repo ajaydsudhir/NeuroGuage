@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from neuroguage.demo import (
+from neuroguage.lifecycle import (
     DemoConfig,
     DemoOrchestrator,
     DemoStage,

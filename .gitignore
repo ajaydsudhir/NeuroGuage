@@ -1,3 +1,30 @@
+# Local data and runtime captures
 data/
+
+# Python cache/build artifacts
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editable install metadata
+*.egg-info/
+src/*.egg-info/
+
+# IDE/OS noise
+.DS_Store
+Thumbs.db
+
+# Logs and temporary runtime outputs
+logs/*.log
+
+# Live run outputs are generated each session
+artifacts/reports/live/*.json
+artifacts/reports/live/*.csv
+artifacts/reports/live/*.png
+
+# Keep manifest if present
+!artifacts/reports/live/run_live_manifest.json

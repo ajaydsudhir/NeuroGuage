@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from neuroguage.promotion import (
+from neuroguage.lifecycle import (
     PROMOTION_DELTA_THRESHOLD,
     compare_latency,
     compare_metrics,

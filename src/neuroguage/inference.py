@@ -1,13 +1,8 @@
-"""Day 4 — T12  Real-Time Inference Service.
+"""Live risk inference helpers.
 
-Provides a live inference pipeline that:
-
-  T12.1  Implements live feature path aligned to offline data contract and
-         transforms (same windowing, feature extraction, normalization).
-  T12.2  Loads selected MVP model and emits risk score in [0, 1].
-  T12.3  Adds runtime fault handling for packet loss and delayed modality
-         updates.
-  T12.4  Logs per-update latency and model confidence diagnostics.
+This module keeps the online path close to the offline training path:
+same feature columns, same normalization, and the same late-fusion model
+setup. It also tracks runtime faults and writes diagnostics for replay.
 """
 
 from __future__ import annotations
@@ -27,17 +22,13 @@ import pandas as pd
 LOGGER = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
 # Exceptions
-# ---------------------------------------------------------------------------
 
 class InferenceError(ValueError):
     """Raised when real-time inference cannot proceed."""
 
 
-# ---------------------------------------------------------------------------
 # Data-classes
-# ---------------------------------------------------------------------------
 
 @dataclass
 class InferenceConfig:
@@ -89,9 +80,7 @@ class InferenceState:
     latency_history: deque[float] = field(default_factory=lambda: deque(maxlen=100))
 
 
-# ---------------------------------------------------------------------------
 # Model loading
-# ---------------------------------------------------------------------------
 
 def _resolve_selected_model_dir(config: InferenceConfig) -> Path:
     """Determine the model directory for the selected MVP variant."""
@@ -103,11 +92,11 @@ def _resolve_selected_model_dir(config: InferenceConfig) -> Path:
         if variant_dir.exists():
             return variant_dir
         LOGGER.warning(
-            "Selected variant directory %s not found; falling back to Day 3 models.",
+            "Selected variant directory %s not found; falling back to baseline models.",
             variant_dir,
         )
 
-    # Fall back to Day 3 models
+    # Fall back to baseline models
     fallback = Path("artifacts/models/day3")
     if fallback.exists():
         return fallback
@@ -118,7 +107,7 @@ def _resolve_selected_model_dir(config: InferenceConfig) -> Path:
 def load_inference_models(
     config: InferenceConfig,
 ) -> dict[str, Any]:
-    """Load model artifacts for live inference (T12.2).
+    """Load model artifacts for live inference.
 
     Returns a dictionary with keys:
         linear_model, tree_model, fusion_weights, feature_columns,
@@ -175,9 +164,7 @@ def load_inference_models(
     }
 
 
-# ---------------------------------------------------------------------------
-# Live feature path (T12.1)
-# ---------------------------------------------------------------------------
+# Live feature path
 
 def _apply_live_normalization(
     raw_features: dict[str, float],
@@ -185,14 +172,14 @@ def _apply_live_normalization(
     scaler_metadata: dict[str, Any] | None,
 ) -> dict[str, float]:
     """Apply train-only z-score normalization aligned to offline pipeline."""
-    normalized: dict[str, float] = {}
+    scaled_features: dict[str, float] = {}
 
     if scaler_metadata is None:
         # No scaler — pass through raw features
         for col in feature_columns:
             raw_name = col.removeprefix("z_")
-            normalized[col] = raw_features.get(raw_name, 0.0)
-        return normalized
+            scaled_features[col] = raw_features.get(raw_name, 0.0)
+        return scaled_features
 
     statistics = scaler_metadata.get("statistics", {})
     for col in feature_columns:
@@ -204,11 +191,11 @@ def _apply_live_normalization(
             std = float(statistics[raw_name]["std"])
             if std <= 1e-9:
                 std = 1.0
-            normalized[col] = (raw_value - mean) / std
+            scaled_features[col] = (raw_value - mean) / std
         else:
-            normalized[col] = raw_value
+            scaled_features[col] = raw_value
 
-    return normalized
+    return scaled_features
 
 
 def build_live_features(
@@ -218,7 +205,7 @@ def build_live_features(
     timestamp_s: float,
     config: InferenceConfig,
 ) -> dict[str, float]:
-    """Construct a feature vector from live sensor buffers (T12.1).
+    """Construct a feature vector from live sensor buffers.
 
     Mirrors the offline EEG and optical/IMU feature extraction but operates
     on real-time circular buffers rather than session-wide DataFrames.
@@ -234,19 +221,19 @@ def build_live_features(
         coverage_list = []
 
         for ch in eeg_channels:
-            vals = eeg_buffer[ch].dropna().to_numpy(dtype=float)
-            coverage_list.append(float(len(vals)) / max(1, len(eeg_buffer)))
-            if len(vals) < 4:
+            samples = eeg_buffer[ch].dropna().to_numpy(dtype=float)
+            coverage_list.append(float(len(samples)) / max(1, len(eeg_buffer)))
+            if len(samples) < 4:
                 channel_thetas.append(0.0)
                 channel_alphas.append(0.0)
                 channel_betas.append(0.0)
                 continue
             # Simplified band power estimation using variance in band approximations
-            vals_clipped = np.clip(vals, -200.0, 200.0)
-            total_var = float(np.var(vals_clipped)) + 1e-12
-            channel_thetas.append(float(np.clip(np.var(vals_clipped[:len(vals_clipped)//3]) / total_var, 0, 1)))
-            channel_alphas.append(float(np.clip(np.var(vals_clipped[len(vals_clipped)//3:2*len(vals_clipped)//3]) / total_var, 0, 1)))
-            channel_betas.append(float(np.clip(np.var(vals_clipped[2*len(vals_clipped)//3:]) / total_var, 0, 1)))
+            clipped = np.clip(samples, -200.0, 200.0)
+            total_var = float(np.var(clipped)) + 1e-12
+            channel_thetas.append(float(np.clip(np.var(clipped[:len(clipped)//3]) / total_var, 0, 1)))
+            channel_alphas.append(float(np.clip(np.var(clipped[len(clipped)//3:2*len(clipped)//3]) / total_var, 0, 1)))
+            channel_betas.append(float(np.clip(np.var(clipped[2*len(clipped)//3:]) / total_var, 0, 1)))
 
         rel_theta = float(np.mean(channel_thetas)) if channel_thetas else 0.0
         rel_alpha = float(np.mean(channel_alphas)) if channel_alphas else 0.0
@@ -270,10 +257,10 @@ def build_live_features(
     else:
         opt_cols = [c for c in optical_buffer.columns if c.startswith("optics_")]
         if opt_cols:
-            opt_vals = optical_buffer[opt_cols].mean(axis=1).to_numpy(dtype=float)
-            opt_mean = float(np.mean(opt_vals)) if len(opt_vals) else 0.0
-            opt_slope = float(np.polyfit(np.arange(len(opt_vals)), opt_vals, 1)[0]) if len(opt_vals) > 1 else 0.0
-            opt_change = float(opt_vals[-1] - opt_vals[0]) if len(opt_vals) > 1 else 0.0
+            opt_series = optical_buffer[opt_cols].mean(axis=1).to_numpy(dtype=float)
+            opt_mean = float(np.mean(opt_series)) if len(opt_series) else 0.0
+            opt_slope = float(np.polyfit(np.arange(len(opt_series)), opt_series, 1)[0]) if len(opt_series) > 1 else 0.0
+            opt_change = float(opt_series[-1] - opt_series[0]) if len(opt_series) > 1 else 0.0
             opt_coverage = float(optical_buffer[opt_cols].notna().mean().mean())
         else:
             opt_mean, opt_slope, opt_change, opt_coverage = 0.0, 0.0, 0.0, 0.0
@@ -347,9 +334,7 @@ def _default_imu_features() -> dict[str, float]:
     }
 
 
-# ---------------------------------------------------------------------------
-# Fault handling (T12.3)
-# ---------------------------------------------------------------------------
+# Fault handling
 
 def detect_faults(
     state: InferenceState,
@@ -395,9 +380,7 @@ def detect_faults(
     return faults
 
 
-# ---------------------------------------------------------------------------
-# Inference cycle (T12.2, T12.4)
-# ---------------------------------------------------------------------------
+# Inference cycle (, )
 
 def run_inference_cycle(
     eeg_buffer: pd.DataFrame,
@@ -410,14 +393,14 @@ def run_inference_cycle(
 ) -> InferenceUpdate:
     """Execute a single inference update cycle.
 
-    1. Detect faults (T12.3)
-    2. Build live features (T12.1)
-    3. Normalize and predict (T12.2)
-    4. Log latency and diagnostics (T12.4)
+    1. Detect faults
+    2. Build live features
+    3. Normalize and predict
+    4. Log latency and diagnostics
     """
     cycle_start = time.perf_counter()
 
-    # T12.3 — Fault detection
+    # Fault detection
     fault_flags = detect_faults(
         state=state,
         current_time_s=timestamp_s,
@@ -427,7 +410,7 @@ def run_inference_cycle(
         imu_buffer_empty=imu_buffer.empty,
     )
 
-    # T12.1 — Build live features
+    # Build live features
     raw_features = build_live_features(
         eeg_buffer=eeg_buffer,
         optical_buffer=optical_buffer,
@@ -439,24 +422,24 @@ def run_inference_cycle(
     # Normalize
     feature_columns: list[str] = models["feature_columns"]
     scaler_metadata: dict[str, Any] | None = models["scaler_metadata"]
-    normalized = _apply_live_normalization(raw_features, feature_columns, scaler_metadata)
+    scaled_features = _apply_live_normalization(raw_features, feature_columns, scaler_metadata)
 
     # Build feature array in correct column order
-    x = np.array([[normalized.get(col, 0.0) for col in feature_columns]])
+    feature_row = np.array([[scaled_features.get(col, 0.0) for col in feature_columns]])
 
-    # T12.2 — Model prediction
+    # Model prediction
     linear_model = models["linear_model"]
     tree_model = models["tree_model"]
     fusion_weights = models["fusion_weights"]
 
     try:
-        linear_prob = float(linear_model.predict_proba(x)[:, 1][0])
+        linear_prob = float(linear_model.predict_proba(feature_row)[:, 1][0])
     except Exception:
         linear_prob = 0.5
         fault_flags.append("linear_model_error")
 
     try:
-        tree_prob = float(tree_model.predict_proba(x)[:, 1][0])
+        tree_prob = float(tree_model.predict_proba(feature_row)[:, 1][0])
     except Exception:
         tree_prob = 0.5
         fault_flags.append("tree_model_error")
@@ -475,7 +458,7 @@ def run_inference_cycle(
         model_confidence *= 0.5
         risk_score = float(np.clip(risk_score, 0.3, 0.7))  # Pull toward uncertain
 
-    # T12.4 — Latency and diagnostics
+    # Latency and diagnostics
     cycle_latency = time.perf_counter() - cycle_start
     state.update_count += 1
     state.risk_score_history.append(risk_score)
@@ -507,16 +490,14 @@ def run_inference_cycle(
         timestamp_s=timestamp_s,
         risk_score=risk_score,
         model_confidence=model_confidence,
-        feature_vector=normalized,
+        feature_vector=scaled_features,
         latency_s=cycle_latency,
         fault_flags=fault_flags,
         diagnostics=diagnostics,
     )
 
 
-# ---------------------------------------------------------------------------
 # Replay-mode inference runner
-# ---------------------------------------------------------------------------
 
 def run_replay_inference(
     labeled_frame: pd.DataFrame,
@@ -546,19 +527,19 @@ def run_replay_inference(
         timestamp_s = float(row.get("start_time_s", float(idx)))
 
         # Build normalized feature vector from stored z-columns
-        normalized: dict[str, float] = {}
+        scaled_features: dict[str, float] = {}
         for col in feature_columns:
-            normalized[col] = float(row.get(col, 0.0))
+            scaled_features[col] = float(row.get(col, 0.0))
 
-        x = np.array([[normalized.get(col, 0.0) for col in feature_columns]])
+        feature_row = np.array([[scaled_features.get(col, 0.0) for col in feature_columns]])
 
         try:
-            linear_prob = float(linear_model.predict_proba(x)[:, 1][0])
+            linear_prob = float(linear_model.predict_proba(feature_row)[:, 1][0])
         except Exception:
             linear_prob = 0.5
 
         try:
-            tree_prob = float(tree_model.predict_proba(x)[:, 1][0])
+            tree_prob = float(tree_model.predict_proba(feature_row)[:, 1][0])
         except Exception:
             tree_prob = 0.5
 
@@ -579,7 +560,7 @@ def run_replay_inference(
                 timestamp_s=timestamp_s,
                 risk_score=risk_score,
                 model_confidence=model_confidence,
-                feature_vector=normalized,
+                feature_vector=scaled_features,
                 latency_s=cycle_latency,
                 fault_flags=[],
                 diagnostics={
@@ -599,9 +580,7 @@ def run_replay_inference(
     return updates
 
 
-# ---------------------------------------------------------------------------
 # Artifact persistence
-# ---------------------------------------------------------------------------
 
 def write_inference_diagnostics(
     updates: list[InferenceUpdate],

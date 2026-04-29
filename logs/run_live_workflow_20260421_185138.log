@@ -1,2 +1,0 @@
-2026-04-21 14:51:38 | INFO | neuroguage.workflows | Workflow 'run_live' completed with status 'dry-run'.
-2026-04-21 14:51:38 | INFO | neuroguage.workflows | Manifest written to artifacts\reports\day1\entrypoints\run_live_manifest.json

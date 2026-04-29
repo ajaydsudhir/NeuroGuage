@@ -13,7 +13,7 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from neuroguage.calibration import (  # noqa: E402
+from neuroguage.live_app import (  # noqa: E402
     BaselineStats,
     PersonalBaselineCalibrator,
 )

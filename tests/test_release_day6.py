@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from neuroguage.release import _sha256, build_release_bundle
+from neuroguage.lifecycle import _sha256, build_release_bundle
 
 
 def test_sha256_deterministic(tmp_path: Path) -> None:

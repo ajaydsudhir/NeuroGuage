@@ -1,13 +1,10 @@
-"""Day 5 — T14  Dashboard and Timeline Visualization.
+"""Dashboard UI (Live Visualization).
 
-Matplotlib-based real-time dashboard for NeuroGauge that provides:
+Matplotlib-based real-time dashboard for NeuroGauge with:
 
-  T14.1  Real-time panels for EEG, optical trends, risk score, and current
-         alert state.
-  T14.2  Timeline with transition markers and rationale details.
-  T14.3  Stream health and model-state indicators.
-  T14.4  Readability validated for classroom projection (large fonts, high
-         contrast, 1280×720 minimum).
+  A single risk timeline panel.
+  A probability panel for P(attention) and P(oxygenation).
+  A system status panel with guardrail state and stream health.
 """
 
 from __future__ import annotations
@@ -28,9 +25,7 @@ from .guardrails import AlertState, GuardrailTransition
 
 LOGGER = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# T14.4 — Classroom-projection colour scheme and typography
-# ---------------------------------------------------------------------------
+# Classroom-projection colour scheme and typography
 
 # High-contrast palette optimised for projector readability at distance
 _STATE_COLORS: dict[str, str] = {
@@ -57,18 +52,17 @@ _HEALTH_OK = "#22c55e"
 _HEALTH_WARN = "#eab308"
 _HEALTH_FAIL = "#ef4444"
 
-# T14.4 — Large font sizes for projection readability
+# Large font sizes for projection readability
 _TITLE_SIZE = 16
 _LABEL_SIZE = 13
 _TICK_SIZE = 11
 _BADGE_SIZE = 28
 _RATIONALE_SIZE = 11
 _INDICATOR_SIZE = 12
+_LEGEND_SIZE = 12
 
 
-# ---------------------------------------------------------------------------
 # Data-classes
-# ---------------------------------------------------------------------------
 
 @dataclass
 class DashboardConfig:
@@ -122,23 +116,21 @@ class DashboardSnapshot:
     black_threshold: float = 0.85
     guardrail_profile: str = ""
 
+    # Dual-head neuro-symbolic mismatch overlay
+    dual_head_enabled: bool = False
+    attention_prob_history: list[float] = field(default_factory=list)
+    metabolic_prob_history: list[float] = field(default_factory=list)
+    mismatch_active_history: list[bool] = field(default_factory=list)
+    mismatch_active: bool = False
+    mismatch_attention_min: float = 0.60
+    mismatch_metabolic_max: float = 0.40
+    mismatch_rationale: str = ""
 
-# ---------------------------------------------------------------------------
-# Dashboard renderer  (T14.1–T14.4)
-# ---------------------------------------------------------------------------
+
+# Dashboard renderer  (–)
 
 class DashboardRenderer:
-    """Matplotlib-based dashboard renderer.
-
-    Creates a 4-panel layout:
-      ┌──────────────┬──────────────┐
-      │  EEG Bands   │  Risk Score  │
-      ├──────────────┼──────────────┤
-      │Optical Trend │State + Health│
-      ├──────────────┴──────────────┤
-      │     Timeline + Rationale    │
-      └─────────────────────────────┘
-    """
+    """Matplotlib-based dashboard renderer."""
 
     def __init__(self, config: DashboardConfig | None = None) -> None:
         self.config = config or DashboardConfig()
@@ -169,19 +161,17 @@ class DashboardRenderer:
             dpi=self.config.dpi,
         )
         gs = gridspec.GridSpec(
-            3, 2,
-            height_ratios=[1.0, 1.0, 0.8],
-            hspace=0.35,
-            wspace=0.25,
-            left=0.06, right=0.94,
-            top=0.93, bottom=0.06,
+            2, 2,
+            height_ratios=[1.25, 1.15],
+            hspace=0.30,
+            wspace=0.20,
+            left=0.045, right=0.955,
+            top=0.92, bottom=0.055,
         )
 
-        self._axes["eeg"] = fig.add_subplot(gs[0, 0])
-        self._axes["risk"] = fig.add_subplot(gs[0, 1])
-        self._axes["optical"] = fig.add_subplot(gs[1, 0])
+        self._axes["risk"] = fig.add_subplot(gs[0, :])
+        self._axes["probabilities"] = fig.add_subplot(gs[1, 0])
         self._axes["state"] = fig.add_subplot(gs[1, 1])
-        self._axes["timeline"] = fig.add_subplot(gs[2, :])
 
         fig.suptitle(
             "NeuroGauge — Real-Time Cognitive Fatigue Monitor",
@@ -198,36 +188,8 @@ class DashboardRenderer:
     # Panel renderers
     # ------------------------------------------------------------------
 
-    def _render_eeg_panel(self, snap: DashboardSnapshot) -> None:
-        """T14.1 — EEG relative band powers panel."""
-        ax = self._axes["eeg"]
-        ax.clear()
-        ax.set_title("EEG Band Powers", fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
-        ax.set_ylabel("Relative Power", fontsize=_LABEL_SIZE)
-        ax.set_xlabel("Time (s)", fontsize=_LABEL_SIZE)
-        ax.tick_params(labelsize=_TICK_SIZE)
-
-        t = snap.timestamps[-self.config.max_visible_points:]
-        if not t:
-            ax.text(0.5, 0.5, "Awaiting EEG data…", transform=ax.transAxes,
-                    ha="center", va="center", fontsize=_LABEL_SIZE, color=_TEXT_COLOR)
-            return
-
-        n = len(t)
-        theta = snap.eeg_theta[-n:]
-        alpha = snap.eeg_alpha[-n:]
-        beta = snap.eeg_beta[-n:]
-
-        ax.plot(t, theta, color="#fbbf24", linewidth=1.8, label="θ Theta", alpha=0.9)
-        ax.plot(t, alpha, color=_ACCENT_EEG, linewidth=1.8, label="α Alpha", alpha=0.9)
-        ax.plot(t, beta, color="#34d399", linewidth=1.8, label="β Beta", alpha=0.9)
-        ax.set_ylim(-0.05, 1.05)
-        ax.legend(loc="upper left", fontsize=_TICK_SIZE - 1, framealpha=0.5,
-                  facecolor=_PANEL_BG, edgecolor=_GRID_COLOR)
-        ax.grid(True, alpha=0.3)
-
     def _render_risk_panel(self, snap: DashboardSnapshot) -> None:
-        """T14.1 — Risk score panel with guardrail zone shading."""
+        """Risk score panel with guardrail zone shading."""
         ax = self._axes["risk"]
         ax.clear()
         ax.set_title("Fatigue Risk Score", fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
@@ -274,29 +236,68 @@ class DashboardRenderer:
 
         ax.grid(True, alpha=0.3)
 
-    def _render_optical_panel(self, snap: DashboardSnapshot) -> None:
-        """T14.1 — Optical trend panel."""
-        ax = self._axes["optical"]
+    def _render_probability_panel(self, snap: DashboardSnapshot) -> None:
+        """Render P(attention) and P(oxygenation) signals."""
+        ax = self._axes["probabilities"]
         ax.clear()
-        ax.set_title("Optical Trend", fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
-        ax.set_ylabel("Normalised Signal", fontsize=_LABEL_SIZE)
+        title = (
+            "P(Attention) and P(Oxygenation)"
+            if snap.dual_head_enabled
+            else "Oxygenation Proxy (enable dual-head for two probabilities)"
+        )
+        ax.set_title(title, fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
+        ax.set_ylabel("Probability", fontsize=_LABEL_SIZE)
         ax.set_xlabel("Time (s)", fontsize=_LABEL_SIZE)
         ax.tick_params(labelsize=_TICK_SIZE)
 
         t = snap.timestamps[-self.config.max_visible_points:]
         if not t:
-            ax.text(0.5, 0.5, "Awaiting optical data…", transform=ax.transAxes,
+            ax.text(0.5, 0.5, "Awaiting probability signals…", transform=ax.transAxes,
                     ha="center", va="center", fontsize=_LABEL_SIZE, color=_TEXT_COLOR)
             return
 
         n = len(t)
-        opt = snap.optical_trend[-n:]
-        ax.plot(t, opt, color=_ACCENT_OPT, linewidth=1.8, alpha=0.9)
-        ax.fill_between(t, opt, alpha=0.12, color=_ACCENT_OPT)
+        if snap.dual_head_enabled:
+            attention = snap.attention_prob_history[-n:]
+            metabolic = snap.metabolic_prob_history[-n:]
+            if len(attention) < n:
+                attention = ([attention[-1]] * (n - len(attention)) + attention) if attention else ([0.0] * n)
+            if len(metabolic) < n:
+                metabolic = ([metabolic[-1]] * (n - len(metabolic)) + metabolic) if metabolic else ([1.0] * n)
+            ax.plot(t, attention, color="#34d399", linewidth=2.4, alpha=0.98,
+                    label="P(attention)")
+            ax.plot(t, metabolic, color="#a78bfa", linewidth=2.4, alpha=0.98,
+                    label="P(oxygenation)")
+            ax.axhline(snap.mismatch_attention_min, color="#34d399",
+                       linestyle=":", linewidth=1.2, alpha=0.7)
+            ax.axhline(snap.mismatch_metabolic_max, color="#a78bfa",
+                       linestyle=":", linewidth=1.2, alpha=0.7)
+            ax.set_ylim(-0.05, 1.05)
+            ax.legend(loc="upper left", fontsize=_LEGEND_SIZE, framealpha=0.70,
+                      facecolor=_PANEL_BG, edgecolor=_GRID_COLOR)
+
+            # Highlight cycles where the symbolic AND-rule is satisfied.
+            mm_history = snap.mismatch_active_history[-n:]
+            band_height = 0.06
+            for i, active in enumerate(mm_history):
+                if not active:
+                    continue
+                left = t[i]
+                width = (t[i + 1] - t[i]) if i + 1 < len(t) else (t[-1] - t[-2] if len(t) > 1 else 0.5)
+                ax.axvspan(left, left + width, ymin=0.0, ymax=band_height,
+                           color="#ef4444", alpha=0.55)
+        else:
+            # Fallback when dual-head probabilities are disabled.
+            opt = snap.optical_trend[-n:]
+            ax.plot(t, opt, color=_ACCENT_OPT, linewidth=2.2, alpha=0.9,
+                    label="oxygenation proxy")
+            ax.fill_between(t, opt, alpha=0.14, color=_ACCENT_OPT)
+            ax.legend(loc="upper left", fontsize=_LEGEND_SIZE, framealpha=0.70,
+                      facecolor=_PANEL_BG, edgecolor=_GRID_COLOR)
         ax.grid(True, alpha=0.3)
 
     def _render_state_panel(self, snap: DashboardSnapshot) -> None:
-        """T14.1 + T14.3 — Current state badge and stream health indicators."""
+        """+ Current state badge and stream health indicators."""
         ax = self._axes["state"]
         ax.clear()
         ax.set_xlim(0, 1)
@@ -330,12 +331,12 @@ class DashboardRenderer:
             linewidth=2,
         )
         ax.add_patch(badge)
-        ax.text(0.50, 0.72, badge_label, fontsize=_BADGE_SIZE,
+        ax.text(0.50, 0.74, badge_label, fontsize=_BADGE_SIZE,
                 fontweight="bold", ha="center", va="center", color=text_color)
-        ax.text(0.50, 0.55, sub_label,
+        ax.text(0.50, 0.57, sub_label,
                 fontsize=_INDICATOR_SIZE, ha="center", va="center", color=text_color)
 
-        # -- T14.3 — Stream health indicators --
+        # -- Stream health indicators --
         health_items = [
             ("EEG", snap.eeg_health),
             ("Optical", snap.optical_health),
@@ -343,7 +344,7 @@ class DashboardRenderer:
             ("Model", snap.model_health),
         ]
         x_positions = [0.12, 0.32, 0.55, 0.78]
-        y_row = 0.30
+        y_row = 0.28
         for x, (label, status) in zip(x_positions, health_items):
             dot_color = _HEALTH_OK if status == "OK" else (_HEALTH_WARN if status == "WARN" else _HEALTH_FAIL)
             ax.plot(x, y_row, "o", color=dot_color, markersize=10, markeredgecolor="#fff", markeredgewidth=1)
@@ -351,90 +352,49 @@ class DashboardRenderer:
 
         # -- Latency --
         lat_color = _HEALTH_OK if snap.latency_s <= 2.0 else _HEALTH_FAIL
-        ax.text(0.12, 0.12, f"Latency: {snap.latency_s*1000:.0f} ms",
+        ax.text(0.10, 0.13, f"Latency: {snap.latency_s*1000:.0f} ms",
                 fontsize=_INDICATOR_SIZE - 1, color=lat_color)
 
         if snap.stage_name:
-            ax.text(0.55, 0.12, f"Stage: {snap.stage_name}",
+            ax.text(0.56, 0.13, f"Stage: {snap.stage_name}",
                     fontsize=_INDICATOR_SIZE - 1, color=_TEXT_COLOR)
 
         elapsed_min = int(snap.elapsed_s // 60)
         elapsed_sec = int(snap.elapsed_s % 60)
-        ax.text(0.55, 0.02, f"Elapsed: {elapsed_min}:{elapsed_sec:02d}",
+        ax.text(0.56, 0.03, f"Elapsed: {elapsed_min}:{elapsed_sec:02d}",
                 fontsize=_INDICATOR_SIZE - 1, color=_TEXT_COLOR)
 
         if snap.guardrail_profile:
-            ax.text(0.12, 0.02, f"Profile: {snap.guardrail_profile}",
+            ax.text(0.10, 0.03, f"Profile: {snap.guardrail_profile}",
                     fontsize=_INDICATOR_SIZE - 2, color=_TEXT_COLOR, alpha=0.7)
 
-    def _render_timeline_panel(self, snap: DashboardSnapshot) -> None:
-        """T14.2 — Timeline with transition markers and rationale details."""
-        ax = self._axes["timeline"]
-        ax.clear()
-        ax.set_title("Guardrail Timeline", fontsize=_TITLE_SIZE, fontweight="bold", pad=8)
-        ax.set_xlabel("Time (s)", fontsize=_LABEL_SIZE)
-        ax.set_yticks([])
-        ax.tick_params(labelsize=_TICK_SIZE)
-
-        t = snap.timestamps[-self.config.max_visible_points:]
-        if not t:
-            ax.text(0.5, 0.5, "Awaiting timeline data…", transform=ax.transAxes,
-                    ha="center", va="center", fontsize=_LABEL_SIZE, color=_TEXT_COLOR)
-            return
-
-        n = len(t)
-        states = snap.alert_states[-n:]
-
-        # Draw state colour bands
-        for i in range(len(t)):
-            st = states[i] if i < len(states) else "GREEN"
-            color = _STATE_COLORS.get(st, "#555")
-            width = (t[1] - t[0]) if len(t) > 1 else 1.0
-            ax.barh(0.5, width, left=t[i], height=0.6, color=color, alpha=0.6, edgecolor="none")
-
-        ax.set_ylim(0, 1.3)
-
-        # Transition markers and rationale annotations
-        visible_transitions = [
-            tr for tr in snap.transitions
-            if len(t) == 0 or tr.get("timestamp_s", 0) >= t[0]
-        ]
-        recent = visible_transitions[-self.config.show_rationale_count:]
-
-        for i, tr in enumerate(recent):
-            ts = tr.get("timestamp_s", 0)
-            new_state = tr.get("new_state", "")
-            rationale = tr.get("rationale", "")
-
-            ax.axvline(ts, color="#ffffff", linewidth=1.5, linestyle="--", alpha=0.7)
-            ax.plot(ts, 1.05, "v", color=_STATE_COLORS.get(new_state, "#fff"),
-                    markersize=10, markeredgecolor="#fff", markeredgewidth=1)
-
-            # Truncated rationale text
-            short = rationale[:70] + "…" if len(rationale) > 70 else rationale
-            y_offset = 1.15 + (i * 0.05)
-            if y_offset < 1.3:
-                ax.text(ts, y_offset, f"→{new_state}: {short}",
-                        fontsize=_RATIONALE_SIZE - 1, color=_TEXT_COLOR, alpha=0.9,
-                        ha="left", va="bottom",
-                        bbox=dict(boxstyle="round,pad=0.15", facecolor=_PANEL_BG, alpha=0.8, edgecolor=_GRID_COLOR))
-
-        ax.grid(True, axis="x", alpha=0.3)
+        if snap.dual_head_enabled and snap.mismatch_active:
+            mismatch_badge = mpatches.FancyBboxPatch(
+                (0.10, 0.42), 0.80, 0.10,
+                boxstyle="round,pad=0.03",
+                facecolor="#7f1d1d",
+                edgecolor="#fca5a5",
+                linewidth=2,
+            )
+            ax.add_patch(mismatch_badge)
+            ax.text(
+                0.50, 0.47, "MISMATCH — engaged but capacity dropping",
+                fontsize=_INDICATOR_SIZE, fontweight="bold",
+                ha="center", va="center", color="#ffffff",
+            )
 
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
 
     def render(self, snap: DashboardSnapshot) -> plt.Figure:
-        """Render all panels from a snapshot (T14.1–T14.4)."""
+        """Render all panels from a snapshot (–)."""
         if not self._initialised:
             self.initialise()
 
-        self._render_eeg_panel(snap)
         self._render_risk_panel(snap)
-        self._render_optical_panel(snap)
+        self._render_probability_panel(snap)
         self._render_state_panel(snap)
-        self._render_timeline_panel(snap)
 
         assert self._fig is not None
         self._fig.canvas.draw_idle()
@@ -461,9 +421,7 @@ class DashboardRenderer:
             self._initialised = False
 
 
-# ---------------------------------------------------------------------------
-# Snapshot builder — constructs DashboardSnapshot from Day 4 artifacts
-# ---------------------------------------------------------------------------
+# Snapshot builder — constructs DashboardSnapshot from replay artifacts
 
 def build_snapshot_from_replay(
     inference_diagnostics: list[dict[str, Any]],
@@ -473,7 +431,7 @@ def build_snapshot_from_replay(
     stage_name: str = "",
     elapsed_s: float = 0.0,
 ) -> DashboardSnapshot:
-    """Build a DashboardSnapshot from Day 4 replay artifacts."""
+    """Build a DashboardSnapshot from replay artifacts."""
     import pandas as pd
 
     timestamps = [d["timestamp_s"] for d in inference_diagnostics]
@@ -549,16 +507,14 @@ def build_snapshot_from_replay(
     )
 
 
-# ---------------------------------------------------------------------------
 # Artifact persistence
-# ---------------------------------------------------------------------------
 
 def write_dashboard_artifacts(
     snapshot_path: str | Path,
     validation_path: str | Path,
     config: DashboardConfig | None = None,
 ) -> dict[str, Any]:
-    """Write dashboard validation report for T14.4."""
+    """Write dashboard validation report for ."""
     cfg = config or DashboardConfig()
     val_path = Path(validation_path)
     val_path.parent.mkdir(parents=True, exist_ok=True)

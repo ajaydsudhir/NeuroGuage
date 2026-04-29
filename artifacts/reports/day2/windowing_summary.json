@@ -1,6 +1,0 @@
-{
-  "eeg_windows": 11,
-  "optical_windows": 3,
-  "eeg_missing_packet_max": 1,
-  "optical_missing_packet_max": 5
-}

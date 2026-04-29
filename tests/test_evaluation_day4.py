@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from neuroguage.evaluation import (
+from neuroguage.pipeline import (
     EvaluationError,
     apply_imu_quality_gate,
     build_ablation_feature_sets,

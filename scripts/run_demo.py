@@ -3,8 +3,8 @@
 This wrapper presets the flags that the README + diagnostic analysis identified
 as the right defaults for an in-class showcase of NeuroGauge:
 
-* ``--guardrail-config configs/guardrails_personalized.json`` — thresholds
-  expressed in z-score-normalised space (Fix A).
+* ``--guardrail-config configs/guardrails_muse_demo.json`` — demo-tuned
+  guardrail thresholds.
 * ``--baseline-duration 20`` — collects a 20 s personal baseline of the
   model's risk output before guardrails fire (Fix B).
 * ``--baseline-stdev-floor 0.04`` — keeps tiny noise jiggles from saturating
@@ -46,6 +46,9 @@ def main() -> int:
     record_raw_to: str | None = None
     has_guardrail_config = False
     has_baseline_duration = False
+    has_use_dual_head = False
+    has_dual_head_weights = False
+    has_dual_head_config = False
 
     i = 0
     while i < len(user_argv):
@@ -62,6 +65,12 @@ def main() -> int:
             has_guardrail_config = True
         elif arg == "--baseline-duration":
             has_baseline_duration = True
+        elif arg == "--use-dual-head":
+            has_use_dual_head = True
+        elif arg == "--dual-head-weights":
+            has_dual_head_weights = True
+        elif arg == "--dual-head-config":
+            has_dual_head_config = True
         i += 1
 
     if address is None:
@@ -85,9 +94,21 @@ def main() -> int:
 
     if not has_guardrail_config:
         forwarded += ["--guardrail-config",
-                      str(REPO_ROOT / "configs" / "guardrails_personalized.json")]
+                      str(REPO_ROOT / "configs" / "guardrails_muse_demo.json")]
     if not has_baseline_duration:
         forwarded += ["--baseline-duration", "20"]
+    if not has_use_dual_head:
+        forwarded += ["--use-dual-head"]
+    if not has_dual_head_weights:
+        forwarded += [
+            "--dual-head-weights",
+            str(REPO_ROOT / "artifacts" / "models" / "dual_head_muse_demo_accv2" / "dual_head.pt"),
+        ]
+    if not has_dual_head_config:
+        forwarded += [
+            "--dual-head-config",
+            str(REPO_ROOT / "artifacts" / "models" / "dual_head_muse_demo_accv2" / "config.json"),
+        ]
 
     pass_through = [
         a for a in user_argv

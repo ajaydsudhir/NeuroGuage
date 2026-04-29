@@ -1,7 +1,0 @@
-{
-  "workflow": "train",
-  "status": "dry-run",
-  "timestamp_utc": "2026-04-21T18:51:31.196308+00:00",
-  "log_path": "logs\\train_workflow_20260421_185131.log",
-  "extra_config": {}
-}

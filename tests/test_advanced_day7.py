@@ -10,7 +10,7 @@ import pandas as pd
 import pytest
 import torch
 
-from neuroguage.advanced import (
+from neuroguage.lifecycle import (
     AdvancedModelConfig,
     BiGRUAttentionClassifier,
     infer_single_window,

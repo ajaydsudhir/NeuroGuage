@@ -1,7 +1,7 @@
-"""Record a calibration / training session from a Muse S Athena device.
+"""Record a calibration or training session from a Muse S Athena device.
 
-This script drives the three steps required to generate a
-NeuroGauge-compatible labelled session:
+This script handles the three steps needed to generate a
+NeuroGauge-compatible labeled session:
 
   1. Discover a Muse S Athena (or use the MAC address you pass in).
   2. Record raw BLE packets via the ``OpenMuse record`` command.
@@ -17,7 +17,7 @@ Example usage::
         --subjective-fatigue-score 2 \
         --output-dir data/raw/sub01/baseline_rest
 
-The produced folder can be fed straight into Day 2 ingestion:
+The produced folder can be fed straight into schema validation:
 
     python -m neuroguage.cli validate-schema \
         --eeg   data/raw/sub01/baseline_rest/eeg.csv \

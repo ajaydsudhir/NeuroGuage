@@ -8,7 +8,7 @@ pytest==8.3.3
 torch==2.5.1
 
 # Live streaming for Muse S Athena (optional at runtime, required for --source muse / replay).
-# See docs/runbooks/muse_s_athena_live.md for the full Muse integration walkthrough.
+# Setup and run instructions are documented in README.md.
 mne-lsl>=1.10.0
 bleak>=0.21.0
 OpenMuse @ https://github.com/DominiqueMakowski/OpenMuse/zipball/main

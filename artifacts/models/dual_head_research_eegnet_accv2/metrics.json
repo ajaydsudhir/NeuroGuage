@@ -1,0 +1,55 @@
+{
+  "train": {
+    "attention": {
+      "macro_f1": 0.625,
+      "balanced_accuracy": 0.8,
+      "auroc": 0.8
+    },
+    "metabolic": {
+      "macro_f1": 0.7333333333333334,
+      "balanced_accuracy": 0.8333333333333333,
+      "auroc": 0.9814814814814815
+    },
+    "mismatch": {
+      "macro_f1": 0.42857142857142855,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.7407407407407408
+    }
+  },
+  "validation": {
+    "attention": {
+      "macro_f1": 0.4857142857142857,
+      "balanced_accuracy": 0.7,
+      "auroc": 0.6
+    },
+    "metabolic": {
+      "macro_f1": 0.7777777777777777,
+      "balanced_accuracy": 0.9,
+      "auroc": 0.9
+    },
+    "mismatch": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 1.0
+    }
+  },
+  "test": {
+    "attention": {
+      "macro_f1": 0.14285714285714285,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.2
+    },
+    "metabolic": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.1
+    },
+    "mismatch": {
+      "macro_f1": 0.45454545454545453,
+      "balanced_accuracy": 0.5,
+      "auroc": 0.0
+    }
+  },
+  "best_validation_composite_score": 0.6597835497835498,
+  "epochs_trained": 20
+}

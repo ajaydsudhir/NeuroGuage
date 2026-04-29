@@ -1,6 +1,6 @@
-"""Live Muse S Athena streaming adapter for NeuroGauge.
+"""Muse Acquisition Layer (Live/Replay/Synthetic).
 
-This module bridges the Muse S Athena headband to the existing Day 2-5 inference
+This module bridges the Muse S Athena headband to the existing 5 inference
 pipeline.  It provides three data sources that all share the same
 :class:`MuseDataSource` protocol:
 
@@ -48,9 +48,7 @@ import pandas as pd
 LOGGER = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
 # Channel mapping — OpenMuse labels -> NeuroGauge data-contract column names.
-# ---------------------------------------------------------------------------
 
 # EEG labels per OpenMuse.decode.select_eeg_channels:
 #   EEG8 = ['EEG_TP9', 'EEG_AF7', 'EEG_AF8', 'EEG_TP10',
@@ -121,9 +119,7 @@ IMU_OUTPUT_COLUMNS = [
 ]
 
 
-# ---------------------------------------------------------------------------
 # Data-source protocol
-# ---------------------------------------------------------------------------
 
 @dataclass
 class MuseFrames:
@@ -150,9 +146,7 @@ class MuseDataSource(Protocol):
     def health(self) -> dict[str, Any]: ...
 
 
-# ---------------------------------------------------------------------------
 # OpenMuse subprocess helper
-# ---------------------------------------------------------------------------
 
 @dataclass
 class OpenMuseStreamProcess:
@@ -277,9 +271,7 @@ def discover_muse_devices(timeout: float = 10.0, verbose: bool = True) -> list[d
         return []
 
 
-# ---------------------------------------------------------------------------
 # LSL-backed live source
-# ---------------------------------------------------------------------------
 
 @dataclass
 class LSLMuseSource:
@@ -300,6 +292,7 @@ class LSLMuseSource:
     pull_timeout_s: float = 0.0
     record_raw_to: Optional[str] = None
     require_modalities: tuple[str, ...] = ("eeg", "optical", "imu")
+    require_full_link: bool = True
     bridge_warmup_s: float = 5.0
 
     source_name: str = field(default="muse_lsl", init=False)
@@ -434,6 +427,13 @@ class LSLMuseSource:
             if not missing:
                 return
             if time.time() >= deadline:
+                if self.require_full_link:
+                    raise RuntimeError(
+                        "Muse link not ready: timed out waiting for required LSL "
+                        f"modalities {missing} after {self.resolve_timeout_s:.1f}s. "
+                        "NeuroGauge will not start until the Muse S Athena is fully "
+                        "linked and streaming EEG, optical, and IMU data."
+                    )
                 LOGGER.warning(
                     "LSL resolve timed out after %.1fs; missing modalities=%s. "
                     "Pipeline will run with partial data.",
@@ -539,9 +539,7 @@ class LSLMuseSource:
         return info
 
 
-# ---------------------------------------------------------------------------
 # Synthetic source — useful for CI, tutorials, and classroom fallbacks.
-# ---------------------------------------------------------------------------
 
 @dataclass
 class SyntheticMuseSource:
@@ -685,9 +683,7 @@ class SyntheticMuseSource:
         }
 
 
-# ---------------------------------------------------------------------------
 # Recorded-raw replay source (OpenMuse record --> decode_rawdata)
-# ---------------------------------------------------------------------------
 
 @dataclass
 class RawRecordingReplaySource:
@@ -833,9 +829,7 @@ class RawRecordingReplaySource:
         }
 
 
-# ---------------------------------------------------------------------------
 # Factory
-# ---------------------------------------------------------------------------
 
 def build_data_source(
     *,
@@ -866,6 +860,7 @@ def build_data_source(
             manage_bridge=manage_bridge,
             record_raw_to=record_raw_to,
             resolve_timeout_s=resolve_timeout_s,
+            require_full_link=True,
         )
     if kind in ("synthetic", "fake", "simulated"):
         return SyntheticMuseSource(
@@ -884,9 +879,7 @@ def build_data_source(
     raise ValueError(f"Unknown source_kind: {source_kind}")
 
 
-# ---------------------------------------------------------------------------
 # Session recorder — decode a raw file into contract-shaped CSVs.
-# ---------------------------------------------------------------------------
 
 def decode_raw_session_to_contract(
     raw_file: str | Path,
@@ -895,7 +888,7 @@ def decode_raw_session_to_contract(
     task_type: str = "sustained_attention",
     subjective_fatigue_score: float = 5.0,
 ) -> dict[str, Path]:
-    """Convert an ``OpenMuse record`` .txt file into Day 2 contract CSVs.
+    """Convert an ``OpenMuse record`` .txt file into session-contract CSVs.
 
     Writes ``<output_dir>/{eeg,optical,imu}.csv`` plus a ``metadata.json``
     that conforms to ``configs/data_contract.json``.  Returns a mapping of

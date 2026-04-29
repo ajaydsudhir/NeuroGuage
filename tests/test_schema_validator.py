@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from neuroguage.schema_validator import SchemaValidationError, validate_session_files
+from neuroguage.pipeline import SchemaValidationError, validate_session_files
 
 
 FIXTURES = Path("tests/fixtures/day1")

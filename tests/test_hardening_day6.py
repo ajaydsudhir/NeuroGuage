@@ -10,7 +10,7 @@ import numpy as np
 import pytest
 
 from neuroguage.guardrails import GuardrailConfig, GuardrailState, update_guardrail
-from neuroguage.hardening import (
+from neuroguage.lifecycle import (
     AcceptanceCriterionResult,
     benchmark_refresh_latency,
     prioritise_defects,
@@ -176,7 +176,7 @@ class TestAcceptanceVerification:
         assert "macro_f1" in result.notes
 
     def test_ac003_latency_pass(self) -> None:
-        from neuroguage.hardening import LatencyBenchmark
+        from neuroguage.lifecycle import LatencyBenchmark
 
         bench = LatencyBenchmark(
             samples=10, mean_s=0.01, median_s=0.01, p95_s=0.02,
@@ -243,7 +243,7 @@ class TestArtifactPersistence:
         assert path.exists()
 
     def test_write_latency_benchmark(self, tmp_path: Path) -> None:
-        from neuroguage.hardening import LatencyBenchmark
+        from neuroguage.lifecycle import LatencyBenchmark
 
         bench = LatencyBenchmark(samples=1, mean_s=0, median_s=0, p95_s=0,
                                  max_s=0, budget_s=2.0, within_budget=True)

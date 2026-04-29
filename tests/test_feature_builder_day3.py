@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from neuroguage.feature_builder import build_leakage_report, run_feature_builder_pipeline
+from neuroguage.pipeline import build_leakage_report, run_feature_builder_pipeline
 
 
 FIXTURES = Path("tests/fixtures/day3")

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from neuroguage.ingestion import synchronize_modalities
-from neuroguage.windowing import build_windowing_layers
+from neuroguage.pipeline import synchronize_modalities
+from neuroguage.pipeline import build_windowing_layers
 
 
 FIXTURES = Path("tests/fixtures/day2")

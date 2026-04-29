@@ -1,24 +1,14 @@
-"""NeuroGauge package."""
+"""NeuroGauge package (consolidated runtime)."""
 
 __all__ = [
-	"advanced",
 	"cli",
 	"dashboard",
-	"demo",
-	"evaluation",
-	"feature_builder",
-	"finalization",
+	"dual_head",
 	"guardrails",
-	"hardening",
 	"inference",
-	"labeling",
+	"lifecycle",
 	"live_app",
-	"logging_config",
 	"muse_stream",
-	"promotion",
-	"release",
-	"schema_validator",
-	"training",
-	"workflows",
+	"pipeline",
 ]
 __version__ = "0.1.0"
