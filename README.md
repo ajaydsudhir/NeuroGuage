@@ -92,12 +92,6 @@ python scripts/run_live.py --source muse --address <MUSE_MAC> --duration 300 --u
 python scripts/run_live.py --source muse --address <MUSE_MAC> --duration 300 --use-dual-head --dual-head-weights artifacts/models/dual_head_research_eegnet_accv2/dual_head.pt --dual-head-config artifacts/models/dual_head_research_eegnet_accv2/config.json --guardrail-config configs/guardrails_research_eegnet.json
 ```
 
-### E) Replay mode
-
-```powershell
-python scripts/replay.py
-```
-
 ## Outputs You Should Check
 
 After a successful run, check `artifacts/reports/live/` for:

@@ -1,0 +1,8 @@
+{
+  "linear_model_path": "artifacts/models/mvp_fusion\\ablations\\eeg_only\\linear_model_calibrated.pkl",
+  "tree_model_path": "artifacts/models/mvp_fusion\\ablations\\eeg_only\\tree_model_calibrated.pkl",
+  "fusion_config_path": "artifacts/models/mvp_fusion\\ablations\\eeg_only\\late_fusion_config.json",
+  "feature_columns_path": "artifacts/models/mvp_fusion\\ablations\\eeg_only\\feature_columns.json",
+  "metrics_path": "artifacts/reports/evaluation\\ablations\\eeg_only_training_metrics.json",
+  "scaler_metadata_path": "artifacts/models/mvp_fusion\\ablations\\eeg_only\\scaler_metadata.json"
+}

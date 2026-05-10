@@ -7,7 +7,7 @@ from neuroguage.pipeline import extract_optical_imu_window_features
 from neuroguage.pipeline import build_windowing_layers
 
 
-FIXTURES = Path("tests/fixtures/day2")
+FIXTURES = Path("tests/fixtures/raw_modalities")
 
 
 def _synchronized_and_optical_windows():

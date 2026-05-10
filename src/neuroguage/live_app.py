@@ -995,7 +995,7 @@ __all__ = [
 # --- Consolidated from calibration.py ---
 """Personal-baseline calibration (Fix B).
 
-The Day 4 fusion checkpoint has a compressed dynamic range and a per-subject
+The MVP fusion checkpoint has a compressed dynamic range and a per-subject
 operating point that is far from the textbook ``[0, 1]`` distribution the
 guardrail thresholds were originally chosen for.  This module addresses the
 problem by collecting a short *baseline* segment at the start of a session,

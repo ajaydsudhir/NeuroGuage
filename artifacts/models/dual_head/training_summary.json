@@ -1,5 +1,5 @@
 {
-  "labeled_frame": "D:\\Projects\\NeuroGuage\\artifacts\\features\\day3\\labeled_feature_matrix.csv",
+  "labeled_frame": "D:\\Projects\\NeuroGuage\\artifacts/features/labeled\\labeled_feature_matrix.csv",
   "weak_labels": {
     "rows": 24,
     "attention_positive_rate": 0.8333333333333334,

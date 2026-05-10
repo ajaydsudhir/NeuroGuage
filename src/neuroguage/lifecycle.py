@@ -35,8 +35,8 @@ Design decisions:
   Persist artifacts, config, and evaluation logs
      - Saves model `.pt`, `config.json`, `feature_columns.json`,
        `training_metrics.json`, and `predictions.csv` under a dedicated
-       Day 7 artifacts directory so scripts and the release bundle can ingest
-       them without touching MVP artifacts.
+       a dedicated advanced-model artifacts directory so scripts and the
+       release bundle can ingest them without touching MVP artifacts.
 """
 
 
@@ -1577,22 +1577,22 @@ def verify_ac003_latency(
 
 
 def verify_ac004_quick_demo(
-    day5_exit_gate_path: Path,
+    demo_exit_gate_path: Path,
     demo_summary_path: Path,
 ) -> AcceptanceCriterionResult:
     """AC-004 — Quick demo completes in 5 to 10 minutes without system
     failure."""
-    evidence = [str(day5_exit_gate_path), str(demo_summary_path)]
-    if not day5_exit_gate_path.exists() or not demo_summary_path.exists():
+    evidence = [str(demo_exit_gate_path), str(demo_summary_path)]
+    if not demo_exit_gate_path.exists() or not demo_summary_path.exists():
         return AcceptanceCriterionResult(
             id="AC-004",
             description="Quick demo completes in 5 to 10 minutes without system failure.",
             passed=False,
             evidence_paths=evidence,
-            notes="Missing Day 5 exit gate or demo summary.",
+            notes="Missing demo exit gate or demo summary.",
         )
 
-    gate = json.loads(day5_exit_gate_path.read_text(encoding="utf-8"))
+    gate = json.loads(demo_exit_gate_path.read_text(encoding="utf-8"))
     summary = json.loads(demo_summary_path.read_text(encoding="utf-8"))
     passed = (
         bool(gate.get("gate_passed"))
@@ -1600,7 +1600,7 @@ def verify_ac004_quick_demo(
         and bool(summary.get("all_passed"))
     )
     notes = (
-        f"Day 5 gate_passed={gate.get('gate_passed')}, "
+        f"Demo gate_passed={gate.get('gate_passed')}, "
         f"timing_within_budget={summary.get('timing_within_budget')}, "
         f"all_passed={summary.get('all_passed')}, "
         f"dry_runs={summary.get('total_dry_runs')}."
@@ -1666,13 +1666,13 @@ def render_acceptance_checklist(
 ) -> str:
     """Render AC-001..AC-005 results as a Markdown checklist.
 
-    Mirrors the schema in docs/day1/checklists/mvp_acceptance_ac_001_to_ac_005.md
+    Mirrors the schema in docs/checklists/mvp_acceptance_ac_001_to_ac_005.md
     so the artifact is a drop-in replacement.
     """
     lines: list[str] = []
     lines.append("# MVP Acceptance Checklist (AC-001 to AC-005)")
     lines.append("")
-    lines.append("Version: v1.1.0 (Day 6 automated verification)")
+    lines.append("Version: v1.1.0 (automated hardening verification)")
     lines.append("")
 
     for r in results:
@@ -2227,7 +2227,7 @@ def build_release_bundle(
 
     The bundle contains:
       - configs/               : frozen data contract + demo timing snapshot
-      - models/                : Day 4 selected model variant
+      - models/                : selected fusion model variant + baselines
       - reports/               : evaluation, inference, guardrail, dashboard,
                                  stability, latency, acceptance reports
       - checklists/            : MVP + stretch acceptance checklists
@@ -2238,33 +2238,33 @@ def build_release_bundle(
     release_dir.mkdir(parents=True, exist_ok=True)
 
     bundle_map: list[tuple[Path, Path, str]] = [
-        (Path("configs/data_contract.json"), release_dir / "configs" / "data_contract.json", "Day 1 data contract"),
-        (Path("configs/demo_timing.json"), release_dir / "configs" / "demo_timing.json", "Day 5 demo timing envelope"),
-        (Path("artifacts/models/day4/ablations"), release_dir / "models" / "ablations", "Day 4 ablation model variants"),
-        (Path("artifacts/models/day3"), release_dir / "models" / "day3_baseline", "Day 3 MVP baseline models"),
-        (Path("artifacts/reports/day3"), release_dir / "reports" / "day3", "Day 3 training reports"),
-        (Path("artifacts/reports/day4/evaluation_summary.json"), release_dir / "reports" / "day4" / "evaluation_summary.json", "Day 4 evaluation summary"),
-        (Path("artifacts/reports/day4/ablation_report.json"), release_dir / "reports" / "day4" / "ablation_report.json", "Day 4 ablation report"),
-        (Path("artifacts/reports/day4/evaluation_narrative.md"), release_dir / "reports" / "day4" / "evaluation_narrative.md", "Day 4 evaluation narrative"),
-        (Path("artifacts/reports/day4/model_selection.json"), release_dir / "reports" / "day4" / "model_selection.json", "Day 4 model selection"),
-        (Path("artifacts/reports/day4/inference_diagnostics.json"), release_dir / "reports" / "day4" / "inference_diagnostics.json", "Day 4 inference diagnostics"),
-        (Path("artifacts/reports/day4/guardrail_transition_log.json"), release_dir / "reports" / "day4" / "guardrail_transition_log.json", "Day 4 guardrail transition log"),
-        (Path("artifacts/reports/day4/guardrail_summary.json"), release_dir / "reports" / "day4" / "guardrail_summary.json", "Day 4 guardrail summary"),
-        (Path("artifacts/reports/day4/day4_integration_summary.json"), release_dir / "reports" / "day4" / "day4_integration_summary.json", "Day 4 integration summary"),
-        (Path("artifacts/reports/day5/dashboard_snapshot.png"), release_dir / "reports" / "day5" / "dashboard_snapshot.png", "Day 5 dashboard snapshot"),
-        (Path("artifacts/reports/day5/dashboard_validation.json"), release_dir / "reports" / "day5" / "dashboard_validation.json", "Day 5 dashboard validation"),
-        (Path("artifacts/reports/day5/demo_summary.json"), release_dir / "reports" / "day5" / "demo_summary.json", "Day 5 demo summary"),
-        (Path("artifacts/reports/day5/defect_log.json"), release_dir / "reports" / "day5" / "defect_log.json", "Day 5 dry-run defect log"),
-        (Path("artifacts/reports/day5/day5_exit_gate.json"), release_dir / "reports" / "day5" / "day5_exit_gate.json", "Day 5 exit gate evidence"),
-        (Path("artifacts/reports/day6/latency_benchmark.json"), release_dir / "reports" / "day6" / "latency_benchmark.json", "Day 6 latency benchmark"),
-        (Path("artifacts/reports/day6/stability_report.json"), release_dir / "reports" / "day6" / "stability_report.json", "Day 6 alert-stability report"),
-        (Path("artifacts/reports/day6/defect_triage.json"), release_dir / "reports" / "day6" / "defect_triage.json", "Day 6 dry-run defect triage"),
-        (Path("artifacts/reports/day6/acceptance_results.json"), release_dir / "reports" / "day6" / "acceptance_results.json", "Day 6 AC-001..AC-005 results"),
-        (Path("artifacts/reports/day6/day6_exit_gate.json"), release_dir / "reports" / "day6" / "day6_exit_gate.json", "Day 6 exit gate evidence"),
-        (Path("artifacts/reports/day6/mvp_acceptance_ac_001_to_ac_005.md"), release_dir / "checklists" / "mvp_acceptance_ac_001_to_ac_005.md", "Updated MVP acceptance checklist"),
-        (Path("docs/day1/checklists/stretch_acceptance_ac_006_to_ac_009.md"), release_dir / "checklists" / "stretch_acceptance_ac_006_to_ac_009.md", "Stretch acceptance checklist"),
-        (Path("docs/day6/demo_runbook.md"), release_dir / "docs" / "demo_runbook.md", "Demo runbook"),
-        (Path("docs/day6/limitations_and_risks.md"), release_dir / "docs" / "limitations_and_risks.md", "Limitations and risks"),
+        (Path("configs/data_contract.json"), release_dir / "configs" / "data_contract.json", "Frozen data contract"),
+        (Path("configs/demo_timing.json"), release_dir / "configs" / "demo_timing.json", "Demo timing envelope"),
+        (Path("artifacts/models/mvp_fusion/ablations"), release_dir / "models" / "ablations", "Ablation model variants"),
+        (Path("artifacts/models/mvp_baseline"), release_dir / "models" / "mvp_baseline", "MVP baseline models"),
+        (Path("artifacts/reports/training"), release_dir / "reports" / "training", "Training report snapshots"),
+        (Path("artifacts/reports/evaluation/evaluation_summary.json"), release_dir / "reports" / "evaluation" / "evaluation_summary.json", "Evaluation summary"),
+        (Path("artifacts/reports/evaluation/ablation_report.json"), release_dir / "reports" / "evaluation" / "ablation_report.json", "Ablation report"),
+        (Path("artifacts/reports/evaluation/evaluation_narrative.md"), release_dir / "reports" / "evaluation" / "evaluation_narrative.md", "Evaluation narrative"),
+        (Path("artifacts/reports/evaluation/model_selection.json"), release_dir / "reports" / "evaluation" / "model_selection.json", "Model selection record"),
+        (Path("artifacts/reports/evaluation/inference_diagnostics.json"), release_dir / "reports" / "evaluation" / "inference_diagnostics.json", "Inference diagnostics"),
+        (Path("artifacts/reports/evaluation/guardrail_transition_log.json"), release_dir / "reports" / "evaluation" / "guardrail_transition_log.json", "Guardrail transition log"),
+        (Path("artifacts/reports/evaluation/guardrail_summary.json"), release_dir / "reports" / "evaluation" / "guardrail_summary.json", "Guardrail summary"),
+        (Path("artifacts/reports/evaluation/evaluation_integration_summary.json"), release_dir / "reports" / "evaluation" / "evaluation_integration_summary.json", "Integration test summary"),
+        (Path("artifacts/reports/dashboard/dashboard_snapshot.png"), release_dir / "reports" / "dashboard" / "dashboard_snapshot.png", "Dashboard snapshot"),
+        (Path("artifacts/reports/dashboard/dashboard_validation.json"), release_dir / "reports" / "dashboard" / "dashboard_validation.json", "Dashboard validation"),
+        (Path("artifacts/reports/dashboard/demo_summary.json"), release_dir / "reports" / "dashboard" / "demo_summary.json", "Demo dry-run summary"),
+        (Path("artifacts/reports/dashboard/defect_log.json"), release_dir / "reports" / "dashboard" / "defect_log.json", "Dry-run defect log"),
+        (Path("artifacts/reports/dashboard/demo_exit_gate.json"), release_dir / "reports" / "dashboard" / "demo_exit_gate.json", "Demo exit gate evidence"),
+        (Path("artifacts/reports/hardening/latency_benchmark.json"), release_dir / "reports" / "hardening" / "latency_benchmark.json", "Latency benchmark"),
+        (Path("artifacts/reports/hardening/stability_report.json"), release_dir / "reports" / "hardening" / "stability_report.json", "Alert-stability report"),
+        (Path("artifacts/reports/hardening/defect_triage.json"), release_dir / "reports" / "hardening" / "defect_triage.json", "Dry-run defect triage"),
+        (Path("artifacts/reports/hardening/acceptance_results.json"), release_dir / "reports" / "hardening" / "acceptance_results.json", "AC-001..AC-005 results"),
+        (Path("artifacts/reports/hardening/mvp_exit_gate.json"), release_dir / "reports" / "hardening" / "mvp_exit_gate.json", "MVP hardening exit gate evidence"),
+        (Path("artifacts/reports/hardening/mvp_acceptance_ac_001_to_ac_005.md"), release_dir / "checklists" / "mvp_acceptance_ac_001_to_ac_005.md", "Updated MVP acceptance checklist"),
+        (Path("docs/checklists/stretch_acceptance_ac_006_to_ac_009.md"), release_dir / "checklists" / "stretch_acceptance_ac_006_to_ac_009.md", "Stretch acceptance checklist"),
+        (Path("docs/runbooks/demo_runbook.md"), release_dir / "docs" / "demo_runbook.md", "Demo runbook"),
+        (Path("docs/limitations_and_risks.md"), release_dir / "docs" / "limitations_and_risks.md", "Limitations and risks"),
         (Path("README.md"), release_dir / "docs" / "README.md", "Updated README"),
         (Path("environment.yml"), release_dir / "env" / "environment.yml", "Conda environment spec"),
         (Path("requirements.txt"), release_dir / "env" / "requirements.txt", "Pip requirements"),
@@ -2293,18 +2293,23 @@ def build_release_bundle(
     # Pull acceptance + gate decisions for quick access
     # ------------------------------------------------------------------
     acceptance: dict[str, Any] = {}
-    acc_path = Path("artifacts/reports/day6/acceptance_results.json")
+    acc_path = Path("artifacts/reports/hardening/acceptance_results.json")
     if acc_path.exists():
         acceptance = json.loads(acc_path.read_text(encoding="utf-8"))
 
     gate_decisions: dict[str, Any] = {}
-    for day in ("day1", "day2", "day3", "day4", "day5", "day6"):
-        gate_file = Path(f"artifacts/reports/{day}/{day}_exit_gate.json")
+    _gate_sources: tuple[tuple[str, Path], ...] = (
+        ("pipeline", Path("artifacts/reports/pipeline/pipeline_exit_gate.json")),
+        ("dashboard", Path("artifacts/reports/dashboard/demo_exit_gate.json")),
+        ("hardening", Path("artifacts/reports/hardening/mvp_exit_gate.json")),
+        ("evaluation", Path("artifacts/reports/evaluation/evaluation_exit_gate.json")),
+    )
+    for gate_id, gate_file in _gate_sources:
         if gate_file.exists():
             try:
-                gate_decisions[day] = json.loads(gate_file.read_text(encoding="utf-8"))
+                gate_decisions[gate_id] = json.loads(gate_file.read_text(encoding="utf-8"))
             except json.JSONDecodeError:
-                gate_decisions[day] = {"error": "malformed"}
+                gate_decisions[gate_id] = {"error": "malformed"}
 
     evidence: dict[str, str] = {
         entry["label"]: entry["destination"]
@@ -2376,11 +2381,11 @@ def _render_evidence_index(manifest: ReleaseManifest) -> str:
 
     lines.append("## Gate Decisions")
     lines.append("")
-    for day in sorted(manifest.gate_decisions.keys()):
-        lines.append(f"### {day.upper()}")
+    for phase in sorted(manifest.gate_decisions.keys()):
+        lines.append(f"### {phase.upper()}")
         lines.append("")
         lines.append("```json")
-        lines.append(json.dumps(manifest.gate_decisions[day], indent=2))
+        lines.append(json.dumps(manifest.gate_decisions[phase], indent=2))
         lines.append("```")
         lines.append("")
 
@@ -2396,12 +2401,12 @@ def _render_evidence_index(manifest: ReleaseManifest) -> str:
     return "\n".join(lines) + "\n"
 
 
-"""Final Packaging and Demo Rehearsal.
+"""Final packaging and demo rehearsal.
 
-Builds the release-candidate bundle by extending the Day 6 MVP release with
-Day 7 stretch artifacts, runs one final rehearsal under the class-demo
-timing constraints, and publishes the final status summary consumed by the
-G07 exit gate.
+Builds the release-candidate bundle by extending the MVP hardening release with
+stretch-track artifacts, runs one final rehearsal under the class-demo timing
+constraints, and publishes the final status summary consumed by the G07 exit
+gate.
 """
 
 
@@ -2429,21 +2434,21 @@ class StretchStatus:
 
 
 def resolve_stretch_status(
-    day6_exit_gate: dict[str, Any] | None,
+    mvp_exit_gate: dict[str, Any] | None,
     promotion_decision: dict[str, Any] | None,
 ) -> StretchStatus:
-    """Implement decide whether to proceed with stretch or defer.
+    """Decide whether to proceed with stretch or defer.
 
     Logic:
-      - If the Day 6 gate blocked the stretch, and are marked
+      - If the MVP hardening gate blocked the stretch, outcomes are marked
         deferred and the final package proceeds with MVP only.
       - If stretch ran and `promotion_decision` exists, we follow its
         outcome (PROMOTE_ADVANCED or KEEP_MVP); neither path is "deferred"
         because both produced evidence.
-      - If Day 6 allowed stretch but promotion artifacts are missing,
+      - If the gate allowed stretch but promotion artifacts are missing,
         stretch is considered deferred with an explicit reason.
     """
-    gate = day6_exit_gate or {}
+    gate = mvp_exit_gate or {}
     decision = str(gate.get("phase_gate_decision", ""))
     decision_upper = decision.upper()
     blocked = (
@@ -2459,8 +2464,8 @@ def resolve_stretch_status(
             stretch_attempted=False,
             deferred=True,
             reason=(
-                f"Day 6 phase-gate decision was '{decision or 'UNKNOWN'}'. "
-                "Stretch tasks /deferred; final package ships MVP only."
+                f"MVP hardening phase-gate decision was '{decision or 'UNKNOWN'}'. "
+                "Stretch tasks deferred; final package ships MVP only."
             ),
             decision=None,
         )
@@ -2470,8 +2475,8 @@ def resolve_stretch_status(
             stretch_attempted=False,
             deferred=True,
             reason=(
-                "Day 6 allowed stretch, but no promotion artifact "
-                "(promotion_decision.json) was produced. Deferring /."
+                "MVP gate allowed stretch, but no promotion artifact "
+                "(promotion_decision.json) was produced. Deferring."
             ),
             decision=None,
         )
@@ -2497,45 +2502,45 @@ def build_final_demo_bundle(
     version: str,
     commit: str | None,
     stretch: StretchStatus,
-    day7_report_dir: Path,
+    stretch_report_dir: Path,
     advanced_model_dir: Path,
 ) -> ReleaseManifest:
     """Assemble the final demo folder.
 
-    Extends the Day 6 MVP release bundle with:
-      - Day 7 advanced-model artifacts (if stretch not deferred).
-      - Day 7 comparison + promotion decision evidence.
+    Extends the MVP release bundle with:
+      - Advanced-model artifacts (if stretch not deferred).
+      - Comparison + promotion decision evidence.
       - Quick-start notes + final status summary.
     """
     release_dir = Path(release_dir)
-    day7_report_dir = Path(day7_report_dir)
+    stretch_report_dir = Path(stretch_report_dir)
     advanced_model_dir = Path(advanced_model_dir)
 
     extras: list[tuple[Path, Path, str]] = [
         (
-            day7_report_dir / "rehearsal_report.json",
-            release_dir / "reports" / "day7" / "rehearsal_report.json",
-            "Day 7 final rehearsal report",
+            stretch_report_dir / "rehearsal_report.json",
+            release_dir / "reports" / "stretch" / "rehearsal_report.json",
+            "Stretch final rehearsal report",
         ),
         (
-            day7_report_dir / "final_status_summary.json",
-            release_dir / "reports" / "day7" / "final_status_summary.json",
-            "Day 7 final status summary",
+            stretch_report_dir / "final_status_summary.json",
+            release_dir / "reports" / "stretch" / "final_status_summary.json",
+            "Stretch final status summary",
         ),
         (
-            day7_report_dir / "final_status_summary.md",
-            release_dir / "reports" / "day7" / "final_status_summary.md",
-            "Day 7 final status narrative",
+            stretch_report_dir / "final_status_summary.md",
+            release_dir / "reports" / "stretch" / "final_status_summary.md",
+            "Stretch final status narrative",
         ),
         (
-            day7_report_dir / "day7_exit_gate.json",
-            release_dir / "reports" / "day7" / "day7_exit_gate.json",
-            "Day 7 exit gate evidence",
+            stretch_report_dir / "final_exit_gate.json",
+            release_dir / "reports" / "stretch" / "final_exit_gate.json",
+            "Stretch exit gate evidence",
         ),
         (
-            Path("docs/day7/quick_start.md"),
+            Path("docs/quick_start.md"),
             release_dir / "docs" / "quick_start.md",
-            "quick-start notes for class demo",
+            "Quick-start notes for class demo",
         ),
     ]
 
@@ -2544,43 +2549,43 @@ def build_final_demo_bundle(
             [
                 (
                     advanced_model_dir,
-                    release_dir / "models" / "day7_advanced",
-                    "Day 7 advanced BiGRU-attention model artifacts",
+                    release_dir / "models" / "advanced_sequence",
+                    "Advanced BiGRU-attention model artifacts",
                 ),
                 (
-                    day7_report_dir / "advanced_training_metrics.json",
-                    release_dir / "reports" / "day7" / "advanced_training_metrics.json",
-                    "Day 7 advanced training metrics",
+                    stretch_report_dir / "advanced_training_metrics.json",
+                    release_dir / "reports" / "stretch" / "advanced_training_metrics.json",
+                    "Advanced training metrics",
                 ),
                 (
-                    day7_report_dir / "advanced_training_log.json",
-                    release_dir / "reports" / "day7" / "advanced_training_log.json",
-                    "Day 7 advanced training epoch log",
+                    stretch_report_dir / "advanced_training_log.json",
+                    release_dir / "reports" / "stretch" / "advanced_training_log.json",
+                    "Advanced training epoch log",
                 ),
                 (
-                    day7_report_dir / "advanced_predictions.csv",
-                    release_dir / "reports" / "day7" / "advanced_predictions.csv",
-                    "Day 7 advanced held-out predictions",
+                    stretch_report_dir / "advanced_predictions.csv",
+                    release_dir / "reports" / "stretch" / "advanced_predictions.csv",
+                    "Advanced held-out predictions",
                 ),
                 (
-                    day7_report_dir / "advanced_latency_benchmark.json",
-                    release_dir / "reports" / "day7" / "advanced_latency_benchmark.json",
-                    "Day 7 advanced latency benchmark",
+                    stretch_report_dir / "advanced_latency_benchmark.json",
+                    release_dir / "reports" / "stretch" / "advanced_latency_benchmark.json",
+                    "Advanced latency benchmark",
                 ),
                 (
-                    day7_report_dir / "advanced_stability_report.json",
-                    release_dir / "reports" / "day7" / "advanced_stability_report.json",
-                    "Day 7 advanced stability report",
+                    stretch_report_dir / "advanced_stability_report.json",
+                    release_dir / "reports" / "stretch" / "advanced_stability_report.json",
+                    "Advanced stability report",
                 ),
                 (
-                    day7_report_dir / "promotion_decision.json",
-                    release_dir / "reports" / "day7" / "promotion_decision.json",
-                    "Day 7 promotion decision (T19.4)",
+                    stretch_report_dir / "promotion_decision.json",
+                    release_dir / "reports" / "stretch" / "promotion_decision.json",
+                    "Promotion decision (T19.4)",
                 ),
                 (
-                    day7_report_dir / "promotion_decision.md",
-                    release_dir / "reports" / "day7" / "promotion_decision.md",
-                    "Day 7 promotion decision narrative",
+                    stretch_report_dir / "promotion_decision.md",
+                    release_dir / "reports" / "stretch" / "promotion_decision.md",
+                    "Promotion decision narrative",
                 ),
             ]
         )
@@ -2621,7 +2626,7 @@ def run_final_rehearsal(
 ) -> RehearsalResult:
     """Execute one full rehearsal under class-demo timing constraints.
 
-    Reuses the Day 5 demo dry-run harness so the rehearsal is an actual
+    Reuses the class-demo dry-run harness so the rehearsal is an actual
     simulated end-to-end pass through the PRD-mandated quick-demo sequence
     rather than a rubber-stamp.  Includes objective latency and stability
     checks against the most recent benchmarks.

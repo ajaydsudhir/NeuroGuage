@@ -1,5 +1,5 @@
 {
-  "labeled_frame": "D:\\Projects\\NeuroGuage\\artifacts\\features\\day3\\labeled_feature_matrix.csv",
+  "labeled_frame": "D:\\Projects\\NeuroGuage\\artifacts/features/labeled\\labeled_feature_matrix.csv",
   "model_variant": "muse_demo",
   "weak_labels": {
     "rows": 24,

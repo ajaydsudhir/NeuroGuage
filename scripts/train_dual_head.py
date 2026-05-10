@@ -3,7 +3,7 @@
 Usage::
 
     python scripts/train_dual_head.py \
-        --labeled-frame artifacts/features/day3/labeled_feature_matrix.csv \
+        --labeled-frame artifacts/features/labeled/labeled_feature_matrix.csv \
         --output-dir   artifacts/models/dual_head \
         --epochs 120
 
@@ -51,8 +51,8 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
     parser.add_argument(
         "--labeled-frame",
-        default=str(REPO_ROOT / "artifacts" / "features" / "day3" / "labeled_feature_matrix.csv"),
-        help="Path to the Day 3 labeled feature matrix CSV.",
+        default=str(REPO_ROOT / "artifacts" / "features" / "labeled" / "labeled_feature_matrix.csv"),
+        help="Path to the labeled feature matrix CSV.",
     )
     parser.add_argument(
         "--output-dir",

@@ -1,6 +1,6 @@
 {
   "contract_version": "1.0.0",
-  "description": "Day 1 multimodal session contract for EEG, optical, IMU, and metadata.",
+  "description": "Multimodal session contract for EEG, optical, IMU, and metadata.",
   "modalities": {
     "eeg": {
       "required_columns": [

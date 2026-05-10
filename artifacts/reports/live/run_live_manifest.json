@@ -1,52 +1,52 @@
 {
   "workflow": "run_live",
   "status": "executed",
-  "timestamp_utc": "2026-04-29T03:25:37.201942+00:00",
-  "log_path": "logs\\run_live_workflow_20260429_032537.log",
+  "timestamp_utc": "2026-05-06T23:43:17.424497+00:00",
+  "log_path": "logs\\run_live_workflow_20260506_234317.log",
   "source_kind": "muse",
   "device_address": "00:55:DA:B9:EF:09",
   "preset": "p1041",
-  "session_id": "classroom_demo_20260428_2325",
-  "duration_s": 180.0,
+  "session_id": "classroom_demo_20260506_1943",
+  "duration_s": 1800.0,
   "raw_file": null,
   "summary": {
     "source": "muse_lsl",
-    "session_id": "classroom_demo_20260428_2325",
-    "cycles": 346,
-    "elapsed_s": 180.4416913986206,
-    "final_state": "YELLOW",
-    "mean_risk": 0.5174394142712415,
-    "max_risk": 0.7370946619241427,
-    "mean_raw_risk": 0.5546973923114783,
-    "max_raw_risk": 0.6269720653052002,
-    "mean_latency_s": 0.050647077456317205,
-    "max_latency_s": 0.14879219996510074,
+    "session_id": "classroom_demo_20260506_1943",
+    "cycles": 2675,
+    "elapsed_s": 1800.342220544815,
+    "final_state": "RED",
+    "mean_risk": 0.6140294556444127,
+    "max_risk": 0.8550042482447474,
+    "mean_raw_risk": 0.5994397669278084,
+    "max_raw_risk": 0.6768467669846551,
+    "mean_latency_s": 0.11089275644858959,
+    "max_latency_s": 0.30874059999950987,
     "within_latency_budget": true,
-    "transition_count": 7,
+    "transition_count": 14,
     "source_health": {
       "source": "muse_lsl",
       "started": true,
-      "bridge_alive": true,
+      "bridge_alive": false,
       "samples": {
-        "eeg": 46654,
-        "optical": 11639,
-        "imu": 9216
+        "eeg": 366210,
+        "optical": 91665,
+        "imu": 72732
       },
       "last_lsl_time": {
-        "eeg": 297085.4080517029,
-        "optical": 297085.4236008329,
-        "imu": 297085.4573849124
+        "eeg": 16536.66173772696,
+        "optical": 16536.72244169847,
+        "imu": 16536.690453555937
       },
       "last_wall_time": {
-        "eeg": 1777433338.6512132,
-        "optical": 1777433338.6512132,
-        "imu": 1777433338.6512132
+        "eeg": 1778112438.712017,
+        "optical": 1778112438.712017,
+        "imu": 1778112438.712017
       },
-      "wall_time": 1777433339.2915273,
-      "reference_time": 1777433158.7305229,
-      "eeg_healthy": true,
-      "optical_healthy": true,
-      "imu_healthy": true
+      "wall_time": 1778112815.137525,
+      "reference_time": 1778111014.6133964,
+      "eeg_healthy": false,
+      "optical_healthy": false,
+      "imu_healthy": false
     },
     "stub_models": false,
     "guardrail_profile": {
@@ -81,16 +81,16 @@
       "sigma_span": 4.0,
       "baseline_ready": true,
       "baseline": {
-        "mean": 0.5511017734894745,
-        "stdev": 0.025404341259945215,
-        "samples": 42,
-        "duration_s": 20.47453236579895,
+        "mean": 0.5632454075463359,
+        "stdev": 0.012613420921871146,
+        "samples": 39,
+        "duration_s": 20.13274312019348,
         "floor_used": 0.04,
-        "raw_min": 0.4966380023926307,
-        "raw_max": 0.6045910465374384,
+        "raw_min": 0.5424590079090951,
+        "raw_max": 0.6082140484034265,
         "metadata": {}
       },
-      "samples_collected": 42
+      "samples_collected": 39
     },
     "dual_head": {
       "enabled": true,
@@ -102,11 +102,11 @@
       "weights_path": "D:\\Projects\\NeuroGuage\\artifacts\\models\\dual_head_muse_demo_accv2\\dual_head.pt",
       "config_path": "D:\\Projects\\NeuroGuage\\artifacts\\models\\dual_head_muse_demo_accv2\\config.json",
       "model_variant": "muse_demo",
-      "mismatch_events": 0,
-      "mismatch_active_cycles": 0,
-      "mismatch_active_fraction": 0.0,
-      "mean_attention_prob": 0.5674184573304635,
-      "mean_metabolic_prob": 0.6159246535898526,
+      "mismatch_events": 1,
+      "mismatch_active_cycles": 1395,
+      "mismatch_active_fraction": 0.5214953271028038,
+      "mean_attention_prob": 0.6491684940448059,
+      "mean_metabolic_prob": 0.569302684926541,
       "thresholds": {
         "attention_min": 0.58,
         "metabolic_max": 0.58,
@@ -114,13 +114,13 @@
       }
     },
     "artifacts": {
-      "updates": "artifacts\\reports\\live\\classroom_demo_20260428_2325_updates.json",
-      "transitions": "artifacts\\reports\\live\\classroom_demo_20260428_2325_transitions.json",
-      "guardrail_summary": "artifacts\\reports\\live\\classroom_demo_20260428_2325_guardrail_summary.json",
-      "summary": "artifacts\\reports\\live\\classroom_demo_20260428_2325_summary.json",
-      "session_log": "artifacts\\reports\\live\\classroom_demo_20260428_2325_session_log.csv",
-      "baseline": "artifacts\\reports\\live\\classroom_demo_20260428_2325_baseline.json",
-      "mismatch_events": "artifacts\\reports\\live\\classroom_demo_20260428_2325_mismatch_events.json"
+      "updates": "artifacts\\reports\\live\\classroom_demo_20260506_1943_updates.json",
+      "transitions": "artifacts\\reports\\live\\classroom_demo_20260506_1943_transitions.json",
+      "guardrail_summary": "artifacts\\reports\\live\\classroom_demo_20260506_1943_guardrail_summary.json",
+      "summary": "artifacts\\reports\\live\\classroom_demo_20260506_1943_summary.json",
+      "session_log": "artifacts\\reports\\live\\classroom_demo_20260506_1943_session_log.csv",
+      "baseline": "artifacts\\reports\\live\\classroom_demo_20260506_1943_baseline.json",
+      "mismatch_events": "artifacts\\reports\\live\\classroom_demo_20260506_1943_mismatch_events.json"
     }
   }
 }

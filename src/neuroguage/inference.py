@@ -1,4 +1,4 @@
-"""Live risk inference helpers.
+"""Live risk inference module.
 
 This module keeps the online path close to the offline training path:
 same feature columns, same normalization, and the same late-fusion model
@@ -34,9 +34,9 @@ class InferenceError(ValueError):
 class InferenceConfig:
     """Configuration for the real-time inference service."""
 
-    model_dir: str | Path = "artifacts/models/day4"
-    scaler_metadata_path: str | Path = "artifacts/models/day3/scaler_metadata.json"
-    selection_path: str | Path = "artifacts/reports/day4/model_selection.json"
+    model_dir: str | Path = "artifacts/models/mvp_fusion"
+    scaler_metadata_path: str | Path = "artifacts/models/mvp_baseline/scaler_metadata.json"
+    selection_path: str | Path = "artifacts/reports/evaluation/model_selection.json"
 
     # Windowing
     eeg_window_size_s: float = 2.0
@@ -97,7 +97,7 @@ def _resolve_selected_model_dir(config: InferenceConfig) -> Path:
         )
 
     # Fall back to baseline models
-    fallback = Path("artifacts/models/day3")
+    fallback = Path("artifacts/models/mvp_baseline")
     if fallback.exists():
         return fallback
 

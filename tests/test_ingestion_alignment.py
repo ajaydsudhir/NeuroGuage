@@ -9,7 +9,7 @@ from neuroguage.pipeline import (
 )
 
 
-FIXTURES = Path("tests/fixtures/day2")
+FIXTURES = Path("tests/fixtures/raw_modalities")
 
 
 def test_ingest_modalities_loads_all_sources() -> None:

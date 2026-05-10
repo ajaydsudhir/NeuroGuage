@@ -74,7 +74,7 @@ class DashboardConfig:
     max_visible_points: int = 120
     update_interval_ms: int = 500
     show_rationale_count: int = 3
-    output_dir: str | Path = "artifacts/reports/day5"
+    output_dir: str | Path = "artifacts/reports/dashboard"
 
 
 @dataclass
@@ -276,16 +276,7 @@ class DashboardRenderer:
             ax.legend(loc="upper left", fontsize=_LEGEND_SIZE, framealpha=0.70,
                       facecolor=_PANEL_BG, edgecolor=_GRID_COLOR)
 
-            # Highlight cycles where the symbolic AND-rule is satisfied.
-            mm_history = snap.mismatch_active_history[-n:]
-            band_height = 0.06
-            for i, active in enumerate(mm_history):
-                if not active:
-                    continue
-                left = t[i]
-                width = (t[i + 1] - t[i]) if i + 1 < len(t) else (t[-1] - t[-2] if len(t) > 1 else 0.5)
-                ax.axvspan(left, left + width, ymin=0.0, ymax=band_height,
-                           color="#ef4444", alpha=0.55)
+            # Keep the dual-head panel clean: no mismatch event strip at the bottom.
         else:
             # Fallback when dual-head probabilities are disabled.
             opt = snap.optical_trend[-n:]
@@ -368,20 +359,9 @@ class DashboardRenderer:
             ax.text(0.10, 0.03, f"Profile: {snap.guardrail_profile}",
                     fontsize=_INDICATOR_SIZE - 2, color=_TEXT_COLOR, alpha=0.7)
 
-        if snap.dual_head_enabled and snap.mismatch_active:
-            mismatch_badge = mpatches.FancyBboxPatch(
-                (0.10, 0.42), 0.80, 0.10,
-                boxstyle="round,pad=0.03",
-                facecolor="#7f1d1d",
-                edgecolor="#fca5a5",
-                linewidth=2,
-            )
-            ax.add_patch(mismatch_badge)
-            ax.text(
-                0.50, 0.47, "MISMATCH — engaged but capacity dropping",
-                fontsize=_INDICATOR_SIZE, fontweight="bold",
-                ha="center", va="center", color="#ffffff",
-            )
+        # Intentionally do not render a mismatch banner in the status panel.
+        # The dashboard should keep a single clean status badge (GREEN/YELLOW/RED/BLACK)
+        # across both live and demo runs.
 
     # ------------------------------------------------------------------
     # Public API
