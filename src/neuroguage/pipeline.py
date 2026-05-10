@@ -5,9 +5,6 @@ This module groups all non-live experiment pipeline stages:
 - Phase 1: EEG-centric attention signal preparation
 - Phase 2: Optical/IMU fatigue-related signal preparation
 - Shared: schema validation, feature assembly, weak labels, train/eval utilities
-
-It is intentionally consolidated so users can find the full offline path in
-one file.
 """
 
 from __future__ import annotations
@@ -930,7 +927,7 @@ def build_unified_feature_matrix(
     optical_imu_feature_frame: pd.DataFrame,
     session_column: str = "session_id",
     alignment_tolerance_s: float = 2.5,
-    dataset_version: str = "day3_v1",
+    dataset_version: str = "mvp_v1",
     feature_schema_version: str = "v1",
 ) -> pd.DataFrame:
     if eeg_feature_frame.empty:
@@ -1195,7 +1192,7 @@ def run_feature_builder_pipeline(
     train_ratio: float = 0.6,
     val_ratio: float = 0.2,
     alignment_tolerance_s: float = 2.5,
-    dataset_version: str = "day3_v1",
+    dataset_version: str = "mvp_v1",
     feature_schema_version: str = "v1",
 ) -> FeatureBuilderResult:
     unified = build_unified_feature_matrix(

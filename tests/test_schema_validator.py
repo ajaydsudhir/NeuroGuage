@@ -8,7 +8,7 @@ import pytest
 from neuroguage.pipeline import SchemaValidationError, validate_session_files
 
 
-FIXTURES = Path("tests/fixtures/day1")
+FIXTURES = Path("tests/fixtures/session")
 
 
 def test_validate_session_files_accepts_valid_inputs() -> None:

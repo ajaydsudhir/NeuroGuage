@@ -14,7 +14,7 @@ def _common_workflow_parser(description: str) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument(
         "--output-dir",
-        default="artifacts/reports/day1/entrypoints",
+        default="artifacts/reports/pipeline/entrypoints",
         help="Directory for workflow manifest output.",
     )
     parser.add_argument(
@@ -180,7 +180,7 @@ def main_verify_env() -> int:
     parser.add_argument("--expected-env", default="neuroguage")
     parser.add_argument(
         "--output",
-        default="artifacts/reports/day1/environment_verification.json",
+        default="artifacts/reports/pipeline/environment_verification.json",
         help="Path to write verification artifact.",
     )
     parser.add_argument(
@@ -230,7 +230,7 @@ def main_train_dual_head() -> int:
     parser = argparse.ArgumentParser(description="Train the dual-head model.")
     parser.add_argument(
         "--labeled-frame",
-        default="artifacts/features/day3/labeled_feature_matrix.csv",
+        default="artifacts/features/labeled/labeled_feature_matrix.csv",
     )
     parser.add_argument("--output-dir", default="artifacts/models/dual_head")
     parser.add_argument("--epochs", type=int, default=120)
@@ -357,7 +357,7 @@ def main_validate_schema() -> int:
     parser.add_argument("--contract", default="configs/data_contract.json")
     parser.add_argument(
         "--summary-output",
-        default="artifacts/reports/day1/schema_validation_summary.json",
+        default="artifacts/reports/pipeline/schema_validation_summary.json",
     )
     args = parser.parse_args()
 
@@ -510,11 +510,11 @@ def _run_workflow(
     )
 
 
-def run_train(output_dir: str | Path = "artifacts/reports/day1/entrypoints", dry_run: bool = False) -> WorkflowResult:
+def run_train(output_dir: str | Path = "artifacts/reports/pipeline/entrypoints", dry_run: bool = False) -> WorkflowResult:
     return _run_workflow("train", output_dir=output_dir, dry_run=dry_run)
 
 
-def run_evaluate(output_dir: str | Path = "artifacts/reports/day1/entrypoints", dry_run: bool = False) -> WorkflowResult:
+def run_evaluate(output_dir: str | Path = "artifacts/reports/pipeline/entrypoints", dry_run: bool = False) -> WorkflowResult:
     return _run_workflow("evaluate", output_dir=output_dir, dry_run=dry_run)
 
 
@@ -644,5 +644,5 @@ def run_live(
     )
 
 
-def run_replay(output_dir: str | Path = "artifacts/reports/day1/entrypoints", dry_run: bool = False) -> WorkflowResult:
+def run_replay(output_dir: str | Path = "artifacts/reports/pipeline/entrypoints", dry_run: bool = False) -> WorkflowResult:
     return _run_workflow("replay", output_dir=output_dir, dry_run=dry_run)

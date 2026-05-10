@@ -1,8 +1,0 @@
-{
-  "linear_model_path": "artifacts\\models\\day4\\ablations\\eeg_optical_imu_gated\\linear_model_calibrated.pkl",
-  "tree_model_path": "artifacts\\models\\day4\\ablations\\eeg_optical_imu_gated\\tree_model_calibrated.pkl",
-  "fusion_config_path": "artifacts\\models\\day4\\ablations\\eeg_optical_imu_gated\\late_fusion_config.json",
-  "feature_columns_path": "artifacts\\models\\day4\\ablations\\eeg_optical_imu_gated\\feature_columns.json",
-  "metrics_path": "artifacts\\reports\\day4\\ablations\\eeg_optical_imu_gated_training_metrics.json",
-  "scaler_metadata_path": "artifacts\\models\\day4\\ablations\\eeg_optical_imu_gated\\scaler_metadata.json"
-}
