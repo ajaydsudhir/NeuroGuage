@@ -40,7 +40,7 @@ The live system runs with two variants:
 ### 1) Clone and install
 
 ```powershell
-git clone <your-repo-url>
+git clone git@github.com:ajaydsudhir/NeuroGuage.git
 cd NeuroGuage
 conda env create -f environment.yml
 conda activate neuroguage
